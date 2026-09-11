@@ -64,20 +64,39 @@
 <main id="top">
 
 <!-- ============================ HERO ============================ -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <linearGradient id="g-maps" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#4285F4"/><stop offset=".45" stop-color="#34A853"/><stop offset=".7" stop-color="#FBBC04"/><stop offset="1" stop-color="#EA4335"/></linearGradient>
+    <linearGradient id="g-aio" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#4285F4"/><stop offset=".5" stop-color="#9B72CB"/><stop offset="1" stop-color="#D96570"/></linearGradient>
+    <symbol id="lg-google" viewBox="0 0 24 24">
+      <path fill="#4285F4" d="M23.49 12.27c0-.79-.07-1.54-.19-2.27H12v4.51h6.47c-.29 1.48-1.14 2.73-2.4 3.58v3h3.86c2.26-2.09 3.56-5.17 3.56-8.82z"/>
+      <path fill="#34A853" d="M12 24c3.24 0 5.95-1.08 7.93-2.91l-3.86-3c-1.08.72-2.45 1.16-4.07 1.16-3.13 0-5.78-2.11-6.73-4.96H1.29v3.09C3.26 21.3 7.31 24 12 24z"/>
+      <path fill="#FBBC04" d="M5.27 14.29c-.25-.72-.38-1.49-.38-2.29s.14-1.57.38-2.29V6.62H1.29C.47 8.24 0 10.06 0 12s.47 3.76 1.29 5.38l3.98-3.09z"/>
+      <path fill="#EA4335" d="M12 4.75c1.77 0 3.35.61 4.6 1.8l3.42-3.42C17.95 1.19 15.24 0 12 0 7.31 0 3.26 2.7 1.29 6.62l3.98 3.09C6.22 6.86 8.87 4.75 12 4.75z"/>
+    </symbol>
+    <symbol id="lg-maps" viewBox="0 0 24 24">
+      <path fill="url(#g-maps)" d="M19.527 4.799c1.212 2.608.937 5.678-.405 8.173-1.101 2.047-2.744 3.74-4.098 5.614-.619.858-1.244 1.75-1.669 2.727-.141.325-.263.658-.383.992-.121.333-.224.673-.34 1.008-.109.314-.236.684-.627.687h-.007c-.466-.001-.579-.53-.695-.887-.284-.874-.581-1.713-1.019-2.525-.51-.944-1.145-1.817-1.79-2.671L19.527 4.799zM8.545 7.705l-3.959 4.707c.724 1.54 1.821 2.863 2.871 4.18.247.31.494.622.737.936l4.984-5.925-.029.01c-1.741.601-3.691-.291-4.392-1.987a3.377 3.377 0 0 1-.209-.716c-.063-.437-.077-.761-.004-1.198l.001-.007zM5.492 3.149l-.003.004c-1.947 2.466-2.281 5.88-1.117 8.77l4.785-5.689-.058-.05-3.607-3.035zM14.661.436l-3.838 4.563a.295.295 0 0 1 .027-.01c1.6-.551 3.403.15 4.22 1.626.176.319.323.683.377 1.045.068.446.085.773.012 1.22l-.003.016 3.897-4.633a7.38 7.38 0 0 0-1.876-2.213A7.4 7.4 0 0 0 14.661.436zM9.466 1.11L5.955 5.286c1.55-1.6 3.58-2.72 5.756-3.3l.098-.024c.15-.038.303-.07.456-.1l-.02.002-2.762 3.294c1.078-.485 2.256-.66 3.412-.66h-.019c.3 0 .6.014.897.043L9.466 1.11z"/>
+    </symbol>
+    <symbol id="lg-aio" viewBox="0 0 24 24">
+      <path fill="url(#g-aio)" d="M11.04 19.32Q12 21.51 12 24q0-2.49.93-4.68.96-2.19 2.58-3.81t3.81-2.55Q21.51 12 24 12q-2.49 0-4.68-.93a12.3 12.3 0 0 1-3.81-2.58 12.3 12.3 0 0 1-2.58-3.81Q12 2.49 12 0q0 2.49-.96 4.68-.93 2.19-2.55 3.81a12.3 12.3 0 0 1-3.81 2.58Q2.49 12 0 12q2.49 0 4.68.96 2.19.93 3.81 2.55t2.55 3.81"/>
+    </symbol>
+    <symbol id="lg-chatgpt" viewBox="0 0 24 24">
+      <g fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round">
+        <path id="cg-arm" d="M12 3.2 6.6 6.3v6.3"/>
+        <use href="#cg-arm" transform="rotate(60 12 12)"/><use href="#cg-arm" transform="rotate(120 12 12)"/>
+        <use href="#cg-arm" transform="rotate(180 12 12)"/><use href="#cg-arm" transform="rotate(240 12 12)"/>
+        <use href="#cg-arm" transform="rotate(300 12 12)"/>
+      </g>
+    </symbol>
+  </defs>
+</svg>
 <section class="hero" id="hero">
-  <div class="hero-bg">
-    <img src="assets/photos/huyen-truong-with-mr-manaf-khatib-online-marketing-for-plastic-surgeons-london-uk-1.webp" alt="Huyen Truong of Online Marketing For Doctors with Mr Manaf Khatib, plastic surgeon, London" fetchpriority="high">
-  </div>
-  <div class="hero-veil"></div>
+  <div class="hero-glow" aria-hidden="true"></div>
   <div class="wrap hero-in">
     <div class="hero-copy">
       <p class="hero-kicker rv" style="--d:.05s">The healthcare SEO agency for UK clinics</p>
-      <h1 class="t-display rv" style="--d:.15s">
-        <span class="line">Medical SEO that fills</span>
-        <span class="line">consultation diaries.</span>
-        <span class="line">Not just rankings reports.</span>
-      </h1>
-      <p class="hero-sub rv" style="--d:.3s">Healthcare-only SEO services for surgeons, doctors and clinics that want patients they can count. Tracked from the first Google search to the booked procedure, by the team behind 2,098% organic growth for HR Plastic Surgery and 1,012% keyword growth for British Face Clinic.</p>
+      <h1 class="t-display rv" style="--d:.15s">Medical SEO that fills consultation diaries. Not just rankings reports.</h1>
+      <p class="hero-sub rv" style="--d:.3s">Healthcare-only SEO services for surgeons, doctors and clinics that want patients they can count, tracked from the first Google search to the booked procedure.</p>
       <ul class="points rv" style="--d:.4s">
         <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Healthcare only. Since 2011, nothing else.</li>
         <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Every enquiry tracked through to a booked procedure</li>
@@ -88,6 +107,41 @@
       <div class="hero-actions rv" style="--d:.5s">
         <a class="btn btn-green btn-lg" href="#book">Book a free strategy call</a>
         <span class="hero-note">30 minutes. No pitch deck. We look at your rankings live.</span>
+      </div>
+    </div>
+
+    <div class="hero-viz" id="heroViz" aria-label="Clients we have ranked across the UK">
+      <img class="viz-map" src="assets/uk-map.svg" alt="" width="600" height="720" fetchpriority="high">
+      <span class="viz-city" style="left:82.0%;top:81.0%" aria-hidden="true"><i></i>London</span>
+      <span class="viz-city" style="left:65.9%;top:59.4%" aria-hidden="true"><i></i>Manchester</span>
+      <span class="viz-city" style="left:83.9%;top:73.3%" aria-hidden="true"><i></i>Cambridge</span>
+      <div class="fc rv" data-depth="1.2" style="--x:0%;--y:2%;--dur:11s;--del:-2s;--d:.55s">
+        <span class="fc-avatar"><img src="assets/headshots/maps--cosmetic-surgery-clinic-manchester.webp" alt="" width="440" height="440"></span>
+        <span class="fc-label"><svg class="fc-engine" aria-hidden="true"><use href="#lg-maps"/></svg><span><small>Google Maps</small>cosmetic surgery clinic Manchester</span></span>
+      </div>
+      <div class="fc rv" data-depth=".7" style="--x:50%;--y:12%;--dur:13s;--del:-5s;--d:.7s">
+        <span class="fc-avatar"><img src="assets/headshots/google--facelift-in-cambridge.webp" alt="" width="440" height="440"></span>
+        <span class="fc-label"><svg class="fc-engine" aria-hidden="true"><use href="#lg-google"/></svg><span><small>Google</small>facelift in Cambridge</span></span>
+      </div>
+      <div class="fc rv" data-depth="1" style="--x:50%;--y:40%;--dur:12s;--del:-8s;--d:.85s">
+        <span class="fc-avatar"><img src="assets/headshots/chatgpt--top-hair-transplant-clinics-in-london.webp" alt="" width="440" height="440"></span>
+        <span class="fc-label"><svg class="fc-engine" aria-hidden="true"><use href="#lg-chatgpt"/></svg><span><small>ChatGPT</small>top hair transplant clinics in London</span></span>
+      </div>
+      <div class="fc rv" data-depth="1.4" style="--x:0%;--y:26%;--dur:14s;--del:-3s;--d:1s">
+        <span class="fc-avatar"><img src="assets/headshots/google--mummy-makeover-hertfordshire.webp" alt="" width="440" height="440"></span>
+        <span class="fc-label"><svg class="fc-engine" aria-hidden="true"><use href="#lg-google"/></svg><span><small>Google</small>mummy makeover Hertfordshire</span></span>
+      </div>
+      <div class="fc rv" data-depth=".8" style="--x:50%;--y:68%;--dur:10.5s;--del:-6s;--d:1.15s">
+        <span class="fc-avatar"><img src="assets/headshots/aio--revision-rhinoplasty-specialist-near-london.webp" alt="" width="440" height="440"></span>
+        <span class="fc-label"><svg class="fc-engine" aria-hidden="true"><use href="#lg-aio"/></svg><span><small>Google AI Overview</small>revision rhinoplasty specialist near London</span></span>
+      </div>
+      <div class="fc rv" data-depth="1.1" style="--x:0%;--y:50%;--dur:12.5s;--del:-1s;--d:1.3s">
+        <span class="fc-avatar"><img src="assets/headshots/google--facelift-near-london.webp" alt="" width="440" height="440"></span>
+        <span class="fc-label"><svg class="fc-engine" aria-hidden="true"><use href="#lg-google"/></svg><span><small>Google</small>facelift near London</span></span>
+      </div>
+      <div class="fc rv" data-depth=".9" style="--x:0%;--y:74%;--dur:11.5s;--del:-9s;--d:1.45s">
+        <span class="fc-avatar"><img src="assets/headshots/maps--neck-surgery-london.webp" alt="" width="440" height="440"></span>
+        <span class="fc-label"><svg class="fc-engine" aria-hidden="true"><use href="#lg-maps"/></svg><span><small>Google Maps</small>neck surgery London</span></span>
       </div>
     </div>
   </div>

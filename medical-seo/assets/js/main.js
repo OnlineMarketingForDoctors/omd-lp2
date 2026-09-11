@@ -138,6 +138,18 @@
     sections.forEach(s => io.observe(s));
   }
 
+  /* ---------------- hero parallax (fine pointers only) ---------------- */
+  const viz = $('#heroViz');
+  if (viz && !reduced && window.matchMedia('(pointer: fine)').matches) {
+    const cards = $$('.fc', viz); let raf = 0, tx = 0, ty = 0;
+    const apply = () => { raf = 0; cards.forEach(c => { const d = +c.dataset.depth || 1; c.style.setProperty('--px', (tx * 14 * d) + 'px'); c.style.setProperty('--py', (ty * 10 * d) + 'px'); }); };
+    $('#hero').addEventListener('mousemove', (e) => {
+      const r = viz.getBoundingClientRect(); tx = ((e.clientX - r.left) / r.width - .5); ty = ((e.clientY - r.top) / r.height - .5);
+      if (!raf) raf = requestAnimationFrame(apply);
+    });
+    $('#hero').addEventListener('mouseleave', () => { tx = 0; ty = 0; if (!raf) raf = requestAnimationFrame(apply); });
+  }
+
   /* ---------------- ticker ---------------- */
   const track = $('#tickerTrack');
   const logos = FEATURED.map(f => `<img src="assets/featured-in/${f}" alt="" loading="lazy">`).join('');
