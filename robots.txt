@@ -1,0 +1,10 @@
+# Crawling is intentionally ALLOWED so that crawlers can read the
+# noindex directives served via the X-Robots-Tag header (vercel.json)
+# and the robots meta tag on each page.
+#
+# Do not add "Disallow: /" here. Blocking the crawl would stop crawlers
+# from ever seeing those directives, which allows bare URLs to be indexed.
+User-agent: *
+Allow: /
+
+# No sitemap is published while the site is unindexed.
