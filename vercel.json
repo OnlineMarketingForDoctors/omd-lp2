@@ -1,4 +1,9 @@
 {
+  "cleanUrls": true,
+  "trailingSlash": true,
+  "redirects": [
+    { "source": "/", "destination": "/medical-seo/", "permanent": false }
+  ],
   "headers": [
     {
       "source": "/(.*)",
