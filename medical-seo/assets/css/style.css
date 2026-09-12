@@ -296,6 +296,14 @@ img.fc-engine{object-fit:contain}
 .paper::before{content:"";position:absolute;left:0;top:0;bottom:0;width:6px;background:var(--green);border-radius:8px 0 0 8px}
 .paper p{margin-bottom:.9em;line-height:1.55}
 .paper p.big{font-size:1.15rem;font-weight:600;margin-bottom:1.1em}
+.paper strong{font-weight:700;color:var(--black)}
+.paper mark{
+  background:linear-gradient(180deg,transparent 10%,rgba(0,219,152,.45) 10%,rgba(0,219,152,.45) 94%,transparent 94%) left center/0% 100% no-repeat;
+  color:inherit;padding:.05em .14em;margin:0 -.06em;font-weight:600;
+  -webkit-box-decoration-break:clone;box-decoration-break:clone;
+  transition:background-size .75s var(--ease) var(--md,0s);
+}
+.paper.in mark{background-size:100% 100%}
 .sig{display:flex;align-items:center;gap:14px;margin-top:26px;padding-top:20px;border-top:1px solid var(--line)}
 .sig b{display:block}
 .sig small{color:var(--ink-2)}
@@ -670,6 +678,7 @@ blockquote{margin:0}
 .rv.in{opacity:1;transform:none}
 .hero .rv{transition-delay:var(--d,0s)}
 @media (prefers-reduced-motion:reduce){
+  .paper mark{background-size:100% 100%;transition:none}
   .rv{opacity:1;transform:none;transition:none}
   *{animation-duration:.001s !important;transition-duration:.001s !important}
 }
