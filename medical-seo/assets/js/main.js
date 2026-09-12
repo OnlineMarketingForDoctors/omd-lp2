@@ -430,7 +430,7 @@
   };
   const closeLightbox = () => {
     if (!lb.classList.contains('is-open')) return;
-    lb.classList.remove('is-open', 'is-image', 'has-set');
+    lb.classList.remove('is-open', 'is-image', 'has-set', 'is-zoomed');
     lbFrame.innerHTML = '';
     document.body.style.overflow = '';
     if (lastFocused && lastFocused.isConnected) lastFocused.focus();
@@ -448,10 +448,11 @@
     zoomIdx = (i + n) % n;
     const btn = zoomSet[zoomIdx], d = btn.dataset;
     openLightbox(
-      `<div class="zoomwrap"><img src="${esc(d.zoom)}" alt="${esc(d.client)}: ${esc(d.cap)}"></div>` +
+      `<div class="zoomwrap"><img src="${esc(d.zoom)}" alt="${esc(d.client)}: ${esc(d.cap)}"><span class="zoom-hint">Tap to zoom</span></div>` +
       `<figcaption class="cap"><span class="cap-t"><b>${esc(d.client)}</b><span>${esc(d.cap)}</span></span>` +
       `${n > 1 ? `<span class="cap-n">${zoomIdx + 1} / ${n}</span>` : ''}</figcaption>`,
       true, `${d.client}: ${d.cap}`);
+    lb.classList.remove('is-zoomed');
     lb.classList.toggle('has-set', n > 1);
     lastFocused = btn;  // close returns the viewer to the screenshot they ended on
     // keep the slider or panel behind the lightbox on the screenshot being viewed
@@ -464,6 +465,13 @@
     zoomSet = $$('[data-zoom]', scope);
     showZoom(zoomSet.indexOf(btn));
   }));
+  // on a phone the screenshot is fitted, so tapping it switches to native size and pans
+  lbFrame.addEventListener('click', (e) => {
+    if (!lb.classList.contains('is-image') || !e.target.closest('.zoomwrap')) return;
+    const wrap = lbFrame.querySelector('.zoomwrap');
+    lb.classList.toggle('is-zoomed');
+    if (lb.classList.contains('is-zoomed')) wrap.scrollLeft = (wrap.scrollWidth - wrap.clientWidth) / 2;
+  });
   lbPrev.addEventListener('click', () => showZoom(zoomIdx - 1));
   lbNext.addEventListener('click', () => showZoom(zoomIdx + 1));
   lbClose.addEventListener('click', closeLightbox);
