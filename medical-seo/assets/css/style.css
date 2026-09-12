@@ -296,13 +296,64 @@ img.fc-engine{object-fit:contain}
 .letter-grid{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,1fr);gap:clamp(24px,5vw,80px);align-items:start}
 .letter-side{padding-top:6vw;max-width:520px}
 .letter-side h2{margin-bottom:20px}
+/* A page torn from a notebook. Every vertical measure is a multiple of --rule
+   so the text keeps sitting on the ruled lines; --rule-phase is the baseline
+   offset inside each line box (Montserrat at 17px in a 30px line). The rules
+   are positioned from the content box, so the left gutter and padding can stay
+   fluid without knocking the text off the lines. */
 .paper{
-  background:var(--white);color:var(--ink);padding:clamp(28px,4vw,56px);border-radius:8px;
-  box-shadow:var(--shadow-lg);position:relative;transform:translateY(clamp(0px,4vw,60px));
+  --rule:30px;
+  --rule-phase:21px;
+  --gutter-l:clamp(46px,6vw,84px);
+  position:relative;color:var(--ink);
+  font-size:17px;line-height:var(--rule);
+  background-color:#FDFCF6;
+  background-image:repeating-linear-gradient(to bottom,
+    rgba(43,88,138,.17) 0 1px,transparent 1px var(--rule));
+  background-origin:content-box;
+  background-clip:border-box;
+  background-position:0 var(--rule-phase);
+  padding:calc(var(--rule) * 1.5) clamp(24px,3.2vw,44px) var(--rule) var(--gutter-l);
+  border-radius:3px 9px 9px 3px;
+  box-shadow:var(--shadow-lg);
+  transform:translateY(clamp(0px,4vw,60px));
 }
-.paper::before{content:"";position:absolute;left:0;top:0;bottom:0;width:6px;background:var(--green);border-radius:8px 0 0 8px}
-.paper p{margin-bottom:.9em;line-height:1.55}
-.paper p.big{font-size:1.15rem;font-weight:600;margin-bottom:1.1em}
+/* bound edge and the red margin rule */
+.paper::before{
+  content:"";position:absolute;left:0;top:0;bottom:0;
+  width:calc(var(--gutter-l) - 19px);
+  background:linear-gradient(90deg,rgba(90,70,40,.07),rgba(90,70,40,.02) 55%,transparent);
+  border-right:1px solid rgba(198,86,80,.4);
+  border-radius:3px 0 0 3px;pointer-events:none;
+}
+/* Punched holes, cut out of the card so the photograph shows through. Each mask
+   layer is opaque except its own circle and they are intersected, so only the
+   circles are removed. Where mask-composite is unsupported the layers union to
+   fully opaque and the page simply keeps its holes undrilled. */
+.paper{
+  --hx:calc((var(--gutter-l) - 19px) / 2);
+  -webkit-mask-image:
+    radial-gradient(circle 9px at var(--hx) 13%,transparent 0 9px,#000 9.6px),
+    radial-gradient(circle 9px at var(--hx) 50%,transparent 0 9px,#000 9.6px),
+    radial-gradient(circle 9px at var(--hx) 87%,transparent 0 9px,#000 9.6px);
+  mask-image:
+    radial-gradient(circle 9px at var(--hx) 13%,transparent 0 9px,#000 9.6px),
+    radial-gradient(circle 9px at var(--hx) 50%,transparent 0 9px,#000 9.6px),
+    radial-gradient(circle 9px at var(--hx) 87%,transparent 0 9px,#000 9.6px);
+  -webkit-mask-composite:source-in;
+  mask-composite:intersect;
+}
+/* paper thickness around each hole */
+.paper::after{
+  content:"";position:absolute;inset:0;pointer-events:none;
+  background-image:
+    radial-gradient(circle 12px at var(--hx) 13%,transparent 0 8.6px,rgba(70,55,30,.26) 9.2px 10.4px,transparent 11.4px),
+    radial-gradient(circle 12px at var(--hx) 50%,transparent 0 8.6px,rgba(70,55,30,.26) 9.2px 10.4px,transparent 11.4px),
+    radial-gradient(circle 12px at var(--hx) 87%,transparent 0 8.6px,rgba(70,55,30,.26) 9.2px 10.4px,transparent 11.4px);
+  background-repeat:no-repeat;
+}
+.paper p{margin-bottom:var(--rule);line-height:var(--rule)}
+.paper p.big{font-size:1.15rem;font-weight:600;margin-bottom:var(--rule)}
 .paper strong{font-weight:700;color:var(--black)}
 .paper mark{
   background:linear-gradient(180deg,transparent 12%,rgba(0,219,152,.4) 12%,rgba(0,219,152,.4) 94%,transparent 94%) left center/0% 100% no-repeat;
@@ -311,7 +362,7 @@ img.fc-engine{object-fit:contain}
   transition:background-size .8s var(--ease) .25s;
 }
 .paper.in mark{background-size:100% 100%}
-.sig{display:flex;align-items:center;gap:14px;margin-top:26px;padding-top:20px;border-top:1px solid var(--line)}
+.sig{display:flex;align-items:center;gap:14px;margin-top:var(--rule);padding-top:calc(var(--rule) - 1px);border-top:1px solid rgba(0,0,0,.14)}
 .sig b{display:block}
 .sig small{color:var(--ink-2)}
 .sig img{width:56px;height:56px;flex:none;border-radius:50%;object-fit:cover}
