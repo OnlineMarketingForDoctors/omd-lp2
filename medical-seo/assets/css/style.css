@@ -296,9 +296,6 @@ img.fc-engine{object-fit:contain}
 .paper::before{content:"";position:absolute;left:0;top:0;bottom:0;width:6px;background:var(--green);border-radius:8px 0 0 8px}
 .paper p{margin-bottom:.9em;line-height:1.55}
 .paper p.big{font-size:1.15rem;font-weight:600;margin-bottom:1.1em}
-.paper .stack{margin:14px 0 18px;padding-left:0}
-.paper .stack li{font-weight:600;padding:5px 0;border-bottom:1px dashed var(--line)}
-.paper .stack li:last-child{border:0}
 .sig{display:flex;align-items:center;gap:14px;margin-top:26px;padding-top:20px;border-top:1px solid var(--line)}
 .sig b{display:block}
 .sig small{color:var(--ink-2)}
