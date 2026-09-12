@@ -170,6 +170,7 @@ ul{margin:0;padding:0;list-style:none}
 }
 .hero-kicker::before,.sec-kicker::before{content:"";width:34px;height:2px;background:var(--green)}
 .sec-kicker{margin-bottom:14px}
+.sec-kicker.on-light{color:var(--ink)}
 .hero .hero-kicker{margin-bottom:16px}
 .hero h1{margin-bottom:18px}
 .hero-sub{font-size:clamp(.98rem,1.15vw,1.08rem);color:var(--on-dark-2);max-width:56ch;margin-bottom:22px}
@@ -493,12 +494,6 @@ img.fc-engine{object-fit:contain}
 .ai-results .slide{border:1px solid var(--line);box-shadow:none}
 .ai-results .slide .shot{aspect-ratio:auto;height:340px}
 .ai-results .slide .meta{border-top:1px solid var(--line);background:var(--white)}
-.ai-kicker{
-  display:inline-flex;align-items:center;gap:10px;background:var(--black);color:var(--white);padding:8px 14px;border-radius:999px;
-  font-family:var(--action);letter-spacing:.1em;text-transform:uppercase;font-size:.74rem;margin-bottom:18px;
-}
-.ai-kicker i{width:8px;height:8px;border-radius:50%;background:var(--green);animation:pulse 1.8s infinite}
-@keyframes pulse{50%{box-shadow:0 0 0 6px rgba(0,219,152,.25)}}
 
 /* ==========================================================================
    Testimonials
