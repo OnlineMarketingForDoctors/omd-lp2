@@ -366,10 +366,11 @@
 
   /* ---------------- case studies ---------------- */
   const csNav = $('#csNav'), csPanels = $('#csPanels');
-  csNav.innerHTML = CASES.map((c, i) => `
-    <button class="cs-tab" role="tab" aria-selected="${i === 0}" data-cs="${c.id}">
+  csNav.innerHTML = CASES.map((c) => `
+    <button class="cs-tab" type="button" data-cs="${c.id}">
       <span class="logo-box">${c.logo ? `<img src="${c.logo}" alt="">` : `<b>${c.name}</b>`}</span>
       ${c.logo ? `<b>${c.name}</b>` : ''}
+      <svg class="tab-chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
     </button>`).join('');
   csPanels.innerHTML = CASES.map((c, i) => `
     <div class="cs-panel ${i === 0 ? 'is-active' : ''}" id="cs-${c.id}" role="tabpanel">
@@ -406,12 +407,39 @@
         </div>
       </div>
     </div>`).join('');
+  // same accordion as the specialty rail: below 860px the panel opens under the
+  // clinic you tap, so the other clinics stay on screen instead of scrolling off
+  const csHome = csPanels.parentElement, mqCs = window.matchMedia('(max-width: 860px)');
+  let csCurrent = CASES[0].id;
+  const applyCsMode = () => {
+    const acc = mqCs.matches;
+    if (!acc && !csCurrent) csCurrent = CASES[0].id;
+    csNav.setAttribute('role', acc ? 'presentation' : 'tablist');
+    let active = null;
+    $$('.cs-tab', csNav).forEach(t => {
+      const on = t.dataset.cs === csCurrent;
+      if (on) active = t;
+      if (acc) {
+        t.removeAttribute('role'); t.removeAttribute('aria-selected');
+        t.setAttribute('aria-expanded', String(on));
+      } else {
+        t.setAttribute('role', 'tab'); t.removeAttribute('aria-expanded');
+        t.setAttribute('aria-selected', String(on));
+      }
+    });
+    $$('.cs-panel', csPanels).forEach(p => p.classList.toggle('is-active', p.id === 'cs-' + csCurrent));
+    csPanels.hidden = acc && !active;
+    if (acc) { if (active) active.after(csPanels); } else if (csPanels.parentElement !== csHome) { csHome.append(csPanels); }
+  };
   csNav.addEventListener('click', (e) => {
     const b = e.target.closest('.cs-tab'); if (!b) return;
-    $$('.cs-tab', csNav).forEach(t => t.setAttribute('aria-selected', String(t === b)));
-    $$('.cs-panel', csPanels).forEach(p => p.classList.toggle('is-active', p.id === 'cs-' + b.dataset.cs));
-    b.scrollIntoView({ block: 'nearest', inline: 'center', behavior: reduced ? 'auto' : 'smooth' });
+    const acc = mqCs.matches;
+    csCurrent = (acc && b.dataset.cs === csCurrent) ? null : b.dataset.cs;  // tapping the open clinic closes it
+    applyCsMode();
+    b.scrollIntoView({ block: 'nearest', inline: acc ? 'nearest' : 'center', behavior: reduced ? 'auto' : 'smooth' });
   });
+  mqCs.addEventListener('change', applyCsMode);
+  applyCsMode();
 
   /* ---------------- lightbox: video testimonials and ranking screenshots ---------------- */
   const lb = $('#lightbox'), lbFrame = $('#lightboxFrame'), lbClose = $('#lightboxClose'),

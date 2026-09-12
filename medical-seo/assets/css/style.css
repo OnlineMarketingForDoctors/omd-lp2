@@ -678,6 +678,29 @@ blockquote{margin:0}
 .cs-tab .logo-box img{height:26px;width:auto;max-width:120px;object-fit:contain}
 .cs-tab .logo-box b{color:var(--black);padding:0 2px}
 .cs-tab b{font-family:var(--action);font-weight:500;letter-spacing:.05em;text-transform:uppercase;font-size:.8rem}
+.cs-tab .tab-chev{display:none}
+@media (max-width:860px){
+  /* accordion: every clinic stays on screen and its panel opens under the row
+     you tap, rather than hiding behind a horizontal scroll nobody notices */
+  .cs-nav{display:block;overflow:visible;border-bottom:0;border-top:1px solid rgba(127,127,127,.24);margin-top:26px}
+  .cs-tab{
+    width:100%;flex-direction:row;align-items:center;gap:12px;min-width:0;
+    padding:12px 2px;border-bottom:1px solid rgba(127,127,127,.24);border-radius:0;margin-bottom:0;opacity:.85;
+  }
+  .cs-tab b{flex:1 1 auto;min-width:0}
+  .cs-tab .logo-box{flex:none;height:30px}
+  .cs-tab .logo-box img{height:22px;max-width:96px}
+  /* auto margin, not a flexing sibling: the three clinics without a logo file
+     have no <b> to push the chevron over */
+  .cs-tab .tab-chev{display:block;flex:none;margin-left:auto;width:26px;height:26px;color:var(--green)}
+  /* the row above already names the clinic */
+  .cs-nav .cs-name{display:none}
+  .cs-tab[aria-expanded="true"]{opacity:1;border-bottom-color:transparent}
+  .cs-tab[aria-expanded="true"] b{color:var(--green)}
+  .cs-tab[aria-expanded="true"] .tab-chev{transform:rotate(180deg)}
+  .cs-nav #csPanels{border-bottom:1px solid rgba(127,127,127,.24);padding-bottom:22px}
+  .cs-panel{padding-top:22px}
+}
 .cs-panel{display:none;padding-top:clamp(32px,4vw,56px)}
 .cs-panel.is-active{display:block;animation:fade .5s var(--ease)}
 @keyframes fade{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
