@@ -219,9 +219,24 @@
   ];
 
   /* ---------------- ticker ---------------- */
-  const track = $('#tickerTrack');
-  const logos = FEATURED.map(f => `<img src="assets/featured-in/${f}" alt="" loading="lazy">`).join('');
-  track.innerHTML = logos + logos;
+  const track = $('#tickerTrack'), track2 = $('#tickerTrack2');
+  const row = (arr) => arr.map(f => `<img src="assets/featured-in/${f}" alt="" loading="lazy">`).join('');
+  // one row on desktop, two shorter rows on a phone where a single row reads as a trickle
+  const mqTicker = window.matchMedia('(max-width: 920px)');
+  const buildTicker = () => {
+    if (mqTicker.matches) {
+      const half = Math.ceil(FEATURED.length / 2);
+      const a = row(FEATURED.slice(0, half)), b = row(FEATURED.slice(half));
+      track.innerHTML = a + a;
+      track2.innerHTML = b + b;
+    } else {
+      const all = row(FEATURED);
+      track.innerHTML = all + all;
+      track2.innerHTML = '';
+    }
+  };
+  buildTicker();
+  mqTicker.addEventListener('change', buildTicker);
 
   /* client logo strip: two identical sets, the second hidden from screen
      readers, so the track can loop by translating exactly half its width */
