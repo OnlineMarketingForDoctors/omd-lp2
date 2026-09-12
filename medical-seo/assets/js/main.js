@@ -66,6 +66,51 @@
       link: 'https://onlinemarketingfordoctors.com/case-study/breast-and-body-clinic-uk/'
     },
     {
+      id: 'symmetry', name: 'Symmetry Clinic', logo: 'assets/client-logos/symmetry-clinic-logo.png', uk: true,
+      kind: 'rankings', meta: 'Ranking file',
+      place: 'Harley Street, London', specialty: 'Facial plastic surgery',
+      title: "Named in ChatGPT's top five London rhinoplasty clinics, and in five separate Google AI Overviews.",
+      hero: { n: 'Top 5', t: "in ChatGPT's shortlist of London rhinoplasty clinics" },
+      stats: [['5', 'Google AI Overview placements for London facial surgery searches'], ['14', 'AI answers captured'], ['6', 'Google Search and Maps placements']],
+      queries: ['best facial plastic surgeons in london', 'top 10 facial cosmetic surgeons in london', 'best facelift surgery clinic in london', 'revision rhinoplasty london', 'septoplasty london', 'nose reduction london', 'facial reconstructive surgery in london'],
+      shots: [['assets/results/ai/plastic-surgery/symmetry-clinic--symmetry-clinic-ranks-on-chatgpt-for-top-5-plastic-surgery-clinics-in-london-specialising-in-rh.webp', "ChatGPT's top five London rhinoplasty clinics"], ['assets/results/ai/plastic-surgery/symmetry-clinic--symmetry-clinic-ranking-on-google-ai-overview-for-top-10-facial-cosmetic-surgeons-in-london.webp', 'Google AI Overview, top facial cosmetic surgeons in London'], ['assets/results/seo/plastic-surgery/symmetry-clinic--symmetry-clinic-ranking-in-google-search-for-the-keyword-revision-rhinoplasty-london.webp', 'Google Search, revision rhinoplasty London']],
+      portrait: ''
+    },
+    {
+      id: 'vision', name: 'The Vision Surgeon', logo: 'assets/client-logos/the-vision-surgeon-logo.webp', uk: true,
+      kind: 'rankings', meta: 'Ranking file',
+      place: 'Colchester and Essex', specialty: 'Ophthalmology',
+      title: 'The answer when a patient asks for the best laser eye surgeon in Colchester.',
+      hero: { n: '6', t: 'AI answers naming the clinic for laser eye surgery in Colchester' },
+      stats: [['5', 'Google Search and Maps placements across Colchester and Essex'], ['6', 'AI answers captured'], ['2', 'ChatGPT shortlists for laser refractive surgery']],
+      queries: ['best laser surgeon in colchester', 'best laser refractive surgery clinic in colchester', 'laser eye surgery colchester', 'hyperopia treatment colchester', 'eye doctor colchester', 'ophthalmologist colchester', 'eye care specialist essex'],
+      shots: [['assets/results/ai/eye-care-clinics/the-vision-surgeon--the-vision-surgeon-ranks-on-chatgpt-results-for-best-laser-surgeon-in-colchester-keyword.webp', "ChatGPT, best laser surgeon in Colchester"], ['assets/results/ai/eye-care-clinics/the-vision-surgeon--the-vision-surgeon-ranks-on-ai-search-results-for-laser-eye-surgery-colchester-keyword.webp', 'Google AI search, laser eye surgery Colchester'], ['assets/results/seo/eye-care-clinics/the-vision-surgeon--the-vision-surgeon-ranks-on-google-maps-for-eye-doctor-colchester-keyword.webp', 'Google Maps, eye doctor Colchester']],
+      portrait: ''
+    },
+    {
+      id: 'mansmatters', name: 'MansMatters', logo: 'assets/client-logos/mans-matters-logo.webp', uk: true,
+      kind: 'rankings', meta: 'Ranking file',
+      place: 'London', specialty: "Men's health",
+      title: "First on Google for the e-shot in London, and ChatGPT's answer for men's health clinics in the city.",
+      hero: { n: '1st', t: 'on Google for the e-shot treatment in London' },
+      stats: [['7', 'AI answers captured'], ['2', "ChatGPT shortlists for London men's health clinics"], ['2', 'Google Search and Maps placements']],
+      queries: ['men health clinics in london', 'peyronies disease clinic in london', 'e shot treatment london', 'peyronies disease treatment london', 'shockwave therapy for peyronies', 'erectile dysfunction near london'],
+      shots: [['assets/results/seo/men-and-women-health-clinics/mansmatters--mansmatters-ranks-1st-on-google-search-results-for-the-e-shot-treatment-london-keyword.webp', 'First on Google Search, e-shot treatment London'], ['assets/results/ai/men-and-women-health-clinics/mansmatters--mans-matters-ranks-on-chatgpt-for-men-health-clinics-in-london.webp', "ChatGPT, men's health clinics in London"], ['assets/results/ai/men-and-women-health-clinics/mansmatters--mansmatters-ranks-on-top-ai-google-search-results-for-the-keyword-peyronies-disease-treatment-n.webp', "Google AI search, Peyronie's disease treatment near London"]],
+      portrait: ''
+    },
+    {
+      id: 'fortes', name: 'Fortes Clinic', logo: 'assets/client-logos/fortes-clinic.webp', uk: true,
+      kind: 'rankings', meta: 'AI search file',
+      place: 'London', specialty: 'Hair transplant',
+      title: "In ChatGPT's industry shortlist of the top three hair transplant clinics.",
+      hero: { n: 'Top 3', t: "in ChatGPT's industry shortlist of hair transplant clinics" },
+      stats: [['4', 'ChatGPT answers captured'], ['3', 'distinct London hair transplant queries']],
+      queries: ['top hair transplant clinics in london', 'best fue hair transplant clinic in london', 'best doctor-led hair transplant clinic london', 'industry shortlist, top 3 hair transplant clinics'],
+      note: "This clinic's evidence is AI search visibility rather than organic rankings.",
+      shots: [['assets/results/ai/hair-transplant-clinics/fortes-clinic--fortes-clinic-ranking-on-chatgpt-for-industry-shortlist-for-top-3-hair-transplant-clinics.webp', "ChatGPT, industry shortlist of the top three clinics"], ['assets/results/ai/hair-transplant-clinics/fortes-clinic--fortes-clinic-ranking-on-chatgpt-for-top-hair-transplant-clinics-in-london.webp', 'ChatGPT, top hair transplant clinics in London'], ['assets/results/ai/hair-transplant-clinics/fortes-clinic--fortes-clinic-ranking-on-chatgpt-for-best-doctor-led-hair-transplant-clinic-london.webp', 'ChatGPT, best doctor-led hair transplant clinic in London']],
+      portrait: ''
+    },
+    {
       id: 'crown', name: 'The Crown Clinic', logo: '', uk: false,
       place: 'Sydney, Australia', specialty: 'Hair transplant', months: '6 months',
       title: 'First on Google for "hair transplant Sydney", and organic conversion rate up from 5% to nearly 20%.',
@@ -249,18 +294,25 @@
   csNav.innerHTML = CASES.map((c, i) => `
     <button class="cs-tab" role="tab" aria-selected="${i === 0}" data-cs="${c.id}">
       <span class="logo-box">${c.logo ? `<img src="${c.logo}" alt="">` : `<b>${c.name}</b>`}</span>
-      ${c.logo ? `<b>${c.name}</b>` : ''}<small>${c.uk ? 'UK' : c.place.split(',').pop().trim()} &middot; ${c.months}</small>
+      ${c.logo ? `<b>${c.name}</b>` : ''}<small>${c.uk ? 'UK' : c.place.split(',').pop().trim()} &middot; ${c.meta || c.months}</small>
     </button>`).join('');
   csPanels.innerHTML = CASES.map((c, i) => `
     <div class="cs-panel ${i === 0 ? 'is-active' : ''}" id="cs-${c.id}" role="tabpanel">
       <div class="cs-grid">
         <div>
           <div class="cs-head">
-            <div class="place"><span>${c.place}</span><span>${c.specialty}</span><span>${c.months}</span></div>
+            <div class="place"><span>${c.place}</span><span>${c.specialty}</span><span>${c.meta || c.months}</span></div>
             <h3>${c.title}</h3>
           </div>
           <div class="cs-hero-stat"><span class="num">${c.hero.n}</span><span>${c.hero.t}</span></div>
           <div class="cs-stats">${c.stats.map(s => `<div><span class="num">${s[0]}</span><small>${s[1]}</small></div>`).join('')}</div>
+          ${c.kind === 'rankings' ? `
+          <div class="cs-body">
+            <h4>Where they appear now</h4>
+            <ul class="cs-queries">${c.queries.map(q => `<li>${esc(q)}</li>`).join('')}</ul>
+          </div>
+          <p class="cs-note">Every placement above is a screenshot from a live client account, and you can open each one full size. ${c.note ? esc(c.note) + ' ' : ''}We do not publish traffic or enquiry figures for this clinic, so none are claimed here.</p>
+          ` : `
           <div class="cs-body">
             <h4>The situation</h4><p>${c.situation}</p>
             <h4>What we did on the search side</h4><ul>${c.did.map(d => `<li>${d}</li>`).join('')}</ul>
@@ -270,9 +322,10 @@
             <div class="q-who">${c.portrait ? `<img src="${c.portrait}" alt="" loading="lazy">` : ''}<div><b>${c.who}</b><small>${c.role}</small></div></div>
           </blockquote>
           <a class="cs-link" href="${c.link}" target="_blank" rel="noopener">Read the full case study <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
+          `}
         </div>
         <div class="cs-shots">
-          ${c.shots.map((s, k) => `<figure class="shot-card s${k + 1}"><img src="${s[0]}" alt="${s[1]}" loading="lazy"><figcaption>${s[1]}</figcaption></figure>`).join('')}
+          ${c.shots.map((s, k) => `<figure class="shot-card s${k + 1}"><button class="shot-zoom" type="button" data-zoom="${esc(s[0])}" data-client="${esc(c.name)}" data-cap="${esc(s[1])}" aria-label="Enlarge screenshot: ${esc(c.name)}, ${esc(s[1])}"><img src="${esc(s[0])}" alt="${esc(s[1])}" loading="lazy"></button><figcaption>${esc(s[1])}</figcaption></figure>`).join('')}
           ${c.portrait ? `<div class="portrait"><img src="${c.portrait}" alt="${c.who}" loading="lazy"></div>` : ''}
         </div>
       </div>
@@ -308,8 +361,8 @@
     `<iframe src="https://www.youtube-nocookie.com/embed/${b.dataset.video}?autoplay=1&rel=0" title="Client video testimonial" allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen></iframe>`,
     false, 'Client video testimonial')));
   // slides are rebuilt on every tab change, so delegate rather than bind per card
-  $$('#seoSlides, #aiSlides').forEach(container => container.addEventListener('click', (e) => {
-    const btn = e.target.closest('.shot[data-zoom]'); if (!btn) return;
+  $$('#seoSlides, #aiSlides, #csPanels').forEach(container => container.addEventListener('click', (e) => {
+    const btn = e.target.closest('[data-zoom]'); if (!btn) return;
     openLightbox(
       `<div class="zoomwrap"><img src="${esc(btn.dataset.zoom)}" alt="${esc(btn.dataset.client)}: ${esc(btn.dataset.cap)}"></div>` +
       `<figcaption class="cap"><b>${esc(btn.dataset.client)}</b><span>${esc(btn.dataset.cap)}</span></figcaption>`,
