@@ -720,6 +720,7 @@ blockquote{margin:0}
 .who-list{display:grid;grid-template-columns:repeat(4,1fr);gap:10px 24px;margin-top:22px}
 .who-list li{padding:12px 0;border-bottom:1px solid var(--line);font-weight:600;font-size:.95rem;display:flex;justify-content:space-between;align-items:center}
 .who-list li::after{content:"";width:8px;height:8px;border-radius:50%;background:var(--green)}
+.who-more{margin-top:26px;font-weight:700;font-size:1.05rem}
 @media (max-width:920px){.mosaic{grid-template-columns:repeat(2,1fr)}.who-list{grid-template-columns:1fr 1fr}}
 @media (max-width:520px){.who-list{grid-template-columns:1fr}}
 
