@@ -409,6 +409,8 @@ img.fc-engine{object-fit:contain}
 .results-head{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1fr);gap:32px;align-items:end;margin-bottom:36px}
 .results-head h2{margin-bottom:12px}
 .results-head .side{font-size:1rem;color:inherit;opacity:.8;max-width:44ch}
+/* the two columns squeeze the headline to a few characters on a phone */
+@media (max-width:860px){.results-head{grid-template-columns:minmax(0,1fr);gap:16px;align-items:start}}
 /* Specialty rail. Sixteen specialties never fit on one horizontal row, so the
    nav runs down the left and the slider takes the rest. Below 860px it falls
    back to horizontal pills, where a vertical list would eat the whole screen. */
