@@ -47,6 +47,7 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer;paddin
 h1,h2,h3,h4{margin:0;line-height:1.05;letter-spacing:-.02em;font-weight:800}
 p{margin:0 0 1em}
 ul{margin:0;padding:0;list-style:none}
+figure{margin:0}
 :focus-visible{outline:3px solid var(--green);outline-offset:3px}
 .sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
 
@@ -159,8 +160,8 @@ ul{margin:0;padding:0;list-style:none}
 .hero-glow{
   position:absolute;inset:0;z-index:-1;pointer-events:none;
   background:
-    radial-gradient(60% 55% at 78% 45%,rgba(0,219,152,.16),transparent 70%),
-    radial-gradient(40% 40% at 10% 90%,rgba(0,219,152,.07),transparent 70%);
+    radial-gradient(60% 55% at 78% 45%,rgba(0,219,152,.16),rgba(0,219,152,.07) 42%,rgba(0,219,152,.02) 60%,transparent 78%),
+    radial-gradient(40% 40% at 10% 90%,rgba(0,219,152,.07),rgba(0,219,152,.03) 44%,rgba(0,219,152,.01) 60%,transparent 76%);
 }
 .hero-in{padding-block:clamp(20px,3vw,36px) 156px;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(24px,4vw,56px);align-items:center}
 .hero-copy{max-width:640px}
@@ -237,7 +238,7 @@ img.fc-engine{object-fit:contain}
 .badges{position:absolute;right:var(--gutter);bottom:124px;display:flex;gap:14px;z-index:2}
 .badge{
   display:flex;align-items:center;gap:12px;min-height:64px;
-  background:rgba(255,255,255,.07);color:var(--white);
+  background:rgba(255,255,255,.09);color:var(--white);
   border:1px solid rgba(255,255,255,.15);border-radius:12px;padding:10px 18px 10px 14px;
   backdrop-filter:blur(14px) saturate(1.2);-webkit-backdrop-filter:blur(14px) saturate(1.2);
   box-shadow:0 18px 38px -18px rgba(0,0,0,.8),inset 0 1px 0 rgba(255,255,255,.08);
@@ -290,7 +291,7 @@ img.fc-engine{object-fit:contain}
   /* .badges sits outside .wrap, so it needs its own gutter once it is in flow */
   .badges{position:static;margin:22px var(--gutter) 0;display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:10px}
   .badge{min-height:56px}
-  .ticker{position:relative;padding:12px 0}
+  .ticker{position:relative;margin-top:26px;padding:14px 0}
   .ticker-label{display:none}
   .ticker-track{animation-duration:34s}
   .ticker-track-2{display:flex;margin-top:10px;animation-duration:40s;animation-direction:reverse}
@@ -443,7 +444,9 @@ img.fc-engine{object-fit:contain}
   margin-left:-1px;padding:.68em .95em;border:0;border-left:2px solid transparent;border-radius:0;
   opacity:.56;transition:opacity .2s var(--ease),border-color .2s var(--ease),background .2s var(--ease);
 }
+.tab .tab-name{flex:1 1 auto}
 .tab .count{font-size:.68rem;opacity:.7;font-variant-numeric:tabular-nums}
+.tab .tab-chev{display:none;width:18px;height:18px;flex:none;transition:transform .25s var(--ease)}
 .tab:hover{opacity:.88}
 .tab[aria-selected="true"]{
   opacity:1;border-left-color:var(--green);
@@ -489,20 +492,20 @@ img.fc-engine{object-fit:contain}
 .arrow:disabled{opacity:.3;pointer-events:none}
 
 @media (max-width:860px){
-  /* minmax(0,1fr) not 1fr: the auto minimum lets the pill row blow the column out */
-  .results-layout{grid-template-columns:minmax(0,1fr);gap:14px}
-  .tabs{
-    flex-direction:row;gap:8px;border-left:0;overflow-x:auto;padding:4px 0 14px;
-    scrollbar-width:thin;-webkit-overflow-scrolling:touch;
-  }
-  .tabs::-webkit-scrollbar{height:6px}
-  .tabs::-webkit-scrollbar-thumb{background:rgba(127,127,127,.35);border-radius:3px}
+  /* minmax(0,1fr) not 1fr: the auto minimum lets a wide child blow the column out */
+  .results-layout{grid-template-columns:minmax(0,1fr);gap:0}
+  /* accordion: every specialty stays on screen and the slider opens under the
+     one you tap, which a scrolling pill row never made obvious */
+  .tabs{flex-direction:column;gap:0;border-left:0;border-top:1px solid rgba(127,127,127,.24);padding:0}
   .tab{
-    width:auto;justify-content:flex-start;gap:.5em;margin-left:0;font-size:.82rem;
-    padding:.7em 1.05em;border:1px solid currentColor;border-radius:999px;opacity:.72;
+    width:100%;align-items:center;justify-content:flex-start;gap:.7em;margin-left:0;font-size:.82rem;
+    padding:1.05em .2em;border:0;border-bottom:1px solid rgba(127,127,127,.24);border-radius:0;opacity:.75;
   }
-  .tab[aria-selected="true"]{background:var(--green);color:var(--black);border-color:var(--green)}
-  .slide{flex:0 0 min(80vw,440px)}
+  .tab .tab-chev{display:block;opacity:.6}
+  .tab[aria-expanded="true"]{opacity:1;background:none;color:var(--green);border-bottom-color:transparent}
+  .tab[aria-expanded="true"] .tab-chev{transform:rotate(180deg);opacity:1}
+  .tabs .slider{margin:0 0 18px;border-bottom:1px solid rgba(127,127,127,.24);padding-bottom:10px}
+  .slide{flex:0 0 min(78vw,440px)}
 }
 
 /* AI results variant: answer-card feel */

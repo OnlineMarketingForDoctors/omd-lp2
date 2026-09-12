@@ -289,7 +289,30 @@
       const ia = ORDER.indexOf(a), ib = ORDER.indexOf(b);
       return (ia < 0 ? 99 : ia) - (ib < 0 ? 99 : ib);
     });
-    tabsEl.innerHTML = groups.map((g, i) => `<button class="tab" role="tab" aria-selected="${i === 0}" data-group="${g}">${g}<span class="count">${data[g].length}</span></button>`).join('');
+    tabsEl.innerHTML = groups.map((g) => `<button class="tab" type="button" data-group="${g}"><span class="tab-name">${g}</span><span class="count">${data[g].length}</span><svg class="tab-chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></button>`).join('');
+    const layout = tabsEl.parentElement, slider = slidesEl.closest('.slider');
+    let current = groups[0];
+    // below 860px the rail becomes an accordion: the slider is moved in under the
+    // open specialty, so the other specialties stay visible instead of scrolling
+    // off the side of a pill row nobody notices
+    const mqAcc = window.matchMedia('(max-width: 860px)');
+    const applyMode = () => {
+      const acc = mqAcc.matches;
+      tabsEl.setAttribute('role', acc ? 'presentation' : 'tablist');
+      let active = null;
+      $$('.tab', tabsEl).forEach(t => {
+        const on = t.dataset.group === current;
+        if (on) active = t;
+        if (acc) {
+          t.removeAttribute('role'); t.removeAttribute('aria-selected');
+          t.setAttribute('aria-expanded', String(on));
+        } else {
+          t.setAttribute('role', 'tab'); t.removeAttribute('aria-expanded');
+          t.setAttribute('aria-selected', String(on));
+        }
+      });
+      if (acc) { if (active) active.after(slider); } else if (slider.parentElement !== layout) { layout.append(slider); }
+    };
     const render = (g) => {
       const items = data[g];
       slidesEl.innerHTML = items.map((it) => `
@@ -312,12 +335,14 @@
     slidesEl.addEventListener('scroll', updatePos, { passive: true });
     tabsEl.addEventListener('click', (e) => {
       const b = e.target.closest('.tab'); if (!b) return;
-      $$('.tab', tabsEl).forEach(t => t.setAttribute('aria-selected', String(t === b)));
-      // only needed for the horizontal pill fallback; the vertical rail shows every item
-      if (tabsEl.scrollWidth > tabsEl.clientWidth + 4) b.scrollIntoView({ block: 'nearest', inline: 'center', behavior: reduced ? 'auto' : 'smooth' });
-      render(b.dataset.group);
+      current = b.dataset.group;
+      applyMode();
+      render(current);
+      if (mqAcc.matches) b.scrollIntoView({ block: 'nearest', behavior: reduced ? 'auto' : 'smooth' });
     });
-    render(groups[0]);
+    mqAcc.addEventListener('change', applyMode);
+    applyMode();
+    render(current);
   };
   fetch('assets/results/index.json').then(r => r.json()).then(data => {
     buildSlider('seo', data.seo, $('#seoTabs'), $('#seoSlides'), $('#seoPos'));
