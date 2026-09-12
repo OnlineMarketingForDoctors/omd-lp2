@@ -166,6 +166,7 @@
     drawer.classList.toggle('is-open', open);
     drawer.setAttribute('aria-hidden', String(!open));
     menuBtn.setAttribute('aria-expanded', String(open));
+    menuBtn.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
     document.body.style.overflow = open ? 'hidden' : '';
   };
   menuBtn.addEventListener('click', () => setDrawer(!drawer.classList.contains('is-open')));

@@ -116,6 +116,11 @@ figure{margin:0}
 .header .btn{font-size:.86rem;padding:.95em 1.3em}
 .icon-btn{display:none;width:44px;height:44px;align-items:center;justify-content:center;border-radius:8px;color:var(--white)}
 .icon-btn svg{width:26px;height:26px}
+/* the hamburger becomes a close button while the drawer is open */
+.menu-btn .ic-close{display:none}
+.menu-btn[aria-expanded="true"] .ic-menu{display:none}
+.menu-btn[aria-expanded="true"] .ic-close{display:block}
+.menu-btn[aria-expanded="true"]{background:rgba(255,255,255,.14)}
 .mobile-book{display:none}
 
 @media (max-width:1280px){
