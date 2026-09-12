@@ -283,8 +283,15 @@ img.fc-engine{object-fit:contain}
    Letter (Dear Clinic Builder)
    ========================================================================== */
 .letter{position:relative;color:var(--white);isolation:isolate;padding-block:clamp(80px,10vw,140px)}
-.letter-bg{position:absolute;inset:0;z-index:-1}
-.letter-bg img{width:100%;height:100%;object-fit:cover;object-position:60% 50%}
+.letter-bg{position:absolute;inset:0;z-index:-1;overflow:hidden}
+/* Mirrored so the subject faces the letter card. The element is half again as
+   wide as the section and anchored to its right edge, which parks the desk and
+   the doctor in the open left third at every viewport width; letting object-fit
+   pick the crop instead drifts him under the card as the screen widens. */
+.letter-bg img{
+  position:absolute;top:0;right:0;width:150%;max-width:none;height:100%;
+  object-fit:cover;object-position:50% 42%;transform:scaleX(-1);
+}
 .letter-bg::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(0,0,0,.55),rgba(0,0,0,.25) 60%,rgba(0,0,0,.7))}
 .letter-grid{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,1fr);gap:clamp(24px,5vw,80px);align-items:start}
 .letter-side{padding-top:6vw;max-width:520px}
@@ -311,6 +318,7 @@ img.fc-engine{object-fit:contain}
 .ps{margin-top:20px;font-size:.98rem;color:var(--ink-2)}
 .ps b{color:var(--ink)}
 @media (max-width:920px){
+  .letter-bg img{width:126%;max-width:none;object-position:50% 42%}
   .letter-grid{grid-template-columns:1fr}
   .letter-side{padding-top:0}
   .paper{transform:none}
