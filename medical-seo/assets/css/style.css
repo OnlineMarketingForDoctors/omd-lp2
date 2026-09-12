@@ -461,10 +461,6 @@ img.fc-engine{object-fit:contain}
 .slide .meta{padding:14px 16px 16px;display:flex;flex-direction:column;gap:4px}
 .slide .meta b{font-size:.92rem}
 .slide .meta span{font-size:.8rem;color:var(--ink-2);line-height:1.35}
-.slide .uk{
-  position:absolute;left:12px;top:12px;z-index:2;background:var(--black);color:var(--white);font-family:var(--action);font-weight:500;
-  letter-spacing:.1em;font-size:.68rem;padding:5px 9px;border-radius:4px;text-transform:uppercase;
-}
 .slider-nav{display:flex;gap:10px;justify-content:flex-end;margin-top:6px;align-items:center}
 .slider-nav .pos{font-family:var(--action);font-size:.85rem;opacity:.7;margin-right:auto;letter-spacing:.05em}
 .arrow{width:46px;height:46px;border-radius:50%;border:1px solid currentColor;display:inline-flex;align-items:center;justify-content:center;transition:all .25s var(--ease)}
@@ -494,7 +490,6 @@ img.fc-engine{object-fit:contain}
 .ai-results .slide{border:1px solid var(--line);box-shadow:none}
 .ai-results .slide .shot{aspect-ratio:auto;height:340px}
 .ai-results .slide .meta{border-top:1px solid var(--line);background:var(--white)}
-.ai-results .slide .uk{background:var(--green);color:var(--black)}
 .ai-kicker{
   display:inline-flex;align-items:center;gap:10px;background:var(--black);color:var(--white);padding:8px 14px;border-radius:999px;
   font-family:var(--action);letter-spacing:.1em;text-transform:uppercase;font-size:.74rem;margin-bottom:18px;
@@ -580,12 +575,37 @@ blockquote{margin:0}
 }
 .lightbox .cap{
   flex:none;padding:13px 18px;background:var(--white);color:var(--ink);
-  display:flex;flex-direction:column;gap:1px;text-align:left;
+  display:flex;align-items:center;justify-content:space-between;gap:16px;text-align:left;
 }
+.lightbox .cap-t{display:flex;flex-direction:column;gap:1px;min-width:0}
 .lightbox .cap b{font-size:.98rem}
 .lightbox .cap span{font-size:.86rem;color:var(--ink-2)}
+.lightbox .cap-n{flex:none;font-family:var(--action);font-size:.8rem;letter-spacing:.06em;opacity:.6;white-space:nowrap}
 .lightbox .close{position:absolute;top:20px;right:20px;color:#fff;width:48px;height:48px;display:flex;align-items:center;justify-content:center;border-radius:50%;background:rgba(255,255,255,.12)}
 .lightbox .close svg{width:24px;height:24px}
+/* step through the screenshots in the set the viewer opened. Flex siblings of
+   the frame on desktop so they never cover the image; over the image edges on
+   smaller screens, where there is no room beside it. */
+.lightbox .lb-nav{
+  display:none;flex:none;color:#fff;width:52px;height:52px;
+  align-items:center;justify-content:center;border-radius:50%;
+  background:rgba(255,255,255,.12);transition:background .2s var(--ease),transform .2s var(--ease);
+}
+.lightbox .lb-nav svg{width:26px;height:26px}
+.lightbox .lb-nav:hover{background:rgba(255,255,255,.24)}
+.lightbox .lb-nav:active{transform:scale(.94)}
+.lightbox.is-image.has-set .lb-nav{display:flex}
+.lightbox.has-set{gap:clamp(8px,1.6vw,26px)}
+@media (max-width:860px){
+  .lightbox.has-set{gap:0}
+  .lightbox .lb-nav{
+    position:absolute;top:50%;transform:translateY(-50%);width:46px;height:46px;
+    background:rgba(0,0,0,.55);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);
+  }
+  .lightbox .lb-nav.prev{left:6px}
+  .lightbox .lb-nav.next{right:6px}
+  .lightbox .lb-nav:active{transform:translateY(-50%) scale(.94)}
+}
 
 /* ==========================================================================
    Case studies
@@ -610,6 +630,10 @@ blockquote{margin:0}
 .cs-panel.is-active{display:block;animation:fade .5s var(--ease)}
 @keyframes fade{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
 .cs-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.15fr);gap:clamp(28px,5vw,72px);align-items:start}
+.cs-name{display:flex;align-items:center;gap:14px;margin-bottom:18px}
+.cs-name .logo-box{flex:none;display:flex;align-items:center;background:var(--white);border-radius:8px;padding:7px 11px}
+.cs-name .logo-box img{height:34px;width:auto;max-width:150px;object-fit:contain}
+.cs-name b{font-family:var(--action);font-weight:600;text-transform:uppercase;letter-spacing:.06em;font-size:clamp(1.02rem,1.5vw,1.25rem);line-height:1.15}
 .cs-head .place{font-family:var(--action);letter-spacing:.1em;text-transform:uppercase;font-size:.78rem;color:var(--green);display:flex;gap:14px;flex-wrap:wrap;margin-bottom:14px}
 .cs-head h3{font-size:clamp(1.6rem,2.8vw,2.3rem);font-weight:800;letter-spacing:-.02em;line-height:1.08;margin-bottom:18px}
 .cs-hero-stat{display:flex;align-items:baseline;gap:14px;margin:22px 0 10px}
@@ -674,7 +698,7 @@ blockquote{margin:0}
 /* ==========================================================================
    Who we help
    ========================================================================== */
-.who .intro{max-width:60ch;margin-bottom:34px}
+.who .intro{max-width:60ch;margin-top:16px;margin-bottom:34px}
 .mosaic{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
 .tile{position:relative;aspect-ratio:4/5;border-radius:10px;overflow:hidden;background:#ddd;box-shadow:var(--shadow-md)}
 .tile img{width:100%;height:100%;object-fit:cover;transition:transform .7s var(--ease)}

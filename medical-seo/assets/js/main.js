@@ -249,7 +249,6 @@
       slidesEl.innerHTML = items.map((it) => `
         <figure class="slide">
           <button class="shot" type="button" data-zoom="${esc(it.file)}" data-client="${esc(it.client)}" data-cap="${esc(prettyCaption(it.caption, it.client))}" aria-label="Enlarge screenshot: ${esc(it.client)}, ${esc(prettyCaption(it.caption, it.client))}">
-            ${it.uk ? '<span class="uk">UK</span>' : ''}
             <img src="${esc(it.file)}" alt="${esc(it.client)}: ${esc(prettyCaption(it.caption, it.client))}" loading="lazy">
             <span class="zoom" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><circle cx="11" cy="11" r="6.5"/><path d="m20 20-4.2-4.2M11 8.6v4.8M8.6 11h4.8"/></svg></span>
           </button>
@@ -301,6 +300,7 @@
       <div class="cs-grid">
         <div>
           <div class="cs-head">
+            <div class="cs-name">${c.logo ? `<span class="logo-box"><img src="${esc(c.logo)}" alt=""></span>` : ''}<b>${esc(c.name)}</b></div>
             <div class="place"><span>${c.place}</span><span>${c.specialty}</span><span>${c.meta || c.months}</span></div>
             <h3>${c.title}</h3>
           </div>
@@ -338,20 +338,23 @@
   });
 
   /* ---------------- lightbox: video testimonials and ranking screenshots ---------------- */
-  const lb = $('#lightbox'), lbFrame = $('#lightboxFrame'), lbClose = $('#lightboxClose');
+  const lb = $('#lightbox'), lbFrame = $('#lightboxFrame'), lbClose = $('#lightboxClose'),
+        lbPrev = $('#lightboxPrev'), lbNext = $('#lightboxNext');
   let lastFocused = null;
   const openLightbox = (html, isImage, label) => {
-    lastFocused = document.activeElement;
+    // stepping through a set re-enters this, so only take focus on the first open
+    const first = !lb.classList.contains('is-open');
+    if (first) lastFocused = document.activeElement;
     lb.classList.toggle('is-image', !!isImage);
     lb.setAttribute('aria-label', label);
     lbFrame.innerHTML = html;
     lb.classList.add('is-open');
     document.body.style.overflow = 'hidden';
-    lbClose.focus();
+    if (first) lbClose.focus();
   };
   const closeLightbox = () => {
     if (!lb.classList.contains('is-open')) return;
-    lb.classList.remove('is-open', 'is-image');
+    lb.classList.remove('is-open', 'is-image', 'has-set');
     lbFrame.innerHTML = '';
     document.body.style.overflow = '';
     if (lastFocused && lastFocused.isConnected) lastFocused.focus();
@@ -360,17 +363,41 @@
   $$('[data-video]').forEach(b => b.addEventListener('click', () => openLightbox(
     `<iframe src="https://www.youtube-nocookie.com/embed/${b.dataset.video}?autoplay=1&rel=0" title="Client video testimonial" allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen></iframe>`,
     false, 'Client video testimonial')));
+  /* the arrows step through whichever set the viewer opened from: the screenshots
+     of the visible slider group, or the cards of one case study */
+  let zoomSet = [], zoomIdx = 0;
+  const showZoom = (i) => {
+    if (!zoomSet.length) return;
+    const n = zoomSet.length;
+    zoomIdx = (i + n) % n;
+    const btn = zoomSet[zoomIdx], d = btn.dataset;
+    openLightbox(
+      `<div class="zoomwrap"><img src="${esc(d.zoom)}" alt="${esc(d.client)}: ${esc(d.cap)}"></div>` +
+      `<figcaption class="cap"><span class="cap-t"><b>${esc(d.client)}</b><span>${esc(d.cap)}</span></span>` +
+      `${n > 1 ? `<span class="cap-n">${zoomIdx + 1} / ${n}</span>` : ''}</figcaption>`,
+      true, `${d.client}: ${d.cap}`);
+    lb.classList.toggle('has-set', n > 1);
+    lastFocused = btn;  // close returns the viewer to the screenshot they ended on
+    // keep the slider or panel behind the lightbox on the screenshot being viewed
+    if (btn.closest('.slides')) btn.closest('.slide').scrollIntoView({ block: 'nearest', inline: 'center', behavior: 'auto' });
+  };
   // slides are rebuilt on every tab change, so delegate rather than bind per card
   $$('#seoSlides, #aiSlides, #csPanels').forEach(container => container.addEventListener('click', (e) => {
     const btn = e.target.closest('[data-zoom]'); if (!btn) return;
-    openLightbox(
-      `<div class="zoomwrap"><img src="${esc(btn.dataset.zoom)}" alt="${esc(btn.dataset.client)}: ${esc(btn.dataset.cap)}"></div>` +
-      `<figcaption class="cap"><b>${esc(btn.dataset.client)}</b><span>${esc(btn.dataset.cap)}</span></figcaption>`,
-      true, `${btn.dataset.client}: ${btn.dataset.cap}`);
+    const scope = btn.closest('.cs-panel') || container;
+    zoomSet = $$('[data-zoom]', scope);
+    showZoom(zoomSet.indexOf(btn));
   }));
+  lbPrev.addEventListener('click', () => showZoom(zoomIdx - 1));
+  lbNext.addEventListener('click', () => showZoom(zoomIdx + 1));
   lbClose.addEventListener('click', closeLightbox);
   lb.addEventListener('click', (e) => { if (e.target === lb || e.target === lbFrame) closeLightbox(); });
-  document.addEventListener('keydown', (e) => { if (e.key === 'Escape') { closeLightbox(); setDrawer(false); } });
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') { closeLightbox(); setDrawer(false); return; }
+    if (!lb.classList.contains('has-set')) return;
+    if (e.key === 'ArrowLeft') { e.preventDefault(); showZoom(zoomIdx - 1); }
+    else if (e.key === 'ArrowRight') { e.preventDefault(); showZoom(zoomIdx + 1); }
+  });
 
   /* ---------------- FAQ: one open at a time ---------------- */
   const faqs = $$('.faq details');
