@@ -596,8 +596,8 @@ blockquote{margin:0}
 }
 .cs-nav::-webkit-scrollbar{display:none}
 .cs-tab{
-  flex:none;display:flex;flex-direction:column;align-items:flex-start;gap:6px;padding:16px 18px 18px;border-bottom:3px solid transparent;
-  margin-bottom:-1px;opacity:.6;transition:all .25s var(--ease);min-width:170px;text-align:left;
+  flex:none;display:flex;flex-direction:column;align-items:flex-start;gap:9px;padding:14px 18px 16px;border-bottom:3px solid transparent;
+  margin-bottom:-1px;opacity:.6;transition:all .25s var(--ease);min-width:158px;text-align:left;
 }
 .cs-tab:hover{opacity:.9}
 .cs-tab[aria-selected="true"]{opacity:1;border-bottom-color:var(--green)}
@@ -606,7 +606,6 @@ blockquote{margin:0}
 .cs-tab .logo-box img{height:26px;width:auto;max-width:120px;object-fit:contain}
 .cs-tab .logo-box b{color:var(--black);padding:0 2px}
 .cs-tab b{font-family:var(--action);font-weight:500;letter-spacing:.05em;text-transform:uppercase;font-size:.8rem}
-.cs-tab small{font-size:.72rem;opacity:.7}
 .cs-panel{display:none;padding-top:clamp(32px,4vw,56px)}
 .cs-panel.is-active{display:block;animation:fade .5s var(--ease)}
 @keyframes fade{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}

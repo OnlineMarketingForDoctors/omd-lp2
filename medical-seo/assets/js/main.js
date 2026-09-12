@@ -294,7 +294,7 @@
   csNav.innerHTML = CASES.map((c, i) => `
     <button class="cs-tab" role="tab" aria-selected="${i === 0}" data-cs="${c.id}">
       <span class="logo-box">${c.logo ? `<img src="${c.logo}" alt="">` : `<b>${c.name}</b>`}</span>
-      ${c.logo ? `<b>${c.name}</b>` : ''}<small>${c.uk ? 'UK' : c.place.split(',').pop().trim()} &middot; ${c.meta || c.months}</small>
+      ${c.logo ? `<b>${c.name}</b>` : ''}
     </button>`).join('');
   csPanels.innerHTML = CASES.map((c, i) => `
     <div class="cs-panel ${i === 0 ? 'is-active' : ''}" id="cs-${c.id}" role="tabpanel">
