@@ -409,18 +409,18 @@ img.fc-engine{object-fit:contain}
    whatever is left, scaling by width with its aspect ratio intact. Below its
    min-width it wraps to its own line rather than shrinking to a smudge. */
 .sig .who{flex:none}
+/* the card, not the viewport, decides what fits on that line: the headshot and
+   the name always stay, and the signature joins them only where it has room to
+   read. The card is narrower at 1024px than it is on a phone, so this cannot be
+   a viewport query. */
 .sig .sig-mark{
-  flex:0 1 auto;min-width:0;margin-left:auto;
+  display:none;flex:0 1 auto;min-width:0;margin-left:auto;
   width:auto;height:auto;max-width:min(46%,220px);max-height:60px;
 }
-/* the card, not the viewport, decides what fits on that line */
-@container (max-width:430px){
-  .sig{gap:10px}
-  .sig .avatar{display:none}
-}
-@container (max-width:345px){
-  .sig b{font-size:.92rem}
-  .sig small{font-size:.8rem}
+/* container queries resolve against the content box, so this is the width of
+   the writing area, not of the card */
+@container (min-width:400px){
+  .sig .sig-mark{display:block}
 }
 .ps{margin-top:20px;font-size:.98rem;color:var(--ink-2)}
 .ps b{color:var(--ink)}
