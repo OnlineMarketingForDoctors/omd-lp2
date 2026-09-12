@@ -409,17 +409,26 @@ img.fc-engine{object-fit:contain}
 .results-head{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1fr);gap:32px;align-items:end;margin-bottom:36px}
 .results-head h2{margin-bottom:12px}
 .results-head .side{font-size:1rem;color:inherit;opacity:.8;max-width:44ch}
-.tabs{display:flex;gap:8px;overflow-x:auto;padding:4px 0 14px;scrollbar-width:thin;-webkit-overflow-scrolling:touch}
-.tabs::-webkit-scrollbar{height:6px}
-.tabs::-webkit-scrollbar-thumb{background:rgba(127,127,127,.35);border-radius:3px}
-.tab{
-  flex:none;font-family:var(--action);font-weight:500;letter-spacing:.06em;text-transform:uppercase;font-size:.82rem;
-  padding:.7em 1.05em;border-radius:999px;border:1px solid currentColor;opacity:.72;transition:all .25s var(--ease);
-  display:inline-flex;align-items:center;gap:.5em;
+/* Specialty rail. Sixteen specialties never fit on one horizontal row, so the
+   nav runs down the left and the slider takes the rest. Below 860px it falls
+   back to horizontal pills, where a vertical list would eat the whole screen. */
+.results-layout{
+  display:grid;grid-template-columns:minmax(196px,244px) minmax(0,1fr);
+  gap:clamp(20px,2.6vw,44px);align-items:start;
 }
-.tab .count{font-size:.7rem;opacity:.7}
-.tab:hover{opacity:1}
-.tab[aria-selected="true"]{background:var(--green);color:var(--black);border-color:var(--green);opacity:1}
+.tabs{display:flex;flex-direction:column;border-left:1px solid rgba(127,127,127,.3)}
+.tab{
+  flex:none;width:100%;display:flex;align-items:baseline;justify-content:space-between;gap:12px;text-align:left;
+  font-family:var(--action);font-weight:500;letter-spacing:.05em;text-transform:uppercase;font-size:.78rem;
+  margin-left:-1px;padding:.68em .95em;border:0;border-left:2px solid transparent;border-radius:0;
+  opacity:.56;transition:opacity .2s var(--ease),border-color .2s var(--ease),background .2s var(--ease);
+}
+.tab .count{font-size:.68rem;opacity:.7;font-variant-numeric:tabular-nums}
+.tab:hover{opacity:.88}
+.tab[aria-selected="true"]{
+  opacity:1;border-left-color:var(--green);
+  background:linear-gradient(90deg,rgba(0,219,152,.16),rgba(0,219,152,0) 78%);
+}
 .slider{position:relative;margin-top:14px}
 .slides{
   display:flex;gap:18px;overflow-x:auto;scroll-snap-type:x mandatory;padding:8px 2px 18px;
@@ -427,7 +436,7 @@ img.fc-engine{object-fit:contain}
 }
 .slides::-webkit-scrollbar{display:none}
 .slide{
-  flex:0 0 min(78vw,560px);scroll-snap-align:start;background:var(--white);color:var(--ink);border-radius:10px;
+  flex:0 0 min(100%,520px);scroll-snap-align:start;background:var(--white);color:var(--ink);border-radius:10px;
   overflow:hidden;box-shadow:var(--shadow-md);display:flex;flex-direction:column;
 }
 .slide .shot{aspect-ratio:4/3;background:#e9edef;position:relative;overflow:hidden}
@@ -445,6 +454,23 @@ img.fc-engine{object-fit:contain}
 .arrow:hover{background:var(--green);color:var(--black);border-color:var(--green)}
 .arrow svg{width:20px;height:20px}
 .arrow:disabled{opacity:.3;pointer-events:none}
+
+@media (max-width:860px){
+  /* minmax(0,1fr) not 1fr: the auto minimum lets the pill row blow the column out */
+  .results-layout{grid-template-columns:minmax(0,1fr);gap:14px}
+  .tabs{
+    flex-direction:row;gap:8px;border-left:0;overflow-x:auto;padding:4px 0 14px;
+    scrollbar-width:thin;-webkit-overflow-scrolling:touch;
+  }
+  .tabs::-webkit-scrollbar{height:6px}
+  .tabs::-webkit-scrollbar-thumb{background:rgba(127,127,127,.35);border-radius:3px}
+  .tab{
+    width:auto;justify-content:flex-start;gap:.5em;margin-left:0;font-size:.82rem;
+    padding:.7em 1.05em;border:1px solid currentColor;border-radius:999px;opacity:.72;
+  }
+  .tab[aria-selected="true"]{background:var(--green);color:var(--black);border-color:var(--green)}
+  .slide{flex:0 0 min(80vw,440px)}
+}
 
 /* AI results variant: answer-card feel */
 .ai-results{background:var(--off);position:relative;overflow:hidden}

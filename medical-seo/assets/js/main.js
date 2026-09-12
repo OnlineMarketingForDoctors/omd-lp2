@@ -218,7 +218,8 @@
     tabsEl.addEventListener('click', (e) => {
       const b = e.target.closest('.tab'); if (!b) return;
       $$('.tab', tabsEl).forEach(t => t.setAttribute('aria-selected', String(t === b)));
-      b.scrollIntoView({ block: 'nearest', inline: 'center', behavior: reduced ? 'auto' : 'smooth' });
+      // only needed for the horizontal pill fallback; the vertical rail shows every item
+      if (tabsEl.scrollWidth > tabsEl.clientWidth + 4) b.scrollIntoView({ block: 'nearest', inline: 'center', behavior: reduced ? 'auto' : 'smooth' });
       render(b.dataset.group);
     });
     render(groups[0]);
