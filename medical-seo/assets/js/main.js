@@ -298,6 +298,8 @@
     const mqAcc = window.matchMedia('(max-width: 860px)');
     const applyMode = () => {
       const acc = mqAcc.matches;
+      // the accordion can be fully closed; the desktop rail always has one open
+      if (!acc && !current) { current = groups[0]; render(current); }
       tabsEl.setAttribute('role', acc ? 'presentation' : 'tablist');
       let active = null;
       $$('.tab', tabsEl).forEach(t => {
@@ -311,6 +313,7 @@
           t.setAttribute('aria-selected', String(on));
         }
       });
+      slider.hidden = acc && !active;
       if (acc) { if (active) active.after(slider); } else if (slider.parentElement !== layout) { layout.append(slider); }
     };
     const render = (g) => {
@@ -335,10 +338,12 @@
     slidesEl.addEventListener('scroll', updatePos, { passive: true });
     tabsEl.addEventListener('click', (e) => {
       const b = e.target.closest('.tab'); if (!b) return;
+      const acc = mqAcc.matches;
+      if (acc && b.dataset.group === current) { current = null; applyMode(); return; }  // tapping the open row closes it
       current = b.dataset.group;
       applyMode();
       render(current);
-      if (mqAcc.matches) b.scrollIntoView({ block: 'nearest', behavior: reduced ? 'auto' : 'smooth' });
+      if (acc) b.scrollIntoView({ block: 'nearest', behavior: reduced ? 'auto' : 'smooth' });
     });
     mqAcc.addEventListener('change', applyMode);
     applyMode();
