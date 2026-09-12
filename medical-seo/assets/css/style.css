@@ -616,6 +616,26 @@ blockquote{margin:0}
 }
 
 /* ==========================================================================
+   Client logo wall
+   ========================================================================== */
+.logo-wall{
+  --tile:clamp(96px,9vw,140px); --tile-pad:clamp(14px,1.6vw,22px);
+  display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:14px;margin-top:34px;
+}
+.logo-wall li{
+  display:grid;place-items:center;height:var(--tile);padding:var(--tile-pad);
+  background:var(--white);border:1px solid var(--line);border-radius:10px;
+  transition:transform .25s var(--ease),box-shadow .25s var(--ease);
+}
+.logo-wall li:hover{transform:translateY(-3px);box-shadow:var(--shadow-md)}
+/* a definite max-height, not 100%: the percentage does not resolve against the
+   grid area here, so tall marks overflowed their tile */
+.logo-wall img{max-width:100%;max-height:calc(var(--tile) - 2 * var(--tile-pad));width:auto;height:auto;object-fit:contain}
+@media (max-width:1000px){.logo-wall{grid-template-columns:repeat(4,minmax(0,1fr))}}
+@media (max-width:760px){.logo-wall{grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}}
+@media (max-width:460px){.logo-wall{grid-template-columns:repeat(2,minmax(0,1fr))}}
+
+/* ==========================================================================
    Case studies
    ========================================================================== */
 .cs-nav{
