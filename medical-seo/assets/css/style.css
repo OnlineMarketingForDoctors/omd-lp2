@@ -395,10 +395,15 @@ img.fc-engine{object-fit:contain}
   transition:background-size .8s var(--ease) .25s;
 }
 .paper.in mark{background-size:100% 100%}
-.sig{display:flex;align-items:center;gap:14px;margin-top:var(--rule);padding-top:calc(var(--rule) - 1px);border-top:1px solid rgba(0,0,0,.14)}
+.sig{
+  display:grid;grid-template-columns:auto minmax(0,1fr);align-items:center;gap:4px 14px;
+  margin-top:var(--rule);padding-top:calc(var(--rule) - 1px);border-top:1px solid rgba(0,0,0,.14);
+}
 .sig b{display:block}
 .sig small{color:var(--ink-2)}
-.sig img{width:56px;height:56px;flex:none;border-radius:50%;object-fit:cover}
+.sig .avatar{width:56px;height:56px;flex:none;border-radius:50%;object-fit:cover}
+/* two ruled lines tall, so the paper's lines stay in step */
+.sig .sig-mark{grid-column:1/-1;width:auto;height:calc(var(--rule) * 2);margin-bottom:2px}
 .ps{margin-top:20px;font-size:.98rem;color:var(--ink-2)}
 .ps b{color:var(--ink)}
 @media (max-width:920px){
