@@ -196,10 +196,41 @@
     $('#hero').addEventListener('mouseleave', () => { tx = 0; ty = 0; if (!raf) raf = requestAnimationFrame(apply); });
   }
 
+  const CLIENTS = [
+    ['delta-clinics-logo.webp', 'Delta Clinics'],
+    ['british_face_clinic_logo.webp', 'British Face Clinic'],
+    ['hr-plastic-surgery-logo.webp', 'HR Plastic Surgery'],
+    ['bb-clinic-uk-logo.webp', 'Breast and Body Clinic UK'],
+    ['symmetry-clinic-logo.png', 'Symmetry Clinic'],
+    ['the-vision-surgeon-logo.webp', 'The Vision Surgeon'],
+    ['mans-matters-logo.webp', 'MansMatters'],
+    ['fortes-clinic.webp', 'Fortes Clinic'],
+    ['Harley-Street-Eye-Centre-logo.webp', 'The Harley Street Eye Centre'],
+    ['uk-hand-wrist-surgery-logo.webp', 'UK Hand and Wrist Surgery'],
+    ['manaf-khatib-logo.webp', 'Mr Manaf Khatib'],
+    ['head2neck-logo.png', 'Head2Neck'],
+    ['cambridge-clear-beauty-logo.png', 'Cambridge Clear Beauty'],
+    ['Tajmeel-Clinic-logo.png', 'Tajmeel Clinic'],
+    ['Victoria-House-Clinic-logo-1.webp', 'Victoria House Clinic'],
+    ['paul-wilson-logo.svg', 'Paul Wilson'],
+    ['Save-Minds-logo-1.webp', 'SaveMinds'],
+    ['Mindful-Space-Ireland-logo-1.webp', 'Mindful Space Ireland'],
+    ['ukaaps-capsco-logo.webp', 'UKAAPS CAPSCO'],
+  ];
+
   /* ---------------- ticker ---------------- */
   const track = $('#tickerTrack');
   const logos = FEATURED.map(f => `<img src="assets/featured-in/${f}" alt="" loading="lazy">`).join('');
   track.innerHTML = logos + logos;
+
+  /* client logo strip: two identical sets, the second hidden from screen
+     readers, so the track can loop by translating exactly half its width */
+  const clientTrack = $('#clientTrack');
+  if (clientTrack) {
+    const tile = ([f, n], dup) =>
+      `<div class="logo-strip-item"${dup ? ' aria-hidden="true"' : ''}><img src="assets/client-logos/${f}" alt="${dup ? '' : esc(n)}" loading="lazy"></div>`;
+    clientTrack.innerHTML = CLIENTS.map(c => tile(c, false)).join('') + CLIENTS.map(c => tile(c, true)).join('');
+  }
 
   /* ---------------- reveal + count-up ---------------- */
   const revealEls = $$('.rv');

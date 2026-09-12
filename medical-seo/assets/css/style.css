@@ -616,24 +616,28 @@ blockquote{margin:0}
 }
 
 /* ==========================================================================
-   Client logo wall
+   Client logo strip
    ========================================================================== */
-.logo-wall{
-  --tile:clamp(96px,9vw,140px); --tile-pad:clamp(14px,1.6vw,22px);
-  display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:14px;margin-top:34px;
+.logo-strip{
+  --tile-w:clamp(150px,15vw,210px); --tile-h:clamp(92px,8.4vw,124px); --tile-pad:clamp(14px,1.6vw,22px);
+  position:relative;margin-top:clamp(26px,3vw,40px);overflow:hidden;
+  -webkit-mask-image:linear-gradient(90deg,transparent,#000 7%,#000 93%,transparent);
+  mask-image:linear-gradient(90deg,transparent,#000 7%,#000 93%,transparent);
 }
-.logo-wall li{
-  display:grid;place-items:center;height:var(--tile);padding:var(--tile-pad);
+.logo-strip-track{display:flex;width:max-content;animation:ticker 62s linear infinite}
+.logo-strip:hover .logo-strip-track{animation-play-state:paused}
+.logo-strip-item{
+  flex:none;display:grid;place-items:center;
+  width:var(--tile-w);height:var(--tile-h);margin-right:14px;padding:var(--tile-pad);
   background:var(--white);border:1px solid var(--line);border-radius:10px;
-  transition:transform .25s var(--ease),box-shadow .25s var(--ease);
 }
-.logo-wall li:hover{transform:translateY(-3px);box-shadow:var(--shadow-md)}
 /* a definite max-height, not 100%: the percentage does not resolve against the
-   grid area here, so tall marks overflowed their tile */
-.logo-wall img{max-width:100%;max-height:calc(var(--tile) - 2 * var(--tile-pad));width:auto;height:auto;object-fit:contain}
-@media (max-width:1000px){.logo-wall{grid-template-columns:repeat(4,minmax(0,1fr))}}
-@media (max-width:760px){.logo-wall{grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}}
-@media (max-width:460px){.logo-wall{grid-template-columns:repeat(2,minmax(0,1fr))}}
+   grid area here, so tall marks would overflow their tile */
+.logo-strip-item img{max-width:100%;max-height:calc(var(--tile-h) - 2 * var(--tile-pad));width:auto;height:auto;object-fit:contain}
+@media (prefers-reduced-motion:reduce){
+  .logo-strip-track{animation:none}
+  .logo-strip{overflow-x:auto;-webkit-mask-image:none;mask-image:none}
+}
 
 /* ==========================================================================
    Case studies
