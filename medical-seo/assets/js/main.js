@@ -111,7 +111,7 @@
       portrait: ''
     },
     {
-      id: 'crown', name: 'The Crown Clinic', logo: '', uk: false,
+      id: 'crown', name: 'The Crown Clinic', logo: 'assets/client-logos/the-crown-clinic-logo.webp', uk: false,
       place: 'Sydney, Australia', specialty: 'Hair transplant', months: '6 months',
       title: 'First on Google for "hair transplant Sydney", and organic conversion rate up from 5% to nearly 20%.',
       hero: { n: '300%', t: 'more new patients in 6 months' },
@@ -125,7 +125,7 @@
       link: 'https://onlinemarketingfordoctors.com/case-study-crown-clinic/'
     },
     {
-      id: 'mehta', name: 'Dr Malay Mehta', logo: '', uk: false,
+      id: 'mehta', name: 'Dr Malay Mehta', logo: 'assets/client-logos/malay-mehta-logo.webp', uk: false,
       place: 'Mumbai, India', specialty: 'Hair transplant', months: '12 months',
       title: 'Number one for "hair transplant Mumbai", and surgical volume up from 5 to 50 a month.',
       hero: { n: '1,277%', t: 'increase in organic traffic in 12 months' },
@@ -139,7 +139,7 @@
       link: 'https://onlinemarketingfordoctors.com/casestudy/dr-malay-mehta/'
     },
     {
-      id: 'vein', name: 'Vein Doctors Sydney', logo: '', uk: false,
+      id: 'vein', name: 'Vein Doctors Sydney', logo: 'assets/client-logos/vein-doctors-sydney-logo.webp', uk: false,
       place: 'Sydney, Australia', specialty: 'Vein clinic', months: '12 months',
       title: 'From under 200 visitors a day to nearly 500, and thousands more ranking keywords.',
       hero: { n: '65%', t: 'increase in organic traffic in 12 months' },
