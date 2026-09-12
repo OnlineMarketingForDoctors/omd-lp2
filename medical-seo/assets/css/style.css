@@ -444,13 +444,25 @@ img.fc-engine{object-fit:contain}
    ground matches the screenshots' own background, so the letterboxing that
    contain introduces is invisible. The 3:2 box is the median aspect of the 275
    screenshots, which keeps the leftover space small in both directions. */
-.slide .shot{aspect-ratio:3/2;background:#fff;position:relative;overflow:hidden;padding:10px}
+.slide .shot{
+  aspect-ratio:3/2;background:#fff;position:relative;overflow:hidden;padding:10px;
+  display:block;width:100%;cursor:zoom-in;
+}
+.slide .shot::after{content:"";position:absolute;inset:0;background:rgba(0,219,152,0);transition:background .25s var(--ease)}
+.slide .shot:hover::after,.slide .shot:focus-visible::after{background:rgba(0,219,152,.08)}
+.slide .zoom{
+  position:absolute;right:12px;bottom:12px;z-index:2;width:36px;height:36px;border-radius:50%;
+  background:rgba(0,0,0,.74);color:#fff;display:grid;place-items:center;
+  opacity:0;transform:translateY(6px);transition:opacity .25s var(--ease),transform .25s var(--ease);
+}
+.slide .zoom svg{width:18px;height:18px}
+.slide .shot:hover .zoom,.slide .shot:focus-visible .zoom{opacity:1;transform:none}
 .slide .shot img{width:100%;height:100%;object-fit:contain;object-position:top}
 .slide .meta{padding:14px 16px 16px;display:flex;flex-direction:column;gap:4px}
 .slide .meta b{font-size:.92rem}
 .slide .meta span{font-size:.8rem;color:var(--ink-2);line-height:1.35}
 .slide .uk{
-  position:absolute;left:12px;top:12px;background:var(--black);color:var(--white);font-family:var(--action);font-weight:500;
+  position:absolute;left:12px;top:12px;z-index:2;background:var(--black);color:var(--white);font-family:var(--action);font-weight:500;
   letter-spacing:.1em;font-size:.68rem;padding:5px 9px;border-radius:4px;text-transform:uppercase;
 }
 .slider-nav{display:flex;gap:10px;justify-content:flex-end;margin-top:6px;align-items:center}
@@ -545,6 +557,33 @@ blockquote{margin:0}
 .lightbox.is-open{display:flex}
 .lightbox .frame{width:min(1100px,100%);aspect-ratio:16/9;background:#000;border-radius:10px;overflow:hidden;box-shadow:var(--shadow-lg)}
 .lightbox iframe{width:100%;height:100%;border:0}
+/* image variant: size to the screenshot rather than 16/9, up to the viewport.
+   The image sits in its own scroll box so the caption stays put while a phone
+   pans around a screenshot too wide to render legibly at 390px. */
+.lightbox.is-image .frame{
+  width:auto;max-width:min(1500px,100%);aspect-ratio:auto;max-height:90vh;
+  background:var(--white);display:flex;flex-direction:column;overflow:hidden;
+}
+.lightbox .zoomwrap{
+  flex:1 1 auto;min-height:0;display:grid;place-items:center;
+  overflow:auto;-webkit-overflow-scrolling:touch;background:#fff;
+}
+.lightbox.is-image img{
+  display:block;width:auto;height:auto;max-width:100%;max-height:calc(90vh - 76px);
+  object-fit:contain;background:#fff;
+}
+@media (max-width:700px){
+  /* render at native size and let the viewer pan; capped so a tall screenshot
+     does not become an endless scroll */
+  .lightbox.is-image .frame{max-width:100%;width:100%}
+  .lightbox.is-image img{max-width:none;max-height:min(72vh,1200px)}
+}
+.lightbox .cap{
+  flex:none;padding:13px 18px;background:var(--white);color:var(--ink);
+  display:flex;flex-direction:column;gap:1px;text-align:left;
+}
+.lightbox .cap b{font-size:.98rem}
+.lightbox .cap span{font-size:.86rem;color:var(--ink-2)}
 .lightbox .close{position:absolute;top:20px;right:20px;color:#fff;width:48px;height:48px;display:flex;align-items:center;justify-content:center;border-radius:50%;background:rgba(255,255,255,.12)}
 .lightbox .close svg{width:24px;height:24px}
 

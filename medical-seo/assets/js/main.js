@@ -4,6 +4,7 @@
   const $ = (s, r = document) => r.querySelector(s);
   const $$ = (s, r = document) => Array.from(r.querySelectorAll(s));
   const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const esc = (v) => String(v).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
   const U = 'https://onlinemarketingfordoctors.com/wp-content/uploads/';
 
   /* ---------------- data: case studies (SEO and AI search only) ---------------- */
@@ -202,8 +203,12 @@
       const items = data[g];
       slidesEl.innerHTML = items.map((it) => `
         <figure class="slide">
-          <div class="shot">${it.uk ? '<span class="uk">UK</span>' : ''}<img src="${it.file}" alt="${it.client}: ${prettyCaption(it.caption, it.client)}" loading="lazy"></div>
-          <figcaption class="meta"><b>${it.client}</b><span>${prettyCaption(it.caption, it.client)}</span></figcaption>
+          <button class="shot" type="button" data-zoom="${esc(it.file)}" data-client="${esc(it.client)}" data-cap="${esc(prettyCaption(it.caption, it.client))}" aria-label="Enlarge screenshot: ${esc(it.client)}, ${esc(prettyCaption(it.caption, it.client))}">
+            ${it.uk ? '<span class="uk">UK</span>' : ''}
+            <img src="${esc(it.file)}" alt="${esc(it.client)}: ${esc(prettyCaption(it.caption, it.client))}" loading="lazy">
+            <span class="zoom" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><circle cx="11" cy="11" r="6.5"/><path d="m20 20-4.2-4.2M11 8.6v4.8M8.6 11h4.8"/></svg></span>
+          </button>
+          <figcaption class="meta"><b>${esc(it.client)}</b><span>${esc(prettyCaption(it.caption, it.client))}</span></figcaption>
         </figure>`).join('');
       slidesEl.scrollTo({ left: 0 });
       updatePos();
@@ -279,17 +284,40 @@
     b.scrollIntoView({ block: 'nearest', inline: 'center', behavior: reduced ? 'auto' : 'smooth' });
   });
 
-  /* ---------------- video lightbox ---------------- */
-  const lb = $('#lightbox'), lbFrame = $('#lightboxFrame');
-  const openVideo = (id) => {
-    lbFrame.innerHTML = `<iframe src="https://www.youtube-nocookie.com/embed/${id}?autoplay=1&rel=0" title="Client video testimonial" allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen></iframe>`;
-    lb.classList.add('is-open'); document.body.style.overflow = 'hidden'; $('#lightboxClose').focus();
+  /* ---------------- lightbox: video testimonials and ranking screenshots ---------------- */
+  const lb = $('#lightbox'), lbFrame = $('#lightboxFrame'), lbClose = $('#lightboxClose');
+  let lastFocused = null;
+  const openLightbox = (html, isImage, label) => {
+    lastFocused = document.activeElement;
+    lb.classList.toggle('is-image', !!isImage);
+    lb.setAttribute('aria-label', label);
+    lbFrame.innerHTML = html;
+    lb.classList.add('is-open');
+    document.body.style.overflow = 'hidden';
+    lbClose.focus();
   };
-  const closeVideo = () => { lb.classList.remove('is-open'); lbFrame.innerHTML = ''; document.body.style.overflow = ''; };
-  $$('[data-video]').forEach(b => b.addEventListener('click', () => openVideo(b.dataset.video)));
-  $('#lightboxClose').addEventListener('click', closeVideo);
-  lb.addEventListener('click', (e) => { if (e.target === lb) closeVideo(); });
-  document.addEventListener('keydown', (e) => { if (e.key === 'Escape') { closeVideo(); setDrawer(false); } });
+  const closeLightbox = () => {
+    if (!lb.classList.contains('is-open')) return;
+    lb.classList.remove('is-open', 'is-image');
+    lbFrame.innerHTML = '';
+    document.body.style.overflow = '';
+    if (lastFocused && lastFocused.isConnected) lastFocused.focus();
+    lastFocused = null;
+  };
+  $$('[data-video]').forEach(b => b.addEventListener('click', () => openLightbox(
+    `<iframe src="https://www.youtube-nocookie.com/embed/${b.dataset.video}?autoplay=1&rel=0" title="Client video testimonial" allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen></iframe>`,
+    false, 'Client video testimonial')));
+  // slides are rebuilt on every tab change, so delegate rather than bind per card
+  $$('#seoSlides, #aiSlides').forEach(container => container.addEventListener('click', (e) => {
+    const btn = e.target.closest('.shot[data-zoom]'); if (!btn) return;
+    openLightbox(
+      `<div class="zoomwrap"><img src="${esc(btn.dataset.zoom)}" alt="${esc(btn.dataset.client)}: ${esc(btn.dataset.cap)}"></div>` +
+      `<figcaption class="cap"><b>${esc(btn.dataset.client)}</b><span>${esc(btn.dataset.cap)}</span></figcaption>`,
+      true, `${btn.dataset.client}: ${btn.dataset.cap}`);
+  }));
+  lbClose.addEventListener('click', closeLightbox);
+  lb.addEventListener('click', (e) => { if (e.target === lb || e.target === lbFrame) closeLightbox(); });
+  document.addEventListener('keydown', (e) => { if (e.key === 'Escape') { closeLightbox(); setDrawer(false); } });
 
   /* ---------------- FAQ: one open at a time ---------------- */
   const faqs = $$('.faq details');
