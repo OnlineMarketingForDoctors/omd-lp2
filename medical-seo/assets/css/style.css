@@ -157,7 +157,12 @@ figure{margin:0}
 .drawer ul{flex:none;display:flex;flex-direction:column;gap:6px}
 .drawer a{font-family:var(--action);font-weight:600;text-transform:uppercase;letter-spacing:.08em;font-size:1.6rem;text-decoration:none;display:block;padding:.35em 0;border-bottom:1px solid var(--paper-line)}
 .drawer .phone{font-size:1.3rem}
-.drawer .btn{flex:none;align-self:flex-start}
+/* .drawer a also matches the CTA and outranks .btn, which stripped the
+   button's own padding and set it in 1.6rem nav type */
+.drawer .btn{
+  flex:none;align-self:flex-start;display:inline-flex;
+  font-size:1rem;padding:1.05em 1.6em;border-bottom:0;max-width:100%;
+}
 
 /* ==========================================================================
    Hero
