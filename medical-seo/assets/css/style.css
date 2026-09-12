@@ -879,9 +879,13 @@ blockquote{margin:0}
 .scarcity p{margin:0;font-size:.95rem}
 @media (max-width:920px){
   .founder-grid{grid-template-columns:1fr}
-  .founder-imgs{aspect-ratio:auto;max-height:none;display:grid;grid-template-columns:1fr 1fr;gap:12px}
-  .founder-imgs .a,.founder-imgs .b{position:static;width:auto;height:auto;border:0}
-  .founder-imgs .addr{position:static;grid-column:1/-1;max-width:none}
+  /* keep the desktop overlap rather than sitting the two photos side by side:
+     the team photo leads and the second is a satellite over its corner */
+  .founder-imgs{aspect-ratio:1/.95;max-height:none}
+  .founder-imgs .a{width:100%;height:72%}
+  .founder-imgs .b{width:58%;height:42%;border-width:5px}
+  /* the address is in the footer and the copy below already names the office */
+  .founder-imgs .addr{display:none}
 }
 
 /* ==========================================================================
