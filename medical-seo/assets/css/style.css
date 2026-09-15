@@ -463,7 +463,9 @@ img.fc-engine{object-fit:contain}
 .stat b{display:block;font-size:.95rem;margin-top:6px}
 .stat small{color:var(--ink-2);font-size:.82rem;display:block;margin-top:2px}
 @media (max-width:920px){
-  .vanity-grid{grid-template-columns:1fr}
+  /* minmax(0,1fr) not 1fr: the auto minimum lets the video slider set the
+     column width, which pushed the copy off the side of the screen */
+  .vanity-grid{grid-template-columns:minmax(0,1fr)}
   .vanity-img .slide{flex:0 0 min(80vw,440px)}
   .stat-row{grid-template-columns:1fr 1fr}
   .stat-row .stat:last-child{grid-column:1/-1}
