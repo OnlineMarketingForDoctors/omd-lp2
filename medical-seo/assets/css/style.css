@@ -988,6 +988,22 @@ blockquote{margin:0}
 }
 
 /* ==========================================================================
+   Back to top
+   ========================================================================== */
+.to-top{
+  position:fixed;right:var(--gutter);bottom:calc(var(--gutter) + env(safe-area-inset-bottom,0px));z-index:90;
+  width:52px;height:52px;border-radius:50%;display:grid;place-items:center;
+  background:var(--green);color:var(--black);box-shadow:var(--shadow-green);
+  opacity:0;visibility:hidden;transform:translateY(14px);
+  transition:opacity .3s var(--ease),transform .3s var(--ease),visibility .3s;
+}
+.to-top.is-on{opacity:1;visibility:visible;transform:none}
+.to-top:hover{background:#19e6a6;transform:translateY(-2px)}
+.to-top svg{width:22px;height:22px}
+@media (max-width:920px){.to-top{width:46px;height:46px}.to-top svg{width:20px;height:20px}}
+@media (prefers-reduced-motion:reduce){.to-top{transition:none}}
+
+/* ==========================================================================
    Footer
    ========================================================================== */
 .footer{background:var(--black);color:var(--on-dark-2);padding:56px 0 32px;font-size:.9rem}

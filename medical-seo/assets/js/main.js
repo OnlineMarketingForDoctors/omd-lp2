@@ -512,6 +512,20 @@
     else if (e.key === 'ArrowRight') { e.preventDefault(); showZoom(zoomIdx + 1); }
   });
 
+  /* ---------------- back to top ---------------- */
+  const toTop = $('#toTop');
+  if (toTop) {
+    const showTop = () => toTop.classList.toggle('is-on', window.scrollY > window.innerHeight * 0.9);
+    window.addEventListener('scroll', showTop, { passive: true });
+    showTop();
+    toTop.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: reduced ? 'auto' : 'smooth' });
+      // send focus back to the top of the page, not just the viewport
+      const first = $('.logo');
+      if (first) first.focus({ preventScroll: true });
+    });
+  }
+
   /* ---------------- FAQ: one open at a time ---------------- */
   const faqs = $$('.faq details');
   faqs.forEach(d => d.addEventListener('toggle', () => { if (d.open) faqs.forEach(o => { if (o !== d) o.open = false; }); }));
