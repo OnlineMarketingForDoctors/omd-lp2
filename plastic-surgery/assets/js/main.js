@@ -335,8 +335,7 @@
   const buildSlider = (kind, data, tabsEl, slidesEl, posEl) => {
     const groups = Object.keys(data);
     tabsEl.innerHTML = groups.map((g) => {
-      const uk = data[g].some(i => i.uk);
-      return `<button class="tab" type="button" data-group="${esc(g)}"><span class="tab-name">${esc(g)}${uk ? '' : ' <small style="opacity:.6;letter-spacing:.06em">AU</small>'}</span><span class="count">${data[g].length}</span><svg class="tab-chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></button>`;
+      return `<button class="tab" type="button" data-group="${esc(g)}"><span class="tab-name">${esc(g)}</span><span class="count">${data[g].length}</span><svg class="tab-chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></button>`;
     }).join('');
     const layout = tabsEl.parentElement, slider = slidesEl.closest('.slider');
     let current = groups[0];
