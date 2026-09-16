@@ -269,6 +269,13 @@
    Founder / qualify: keep the base, swap the address card text
    ========================================================================== */
 .founder-imgs .addr b{color:var(--green)}
+/* the BAAPS photograph is portrait, so its satellite box is portrait too and
+   the crop is anchored to the top where the faces are */
+.founder-imgs .b{width:44%;height:60%}
+.founder-imgs .b img{object-position:50% 8%}
+@media (max-width:920px){
+  .founder-imgs .b{width:46%;height:56%}
+}
 
 /* ==========================================================================
    Lightbox: tap to zoom at every size. Full-page website screenshots are
