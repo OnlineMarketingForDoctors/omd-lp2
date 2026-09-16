@@ -658,7 +658,7 @@ blockquote{margin:0}
 .lightbox .cap b{font-size:.98rem}
 .lightbox .cap span{font-size:.86rem;color:var(--ink-2)}
 .lightbox .cap-n{flex:none;font-family:var(--action);font-size:.8rem;letter-spacing:.06em;opacity:.6;white-space:nowrap}
-.lightbox .close{position:absolute;top:20px;right:20px;color:#fff;width:48px;height:48px;display:flex;align-items:center;justify-content:center;border-radius:50%;background:rgba(255,255,255,.12)}
+.lightbox .close{position:absolute;top:20px;right:20px;z-index:3;color:#fff;width:48px;height:48px;display:flex;align-items:center;justify-content:center;border-radius:50%;background:rgba(255,255,255,.12)}
 .lightbox .close svg{width:24px;height:24px}
 /* step through the screenshots in the set the viewer opened. Flex siblings of
    the frame on desktop so they never cover the image; over the image edges on
@@ -676,11 +676,13 @@ blockquote{margin:0}
 @media (max-width:860px){
   .lightbox.has-set{gap:0}
   .lightbox .lb-nav{
-    position:absolute;top:50%;transform:translateY(-50%);width:46px;height:46px;
+    position:absolute;top:50%;transform:translateY(-50%);width:46px;height:46px;z-index:2;
     background:rgba(0,0,0,.55);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);
   }
   .lightbox .lb-nav.prev{left:6px}
   .lightbox .lb-nav.next{right:6px}
+  /* a tall screenshot fills the screen, so the close button needs its own backdrop */
+  .lightbox .close{top:10px;right:10px;background:rgba(0,0,0,.55);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px)}
   .lightbox .lb-nav:active{transform:translateY(-50%) scale(.94)}
 }
 

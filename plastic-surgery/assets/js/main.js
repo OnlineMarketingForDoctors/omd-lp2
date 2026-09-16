@@ -296,11 +296,18 @@
       <figcaption class="meta"><b>${esc(it.client)}</b><span>${esc(it.cap)}</span></figcaption>
     </figure>`;
   const posTrackers = [];
+  // a scroller is either a .slides track of .slide items or any snap row of
+  // direct children (process steps, case study screenshots)
+  const sliderItems = (el) => {
+    const s = $$('.slide', el); if (s.length) return s;
+    return [...el.children].filter(c => c.getBoundingClientRect().width > 0);
+  };
+  const sliderGap = (el) => parseFloat(getComputedStyle(el).columnGap) || 18;
   const trackPos = (slidesEl, posEl) => {
     if (!slidesEl || !posEl) return;
     const update = () => {
-      const items = $$('.slide', slidesEl); if (!items.length) { posEl.textContent = ''; return; }
-      const w = items[0].getBoundingClientRect().width + 18;
+      const items = sliderItems(slidesEl); if (!items.length) { posEl.textContent = ''; return; }
+      const w = items[0].getBoundingClientRect().width + sliderGap(slidesEl);
       if (w <= 18) { posEl.textContent = `1 / ${items.length}`; return; }
       const idx = Math.min(items.length, Math.round(slidesEl.scrollLeft / w) + 1);
       posEl.textContent = `${idx} / ${items.length}`;
@@ -410,13 +417,23 @@
   }).catch(() => {
     $('#seoSlides').innerHTML = '<p class="muted">Results are loading slowly. Please refresh the page.</p>';
   });
-  $$('[data-prev],[data-next]').forEach(btn => {
-    btn.addEventListener('click', () => {
-      const el = $('#' + (btn.dataset.prev || btn.dataset.next));
-      const first = $('.slide', el); if (!first) return;
-      const w = first.getBoundingClientRect().width + 18;
-      el.scrollBy({ left: btn.dataset.prev ? -w : w, behavior: reduced ? 'auto' : 'smooth' });
-    });
+  document.addEventListener('click', (e) => {
+    const btn = e.target.closest('[data-prev],[data-next]'); if (!btn) return;
+    const el = $('#' + (btn.dataset.prev || btn.dataset.next)); if (!el) return;
+    const first = sliderItems(el)[0]; if (!first) return;
+    const w = first.getBoundingClientRect().width + sliderGap(el);
+    el.scrollBy({ left: btn.dataset.prev ? -w : w, behavior: reduced ? 'auto' : 'smooth' });
+  });
+  const ARROW_L = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 6l-6 6 6 6"/></svg>';
+  const ARROW_R = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg>';
+  const navFor = (id, what, cls) => `<div class="slider-nav ${cls}"><span class="pos" id="${id}Pos"></span>` +
+    `<button class="arrow" data-prev="${id}" aria-label="Previous ${what}">${ARROW_L}</button>` +
+    `<button class="arrow" data-next="${id}" aria-label="Next ${what}">${ARROW_R}</button></div>`;
+  // numbered process steps become a swipe row on phones, with the same arrows
+  $$('.svc-steps').forEach((ol, i) => {
+    ol.id = ol.id || `steps${i + 1}`;
+    ol.insertAdjacentHTML('afterend', navFor(ol.id, 'step', 'steps-nav'));
+    trackPos(ol, $('#' + ol.id + 'Pos'));
   });
 
   /* ---------------- services rail ---------------- */
@@ -513,13 +530,15 @@
           </blockquote>
           <a class="cs-link" href="${esc(c.link)}" target="_blank" rel="noopener">Read the full case study <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
         </div>
-        <div class="cs-shots">
+        <div class="cs-shots" id="csShots-${c.id}">
           ${c.video ? `<figure class="shot-card s1 shot-video"><button class="vshot" type="button" data-video="${esc(c.video[0])}" aria-label="Play video: ${esc(c.video[1])}"><img src="https://i.ytimg.com/vi/${esc(c.video[0])}/maxresdefault.jpg" alt="" loading="lazy" onerror="this.onerror=null;this.src='https://i.ytimg.com/vi/${esc(c.video[0])}/hqdefault.jpg'"><span class="play" aria-hidden="true">${PLAY_SVG}</span></button><figcaption>${esc(c.video[1])}</figcaption></figure>` : ''}
           ${c.shots.map((s, k) => `<figure class="shot-card s${k + (c.video ? 2 : 1)}"><button class="shot-zoom" type="button" data-zoom="${esc(s[2] || s[0])}" data-client="${esc(c.name)}" data-cap="${esc(s[1])}" aria-label="Enlarge screenshot: ${esc(c.name)}, ${esc(s[1])}"><img src="${esc(s[0])}" alt="${esc(s[1])}" loading="lazy"></button><figcaption>${esc(s[1])}</figcaption></figure>`).join('')}
           ${c.portrait ? `<div class="portrait"><img src="${esc(c.portrait)}" alt="${esc(c.who)}" loading="lazy"></div>` : ''}
         </div>
+        ${navFor('csShots-' + c.id, 'screenshot', 'cs-shots-nav')}
       </div>
     </div>`).join('');
+  CASES.forEach(c => trackPos($('#csShots-' + c.id), $('#csShots-' + c.id + 'Pos')));
   const csHome = csPanels.parentElement, mqCs = window.matchMedia('(max-width: 860px)');
   let csCurrent = CASES[0].id;
   const applyCsMode = () => {

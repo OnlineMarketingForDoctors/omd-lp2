@@ -207,7 +207,14 @@
 .press-grid div{background:var(--white);border-radius:10px;height:84px;display:grid;place-items:center;padding:16px}
 .press-grid img{max-height:40px;max-width:100%;width:auto;height:auto;object-fit:contain}
 /* numbered steps only where the content really is a sequence */
-.svc-steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:14px;margin-top:14px}
+.svc-steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:14px;margin:14px 0 0;padding:0;list-style:none}
+.steps-nav{display:none}
+@media (max-width:920px){
+  .svc-steps{display:flex;gap:12px;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:6px;scrollbar-width:none;-webkit-overflow-scrolling:touch}
+  .svc-steps::-webkit-scrollbar{display:none}
+  .svc-steps li{flex:0 0 min(74vw,320px);scroll-snap-align:start}
+  .steps-nav{display:flex;margin-top:4px}
+}
 .svc-steps li{background:rgba(255,255,255,.05);border:1px solid var(--paper-line);border-radius:10px;padding:16px 16px 18px}
 .svc-steps .n{font-family:var(--action);font-weight:600;font-size:1.05rem;width:34px;height:34px;border-radius:8px;background:var(--green);color:var(--black);display:grid;place-items:center;margin-bottom:12px}
 .svc-steps b{display:block;font-size:.98rem;margin-bottom:4px}
@@ -288,6 +295,11 @@
 .cs-shots .shot-video .vshot{aspect-ratio:16/9;height:auto}
 .cs-shots .shot-video .vshot img{height:100%;object-fit:cover;object-position:center}
 .cs-shots .shot-video figcaption{pointer-events:none}
+.cs-shots-nav{display:none}
+@media (max-width:920px){
+  .cs-shots-nav{display:flex;margin-top:6px}
+  .cs-grid{grid-template-rows:auto}
+}
 @media (max-width:920px){
   .shot-card.s4{flex:0 0 min(78vw,440px);scroll-snap-align:start;margin-top:0}
   .cs-shots .shot-card.s1,.cs-shots .shot-card.s2,.cs-shots .shot-card.s3,.cs-shots .shot-card.s4{aspect-ratio:auto}
@@ -316,6 +328,12 @@
 .lightbox.is-image.is-zoomed .frame{width:min(1500px,100%);max-width:100%}
 .lightbox.is-image.is-zoomed img{max-width:none;max-height:none;width:auto;height:auto}
 .lightbox.is-image.is-zoomed .zoomwrap{place-items:start center}
+@media (max-width:700px){
+  /* on a phone the zoomed screenshot fits the width and scrolls down, rather
+     than rendering at native width and showing a cropped slice */
+  .lightbox.is-image.is-zoomed .frame{width:100%}
+  .lightbox.is-image.is-zoomed img{width:100%;max-width:100%}
+}
 
 /* ==========================================================================
    Small utilities
