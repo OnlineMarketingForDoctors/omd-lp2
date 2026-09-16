@@ -65,6 +65,8 @@
      text area through a long gradient rather than a hard edge */
   .hero-v{min-height:0;display:block;padding-top:var(--header-h)}
   .hero-video{position:relative;inset:auto;z-index:0;height:min(72svh,560px);aspect-ratio:auto}
+  /* portrait crop of a landscape clip: anchor to the left so the presenter stays in frame */
+  .hero-video video,.hero-video img{object-position:0% 40%}
   .hero-video::after{
     background:linear-gradient(180deg,rgba(0,0,0,.35) 0%,rgba(0,0,0,0) 30%,rgba(0,0,0,.35) 62%,rgba(0,0,0,.92) 88%,var(--black) 100%);
   }
@@ -122,9 +124,11 @@
 @media (max-width:920px){
   .proof-grid{grid-template-columns:minmax(0,1fr);gap:30px}
   .proof-media{order:-1}
-  .proof-quote{margin:-34px 0 0 14px;padding:20px 20px}
+  .proof-quote{margin:-34px 12px 0;padding:20px 20px}
   .proof-copy{padding-top:6px}
   .proof .stat-row{grid-template-columns:1fr 1fr;gap:16px 18px}
+  /* four stats sit as a 2 x 2 grid; the base rule stretches the last of three */
+  .proof .stat-row .stat:last-child{grid-column:auto}
 }
 
 /* ==========================================================================
