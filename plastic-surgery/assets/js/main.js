@@ -9,72 +9,77 @@
   const ZOOM_SVG = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><circle cx="11" cy="11" r="6.5"/><path d="m20 20-4.2-4.2M11 8.6v4.8M8.6 11h4.8"/></svg>';
   const PLAY_SVG = '<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>';
 
-  /* ---------------- data: case studies (SEO and AI search figures only) ---------------- */
+  /* ---------------- data: case studies, every channel we ran ---------------- */
   const CASES = [
     {
       id: 'delta', name: 'Delta Clinics', logo: 'assets/client-logos/delta-clinics-logo.webp', region: 'UK',
       place: 'Harley Street and Finchley, London', specialty: 'Plastic surgery', months: '8 months',
-      title: 'Two London locations, one Google Business Profile problem, and a 730% rise in enquiries.',
+      channels: ['Website', 'Brand and funnel', 'Google Ads', 'Meta ads', 'SEO', 'Content', 'AI SMS assistant'],
+      title: 'A newly opened Harley Street clinic, built from nothing to a 730% rise in enquiries.',
       hero: { n: '730%', t: 'more patient enquiries in 8 months' },
-      stats: [['1,500%', 'increase in website traffic'], ['540%', 'increase in keyword rankings'], ['2', 'Google Business Profiles restructured so they stopped competing']],
-      situation: 'Mr Hazem Alfie is a consultant plastic surgeon with clinics on Harley Street and in Finchley. Two listings for one brand were cannibalising each other on Google Maps, and the procedure pages were too thin to rank for tummy tuck or breast augmentation in London.',
-      did: ['Rebuilt each Google Business Profile for its own catchment, with its own categories and description', 'Wrote long-form, keyword-mapped pages for the core procedures, with diagrams and video', 'Started a monthly blog answering the questions patients type before they enquire', 'Deep keyword research across the procedure set, short-tail and long-tail, mapped page by page'],
-      shots: [['assets/cases/delta-keywords.webp', 'Ranking on Google for breast augmentation London'], ['assets/cases/delta-gmb.webp', 'Harley Street Google Business Profile'], ['assets/cases/delta-keywords-ranking.webp', 'Ranking growth over the campaign']],
+      stats: [['1,500%', 'increase in website traffic'], ['540%', 'increase in keyword rankings'], ['£0.11', 'average cost per click on Meta, from 295,000 impressions']],
+      situation: 'Mr Hazem Alfie brought twenty years as a consultant plastic surgeon to a newly opened clinic with no proper website, no social presence and two Google listings competing with each other. Previous agencies had not moved the needle.',
+      did: ['Positioned the clinic, then built a new conversion-driven website with a brandscript and one-liner', 'Dedicated landing pages for tummy tuck, breast enlargement and labiaplasty, used in Google Ads', 'Full-funnel Facebook and Instagram campaigns: 295,000 impressions, 12,895 clicks, £0.11 a click', 'Ebook lead magnets with follow-up email sequences, and an AI SMS assistant that books calls from inbound leads', 'Two Google Business Profiles rebuilt for their own catchments, plus long-form procedure pages and a monthly blog'],
+      shots: [['assets/cases/delta-google-ads.webp', 'Google Ads campaign results'], ['assets/cases/delta-social-ad.webp', 'Tummy tuck advert on Instagram'], ['assets/cases/delta-keywords-ranking.webp', 'Keyword rankings up 540% over the campaign'], ['assets/cases/delta-conversions.webp', 'Conversions by channel in Google Analytics']],
       portrait: 'assets/cases/delta-alfie.webp',
-      quote: 'I have seen an increase of almost 730% in the total number of leads or enquiries that come to the clinic. They have also been doing our SEO and I have seen great results with the SEO.',
+      quote: 'I have seen an increase of almost 730% in the total number of leads or enquiries that come to the clinic. They have designed a totally new website, they have been doing our SEO, and they have recently taken on our social media management.',
       who: 'Mr Hazem Alfie', role: 'Consultant Plastic Surgeon, Delta Clinics',
       link: 'https://onlinemarketingfordoctors.com/casestudy/delta-clinics/'
     },
     {
       id: 'bfc', name: 'British Face Clinic', logo: 'assets/client-logos/british_face_clinic_logo.webp', region: 'UK',
       place: 'Harley Street, Milton Keynes and Northampton', specialty: 'Facial cosmetic surgery', months: '12 months',
-      title: 'Three clinics, one facial surgeon, and a 1,012% increase in ranking keywords.',
-      hero: { n: '1,012%', t: 'growth in keyword rankings in 12 months' },
-      stats: [['5.08x', 'return on investment'], ['150%', 'increase in organic traffic'], ['300%', 'increase in conversions']],
-      situation: 'Mr Mrinal Supriya operates across London, Milton Keynes and Northampton. The clinic was known for deep plane facelift and rhinoplasty in the profession, and almost invisible for those terms on Google.',
-      did: ['Restructured three Google Business Profiles so each location owned its own local searches', 'Long-form pages for deep plane facelift, rhinoplasty and blepharoplasty, built from real search intent', 'Keyword research around trending facelift techniques and recovery questions', 'On-page rebuild: unique titles, headings and descriptions on every page'],
-      shots: [['assets/cases/bfc-ga4.webp', 'Organic search up 106% year on year in Google Analytics'], ['assets/cases/bfc-gmb.webp', 'Google Business Profile listing for deep plane facelift'], ['assets/cases/bfc-keyword-research.webp', 'Keyword research mapped to every procedure page']],
+      channels: ['Website', 'Brand and funnel', 'Google Ads', 'Meta ads', 'SEO', 'Content', 'AI SMS assistant'],
+      title: 'Three clinics, one facial surgeon, and a 5.08x return in twelve months.',
+      hero: { n: '5.08x', t: 'return on investment in 12 months' },
+      stats: [['1,012%', 'growth in keyword rankings'], ['£230,875', 'revenue from 44 procedures booked through Google Ads in a year'], ['£4', 'average cost per lead on Meta, from 3.2 million impressions']],
+      situation: 'Mr Mrinal Supriya operates across London, Milton Keynes and Northampton. The clinic was known for deep plane facelift and rhinoplasty in the profession, invisible for those terms on Google, and had a website that did not convert and almost no paid presence.',
+      did: ['Positioned the clinic around the deep plane facelift, then rebuilt the website to convert', 'Landing pages for deep plane facelift, rhinoplasty and blepharoplasty for Google Ads: 2,889 leads and 44 booked procedures in a year', 'Full-funnel Facebook and Instagram campaigns: 3.2 million impressions, 41,290 clicks, about £4 a lead', 'An AI SMS assistant in the CRM that answers every enquiry within minutes and books the phone consultation', 'Three Google Business Profiles restructured, plus long-form procedure pages and a monthly blog'],
+      shots: [['assets/cases/bfc-ads-snapshot.webp', 'Google Ads: 2,889 leads, 44 procedures, £230,875 revenue'], ['assets/cases/bfc-social-ads.webp', 'Deep plane facelift advert on Instagram'], ['assets/cases/bfc-ai-sms.webp', 'The AI SMS assistant booking phone consultations'], ['assets/cases/bfc-ga4.webp', 'Organic search up 106% year on year']],
       portrait: 'assets/cases/bfc-supriya.webp',
-      quote: 'We have seen a significant increase in our organic traffic which has grown by around 150%. Similarly, we have seen a significant increase in our organic keywords, which has grown by 1,000%. We have seen an increase in our practice with a ROI of around 5.08.',
+      quote: 'OMD completely renovated our website and gave it a much fresher look. They have also helped us with our SEO and with our paid Google campaign. Our organic keywords have grown by 1,000%, and we have seen an increase in our practice with a ROI of around 5.08.',
       who: 'Mr Mrinal Supriya', role: 'Facial Cosmetic Surgeon, British Face Clinic',
       link: 'https://onlinemarketingfordoctors.com/casestudy/british-face-clinic/'
     },
     {
       id: 'hr', name: 'HR Plastic Surgery', logo: 'assets/client-logos/hr-plastic-surgery-logo.webp', region: 'UK',
       place: 'London and Hertfordshire', specialty: 'Plastic surgery', months: '18 months',
-      title: 'From minimal traffic to 16,000 visitors a month, and a 2,098% rise in organic traffic.',
-      hero: { n: '2,098%', t: 'increase in organic traffic in 18 months' },
-      stats: [['410%', 'more enquiries from organic search'], ['16,000', 'monthly website visitors'], ['2,148', 'visits a month from a single blog article']],
-      situation: 'Mr Hyder Ridha had barely marketed the practice while competing clinics had been investing in search for a decade. The website had duplicated content, no local presence for its Hertfordshire clinics, and almost no organic traffic.',
-      did: ['Audited and rewrote every thin or duplicated page, then positioned the site around mummy makeover', 'Keyword research covering the London suburbs and Hertfordshire towns patients actually search from', 'Google Business Profiles for Harpenden, Hitchin and Hatfield, each optimised and reviewed', 'Monthly blog programme, plus high-quality link building to build authority'],
-      shots: [['assets/cases/hr-traffic.webp', 'Over 16,000 monthly visitors'], ['assets/cases/hr-harpenden-gmb.webp', 'Harpenden Google Business Profile, year on year'], ['assets/cases/hr-blog.webp', 'One article, 2,148 visits a month']],
+      channels: ['Website', 'Brand and funnel', 'Google Ads', 'Meta ads', 'SEO', 'Content', 'Email'],
+      title: 'Repositioned as the mummy makeover expert, from under 200 organic visits to 16,000 a month.',
+      hero: { n: '247%', t: 'more patient enquiries in 18 months' },
+      stats: [['2,098%', 'increase in organic traffic'], ['16,000', 'monthly website visitors'], ['155%', 'higher website conversion rate after the rebuild']],
+      situation: 'Mr Hyder Ridha had barely marketed the practice while competing London clinics had been investing for a decade. Thin content, no sales funnel, few Google reviews, low traffic and a Google Ads campaign that was not producing leads.',
+      did: ['Rebuilt the website around the mummy makeover, with a brandscript and one-liner: conversion rate up 155%', 'Dedicated landing pages for Google Ads: conversion rate up 107% and conversions up 989%', 'Ebook lead magnets with nurturing email sequences for the 95% of visitors who do not enquire first time', 'Full-funnel Facebook and Instagram campaigns from awareness to free consultation offers', 'Google Business Profiles for Harpenden, Hitchin and Hatfield, a monthly blog and link building'],
+      shots: [['assets/cases/hr-website-after.webp', 'The new website, positioned around the mummy makeover'], ['assets/cases/hr-landing-page.webp', 'Breast augmentation landing page for Google Ads'], ['assets/cases/hr-traffic.webp', 'Over 16,000 monthly visitors'], ['assets/cases/hr-lead-magnets.webp', 'Ebook lead magnets']],
       portrait: 'assets/cases/hr-ridha.webp',
-      quote: 'OMD successfully secured our ranking for highly competitive keywords, driving over 16,000 monthly visitors to our website. The conversion numbers witnessed an impressive surge of 400% across all traffic channels.',
+      quote: 'OMD devised a comprehensive plan to overhaul my entire website, repositioning it as the go-to Mummy Makeover expert. They initiated a Google Ads campaign to swiftly generate traffic, and the results became notably significant after the first 6 months, especially when SEO traffic started gaining traction.',
       who: 'Mr Hyder Ridha', role: 'Plastic Surgeon, HR Plastic Surgery',
       link: 'https://onlinemarketingfordoctors.com/case-study/hr-plastic-surgery/'
     },
     {
       id: 'bbc', name: 'Breast and Body Clinic UK', logo: 'assets/client-logos/bb-clinic-uk-logo.webp', region: 'UK',
       place: 'Manchester', specialty: 'Plastic surgery', months: '18 months',
-      title: 'Not on page one for a single main keyword. Now on page one for all of them.',
-      hero: { n: '800%', t: 'more enquiries from organic search in 18 months' },
-      stats: [['2,936%', 'increase in organic traffic'], ['300 to 4,270', 'search impressions a day'], ['4,331', 'visits a month from one blog article']],
-      situation: 'Mr Aftab Siddiqui was competing in Manchester against clinics with years of search history. The site had 300 impressions a day and no first-page rankings for the procedures the practice is built on.',
-      did: ['Rewrote all thin and copied content, then rebuilt the procedure pages for tummy tuck, breast reduction and mummy makeover', 'Keyword research covering every important Manchester suburb, short-tail and long-tail', 'Optimised and maintained the Google Business Profile for local and Maps rankings', 'Monthly articles targeting the questions patients search before booking, plus link building'],
-      shots: [['assets/cases/bbc-traffic.webp', 'Organic traffic growth'], ['assets/cases/bbc-tummy-tuck.webp', 'Ranking for tummy tuck Manchester'], ['assets/cases/bbc-fig13.webp', 'Keyword research across every Manchester procedure']],
+      channels: ['Website', 'Brand and funnel', 'Google Ads', 'Meta ads', 'SEO', 'Content', 'CRM'],
+      title: 'Not on page one for a single main keyword. Now on page one for all of them, with 706% more enquiries.',
+      hero: { n: '706%', t: 'more patient enquiries in 18 months' },
+      stats: [['2,936%', 'increase in organic traffic'], ['618%', 'more website conversions year on year'], ['29', 'extra leads a month from one exit pop-up lead magnet']],
+      situation: 'Mr Aftab Siddiqui was competing in Manchester against clinics with years of search history. A local agency and an international one had both failed to move bookings. The site had 300 impressions a day, thin content, no funnel and an unproductive Google Ads account.',
+      did: ['Rebuilt the website around the mummy makeover, with a brandscript, one-liner and ebook lead magnets', 'Landing pages for tummy tuck, breast augmentation, breast reduction and mummy makeover, with rebuilt Google Ads copy', 'Full-funnel Facebook and Instagram campaigns from awareness to free consultation offers', 'A CRM so the clinic can track every enquiry from source to booking', 'Google Business Profile optimisation, rewritten procedure pages, a monthly blog and link building'],
+      shots: [['assets/cases/bbc-home-after.webp', 'The new website'], ['assets/cases/bbc-landing-page.webp', 'Mummy makeover landing page'], ['assets/cases/bbc-traffic.webp', 'Organic traffic growth'], ['assets/cases/bbc-12m-later.webp', 'Traffic and conversions twelve months later']],
       portrait: 'assets/cases/bbc-siddiqui.webp',
-      quote: 'My website has gone from 300 impressions a day to 4,270 a day. I was not on the first page for any of my main keywords and now I am on the first page for all of them.',
+      quote: 'My website has been redesigned, I have lead magnets such as interesting eBooks, client testimonials, fantastic blogs, detailed new content, and they set up a CRM which enables me to track and monitor how my website performs. The website conversion number has gone up by 618% compared to the same time last year.',
       who: 'Mr Aftab Siddiqui', role: 'Plastic Surgeon, Breast and Body Clinic UK',
       link: 'https://onlinemarketingfordoctors.com/case-study/breast-and-body-clinic-uk/'
     },
     {
       id: 'somia', name: 'Dr Naveen Somia', logo: '', region: 'Australia',
       place: 'Bondi Junction, Sydney', specialty: 'Plastic surgery', months: '12 months',
+      channels: ['Strategy', 'SEO', 'Landing pages', 'Reviews', 'Email'],
       title: 'Page one for eyelid surgery in Sydney, and 115% more new patients in a year.',
       hero: { n: '115%', t: 'more new patients in 12 months' },
-      stats: [['227%', 'increase in leads'], ['109%', 'increase in monthly web traffic'], ['Page 1', 'for eye bag surgery Sydney, upper and lower eyelid surgery and plastic surgeon Bondi Junction']],
+      stats: [['227%', 'increase in leads'], ['109%', 'increase in monthly web traffic'], ['Page 1', 'for eye bag surgery Sydney, eyelid surgery and plastic surgeon Bondi Junction']],
       situation: 'A well-known plastic surgeon and ASAPS president specialising in eyelid surgery and breast reduction, referred to OMD by a leading digital strategist. The practice needed an agency that could take on its whole online presence.',
-      did: ['Strategy session to fix the direction, the target patient and the procedures to own', 'Competitor research: where rivals advertised, ranked and earned their links', 'Niche procedure pages built out one by one, each with unique content', 'On-site SEO best practice, local reviews programme and a redesigned newsletter'],
+      did: ['Strategy session to fix the direction, the target patient and the procedures to own', 'Competitor research: where rivals advertised, ranked and earned their links', 'Niche procedure pages and landing pages built out one by one, each with unique content', 'On-site SEO best practice and a local reviews programme', 'Redesigned newsletter, with list building through Facebook and Google advertising'],
       shots: [['assets/cases/somia-banner.webp', 'Dr Naveen Somia at his Sydney practice'], ['assets/cases/somia-1.webp', 'Strategy session with the practice team']],
       portrait: 'assets/cases/somia-portrait.webp',
       quote: 'Over the last 12 months we have increased the web traffic by over 100 percent and also increased the conversion by over 100 percent.',
@@ -84,11 +89,12 @@
     {
       id: 'hodgkinson', name: 'Dr Darryl Hodgkinson', logo: '', region: 'Australia',
       place: 'Double Bay, Sydney', specialty: 'Plastic surgery', months: '4 months',
-      title: 'A world-renowned surgeon being outranked by younger clinics. Fixed in four months.',
-      hero: { n: '113%', t: 'increase in organic SEO traffic in 4 months' },
-      stats: [['2x', 'consultation requests'], ['95%', 'increase in conversions'], ['Top', 'for facelift Sydney, blepharoplasty Sydney and nose surgery Sydney']],
-      situation: 'Thirty years of experience and his own day surgery in Double Bay, yet organic traffic had halved after a Google update and younger, more aggressive clinics dominated the search results. Several agencies had promised and not delivered.',
-      did: ['Positioning strategy around facial surgery, the work he wanted to be known for', 'High Performance SEO for the most competitive Sydney facial surgery keywords', 'Content marketing that lifted organic traffic 113% and cut bounce rate by 95%', 'A lead magnet funnel that turned research visitors into consultation requests'],
+      channels: ['Positioning', 'SEO', 'Google Ads', 'Content', 'Lead magnet funnel'],
+      title: 'A world-renowned surgeon being outranked by younger clinics. Turned around in four months.',
+      hero: { n: '2x', t: 'consultation requests in 4 months' },
+      stats: [['113%', 'increase in organic traffic'], ['136%', 'more clicks from Google Ads at 25% lower cost per click'], ['95%', 'lower bounce rate']],
+      situation: 'Thirty years of experience and his own day surgery in Double Bay, yet organic traffic had halved after a Google update, the lead magnet was not converting and younger, more aggressive clinics dominated search and social. Several agencies had promised and not delivered.',
+      did: ['Positioning strategy around facial surgery, the work he wanted to be known for', 'High Performance SEO for the most competitive Sydney facial surgery keywords', 'Content marketing that lifted organic traffic 113% and cut bounce rate by 95%', 'Google Ads rebuilt: 136% more clicks, 73% more conversions, each click 25% cheaper', 'A lead magnet funnel that turned research visitors into consultation requests'],
       shots: [['assets/cases/hodgkinson-banner.webp', 'Huyen Truong with Dr Hodgkinson and James Zagarella at the Double Bay clinic']],
       portrait: '',
       quote: 'The number of requests for consultations is at least doubled from the last 5 months, which is a very good sign.',
@@ -98,14 +104,15 @@
     {
       id: 'attalla', name: 'Dr Mark Attalla', logo: '', region: 'Australia',
       place: 'Melbourne', specialty: 'Cosmetic surgery', months: '8 months',
-      title: 'A penalised domain, a fresh start, and top of page one for liposuction Melbourne.',
+      channels: ['Website revamp', 'SEO', 'Google Ads', 'Content'],
+      title: 'A penalised domain, a fresh start, and double the conversions on a quarter of the ad budget.',
       hero: { n: '146%', t: 'increase in leads in 8 months' },
-      stats: [['76%', 'increase in monthly web traffic'], ['5.53% to 7.85%', 'organic conversion rate'], ['Top', 'for liposuction Melbourne and a dozen procedure keywords']],
-      situation: 'Years of digital marketing spend, a domain penalised by a Google update, and a new site that still was not ranking for the liposuction keywords the practice depended on.',
-      did: ['Website revamp for user experience and conversion before any traffic was bought', 'Comprehensive keyword research across Melbourne suburbs and every liposuction variant', 'New niche procedure pages: stomach, thigh, arm, double chin, cost, fat transfer', 'On-site SEO best practice, proper indexation and faster load times'],
-      shots: [['assets/cases/attalla-fig2.webp', 'Top ranking for liposuction Melbourne on Maps and organic search'], ['assets/cases/attalla-fig1.webp', 'Organic traffic and goal completions over 8 months'], ['assets/cases/attalla-fig6.webp', 'Google reviews, Chelsea Cosmetics Melbourne']],
+      stats: [['76%', 'increase in monthly web traffic'], ['¼', 'of the previous Google Ads budget, for twice the conversions'], ['5.53% to 7.85%', 'organic conversion rate after the website revamp']],
+      situation: 'Years of digital marketing spend, a domain penalised by a Google update, and a new site that still was not ranking for the liposuction keywords the practice depended on, with an expensive Google Ads account to match.',
+      did: ['Website revamp for user experience and conversion before any more traffic was bought', 'Single keyword ad groups and bid negotiation in Google Ads: a quarter of the budget, double the conversions', 'Comprehensive keyword research across Melbourne suburbs and every liposuction variant', 'New niche procedure pages: stomach, thigh, arm, double chin, cost, fat transfer', 'On-site SEO best practice, proper indexation and faster load times'],
+      shots: [['assets/cases/attalla-website.webp', 'The website before and after the revamp'], ['assets/cases/attalla-fig2.webp', 'Top ranking for liposuction Melbourne on Maps and organic search'], ['assets/cases/attalla-fig1.webp', 'Traffic and goal completions over 8 months, paid and organic'], ['assets/cases/attalla-fig6.webp', 'Google reviews, Chelsea Cosmetics Melbourne']],
       portrait: 'assets/cases/attalla-portrait.webp',
-      quote: 'They organised the website in a way that is easier for the clients to go through, which reflects on the ranking and on the performance of the website.',
+      quote: 'They organised the website in a way that is easier for the clients to go through. We found that we are spending almost one-fourth of our previous budget and getting double the conversion.',
       who: 'Dr Mark Attalla', role: 'Cosmetic Surgeon and Owner, Chelsea Cosmetics Melbourne',
       link: 'https://onlinemarketingfordoctors.com/case-study-dr-attalla/'
     }
@@ -492,12 +499,13 @@
             <div class="cs-name">${c.logo ? `<span class="logo-box"><img src="${esc(c.logo)}" alt=""></span>` : ''}<b>${esc(c.name)}</b><span class="cs-region">${esc(c.region)}</span></div>
             <div class="place"><span>${esc(c.place)}</span><span>${esc(c.specialty)}</span><span>${esc(c.months)}</span></div>
             <h3>${esc(c.title)}</h3>
+            <ul class="cs-channels" aria-label="Channels we ran">${(c.channels || []).map(ch => `<li>${esc(ch)}</li>`).join('')}</ul>
           </div>
           <div class="cs-hero-stat"><span class="num">${esc(c.hero.n)}</span><span>${esc(c.hero.t)}</span></div>
           <div class="cs-stats">${c.stats.map(s => `<div><span class="num">${esc(s[0])}</span><small>${esc(s[1])}</small></div>`).join('')}</div>
           <div class="cs-body">
             <h4>The situation</h4><p>${esc(c.situation)}</p>
-            <h4>What we did on the search side</h4><ul>${c.did.map(d => `<li>${esc(d)}</li>`).join('')}</ul>
+            <h4>What we did</h4><ul>${c.did.map(d => `<li>${esc(d)}</li>`).join('')}</ul>
           </div>
           <blockquote class="cs-quote">
             <p>"${esc(c.quote)}"</p>
