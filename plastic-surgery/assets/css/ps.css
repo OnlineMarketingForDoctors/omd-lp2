@@ -84,24 +84,29 @@
 /* ==========================================================================
    Letter: full-bleed dusk photograph behind the notebook page
    ========================================================================== */
-.letter-bg.ps img{object-position:50% 38%}
-.letter-bg.ps::after{background:linear-gradient(90deg,rgba(0,0,0,.35),rgba(0,0,0,.2) 45%,rgba(0,0,0,.72))}
+.letter-bg.dusk img{object-position:50% 38%}
+.letter-bg.dusk::after{background:linear-gradient(90deg,rgba(0,0,0,.35),rgba(0,0,0,.2) 45%,rgba(0,0,0,.72))}
 .letter .letter-side .t-lead{max-width:44ch}
+/* the copy sits at the foot of the section, under the surgeon's shoulder,
+   so the headline never covers his face */
+.letter .letter-grid{align-items:end}
+.letter .letter-side{align-self:end;padding-top:0;padding-bottom:clamp(8px,2vw,24px)}
+.letter .paper{align-self:start}
 @media (max-width:920px){
-  .letter-bg.ps img{width:140%;object-position:62% 40%}
+  .letter-bg.dusk img{width:140%;object-position:62% 40%}
 }
 
 /* ==========================================================================
    Proof: stat ledger with a video card riding up over the letter section
    ========================================================================== */
-.proof{background:var(--off);position:relative;padding-block:0 clamp(72px,9vw,120px);overflow:visible}
-.proof-grid{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr);gap:clamp(28px,5vw,80px);align-items:start}
-.proof-copy{padding-top:clamp(56px,7vw,96px)}
+.proof{background:var(--off);position:relative;padding-block:clamp(72px,9vw,120px);overflow:visible}
+.proof-grid{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr);gap:clamp(28px,5vw,80px);align-items:center}
+.proof-copy{padding-top:0}
 .proof-copy h2{margin-bottom:18px;max-width:16ch}
 .proof-copy .t-lead{margin-bottom:12px}
 .proof .stat-row{grid-template-columns:repeat(2,1fr);gap:22px 32px;margin-top:34px}
 .proof .stat .num{font-size:clamp(2.6rem,4.6vw,4rem)}
-.proof-media{position:relative;margin-top:-96px}
+.proof-media{position:relative}
 .proof-media .video-card{aspect-ratio:16/10}
 .proof-quote{
   position:relative;margin:-54px 0 0 clamp(18px,4vw,64px);padding:26px 28px;
@@ -115,9 +120,8 @@
   font-family:var(--action);letter-spacing:.08em;text-transform:uppercase;font-size:.68rem;font-weight:600;
 }
 @media (max-width:920px){
-  .proof{padding-top:0}
-  .proof-grid{grid-template-columns:minmax(0,1fr);gap:26px}
-  .proof-media{order:-1;margin-top:-70px}
+  .proof-grid{grid-template-columns:minmax(0,1fr);gap:30px}
+  .proof-media{order:-1}
   .proof-quote{margin:-34px 0 0 14px;padding:20px 20px}
   .proof-copy{padding-top:6px}
   .proof .stat-row{grid-template-columns:1fr 1fr;gap:16px 18px}
@@ -261,6 +265,17 @@
    Founder / qualify: keep the base, swap the address card text
    ========================================================================== */
 .founder-imgs .addr b{color:var(--green)}
+
+/* ==========================================================================
+   Lightbox: tap to zoom at every size. Full-page website screenshots are
+   twenty screens tall, so fitted to 90vh they read as a strip; zoomed, they
+   render at native width and the wrapper scrolls.
+   ========================================================================== */
+.lightbox.is-image .zoom-hint{display:block}
+.lightbox.is-zoomed .zoom-hint{display:none}
+.lightbox.is-image.is-zoomed .frame{width:min(1500px,100%);max-width:100%}
+.lightbox.is-image.is-zoomed img{max-width:none;max-height:none;width:auto;height:auto}
+.lightbox.is-image.is-zoomed .zoomwrap{place-items:start center}
 
 /* ==========================================================================
    Small utilities

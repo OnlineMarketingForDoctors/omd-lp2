@@ -582,6 +582,11 @@
       true, `${d.client}: ${d.cap}`);
     lb.classList.remove('is-zoomed');
     lb.classList.toggle('has-set', n > 1);
+    // a full-page website screenshot fitted to the viewport is an unreadable
+    // strip, so anything much taller than it is wide opens already zoomed
+    const im = lbFrame.querySelector('img');
+    const autoZoom = () => { if (im.naturalHeight > im.naturalWidth * 1.6) lb.classList.add('is-zoomed'); };
+    if (im.complete && im.naturalWidth) autoZoom(); else im.addEventListener('load', autoZoom, { once: true });
     lastFocused = btn;
     if (btn.closest('.slides')) btn.closest('.slide').scrollIntoView({ block: 'nearest', inline: 'center', behavior: 'auto' });
   };
