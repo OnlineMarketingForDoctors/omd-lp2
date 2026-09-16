@@ -281,6 +281,9 @@
 .cs-shots .shot-card.tall img{height:100%;object-fit:cover;object-position:top}
 .cs-shots .shot-card.s1 figcaption{top:auto;bottom:0;background:linear-gradient(0deg,rgba(0,0,0,.85),transparent)}
 .cs-shots .portrait{grid-row:3;align-self:start}
+.cs-shots .shot-video .vshot{aspect-ratio:16/9;height:auto}
+.cs-shots .shot-video .vshot img{height:100%;object-fit:cover;object-position:center}
+.cs-shots .shot-video figcaption{pointer-events:none}
 @media (max-width:920px){
   .shot-card.s4{flex:0 0 min(78vw,440px);scroll-snap-align:start;margin-top:0}
   .cs-shots .shot-card.s1,.cs-shots .shot-card.s2,.cs-shots .shot-card.s3,.cs-shots .shot-card.s4{aspect-ratio:auto}

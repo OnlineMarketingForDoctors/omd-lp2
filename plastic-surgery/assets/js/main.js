@@ -95,6 +95,7 @@
       stats: [['113%', 'increase in organic traffic'], ['136%', 'more clicks from Google Ads at 25% lower cost per click'], ['95%', 'lower bounce rate']],
       situation: 'Thirty years of experience and his own day surgery in Double Bay, yet organic traffic had halved after a Google update, the lead magnet was not converting and younger, more aggressive clinics dominated search and social. Several agencies had promised and not delivered.',
       did: ['Positioning strategy around facial surgery, the work he wanted to be known for', 'High Performance SEO for the most competitive Sydney facial surgery keywords', 'Content marketing that lifted organic traffic 113% and cut bounce rate by 95%', 'Google Ads rebuilt: 136% more clicks, 73% more conversions, each click 25% cheaper', 'A lead magnet funnel that turned research visitors into consultation requests'],
+      video: ['d_AhqfJ34wY', 'Dr Hodgkinson on the results, in his own words'],
       shots: [['assets/cases/hodgkinson-banner.webp', 'Huyen Truong and Steven Tait with Dr Hodgkinson']],
       portrait: '',
       quote: 'The number of requests for consultations is at least doubled from the last 5 months, which is a very good sign.',
@@ -496,7 +497,7 @@
       <div class="cs-grid">
         <div>
           <div class="cs-head">
-            <div class="cs-name">${c.logo ? `<span class="logo-box"><img src="${esc(c.logo)}" alt=""></span>` : ''}<b>${esc(c.name)}</b><span class="cs-region">${esc(c.region)}</span></div>
+            <div class="cs-name">${c.logo ? `<span class="logo-box"><img src="${esc(c.logo)}" alt=""></span>` : ''}<b>${esc(c.name)}</b></div>
             <h3>${esc(c.title)}</h3>
             <ul class="cs-channels" aria-label="Channels we ran">${(c.channels || []).map(ch => `<li>${esc(ch)}</li>`).join('')}</ul>
           </div>
@@ -513,7 +514,8 @@
           <a class="cs-link" href="${esc(c.link)}" target="_blank" rel="noopener">Read the full case study <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
         </div>
         <div class="cs-shots">
-          ${c.shots.map((s, k) => `<figure class="shot-card s${k + 1}"><button class="shot-zoom" type="button" data-zoom="${esc(s[2] || s[0])}" data-client="${esc(c.name)}" data-cap="${esc(s[1])}" aria-label="Enlarge screenshot: ${esc(c.name)}, ${esc(s[1])}"><img src="${esc(s[0])}" alt="${esc(s[1])}" loading="lazy"></button><figcaption>${esc(s[1])}</figcaption></figure>`).join('')}
+          ${c.video ? `<figure class="shot-card s1 shot-video"><button class="vshot" type="button" data-video="${esc(c.video[0])}" aria-label="Play video: ${esc(c.video[1])}"><img src="https://i.ytimg.com/vi/${esc(c.video[0])}/maxresdefault.jpg" alt="" loading="lazy" onerror="this.onerror=null;this.src='https://i.ytimg.com/vi/${esc(c.video[0])}/hqdefault.jpg'"><span class="play" aria-hidden="true">${PLAY_SVG}</span></button><figcaption>${esc(c.video[1])}</figcaption></figure>` : ''}
+          ${c.shots.map((s, k) => `<figure class="shot-card s${k + (c.video ? 2 : 1)}"><button class="shot-zoom" type="button" data-zoom="${esc(s[2] || s[0])}" data-client="${esc(c.name)}" data-cap="${esc(s[1])}" aria-label="Enlarge screenshot: ${esc(c.name)}, ${esc(s[1])}"><img src="${esc(s[0])}" alt="${esc(s[1])}" loading="lazy"></button><figcaption>${esc(s[1])}</figcaption></figure>`).join('')}
           ${c.portrait ? `<div class="portrait"><img src="${esc(c.portrait)}" alt="${esc(c.who)}" loading="lazy"></div>` : ''}
         </div>
       </div>
