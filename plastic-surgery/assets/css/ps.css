@@ -155,15 +155,20 @@
 .svc-hero{position:relative;margin-bottom:clamp(28px,3.5vw,44px)}
 .svc-hero .svc-img{border-radius:12px;overflow:hidden;box-shadow:var(--shadow-lg);aspect-ratio:16/9;background:#111}
 .svc-hero .svc-img img{width:100%;height:100%;object-fit:cover}
+/* the intro card spans the photograph with a small inset each side, headline
+   on the left and the summary beside it */
 .svc-card{
-  position:relative;z-index:2;width:min(100%,560px);margin:-96px 0 0 clamp(0px,3vw,36px);
+  position:relative;z-index:2;margin:-96px clamp(16px,3vw,40px) 0;
+  display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr);column-gap:clamp(20px,3vw,44px);align-items:end;
   background:var(--white);color:var(--ink);border-radius:12px;padding:clamp(22px,2.6vw,34px);
   box-shadow:var(--shadow-lg);border-top:4px solid var(--green);
 }
-.svc-panel[data-side="right"] .svc-card{margin-left:auto;margin-right:clamp(0px,3vw,36px)}
-.svc-card .svc-kicker{font-family:var(--action);letter-spacing:.12em;text-transform:uppercase;font-size:.72rem;color:var(--green-deep);margin-bottom:10px}
-.svc-card h3{font-size:clamp(1.5rem,2.4vw,2.1rem);font-weight:800;letter-spacing:-.02em;line-height:1.08;margin-bottom:12px}
+.svc-card .svc-kicker{grid-column:1/-1;font-family:var(--action);letter-spacing:.12em;text-transform:uppercase;font-size:.72rem;color:var(--green-deep);margin-bottom:12px}
+.svc-card h3{font-size:clamp(1.5rem,2.4vw,2.1rem);font-weight:800;letter-spacing:-.02em;line-height:1.08;margin:0;text-wrap:balance}
 .svc-card p{margin:0;color:var(--ink-2);font-size:1rem;line-height:1.55}
+@media (max-width:1100px){
+  .svc-card{grid-template-columns:minmax(0,1fr);row-gap:12px}
+}
 .svc-body{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr);gap:clamp(24px,4vw,60px);align-items:start}
 .svc-copy p{color:var(--on-dark-2);margin-bottom:.9em}
 .svc-copy p strong{color:var(--white)}
@@ -222,8 +227,7 @@
   .svc-tab[aria-expanded="true"] .tab-chev{transform:rotate(180deg)}
   .svc-tab[aria-expanded="true"] .svc-ic{background:var(--green);color:var(--black)}
   .svc-rail #svcPanels{border-bottom:1px solid rgba(127,127,127,.24);padding:22px 0 26px}
-  .svc-card{margin:-56px 12px 0;width:auto;padding:20px}
-  .svc-panel[data-side="right"] .svc-card{margin-right:12px}
+  .svc-card{margin:-56px 12px 0;padding:20px}
   .svc-hero .svc-img{aspect-ratio:4/3}
 }
 
