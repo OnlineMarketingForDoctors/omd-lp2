@@ -95,7 +95,7 @@
       stats: [['113%', 'increase in organic traffic'], ['136%', 'more clicks from Google Ads at 25% lower cost per click'], ['95%', 'lower bounce rate']],
       situation: 'Thirty years of experience and his own day surgery in Double Bay, yet organic traffic had halved after a Google update, the lead magnet was not converting and younger, more aggressive clinics dominated search and social. Several agencies had promised and not delivered.',
       did: ['Positioning strategy around facial surgery, the work he wanted to be known for', 'High Performance SEO for the most competitive Sydney facial surgery keywords', 'Content marketing that lifted organic traffic 113% and cut bounce rate by 95%', 'Google Ads rebuilt: 136% more clicks, 73% more conversions, each click 25% cheaper', 'A lead magnet funnel that turned research visitors into consultation requests'],
-      shots: [['assets/cases/hodgkinson-banner.webp', 'Huyen Truong with Dr Hodgkinson and James Zagarella at the Double Bay clinic']],
+      shots: [['assets/cases/hodgkinson-banner.webp', 'Huyen Truong and Steven Tait with Dr Hodgkinson']],
       portrait: '',
       quote: 'The number of requests for consultations is at least doubled from the last 5 months, which is a very good sign.',
       who: 'Dr Darryl Hodgkinson', role: 'Plastic Surgeon, Double Bay Day Surgery',
