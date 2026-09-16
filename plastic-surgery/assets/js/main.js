@@ -587,7 +587,7 @@
   };
   const closeLightbox = () => {
     if (!lb.classList.contains('is-open')) return;
-    lb.classList.remove('is-open', 'is-image', 'has-set', 'is-zoomed');
+    lb.classList.remove('is-open', 'is-image', 'has-set', 'is-zoomed', 'is-tall');
     lbFrame.innerHTML = '';
     document.body.style.overflow = '';
     if (lastFocused && lastFocused.isConnected) lastFocused.focus();
@@ -612,12 +612,12 @@
       `<figcaption class="cap"><span class="cap-t"><b>${esc(d.client)}</b><span>${esc(d.cap)}</span></span>` +
       `${n > 1 ? `<span class="cap-n">${zoomIdx + 1} / ${n}</span>` : ''}</figcaption>`,
       true, `${d.client}: ${d.cap}`);
-    lb.classList.remove('is-zoomed');
+    lb.classList.remove('is-zoomed', 'is-tall');
     lb.classList.toggle('has-set', n > 1);
     // a full-page website screenshot fitted to the viewport is an unreadable
     // strip, so anything much taller than it is wide opens already zoomed
     const im = lbFrame.querySelector('img');
-    const autoZoom = () => { if (im.naturalHeight > im.naturalWidth * 1.6) lb.classList.add('is-zoomed'); };
+    const autoZoom = () => { if (im.naturalHeight > im.naturalWidth * 1.6) lb.classList.add('is-zoomed', 'is-tall'); };
     if (im.complete && im.naturalWidth) autoZoom(); else im.addEventListener('load', autoZoom, { once: true });
     lastFocused = btn;
     if (btn.closest('.slides')) btn.closest('.slide').scrollIntoView({ block: 'nearest', inline: 'center', behavior: 'auto' });
