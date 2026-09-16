@@ -20,7 +20,7 @@
       stats: [['1,500%', 'increase in website traffic'], ['540%', 'increase in keyword rankings'], ['£0.11', 'average cost per click on Meta, from 295,000 impressions']],
       situation: 'Mr Hazem Alfie brought twenty years as a consultant plastic surgeon to a newly opened clinic with no proper website, no social presence and two Google listings competing with each other. Previous agencies had not moved the needle.',
       did: ['Positioned the clinic, then built a new conversion-driven website with a brandscript and one-liner', 'Dedicated landing pages for tummy tuck, breast enlargement and labiaplasty, used in Google Ads', 'Full-funnel Facebook and Instagram campaigns: 295,000 impressions, 12,895 clicks, £0.11 a click', 'Ebook lead magnets with follow-up email sequences, and an AI SMS assistant that books calls from inbound leads', 'Two Google Business Profiles rebuilt for their own catchments, plus long-form procedure pages and a monthly blog'],
-      shots: [['assets/cases/delta-google-ads.webp', 'Google Ads campaign results'], ['assets/cases/delta-lead-magnets.webp', 'Ebook lead magnets with email follow-up'], ['assets/cases/delta-keywords-ranking.webp', 'Keyword rankings up 540% over the campaign'], ['assets/cases/delta-conversions.webp', 'Conversions by channel in Google Analytics']],
+      shots: [['assets/cases/delta-google-ads.webp', 'Google Ads campaign results'], ['assets/work/websites/delta-clinics-home--top.webp', 'The new Delta Clinics website', 'assets/work/websites/delta-clinics-home--full.webp'], ['assets/cases/delta-keywords-ranking.webp', 'Keyword rankings up 540% over the campaign'], ['assets/cases/delta-conversions.webp', 'Conversions by channel in Google Analytics']],
       portrait: 'assets/cases/delta-alfie.webp',
       quote: 'I have seen an increase of almost 730% in the total number of leads or enquiries that come to the clinic. They have designed a totally new website, they have been doing our SEO, and they have recently taken on our social media management.',
       who: 'Mr Hazem Alfie', role: 'Consultant Plastic Surgeon, Delta Clinics',
@@ -35,7 +35,7 @@
       stats: [['1,012%', 'growth in keyword rankings'], ['£230,875', 'revenue from 44 procedures booked through Google Ads in a year'], ['£4', 'average cost per lead on Meta, from 3.2 million impressions']],
       situation: 'Mr Mrinal Supriya operates across London, Milton Keynes and Northampton. The clinic was known for deep plane facelift and rhinoplasty in the profession, invisible for those terms on Google, and had a website that did not convert and almost no paid presence.',
       did: ['Positioned the clinic around the deep plane facelift, then rebuilt the website to convert', 'Landing pages for deep plane facelift, rhinoplasty and blepharoplasty for Google Ads: 2,889 leads and 44 booked procedures in a year', 'Full-funnel Facebook and Instagram campaigns: 3.2 million impressions, 41,290 clicks, about £4 a lead', 'An AI SMS assistant in the CRM that answers every enquiry within minutes and books the phone consultation', 'Three Google Business Profiles restructured, plus long-form procedure pages and a monthly blog'],
-      shots: [['assets/cases/bfc-ads-snapshot.webp', 'Google Ads: 2,889 leads, 44 procedures, £230,875 revenue'], ['assets/cases/bfc-lead-magnet.webp', 'Ebook lead magnets with email follow-up'], ['assets/cases/bfc-ai-sms.webp', 'The AI SMS assistant booking phone consultations'], ['assets/cases/bfc-ga4.webp', 'Organic search up 106% year on year']],
+      shots: [['assets/cases/bfc-ads-snapshot.webp', 'Google Ads: 2,889 leads, 44 procedures, £230,875 revenue'], ['assets/work/websites/british-face-clinic-home--top.webp', 'The new British Face Clinic website', 'assets/work/websites/british-face-clinic-home--full.webp'], ['assets/cases/bfc-ai-sms.webp', 'The AI SMS assistant booking phone consultations'], ['assets/cases/bfc-ga4.webp', 'Organic search up 106% year on year']],
       portrait: 'assets/cases/bfc-supriya.webp',
       quote: 'OMD completely renovated our website and gave it a much fresher look. They have also helped us with our SEO and with our paid Google campaign. Our organic keywords have grown by 1,000%, and we have seen an increase in our practice with a ROI of around 5.08.',
       who: 'Mr Mrinal Supriya', role: 'Facial Cosmetic Surgeon, British Face Clinic',
@@ -72,7 +72,7 @@
       link: 'https://onlinemarketingfordoctors.com/case-study/breast-and-body-clinic-uk/'
     },
     {
-      id: 'somia', name: 'Dr Naveen Somia', logo: '', region: 'Australia',
+      id: 'somia', name: 'Dr Naveen Somia', logo: 'assets/client-logos/naveen-somia-logo.webp', region: 'Australia',
       place: 'Bondi Junction, Sydney', specialty: 'Plastic surgery', months: '12 months',
       channels: ['Strategy', 'SEO', 'Landing pages', 'Reviews', 'Email'],
       title: 'Page one for eyelid surgery in Sydney, and 115% more new patients in a year.',
@@ -87,7 +87,7 @@
       link: 'https://onlinemarketingfordoctors.com/case-study-naveen-somia/'
     },
     {
-      id: 'hodgkinson', name: 'Dr Darryl Hodgkinson', logo: '', region: 'Australia',
+      id: 'hodgkinson', name: 'Dr Darryl Hodgkinson', logo: 'assets/client-logos/dr-hodgkinson-logo.webp', region: 'Australia',
       place: 'Double Bay, Sydney', specialty: 'Plastic surgery', months: '4 months',
       channels: ['Positioning', 'SEO', 'Google Ads', 'Content', 'Lead magnet funnel'],
       title: 'A world-renowned surgeon being outranked by younger clinics. Turned around in four months.',
@@ -102,7 +102,7 @@
       link: 'https://onlinemarketingfordoctors.com/case-study-dr-hodgkinson/'
     },
     {
-      id: 'attalla', name: 'Dr Mark Attalla', logo: '', region: 'Australia',
+      id: 'attalla', name: 'Dr Mark Attalla', logo: 'assets/client-logos/dr-mark-attalla-logo.webp', region: 'Australia',
       place: 'Melbourne', specialty: 'Cosmetic surgery', months: '8 months',
       channels: ['Website revamp', 'SEO', 'Google Ads', 'Content'],
       title: 'A penalised domain, a fresh start, and double the conversions on a quarter of the ad budget.',
@@ -514,7 +514,7 @@
           <a class="cs-link" href="${esc(c.link)}" target="_blank" rel="noopener">Read the full case study <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
         </div>
         <div class="cs-shots">
-          ${c.shots.map((s, k) => `<figure class="shot-card s${k + 1}"><button class="shot-zoom" type="button" data-zoom="${esc(s[0])}" data-client="${esc(c.name)}" data-cap="${esc(s[1])}" aria-label="Enlarge screenshot: ${esc(c.name)}, ${esc(s[1])}"><img src="${esc(s[0])}" alt="${esc(s[1])}" loading="lazy"></button><figcaption>${esc(s[1])}</figcaption></figure>`).join('')}
+          ${c.shots.map((s, k) => `<figure class="shot-card s${k + 1}"><button class="shot-zoom" type="button" data-zoom="${esc(s[2] || s[0])}" data-client="${esc(c.name)}" data-cap="${esc(s[1])}" aria-label="Enlarge screenshot: ${esc(c.name)}, ${esc(s[1])}"><img src="${esc(s[0])}" alt="${esc(s[1])}" loading="lazy"></button><figcaption>${esc(s[1])}</figcaption></figure>`).join('')}
           ${c.portrait ? `<div class="portrait"><img src="${esc(c.portrait)}" alt="${esc(c.who)}" loading="lazy"></div>` : ''}
         </div>
       </div>
