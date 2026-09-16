@@ -12,12 +12,15 @@
   padding-top:var(--header-h);isolation:isolate;overflow:hidden;background:var(--black);
 }
 .hero-video{position:absolute;inset:0;z-index:-1;overflow:hidden;background:var(--black)}
-.hero-video video,.hero-video img{width:100%;height:100%;object-fit:cover;object-position:50% 40%;display:block}
-.hero-video video{opacity:0;transition:opacity 1.2s var(--ease)}
+/* poster, then video, then the gradient: all three positioned with explicit
+   layers, because an in-flow video would paint beneath the absolute poster
+   the moment its fade-in finished */
+.hero-video video,.hero-video img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 40%;display:block}
+.hero-video img{z-index:0}
+.hero-video video{z-index:1;opacity:0;transition:opacity 1.2s var(--ease)}
 .hero-video video.is-ready{opacity:1}
-.hero-video img{position:absolute;inset:0}
 .hero-video::after{
-  content:"";position:absolute;inset:0;
+  content:"";position:absolute;inset:0;z-index:2;
   background:
     radial-gradient(70% 80% at 50% 45%,rgba(0,0,0,.28),rgba(0,0,0,.62) 70%,rgba(0,0,0,.78)),
     linear-gradient(180deg,rgba(0,0,0,.55) 0%,rgba(0,0,0,.1) 30%,rgba(0,0,0,.15) 60%,rgba(0,0,0,.9) 100%);
