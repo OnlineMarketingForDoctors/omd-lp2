@@ -497,7 +497,6 @@
         <div>
           <div class="cs-head">
             <div class="cs-name">${c.logo ? `<span class="logo-box"><img src="${esc(c.logo)}" alt=""></span>` : ''}<b>${esc(c.name)}</b><span class="cs-region">${esc(c.region)}</span></div>
-            <div class="place"><span>${esc(c.place)}</span><span>${esc(c.specialty)}</span><span>${esc(c.months)}</span></div>
             <h3>${esc(c.title)}</h3>
             <ul class="cs-channels" aria-label="Channels we ran">${(c.channels || []).map(ch => `<li>${esc(ch)}</li>`).join('')}</ul>
           </div>
@@ -545,6 +544,11 @@
   });
   mqCs.addEventListener('change', applyCsMode);
   applyCsMode();
+  // full-page website captures are far taller than wide: crop those to the top
+  $$('.cs-shots .shot-card img').forEach(im => {
+    const mark = () => { if (im.naturalHeight > im.naturalWidth * 1.35) im.closest('.shot-card').classList.add('tall'); };
+    if (im.complete && im.naturalWidth) mark(); else im.addEventListener('load', mark, { once: true });
+  });
 
   /* ---------------- lightbox: videos and screenshots ---------------- */
   const lb = $('#lightbox'), lbFrame = $('#lightboxFrame'), lbClose = $('#lightboxClose'),

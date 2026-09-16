@@ -258,7 +258,6 @@
 /* ==========================================================================
    Case studies: local screenshots + a note when the figures are older
    ========================================================================== */
-.cs-head .place span:nth-child(3)::before{content:"";display:inline-block;width:6px;height:6px;border-radius:50%;background:var(--green);margin-right:10px;vertical-align:middle}
 .cs-region{
   display:inline-flex;align-items:center;gap:6px;margin-left:8px;padding:2px 8px;border-radius:999px;
   background:rgba(255,255,255,.1);font-family:var(--action);font-size:.62rem;letter-spacing:.1em;text-transform:uppercase;color:var(--on-dark-2);
@@ -268,9 +267,24 @@
 .cs-channels{display:flex;flex-wrap:wrap;gap:6px;margin:-4px 0 18px}
 .cs-channels li{padding:5px 11px;border:1px solid var(--paper-line);border-radius:999px;font-family:var(--action);letter-spacing:.06em;text-transform:uppercase;font-size:.66rem;color:var(--on-dark-2)}
 /* a fourth screenshot card, tucked into the left of the second row */
-.shot-card.s4{grid-column:1/3;grid-row:2;margin-top:-56px;aspect-ratio:4/5;z-index:1}
+.shot-card.s4{grid-column:1/3;grid-row:2;z-index:1}
+/* screenshots are shown whole: each card takes its image's natural height and
+   the cards no longer ride over one another. Only full-page website captures,
+   which are several screens tall, are cropped to their top. */
+.cs-shots{align-items:start}
+.cs-shots .shot-card.s1,.cs-shots .shot-card.s2,.cs-shots .shot-card.s3,.cs-shots .shot-card.s4{aspect-ratio:auto;margin-top:0}
+.cs-shots .shot-card.s2,.cs-shots .shot-card.s3,.cs-shots .shot-card.s4{margin-top:0}
+.cs-shots .shot-card .shot-zoom{height:auto}
+.cs-shots .shot-card img{height:auto;object-fit:fill}
+.cs-shots .shot-card.tall{aspect-ratio:4/5}
+.cs-shots .shot-card.tall .shot-zoom{height:100%}
+.cs-shots .shot-card.tall img{height:100%;object-fit:cover;object-position:top}
+.cs-shots .shot-card.s1 figcaption{top:auto;bottom:0;background:linear-gradient(0deg,rgba(0,0,0,.85),transparent)}
+.cs-shots .portrait{grid-row:3;align-self:start}
 @media (max-width:920px){
-  .shot-card.s4{flex:0 0 min(78vw,440px);scroll-snap-align:start;margin-top:0;aspect-ratio:16/11}
+  .shot-card.s4{flex:0 0 min(78vw,440px);scroll-snap-align:start;margin-top:0}
+  .cs-shots .shot-card.s1,.cs-shots .shot-card.s2,.cs-shots .shot-card.s3,.cs-shots .shot-card.s4{aspect-ratio:auto}
+  .cs-shots .shot-card.tall{aspect-ratio:4/5}
 }
 
 /* ==========================================================================
