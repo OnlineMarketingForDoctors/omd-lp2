@@ -129,7 +129,10 @@
     ['manaf-khatib-home', 'Mr Manaf Khatib', 'Homepage, plastic surgeon, London'],
     ['the-hanson-clinic-deep-plane-facelift', 'The Hanson Clinic', 'Deep plane facelift page, Dublin'],
     ['cambridge-clear-beauty-facelift-lp', 'Cambridge Clear Beauty', 'Facelift landing page, Cambridge'],
-    ['british-face-clinic-rhinoplasty-lp', 'British Face Clinic', 'Rhinoplasty landing page']
+    ['british-face-clinic-rhinoplasty-lp', 'British Face Clinic', 'Rhinoplasty landing page'],
+    ['vijayan-home', 'Mr Roshan Vijayan', 'Homepage, consultant plastic surgeon, Hertfordshire'],
+    ['ullas-facial-plastic-surgery-home', 'Ullas Facial Plastic Surgery', 'Homepage, facial plastic surgery, Manchester'],
+    ['adore-life-rhinoplasty-lp', 'Mr Hagen Schumacher', 'Rhinoplasty landing page, Adore Life, London and Cambridge']
   ].map(([f, c, t]) => ({ thumb: `assets/work/websites/${f}--top.webp`, full: `assets/work/websites/${f}--full.webp`, client: c, cap: t }));
   // the hanson file was saved under a shorter name
   WEBSITES[4].thumb = 'assets/work/websites/hanson-clinic-deep-plane-facelift--top.webp';
