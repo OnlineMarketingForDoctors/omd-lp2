@@ -159,9 +159,6 @@
   // on the main site.
   const PHOTOS = [
     ['assets/work/photography/british-face-clinic-rhinoplasty-theatre.webp', 'British Face Clinic', 'Rhinoplasty in theatre, Harley Street'],
-    ['assets/work/photography/cosmex-consultation.webp', 'Cosmex', 'Reviewing imaging in consultation'],
-    ['assets/work/photography/cosmex-facial-assessment.webp', 'Cosmex', 'Facial assessment in the treatment room'],
-    ['assets/work/photography/cosmex-team.webp', 'Cosmex', 'The clinic team'],
     ['assets/work/photography/beyond-aesthetics-consultation.webp', 'Beyond Aesthetics', 'Facial assessment in consultation, Sydney'],
     ['assets/work/photography/beyond-aesthetics-reception.webp', 'Beyond Aesthetics', 'A patient arriving at reception, Sydney'],
     ['assets/work/photography/beyond-aesthetics-waiting-area.webp', 'Beyond Aesthetics', 'The waiting area, Sydney'],
@@ -171,6 +168,9 @@
     ['assets/work/photography/white-hill-clinic-interior.webp', 'White Hill Clinic', 'Showing a patient through the clinic'],
     ['assets/work/photography/white-hill-clinic-consultation-lounge.webp', 'White Hill Clinic', 'The consultation lounge'],
     ['assets/work/photography/white-hill-clinic-team-portrait.webp', 'White Hill Clinic', 'The full clinic team'],
+    ['assets/work/photography/cosmex-consultation.webp', 'Cosmex', 'Reviewing imaging in consultation'],
+    ['assets/work/photography/cosmex-facial-assessment.webp', 'Cosmex', 'Facial assessment in the treatment room'],
+    ['assets/work/photography/cosmex-team.webp', 'Cosmex', 'The clinic team'],
     ['2022/10/photography-amc-1.jpg', 'Clinic photography', 'Consultation, natural light'],
     ['2022/10/videography-lum.jpg', 'Lumiere Beauty Clinic', 'Film still, clinic introduction'],
     ['2022/10/photography-amc-2.jpg', 'Clinic photography', 'The team at work'],
