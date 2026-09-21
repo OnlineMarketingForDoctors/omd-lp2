@@ -159,6 +159,9 @@
   // on the main site.
   const PHOTOS = [
     ['assets/work/photography/british-face-clinic-rhinoplasty-theatre.webp', 'British Face Clinic', 'Rhinoplasty in theatre, Harley Street'],
+    ['assets/work/photography/cosmex-consultation.webp', 'Cosmex', 'Reviewing imaging in consultation'],
+    ['assets/work/photography/cosmex-facial-assessment.webp', 'Cosmex', 'Facial assessment in the treatment room'],
+    ['assets/work/photography/cosmex-team.webp', 'Cosmex', 'The clinic team'],
     ['assets/work/photography/beyond-aesthetics-consultation.webp', 'Beyond Aesthetics', 'Facial assessment in consultation, Sydney'],
     ['assets/work/photography/beyond-aesthetics-reception.webp', 'Beyond Aesthetics', 'A patient arriving at reception, Sydney'],
     ['assets/work/photography/beyond-aesthetics-waiting-area.webp', 'Beyond Aesthetics', 'The waiting area, Sydney'],
