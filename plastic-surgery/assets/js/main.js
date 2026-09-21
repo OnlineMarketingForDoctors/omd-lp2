@@ -216,19 +216,16 @@
     sections.forEach(s => io.observe(s));
   }
 
-  /* ---------------- hero video ---------------- */
-  const hv = $('#heroVideo');
-  if (hv) {
-    const ready = () => hv.classList.add('is-ready');
-    if (reduced) {
-      hv.removeAttribute('autoplay'); hv.pause();
-    } else {
-      hv.addEventListener('playing', ready, { once: true });
-      if (hv.readyState >= 3 && !hv.paused) ready();
-      const p = hv.play(); if (p && p.catch) p.catch(() => {});
-      // keep the video off while the tab is hidden, save battery on phones
-      document.addEventListener('visibilitychange', () => { if (document.hidden) hv.pause(); else { const q = hv.play(); if (q && q.catch) q.catch(() => {}); } });
-    }
+  /* ---------------- hero parallax (fine pointers only) ---------------- */
+  const viz = $('#heroViz');
+  if (viz && !reduced && window.matchMedia('(pointer: fine)').matches) {
+    const cards = $$('.fc', viz); let raf = 0, tx = 0, ty = 0;
+    const apply = () => { raf = 0; cards.forEach(c => { const d = +c.dataset.depth || 1; c.style.setProperty('--px', (tx * 14 * d) + 'px'); c.style.setProperty('--py', (ty * 10 * d) + 'px'); }); };
+    $('#hero').addEventListener('mousemove', (e) => {
+      const r = viz.getBoundingClientRect(); tx = ((e.clientX - r.left) / r.width - .5); ty = ((e.clientY - r.top) / r.height - .5);
+      if (!raf) raf = requestAnimationFrame(apply);
+    });
+    $('#hero').addEventListener('mouseleave', () => { tx = 0; ty = 0; if (!raf) raf = requestAnimationFrame(apply); });
   }
 
   /* ---------------- ticker ---------------- */
