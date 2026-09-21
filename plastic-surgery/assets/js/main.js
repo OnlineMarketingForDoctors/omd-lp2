@@ -155,7 +155,19 @@
 
   const SOCIAL_VIDEOS = ['1Yz3dmQhNy8', 'EEb5xjdOkyY', 'J4JO0OGQwfs', 'Q5k_kK4KRuw', 'fDvDVZYmfII'];
 
+  // newest shoots first. A local path is used as is; the rest are the library
+  // on the main site.
   const PHOTOS = [
+    ['assets/work/photography/british-face-clinic-rhinoplasty-theatre.webp', 'British Face Clinic', 'Rhinoplasty in theatre, Harley Street'],
+    ['assets/work/photography/beyond-aesthetics-consultation.webp', 'Beyond Aesthetics', 'Facial assessment in consultation, Sydney'],
+    ['assets/work/photography/beyond-aesthetics-reception.webp', 'Beyond Aesthetics', 'A patient arriving at reception, Sydney'],
+    ['assets/work/photography/beyond-aesthetics-waiting-area.webp', 'Beyond Aesthetics', 'The waiting area, Sydney'],
+    ['assets/work/photography/clinic-operating-theatre.webp', 'Clinic photography', 'Operating theatre'],
+    ['assets/work/photography/clinic-consultation-desk.webp', 'Clinic photography', 'Consultation with the surgeon'],
+    ['assets/work/photography/clinic-front-of-house.webp', 'Clinic photography', 'Front of house'],
+    ['assets/work/photography/clinic-interior.webp', 'Clinic photography', 'Showing a patient through the clinic'],
+    ['assets/work/photography/clinic-consultation-lounge.webp', 'Clinic photography', 'The consultation lounge'],
+    ['assets/work/photography/clinic-team-portrait.webp', 'Clinic photography', 'The full clinic team'],
     ['2022/10/photography-amc-1.jpg', 'Clinic photography', 'Consultation, natural light'],
     ['2022/10/videography-lum.jpg', 'Lumiere Beauty Clinic', 'Film still, clinic introduction'],
     ['2022/10/photography-amc-2.jpg', 'Clinic photography', 'The team at work'],
@@ -167,7 +179,7 @@
     ['2022/10/videography-for-medical-practices.jpg', 'On set', 'Production day at a clinic'],
     ['2022/10/photography-amc-5.jpg', 'Clinic photography', 'Treatment in progress'],
     ['2022/10/photography-amc-6.jpg', 'Clinic photography', 'Team portrait']
-  ].map(([f, c, t]) => ({ file: U + f, client: c, cap: t }));
+  ].map(([f, c, t]) => ({ file: f.startsWith('assets/') ? f : U + f, client: c, cap: t }));
 
   const CLIENTS = [
     ['delta-clinics-logo.webp', 'Delta Clinics'],
