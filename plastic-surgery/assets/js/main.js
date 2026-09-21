@@ -122,21 +122,19 @@
   const FEATURED = ['forbes-logo-2.webp', 'daily-mail-uk-logo.png', 'business-insider-logo-2.webp', 'entrepreneur-logo.png', 'Yahoo_Finance_logo.webp', 'mashable-logo.webp', 'usa-today-logo.webp', 'msn-logo-1.webp', 'london-insider-logo.webp', 'marketing-mag-logo.webp', 'thrive-global-logo.png', 'smart-company-logo-1.png', 'herald-sun.png', 'new-york-weekly.webp', 'sem_logo.webp'];
 
   /* ---------------- data: service galleries ---------------- */
+  // newest work first
   const WEBSITES = [
+    ['vijayan-home', 'Mr Roshan Vijayan', 'Homepage, consultant plastic surgeon, Hertfordshire'],
+    ['ullas-facial-plastic-surgery-home', 'Ullas Facial Plastic Surgery', 'Homepage, facial plastic surgery, Manchester'],
+    ['adore-life-rhinoplasty-lp', 'Mr Hagen Schumacher', 'Rhinoplasty landing page, Adore Life, London and Cambridge'],
     ['british-face-clinic-home', 'British Face Clinic', 'Homepage, Harley Street facial surgery clinic'],
     ['delta-clinics-home', 'Delta Clinics', 'Homepage, Harley Street and Finchley'],
     ['british-face-clinic-deep-plane-facelift-lp', 'British Face Clinic', 'Deep plane facelift landing page'],
     ['manaf-khatib-home', 'Mr Manaf Khatib', 'Homepage, plastic surgeon, London'],
-    ['the-hanson-clinic-deep-plane-facelift', 'The Hanson Clinic', 'Deep plane facelift page, Dublin'],
+    ['hanson-clinic-deep-plane-facelift', 'The Hanson Clinic', 'Deep plane facelift page, Dublin'],
     ['cambridge-clear-beauty-facelift-lp', 'Cambridge Clear Beauty', 'Facelift landing page, Cambridge'],
-    ['british-face-clinic-rhinoplasty-lp', 'British Face Clinic', 'Rhinoplasty landing page'],
-    ['vijayan-home', 'Mr Roshan Vijayan', 'Homepage, consultant plastic surgeon, Hertfordshire'],
-    ['ullas-facial-plastic-surgery-home', 'Ullas Facial Plastic Surgery', 'Homepage, facial plastic surgery, Manchester'],
-    ['adore-life-rhinoplasty-lp', 'Mr Hagen Schumacher', 'Rhinoplasty landing page, Adore Life, London and Cambridge']
+    ['british-face-clinic-rhinoplasty-lp', 'British Face Clinic', 'Rhinoplasty landing page']
   ].map(([f, c, t]) => ({ thumb: `assets/work/websites/${f}--top.webp`, full: `assets/work/websites/${f}--full.webp`, client: c, cap: t }));
-  // the hanson file was saved under a shorter name
-  WEBSITES[4].thumb = 'assets/work/websites/hanson-clinic-deep-plane-facelift--top.webp';
-  WEBSITES[4].full = 'assets/work/websites/hanson-clinic-deep-plane-facelift--full.webp';
 
   const GADS = [
     ['results-ppc-performance-google-search-ads-ranking-result-deep-plane-facelift-near-london-for-british-face-clinic-by-omd-30032026.webp', 'Google Search ad, top position for deep plane facelift near London'],
