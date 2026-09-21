@@ -295,12 +295,14 @@
 .lightbox.is-image.is-zoomed .frame{width:min(1500px,100%);max-width:100%}
 .lightbox.is-image.is-zoomed img{max-width:none;max-height:none;width:auto;height:auto}
 .lightbox.is-image.is-zoomed .zoomwrap{place-items:start center}
+/* a full-page website screenshot fills the frame width and scrolls straight
+   down, the way the page itself does. Rendering it at its native 1400px put
+   the sides out of reach on any window narrower than that, so it panned in
+   two directions at once. Wide screenshots still zoom to native size, where
+   panning across is the only way to read the small print. */
+.lightbox.is-image.is-zoomed.is-tall img{width:100%;max-width:100%;height:auto;max-height:none}
 @media (max-width:700px){
-  /* on a phone a tall website screenshot zooms to the screen width and scrolls
-     down; a wide one still zooms to native size and pans, so the tap does
-     something visible */
   .lightbox.is-image.is-zoomed .frame{width:100%}
-  .lightbox.is-image.is-zoomed.is-tall img{width:100%;max-width:100%}
 }
 
 /* ==========================================================================
