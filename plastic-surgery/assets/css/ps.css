@@ -173,6 +173,10 @@
 .press-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:12px;margin-top:14px}
 .press-grid div{background:var(--white);border-radius:10px;height:84px;display:grid;place-items:center;padding:16px}
 .press-grid img{max-height:40px;max-width:100%;width:auto;height:auto;object-fit:contain}
+/* a square mark rather than a wordmark: capped at 40px it reads as a stamp
+   next to logos three times its width, so it fills the tile instead */
+.press-grid .sq{padding:10px}
+.press-grid .sq img{max-height:64px}
 /* numbered steps only where the content really is a sequence */
 .svc-steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:14px;margin:14px 0 0;padding:0;list-style:none}
 .steps-nav{display:none}
