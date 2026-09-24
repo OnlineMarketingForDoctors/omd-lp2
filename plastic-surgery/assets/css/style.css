@@ -1032,6 +1032,17 @@ blockquote{margin:0}
 .chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
 .chips li{border:1px solid var(--paper-line);padding:5px 10px;border-radius:4px;font-family:var(--action);letter-spacing:.08em;font-size:.72rem;text-transform:uppercase}
 .footer-bottom{margin-top:36px;padding-top:20px;border-top:1px solid var(--paper-line);display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;font-size:.8rem;color:var(--on-dark-3)}
+/* company details and the legal links, on their own full-width row under
+   the two lines above. Each item is its own element so a narrow screen
+   breaks between items rather than through one. */
+.footer-bottom .legal{flex:1 0 100%;display:flex;flex-wrap:wrap;align-items:center;gap:4px 12px}
+/* the separator trails its own item, so a wrap leaves the pipe at the end
+   of a line rather than dangling at the start of the next one */
+.footer-bottom .legal > *:not(:last-child)::after{content:"|";margin-left:12px;opacity:.35}
+.footer-bottom .legal a{color:var(--on-dark-2);text-decoration:none}
+.footer-bottom .legal a span,.footer-bottom .legal a{border-bottom:0}
+.footer-bottom .legal a:hover{color:var(--white)}
+.footer-bottom .legal a:not(:last-child)::after{color:var(--on-dark-3)}
 @media (max-width:920px){.footer-grid{grid-template-columns:1fr}}
 
 /* ==========================================================================
