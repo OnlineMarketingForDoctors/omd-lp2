@@ -50,6 +50,23 @@
   .viz-quotes .fc-avatar{margin-top:5px}
 }
 
+/* the hero carries more copy than the shared scale was drawn for: a six
+   line headline and a five line paragraph. The display size comes down a
+   step here and the gaps tighten, so the call to action stays close to
+   the fold rather than a screen below it. */
+.hero h1{font-size:clamp(2.2rem,3.3vw,2.95rem);margin-bottom:14px}
+.hero .hero-sub{margin-bottom:18px}
+.hero .points{gap:8px;margin-bottom:22px}
+
+/* each sentence of the headline gets its own block and balances its own
+   lines, so the second never runs on from "list." and neither is left
+   with a one-word last line */
+.h1-line{display:block;text-wrap:balance}
+
+/* the closing line of the hero paragraph sits on its own, a line clear of
+   the copy above it rather than running straight on */
+.hero-sub-cta{display:block;margin-top:.7em}
+
 /* ==========================================================================
    Letter: full-bleed dusk photograph behind the notebook page
    ========================================================================== */
