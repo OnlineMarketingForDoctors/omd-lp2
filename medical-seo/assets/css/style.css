@@ -997,8 +997,9 @@ blockquote{margin:0}
   width:min(760px,100%);max-height:calc(100dvh - 2*var(--gutter));display:flex;flex-direction:column;
   background:var(--white);color:var(--ink);border-radius:12px;overflow:hidden;box-shadow:var(--shadow-lg);
 }
-.modal-head{flex:none;display:flex;align-items:center;justify-content:space-between;gap:16px;padding:15px 18px;border-bottom:1px solid rgba(0,0,0,.09)}
-.modal-title{font-size:1.02rem;margin:0}
+/* no title of our own: the widget carries its own heading, so the bar holds
+   nothing but the close button */
+.modal-head{flex:none;display:flex;align-items:center;justify-content:flex-end;padding:10px 12px}
 .modal-close{flex:none;width:40px;height:40px;display:grid;place-items:center;border-radius:50%;background:rgba(0,0,0,.06)}
 .modal-close:hover{background:rgba(0,0,0,.12)}
 .modal-close svg{width:22px;height:22px}

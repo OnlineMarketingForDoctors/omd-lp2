@@ -84,6 +84,8 @@ figure{margin:0}
 .btn-ghost{border:2px solid currentColor;padding:calc(1.05em - 2px) calc(1.6em - 2px)}
 .btn-ghost:hover{background:rgba(255,255,255,.08)}
 .btn-lg{font-size:1.1rem;padding:1.15em 2em}
+/* after .btn-lg, so the border still comes out of the padding */
+.btn-ghost.btn-lg{padding:calc(1.15em - 2px) calc(2em - 2px)}
 .btn svg{width:1.05em;height:1.05em}
 
 /* ==========================================================================
@@ -973,6 +975,42 @@ blockquote{margin:0}
 .cal iframe{width:100%;border:0;min-height:680px;display:block}
 .cal .cal-fallback{padding:40px;text-align:center}
 @media (max-width:920px){.book-grid{grid-template-columns:1fr}}
+
+/* the contact form stands much taller than the calendar it replaced, so the
+   copy sits at the top of the row and rides down beside it rather than
+   leaving a screen of empty photograph */
+.contact .book-grid{align-items:start}
+.contact .book-copy{position:sticky;top:calc(var(--header-h) + 28px)}
+/* a taller section shows more of the photograph, so it carries more shade */
+.contact .book-bg::after{background:linear-gradient(180deg,rgba(0,0,0,.58) 0%,rgba(0,0,0,.74) 45%,rgba(0,0,0,.86) 100%)}
+.contact-or{margin:18px 0 24px}
+.contact-or .btn{margin-top:10px}
+.contact-form,.contact-form iframe{min-height:0}
+@media (max-width:920px){.contact .book-copy{position:static}}
+
+/* ==========================================================================
+   Dialog: the booking calendar, opened from every booking CTA
+   ========================================================================== */
+.modal{position:fixed;inset:0;z-index:210;background:rgba(0,0,0,.84);display:none;align-items:center;justify-content:center;padding:var(--gutter)}
+.modal.is-open{display:flex}
+.modal-card{
+  width:min(760px,100%);max-height:calc(100dvh - 2*var(--gutter));display:flex;flex-direction:column;
+  background:var(--white);color:var(--ink);border-radius:12px;overflow:hidden;box-shadow:var(--shadow-lg);
+}
+/* no title of our own: the widget carries its own heading, so the bar holds
+   nothing but the close button */
+.modal-head{flex:none;display:flex;align-items:center;justify-content:flex-end;padding:10px 12px}
+.modal-close{flex:none;width:40px;height:40px;display:grid;place-items:center;border-radius:50%;background:rgba(0,0,0,.06)}
+.modal-close:hover{background:rgba(0,0,0,.12)}
+.modal-close svg{width:22px;height:22px}
+/* a fixed body that scrolls. The widget sets its own height once its script
+   loads; this way the dialog is usable whether or not that happens */
+.modal-body{flex:1 1 auto;min-height:0;overflow:auto;-webkit-overflow-scrolling:touch;background:var(--white)}
+.modal-body iframe{display:block;width:100%;height:100%;min-height:620px;border:0}
+@media (max-width:700px){
+  .modal{padding:0}
+  .modal-card{width:100%;height:100dvh;max-height:100dvh;border-radius:0}
+}
 
 /* ==========================================================================
    Locations

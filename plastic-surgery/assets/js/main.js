@@ -653,11 +653,39 @@
   lbClose.addEventListener('click', closeLightbox);
   lb.addEventListener('click', (e) => { if (e.target === lb || e.target === lbFrame) closeLightbox(); });
   document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape') { closeLightbox(); setDrawer(false); return; }
+    if (e.key === 'Escape') { closeLightbox(); if (typeof closeBook === 'function') closeBook(); setDrawer(false); return; }
     if (!lb.classList.contains('has-set')) return;
     if (e.key === 'ArrowLeft') { e.preventDefault(); showZoom(zoomIdx - 1); }
     else if (e.key === 'ArrowRight') { e.preventDefault(); showZoom(zoomIdx + 1); }
   });
+
+  /* ---------------- booking dialog ----------------
+     every booking CTA opens the calendar here instead of scrolling to it. The
+     href still points at the contact form, so without JS the click lands
+     somewhere useful rather than nowhere. */
+  const bookModal = $('#bookModal');
+  if (bookModal) {
+    const bookFrame = $('iframe', bookModal), bookClose = $('#bookModalClose');
+    let bookLastFocused = null;
+    const openBook = () => {
+      bookLastFocused = document.activeElement;
+      // first open pays for the calendar; later ones reuse the loaded frame
+      if (!bookFrame.src && bookFrame.dataset.src) bookFrame.src = bookFrame.dataset.src;
+      bookModal.classList.add('is-open');
+      document.body.style.overflow = 'hidden';
+      bookClose.focus();
+    };
+    var closeBook = () => {
+      if (!bookModal.classList.contains('is-open')) return;
+      bookModal.classList.remove('is-open');
+      document.body.style.overflow = '';
+      if (bookLastFocused && bookLastFocused.isConnected) bookLastFocused.focus();
+      bookLastFocused = null;
+    };
+    $$('[data-book]').forEach(b => b.addEventListener('click', (e) => { e.preventDefault(); setDrawer(false); openBook(); }));
+    bookClose.addEventListener('click', closeBook);
+    bookModal.addEventListener('click', (e) => { if (e.target === bookModal) closeBook(); });
+  }
 
   /* ---------------- back to top ---------------- */
   const toTop = $('#toTop');
