@@ -143,3 +143,17 @@
     object-fit:cover;object-position:45% 10%;transform:translate(-24%,-6%);
   }
 }
+
+/* on a phone the copy would cover her whatever the crop, so the photo
+   becomes a picture of its own above the copy, fading into the black */
+@media (max-width:920px){
+  #why{display:block;min-height:0;padding-top:0;background:var(--black)}
+  #why .ai-bg{position:relative;inset:auto;z-index:0;aspect-ratio:4/3;max-height:70vh;overflow:hidden}
+  #why .ai-bg img{object-position:42% 30%}
+  #why .ai-bg::after{background:linear-gradient(180deg,rgba(0,0,0,0) 55%,rgba(0,0,0,.65) 82%,var(--black) 100%)}
+  #why .ai-grid{margin-top:-48px;position:relative}
+}
+@media (max-width:600px){
+  #why .ai-bg{aspect-ratio:4/5}
+  #why .ai-bg img{object-position:40% 20%}
+}
