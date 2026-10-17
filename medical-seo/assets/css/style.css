@@ -986,6 +986,9 @@ blockquote{margin:0}
 .contact-or{margin:18px 0 24px}
 .contact-or .btn{margin-top:10px}
 .contact-form,.contact-form iframe{min-height:0}
+/* the HighLevel fields run edge to edge inside their frame, so the white
+   card supplies the inset around them */
+.contact-form{padding:clamp(14px,3vw,28px)}
 @media (max-width:920px){.contact .book-copy{position:static}}
 
 /* ==========================================================================
