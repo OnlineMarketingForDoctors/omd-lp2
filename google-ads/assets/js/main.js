@@ -60,7 +60,7 @@
       stats: [['¼', 'of the previous Google Ads budget'], ['331%', 'more conversions from paid search'], ['101%', 'more visits from paid search']],
       situation: 'Dr Mark Attalla had years of digital marketing spend behind him, an expensive Google Ads account, and a domain penalised by a Google update. The goal was more leads, better leads, and a lower cost per lead.',
       did: ['Single keyword ad groups, so the advert copy matches the search almost word for word and click-through rate climbs', 'Bidding strategy, and negotiation with Google, so the clinic stopped paying for clicks that never converted', 'A website revamp for conversion before any more traffic was bought', 'New landing pages for every liposuction variant patients search: stomach, thigh, arm, double chin, cost'],
-      shots: [['assets/cases/attalla-fig1.webp', 'Paid search conversions up 331%, from 206 to 887'], ['assets/cases/attalla-website.webp', 'The website before and after the revamp'], ['assets/cases/attalla-fig2.webp', 'Top for liposuction Melbourne on Maps and search']],
+      shots: [['assets/cases/attalla-fig1.webp', 'Paid search conversions up 331%, from 206 to 887', '', 'fit'], ['assets/cases/attalla-website.webp', 'The website before and after the revamp'], ['assets/cases/attalla-fig2.webp', 'Top for liposuction Melbourne on Maps and search']],
       portrait: 'assets/cases/attalla-portrait.webp',
       quote: 'They organised the website in a way that is easier for the clients to go through. We found that we are spending almost one-fourth of our previous budget and getting double the conversion.',
       who: 'Dr Mark Attalla', role: 'Cosmetic Surgeon and Owner, Chelsea Cosmetics Melbourne',
@@ -88,7 +88,7 @@
       stats: [['618%', 'more website conversions year on year'], ['4', 'procedure landing pages built for the ads'], ['29', 'extra leads a month from one lead magnet']],
       situation: 'Mr Aftab Siddiqui was competing in Manchester against clinics with years of history. A local agency and an international one had both failed to move bookings, and the Google Ads account was spending without producing enquiries.',
       did: ['Google Ads copy rewritten around what patients weigh up: price from, payment plans, free consultation, aftercare', 'Landing pages for tummy tuck, breast augmentation, breast reduction and mummy makeover', 'A CRM so every ad enquiry is tracked from the click to the booking', 'Lead magnets to capture the patients who click, research and are not ready yet'],
-      shots: [['assets/cases/bbc-google-ads1.webp', 'Google Search ad, liposuction'], ['assets/cases/bbc-google-ads2.webp', 'Google Search ad, free consultation offer'], ['assets/cases/bbc-landing-page.webp', 'Mummy makeover landing page']],
+      shots: [['assets/cases/bbc-google-ads1.webp', 'Google Search ad, liposuction', '', 'fit'], ['assets/cases/bbc-google-ads2.webp', 'Google Search ad, free consultation offer', '', 'fit'], ['assets/cases/bbc-landing-page.webp', 'Mummy makeover landing page']],
       portrait: 'assets/cases/bbc-siddiqui.webp',
       quote: 'They set up a CRM which enables me to track and monitor how my website performs. The website conversion number has gone up by 618% compared to the same time last year.',
       who: 'Mr Aftab Siddiqui', role: 'Plastic Surgeon, Breast and Body Clinic UK',
@@ -381,7 +381,7 @@
           `}
         </div>
         <div class="cs-shots">
-          ${c.shots.map((s, k) => `<figure class="shot-card s${k + 1}"><button class="shot-zoom" type="button" data-zoom="${esc(s[0])}" data-client="${esc(c.name)}" data-cap="${esc(s[1])}" aria-label="Enlarge screenshot: ${esc(c.name)}, ${esc(s[1])}"><img src="${esc(s[0])}" alt="${esc(s[1])}" loading="lazy"></button><figcaption>${esc(s[1])}</figcaption></figure>`).join('')}
+          ${c.shots.map((s, k) => `<figure class="shot-card s${k + 1}${s[3] === 'fit' ? ' is-fit' : ''}"><button class="shot-zoom" type="button" data-zoom="${esc(s[0])}" data-client="${esc(c.name)}" data-cap="${esc(s[1])}" aria-label="Enlarge screenshot: ${esc(c.name)}, ${esc(s[1])}"><img src="${esc(s[0])}" alt="${esc(s[1])}" loading="lazy"></button><figcaption>${esc(s[1])}</figcaption></figure>`).join('')}
           ${c.portrait ? `<div class="portrait"><img src="${c.portrait}" alt="${c.who}" loading="lazy"></div>` : ''}
         </div>
       </div>

@@ -117,3 +117,13 @@
   .fc-ad .hl{display:none}
   .fc-stat small{display:none}
 }
+
+/* ---------------- case study cards that show the whole image ----------------
+   short, wide ad screenshots lose their edges in the shared cropped cards,
+   so these take the image's own shape and carry the caption underneath */
+.shot-card.is-fit{aspect-ratio:auto;align-self:start}
+.shot-card.is-fit .shot-zoom{height:auto;padding:12px 12px 0;background:var(--white)}
+.shot-card.is-fit img{height:auto;object-fit:contain}
+.shot-card.is-fit figcaption,
+.shot-card.s1.is-fit figcaption{position:static;background:var(--white);color:var(--ink-2);padding:10px 12px 12px}
+.shot-card.s2.is-fit,.shot-card.s3.is-fit,.shot-card.s1.is-fit + .shot-card{margin-top:0}
