@@ -1,0 +1,200 @@
+{
+ "ads": {
+  "Aesthetic Clinics": [
+   {
+    "file": "assets/results/ads/aesthetic-clinics/iccm--google-ads-face-lift-surgery.webp",
+    "client": "ICCM",
+    "caption": "Google Search ad, face lift surgery"
+   },
+   {
+    "file": "assets/results/ads/aesthetic-clinics/iccm--google-ads-gynaecomastia-sydney.webp",
+    "client": "ICCM",
+    "caption": "Google Search ad, gynaecomastia Sydney"
+   },
+   {
+    "file": "assets/results/ads/aesthetic-clinics/lumiere--google-ads-liposuction-sydney.webp",
+    "client": "Lumiere",
+    "caption": "Google Search ad, liposuction Sydney"
+   },
+   {
+    "file": "assets/results/ads/aesthetic-clinics/shire-aesthetics-vein-clinic--google-ads-non-surgical-thread-lift.webp",
+    "client": "Shire Aesthetics & Vein Clinic",
+    "caption": "Google Search ad, non-surgical thread lift"
+   }
+  ],
+  "Medical eCommerce": [
+   {
+    "file": "assets/results/ads/medical-ecommerce/allmedic--google-ads-1th-position-for-skin-repair-cream.webp",
+    "client": "Allmedic",
+    "caption": "Google Shopping, first position for skin repair cream"
+   }
+  ],
+  "Ophthalmologists": [
+   {
+    "file": "assets/results/ads/ophthalmologists/the-harley-street-eye-centre--google-ads-performance-example-from-harley-street-eye-centre-marketing-for-ophthalmology-clinic.webp",
+    "client": "The Harley Street Eye Centre",
+    "caption": "Google Ads account, 171 conversions in 30 days at £51.66 each"
+   },
+   {
+    "file": "assets/results/ads/ophthalmologists/the-harley-street-eye-centre--google-ads-result-for-laser-eye-surgery-harley-street-marketing-for-ophthalmology-clinics-uk.webp",
+    "client": "The Harley Street Eye Centre",
+    "caption": "Google Search ad, laser eye surgery Harley Street"
+   },
+   {
+    "file": "assets/results/ads/ophthalmologists/the-harley-street-eye-centre--google-ads-top-ranking-for-laser-eye-surgery-london-marketing-for-marketing-for-ophthalmology-c.webp",
+    "client": "The Harley Street Eye Centre",
+    "caption": "Google Search ad, top position for laser eye surgery London"
+   },
+   {
+    "file": "assets/results/ads/ophthalmologists/the-harley-street-eye-centre--keratoconus-surgery-top-google-ads-result-marketing-for-ophthalmology-uk.webp",
+    "client": "The Harley Street Eye Centre",
+    "caption": "Google Search ad, top position for keratoconus surgery"
+   },
+   {
+    "file": "assets/results/ads/ophthalmologists/the-harley-street-eye-centre--the-harley-street-eye-centre-ophtalmology-clinic-ranking-on-google-maps-for-the-keyword-laser-e.webp",
+    "client": "The Harley Street Eye Centre",
+    "caption": "Google Maps, laser eye surgery London"
+   },
+   {
+    "file": "assets/results/ads/ophthalmologists/the-vision-surgeon--the-vision-surgeon-ranks-on-google-maps-ads-for-laser-eye-surgery-colchester-keyword-2.webp",
+    "client": "The Vision Surgeon",
+    "caption": "Google Maps ad, laser eye surgery Colchester"
+   },
+   {
+    "file": "assets/results/ads/ophthalmologists/the-vision-surgeon--the-vision-surgeon-ranks-on-google-maps-ads-for-laser-eye-surgery-colchester-keyword.webp",
+    "client": "The Vision Surgeon",
+    "caption": "Google Maps ad, laser eye surgery Colchester"
+   },
+   {
+    "file": "assets/results/ads/ophthalmologists/the-vision-surgeon--the-vision-surgeon-ranks-on-google-maps-ads-for-lasik-eye-surgery-essex-keyword.webp",
+    "client": "The Vision Surgeon",
+    "caption": "Google Maps ad, LASIK eye surgery Essex"
+   },
+   {
+    "file": "assets/results/ads/ophthalmologists/the-vision-surgeon--the-vision-surgeon-ranks-on-google-maps-ads-for-lens-replacement-surgery-colchester-keyword.webp",
+    "client": "The Vision Surgeon",
+    "caption": "Google Maps ad, lens replacement surgery Colchester"
+   },
+   {
+    "file": "assets/results/ads/ophthalmologists/vision-clinic-sydney--google-ads-cost-of-eye-laser-surgery.webp",
+    "client": "Vision Clinic Sydney",
+    "caption": "Google Search ad, cost of eye laser surgery"
+   },
+   {
+    "file": "assets/results/ads/ophthalmologists/vision-clinic-sydney--google-ads-laser-eye-surgery.webp",
+    "client": "Vision Clinic Sydney",
+    "caption": "Google Search ad, laser eye surgery"
+   }
+  ],
+  "Hair Transplant Clinics": [
+   {
+    "file": "assets/results/ads/hair-transplant-clinics/fortes-clinic--fortes-clinic-shown-in-google-sponsored-results-for-the-keyword-fue-or-fut-hair-transplant-lond.webp",
+    "client": "Fortes Clinic",
+    "caption": "Google Search ad, FUE or FUT hair transplant London"
+   },
+   {
+    "file": "assets/results/ads/hair-transplant-clinics/hair-transplants-melbourne--hair-transplants-melbourne-ranks-on-google-search-ads-for-hair-transplant-melbourne-keyword.webp",
+    "client": "Hair Transplants Melbourne",
+    "caption": "Google Search ad, hair transplant Melbourne"
+   },
+   {
+    "file": "assets/results/ads/hair-transplant-clinics/new-hair-clinic--google-ads-hair-transplant-perth.webp",
+    "client": "New Hair Clinic",
+    "caption": "Google Search ad, hair transplant Perth"
+   },
+   {
+    "file": "assets/results/ads/hair-transplant-clinics/the-crown-clinic--crown-clinic-ranking-on-google-maps-ads-for-the-keyword-hair-transplant-melbourne.webp",
+    "client": "The Crown Clinic",
+    "caption": "Google Maps ad, hair transplant Melbourne"
+   },
+   {
+    "file": "assets/results/ads/hair-transplant-clinics/the-crown-clinic--crown-clinic-ranks-on-google-search-ads-for-hair-transplant-keyword.webp",
+    "client": "The Crown Clinic",
+    "caption": "Google Search ad, hair transplant"
+   },
+   {
+    "file": "assets/results/ads/hair-transplant-clinics/the-crown-clinic--google-ads-hair-transplant-cost.webp",
+    "client": "The Crown Clinic",
+    "caption": "Google Search ad, hair transplant cost"
+   },
+   {
+    "file": "assets/results/ads/hair-transplant-clinics/the-crown-clinic--google-hair-replacement-surgery.webp",
+    "client": "The Crown Clinic",
+    "caption": "Google Search ad, hair replacement surgery"
+   }
+  ],
+  "Neurology": [
+   {
+    "file": "assets/results/ads/neurology/cura-medical-specialists--google-ads-neurologist-sydney-location-2.webp",
+    "client": "Cura Medical Specialists",
+    "caption": "Google Maps ad, neurologist Sydney"
+   },
+   {
+    "file": "assets/results/ads/neurology/cura-medical-specialists--google-ads-neurologist-sydney-location-3.webp",
+    "client": "Cura Medical Specialists",
+    "caption": "Google Maps ad, neurologist Sydney"
+   },
+   {
+    "file": "assets/results/ads/neurology/cura-medical-specialists--google-ads-neurologist-sydney-location.webp",
+    "client": "Cura Medical Specialists",
+    "caption": "Google Maps ad, neurologist Sydney"
+   }
+  ],
+  "Plastic Surgeons": [
+   {
+    "file": "assets/results/ads/plastic-surgeons/british-face-clinic--british-face-clinic-ranking-on-both-google-ads-for-the-keyword-facelift-near-me.webp",
+    "client": "British Face Clinic",
+    "caption": "Google Search ad, facelift near me"
+   },
+   {
+    "file": "assets/results/ads/plastic-surgeons/british-face-clinic--british-face-clinic-ranks-on-google-search-ads-for-deep-plane-facelift-near-london-keyword.webp",
+    "client": "British Face Clinic",
+    "caption": "Google Search ad, deep plane facelift near London"
+   },
+   {
+    "file": "assets/results/ads/plastic-surgeons/british-face-clinic--british-face-clinic-ranks-on-google-search-ads-for-facial-surgeon-uk-keyword.webp",
+    "client": "British Face Clinic",
+    "caption": "Google Search ad, facial surgeon UK"
+   },
+   {
+    "file": "assets/results/ads/plastic-surgeons/british-face-clinic--british-face-clinic-ranks-on-google-search-ads-for-rhinoplasty-london-keyword-2.webp",
+    "client": "British Face Clinic",
+    "caption": "Google Search ad, rhinoplasty London"
+   },
+   {
+    "file": "assets/results/ads/plastic-surgeons/british-face-clinic--british-face-clinic-ranks-on-google-search-ads-for-rhinoplasty-london-keyword.webp",
+    "client": "British Face Clinic",
+    "caption": "Google Search ad, rhinoplasty London"
+   },
+   {
+    "file": "assets/results/ads/plastic-surgeons/delta-clinics--delta-clinics-ranking-on-google-ads-for-the-keyword-breast-augmentation-london.webp",
+    "client": "Delta Clinics",
+    "caption": "Google Search ad, breast augmentation London"
+   }
+  ],
+  "Vasectomy Clinics": [
+   {
+    "file": "assets/results/ads/vasectomy-clinics/vasectomy--google-ads-vasectomy-clinic.webp",
+    "client": "Vasectomy.org.au",
+    "caption": "Google Search ad, vasectomy clinic near me"
+   }
+  ],
+  "Vein Clinics": [
+   {
+    "file": "assets/results/ads/vein-clinics/vein-doctors-sydney--google-ads-spider-veins-treatment-location.webp",
+    "client": "Vein Doctors Sydney",
+    "caption": "Google Search ad, spider veins treatment"
+   },
+   {
+    "file": "assets/results/ads/vein-clinics/vein-health-clinics--google-ads-spider-vein-treatment.webp",
+    "client": "Vein Health Clinics",
+    "caption": "Google Search ad, spider vein treatment"
+   },
+   {
+    "file": "assets/results/ads/vein-clinics/vein-health-clinics--google-ads-varicose-vein-treatment.webp",
+    "client": "Vein Health Clinics",
+    "caption": "Google Search ad, varicose vein treatment"
+   }
+  ]
+ }
+}
