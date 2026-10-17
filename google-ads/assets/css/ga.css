@@ -127,3 +127,19 @@
 .shot-card.is-fit figcaption,
 .shot-card.s1.is-fit figcaption{position:static;background:var(--white);color:var(--ink-2);padding:10px 12px 12px}
 .shot-card.s2.is-fit,.shot-card.s3.is-fit,.shot-card.s1.is-fit + .shot-card{margin-top:0}
+
+/* ---------------- "why Google Ads" band: keep her clear of the copy ----------------
+   at full width the photo can only crop top and bottom, which leaves her
+   under the text column. On desktop it is drawn 29% wider and slid left by
+   24% of that, so she sits in the left third with her phone clear of the
+   copy; the sliver it leaves on the right sits under the black gradient.
+   It hangs from the top, so a tall band crops her feet, not her head;
+   45% is her line in the photo if the band outgrows it */
+@media (min-width:921px){
+  #why{background:var(--black)}
+  #why .ai-bg{overflow:hidden}
+  #why .ai-bg img{
+    position:absolute;left:0;top:0;width:129%;height:auto;min-height:106%;max-width:none;
+    object-fit:cover;object-position:45% 10%;transform:translate(-24%,-6%);
+  }
+}
