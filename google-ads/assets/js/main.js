@@ -135,6 +135,7 @@
       LP('paul-wilson-rhinoplasty', 'Mr Paul Wilson', 'Preservation rhinoplasty'),
       LP('breast-and-body-clinic-breast-augmentation', 'Breast and Body Clinic UK', 'Breast augmentation, Manchester'),
       LP('victoria-house-clinic-neck-lift', 'Victoria House Clinic', 'Neck lift, Birmingham'),
+      LP('hanson-clinic-deep-plane-facelift', 'The Hanson Clinic', 'Deep plane facelift, Dublin'),
       LP('white-hill-clinic-breast-augmentation', 'White Hill Clinic', 'Breast augmentation'),
       LP('ashbrook-vaser-liposuction', 'The Ashbrook Cosmetic Surgery', 'Vaser liposuction')
     ],
