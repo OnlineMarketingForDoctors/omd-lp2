@@ -157,3 +157,20 @@
   #why .ai-bg{aspect-ratio:4/5}
   #why .ai-bg img{object-position:40% 20%}
 }
+
+/* ---------------- landing pages built for Google Ads ----------------
+   white rather than off-white, so it reads apart from the services above.
+   Each card is the first screen of a tall page */
+.lps{background:var(--white)}
+.lps .slide{border:1px solid var(--line);box-shadow:none}
+.lps .slide .shot{aspect-ratio:16/10;padding:0}
+.lps .slide .shot img{object-fit:cover;object-position:top}
+.lps .slide .meta{border-top:1px solid var(--line)}
+
+/* the lightbox opens a full page zoomed: it fills the frame width and
+   scrolls straight down, the way the page itself does */
+.lightbox.is-image .zoom-hint{display:block}
+.lightbox.is-zoomed .zoom-hint{display:none}
+.lightbox.is-image.is-zoomed.is-tall .frame{width:min(1200px,100%)}
+.lightbox.is-image.is-zoomed.is-tall .zoomwrap{place-items:start center}
+.lightbox.is-image.is-zoomed.is-tall img{width:100%;max-width:100%;height:auto;max-height:none}

@@ -121,6 +121,53 @@
     }
   ];
 
+  /* ---------------- data: landing pages built for Google Ads ----------------
+     each card shows the first screen; tapping opens the whole page */
+  const LP = (f, client, caption) => ({ thumb: `assets/work/landing-pages/${f}--top.webp`, file: `assets/work/landing-pages/${f}--full.webp`, client, caption });
+  const LANDING_PAGES = {
+    'Plastic Surgeons': [
+      LP('delta-clinics-breast-enlargement', 'Delta Clinics', 'Breast enlargement, Harley Street'),
+      LP('delta-clinics-labiaplasty', 'Delta Clinics', 'Labiaplasty, Harley Street'),
+      LP('cambridge-clear-beauty-facelift', 'Cambridge Clear Beauty', 'Facelift, Cambridge'),
+      LP('adore-life-facelift', 'Adore Life', 'Facelift, London and Cambridge'),
+      LP('symmetry-clinic-otoplasty', 'Symmetry Clinic', 'Otoplasty, Harley Street'),
+      LP('paul-wilson-rhinoplasty', 'Mr Paul Wilson', 'Preservation rhinoplasty'),
+      LP('breast-and-body-clinic-breast-augmentation', 'Breast and Body Clinic UK', 'Breast augmentation, Manchester'),
+      LP('victoria-house-clinic-neck-lift', 'Victoria House Clinic', 'Neck lift, Birmingham'),
+      LP('white-hill-clinic-breast-augmentation', 'White Hill Clinic', 'Breast augmentation'),
+      LP('ashbrook-vaser-liposuction', 'The Ashbrook Cosmetic Surgery', 'Vaser liposuction')
+    ],
+    'Ophthalmologists': [
+      LP('harley-street-eye-centre-dry-eye', 'The Harley Street Eye Centre', 'Dry eye treatment, Harley Street'),
+      LP('the-vision-surgeon-laser-eye', 'The Vision Surgeon', 'Laser eye surgery and lens replacement, Essex'),
+      LP('aaec-laser-eye', 'AAEC', 'Laser vision correction')
+    ],
+    'Hair Transplant Clinics': [
+      LP('fortes-clinic-fue', 'Fortes Clinic', 'FUE hair transplant, central London'),
+      LP('imami-hair-fue', 'Imami Hair', 'FUE hair transplant'),
+      LP('crown-clinic-hair-transplant', 'The Crown Clinic', 'FUE hair transplant, Australia'),
+      LP('hair-transplant-medical-centre', 'Hair Transplant Medical Centre', 'Hair transplant, Canada')
+    ],
+    'Aesthetic Clinics': [
+      LP('aesthetic-lane-lip-filler', 'Aesthetic Lane', 'Lip filler'),
+      LP('antiwrinkle-injections', 'Antiwrinkle', 'Anti-wrinkle injections'),
+      LP('observatory-tower-sofwave', 'Observatory Tower Medical Centre', 'Sofwave skin tightening'),
+      LP('ultherapy', 'Ultherapy', 'Ultherapy skin lifting'),
+      LP('eighteen-skin-hifu', 'Eighteen Skin', 'HIFU skin tightening'),
+      LP('dermal-skin-laundry-emsculpt', 'Dermal Skin Laundry', 'Emsculpt body contouring'),
+      LP('dermacosmetika-skin-tightening', 'Dermacosmetika', 'Skin tightening and cellulite'),
+      LP('iccm-plasma-pen', 'ICCM', 'Plasmage plasma pen'),
+      LP('endopersonalcare-lpg-endermologie', 'Endopersonalcare', 'LPG endermologie')
+    ],
+    'Other specialties': [
+      LP('cura-medical-specialists-migraine', 'Cura Medical Specialists', 'Headaches and migraine, neurology'),
+      LP('lotus-medics-fertility', 'Lotus Medics', 'Fertility treatment'),
+      LP('mindful-space-adhd', 'Mindful Space Ireland', 'ADHD assessments'),
+      LP('amputee-clinic-prosthetics', 'Amputee Clinic', 'Prosthetics'),
+      LP('ukaaps-capsco-bam', 'UKAAPS CAPSCO', 'BAM conference, Royal College of Surgeons')
+    ]
+  };
+
   const FEATURED = ['forbes-logo-2.webp', 'daily-mail-uk-logo.png', 'business-insider-logo-2.webp', 'entrepreneur-logo.png', 'Yahoo_Finance_logo.webp', 'mashable-logo.webp', 'usa-today-logo.webp', 'msn-logo-1.webp', 'london-insider-logo.webp', 'marketing-mag-logo.webp', 'thrive-global-logo.png', 'smart-company-logo-1.png', 'herald-sun.png', 'new-york-weekly.webp', 'sem_logo.webp'];
 
   /* ---------------- header ---------------- */
@@ -261,7 +308,7 @@
   }
 
   /* ---------------- results sliders ---------------- */
-  const ORDER = ['Plastic Surgeons', 'Ophthalmologists', 'Hair Transplant Clinics', 'Aesthetic Clinics', 'Neurology', 'Vein Clinics', 'Vasectomy Clinics', 'Medical eCommerce'];
+  const ORDER = ['Plastic Surgeons', 'Ophthalmologists', 'Hair Transplant Clinics', 'Aesthetic Clinics', 'Neurology', 'Vein Clinics', 'Vasectomy Clinics', 'Medical eCommerce', 'Other specialties'];
   // captions are written by hand in assets/results/index.json, so they are used as they are
   const prettyCaption = (c) => c;
   const buildSlider = (kind, data, tabsEl, slidesEl, posEl) => {
@@ -301,7 +348,7 @@
       slidesEl.innerHTML = items.map((it) => `
         <figure class="slide">
           <button class="shot" type="button" data-zoom="${esc(it.file)}" data-client="${esc(it.client)}" data-cap="${esc(prettyCaption(it.caption, it.client))}" aria-label="Enlarge screenshot: ${esc(it.client)}, ${esc(prettyCaption(it.caption, it.client))}">
-            <img src="${esc(it.file)}" alt="${esc(it.client)}: ${esc(prettyCaption(it.caption, it.client))}" loading="lazy">
+            <img src="${esc(it.thumb || it.file)}" alt="${esc(it.client)}: ${esc(prettyCaption(it.caption, it.client))}" loading="lazy">
             <span class="zoom" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><circle cx="11" cy="11" r="6.5"/><path d="m20 20-4.2-4.2M11 8.6v4.8M8.6 11h4.8"/></svg></span>
           </button>
           <figcaption class="meta"><b>${esc(it.client)}</b><span>${esc(prettyCaption(it.caption, it.client))}</span></figcaption>
@@ -329,6 +376,7 @@
     applyMode();
     render(current);
   };
+  buildSlider('lp', LANDING_PAGES, $('#lpTabs'), $('#lpSlides'), $('#lpPos'));
   fetch('assets/results/index.json').then(r => r.json()).then(data => {
     buildSlider('ads', data.ads, $('#adsTabs'), $('#adsSlides'), $('#adsPos'));
   }).catch(() => {
@@ -437,7 +485,7 @@
   };
   const closeLightbox = () => {
     if (!lb.classList.contains('is-open')) return;
-    lb.classList.remove('is-open', 'is-image', 'has-set', 'is-zoomed');
+    lb.classList.remove('is-open', 'is-image', 'has-set', 'is-zoomed', 'is-tall');
     lbFrame.innerHTML = '';
     document.body.style.overflow = '';
     if (lastFocused && lastFocused.isConnected) lastFocused.focus();
@@ -459,14 +507,19 @@
       `<figcaption class="cap"><span class="cap-t"><b>${esc(d.client)}</b><span>${esc(d.cap)}</span></span>` +
       `${n > 1 ? `<span class="cap-n">${zoomIdx + 1} / ${n}</span>` : ''}</figcaption>`,
       true, `${d.client}: ${d.cap}`);
-    lb.classList.remove('is-zoomed');
+    lb.classList.remove('is-zoomed', 'is-tall');
     lb.classList.toggle('has-set', n > 1);
+    // a full-page landing page fitted to the viewport is an unreadable strip,
+    // so anything much taller than it is wide opens already zoomed
+    const im = lbFrame.querySelector('img');
+    const autoZoom = () => { if (im.naturalHeight > im.naturalWidth * 1.6) lb.classList.add('is-zoomed', 'is-tall'); };
+    if (im.complete && im.naturalWidth) autoZoom(); else im.addEventListener('load', autoZoom, { once: true });
     lastFocused = btn;  // close returns the viewer to the screenshot they ended on
     // keep the slider or panel behind the lightbox on the screenshot being viewed
     if (btn.closest('.slides')) btn.closest('.slide').scrollIntoView({ block: 'nearest', inline: 'center', behavior: 'auto' });
   };
   // slides are rebuilt on every tab change, so delegate rather than bind per card
-  $$('#adsSlides, #csPanels').forEach(container => container.addEventListener('click', (e) => {
+  $$('#adsSlides, #lpSlides, #csPanels').forEach(container => container.addEventListener('click', (e) => {
     const btn = e.target.closest('[data-zoom]'); if (!btn) return;
     const scope = btn.closest('.cs-panel') || container;
     zoomSet = $$('[data-zoom]', scope);
