@@ -122,7 +122,8 @@
   ];
 
   /* ---------------- data: landing pages built for Google Ads ----------------
-     each card shows the first screen; tapping opens the whole page */
+     each card shows the first screen; tapping opens the whole page.
+     UK pages lead each group, then Ireland, then everywhere else */
   const LP = (f, client, caption) => ({ thumb: `assets/work/landing-pages/${f}--top.webp`, file: `assets/work/landing-pages/${f}--full.webp`, client, caption });
   const LANDING_PAGES = {
     'Plastic Surgeons': [
@@ -152,7 +153,7 @@
       LP('aesthetic-lane-lip-filler', 'Aesthetic Lane', 'Lip filler'),
       LP('antiwrinkle-injections', 'Antiwrinkle', 'Anti-wrinkle injections'),
       LP('observatory-tower-sofwave', 'Observatory Tower Medical Centre', 'Sofwave skin tightening'),
-      LP('ultherapy', 'Ultherapy', 'Ultherapy skin lifting'),
+      LP('ultherapy', 'Merz Aesthetics', 'Ultherapy skin lifting'),
       LP('eighteen-skin-hifu', 'Eighteen Skin', 'HIFU skin tightening'),
       LP('dermal-skin-laundry-emsculpt', 'Dermal Skin Laundry', 'Emsculpt body contouring'),
       LP('dermacosmetika-skin-tightening', 'Dermacosmetika', 'Skin tightening and cellulite'),
@@ -160,9 +161,9 @@
       LP('endopersonalcare-lpg-endermologie', 'Endopersonalcare', 'LPG endermologie')
     ],
     'Other specialties': [
+      LP('mindful-space-adhd', 'Mindful Space Ireland', 'ADHD assessments, Ireland'),
       LP('cura-medical-specialists-migraine', 'Cura Medical Specialists', 'Headaches and migraine, neurology'),
       LP('lotus-medics-fertility', 'Lotus Medics', 'Fertility treatment'),
-      LP('mindful-space-adhd', 'Mindful Space Ireland', 'ADHD assessments'),
       LP('amputee-clinic-prosthetics', 'Amputee Clinic', 'Prosthetics')
     ]
   };
