@@ -163,8 +163,7 @@
       LP('cura-medical-specialists-migraine', 'Cura Medical Specialists', 'Headaches and migraine, neurology'),
       LP('lotus-medics-fertility', 'Lotus Medics', 'Fertility treatment'),
       LP('mindful-space-adhd', 'Mindful Space Ireland', 'ADHD assessments'),
-      LP('amputee-clinic-prosthetics', 'Amputee Clinic', 'Prosthetics'),
-      LP('ukaaps-capsco-bam', 'UKAAPS CAPSCO', 'BAM conference, Royal College of Surgeons')
+      LP('amputee-clinic-prosthetics', 'Amputee Clinic', 'Prosthetics')
     ]
   };
 
