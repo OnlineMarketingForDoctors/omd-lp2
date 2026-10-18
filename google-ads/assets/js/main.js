@@ -151,7 +151,7 @@
     ],
     'Aesthetic Clinics': [
       LP('aesthetic-lane-lip-filler', 'Aesthetic Lane', 'Lip filler'),
-      LP('antiwrinkle-injections', 'Antiwrinkle', 'Anti-wrinkle injections'),
+      LP('antiwrinkle-injections', 'My Cosmetic Clinic', 'Anti-wrinkle injections'),
       LP('observatory-tower-sofwave', 'Observatory Tower Medical Centre', 'Sofwave skin tightening'),
       LP('ultherapy', 'Merz Aesthetics', 'Ultherapy skin lifting'),
       LP('eighteen-skin-hifu', 'Eighteen Skin', 'HIFU skin tightening'),
