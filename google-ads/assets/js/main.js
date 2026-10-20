@@ -153,12 +153,11 @@
     'Aesthetic Clinics': [
       LP('aesthetic-lane-lip-filler', 'Aesthetic Lane', 'Lip filler'),
       LP('antiwrinkle-injections', 'My Cosmetic Clinic', 'Anti-wrinkle injections'),
-      LP('ultherapy', 'Merz Aesthetics', 'Ultherapy skin lifting'),
       LP('eighteen-skin-hifu', 'Eighteen Skin', 'HIFU skin tightening'),
       LP('dermal-skin-laundry-emsculpt', 'Dermal Skin Laundry', 'Emsculpt body contouring'),
       LP('dermacosmetika-skin-tightening', 'Dermacosmetika', 'Skin tightening and cellulite'),
       LP('iccm-plasma-pen', 'ICCM', 'Plasmage plasma pen'),
-      LP('endopersonalcare-lpg-endermologie', 'Endopersonalcare', 'LPG endermologie')
+      LP('endopersonalcare-lpg-endermologie', 'Endo Personal Care', 'LPG endermologie')
     ],
     'Vein Clinics': [
       LP('vein-doctors-sydney-varicose-veins', 'Vein Doctors Sydney', 'Varicose veins, Sydney'),
@@ -179,6 +178,11 @@
       LP('saveminds-depression', 'Save Minds', 'Depression treatment, London'),
       LP('mindful-space-adhd', 'Mindful Space Ireland', 'ADHD assessments, Ireland'),
       LP('cura-medical-specialists-migraine', 'Cura Medical Specialists', 'Headaches and migraine')
+    ],
+    'Medical Devices': [
+      LP('endopersonalcare-emy', 'Endo Personal Care', 'Emy Kegel trainer for pelvic floor exercises'),
+      LP('endopersonalcare-rystora', 'Endo Personal Care', 'Rystora silicone scar treatments'),
+      LP('ultherapy', 'Merz Aesthetics', 'Ultherapy skin lifting')
     ],
     'Other specialties': [
       LP('lotus-medics-fertility', 'Lotus Medics', 'Fertility treatment')
@@ -325,7 +329,7 @@
   }
 
   /* ---------------- results sliders ---------------- */
-  const ORDER = ['Plastic Surgeons', 'Ophthalmologists', 'Hair Transplant Clinics', 'Aesthetic Clinics', 'Neurology', 'Vein Clinics', 'Vasectomy Clinics', 'Medical eCommerce', 'Dental Clinics', 'GP & Medical Centres', 'Mental Health Clinics', 'Other specialties'];
+  const ORDER = ['Plastic Surgeons', 'Ophthalmologists', 'Hair Transplant Clinics', 'Aesthetic Clinics', 'Neurology', 'Vein Clinics', 'Vasectomy Clinics', 'Medical eCommerce', 'Dental Clinics', 'GP & Medical Centres', 'Mental Health Clinics', 'Medical Devices', 'Other specialties'];
   // captions are written by hand in assets/results/index.json, so they are used as they are
   const prettyCaption = (c) => c;
   const buildSlider = (kind, data, tabsEl, slidesEl, posEl) => {
