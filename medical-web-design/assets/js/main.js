@@ -75,7 +75,7 @@
       stats: [['-87.94%', 'organic bounce rate'], ['5.16% to 19.89%', 'organic conversion rate'], ['906.99%', 'more goal completions, March to August 2020']],
       situation: 'A well-regarded Sydney hair transplant clinic being outranked and outsold by newer competitors who marketed harder. The old website had a high bounce rate, and most of the visitors it did get left without enquiring.',
       did: ['A new website built for conversion, with the consultation as the one obvious next step on every page', 'On-site SEO best practice across every page: unique titles, headings, descriptions and faster load times', 'Conversion fixes that cut the organic bounce rate by 88% and nearly quadrupled the organic conversion rate', 'A local reviews programme on the Google Business Profile, and top rankings for hair transplant Sydney'],
-      shots: [[C + 'crown-bounce-conversion.webp', 'Organic bounce rate down 87.94%, conversion rate up 285.09%', '', 'fit'], [C + 'crown-enquiries.webp', '467.54% increase in the number of enquiries', '', 'fit'], [C + 'crown-6-months.webp', 'March vs August 2020: users up 152.81%, goal completions up 906.99%', '', 'fit']],
+      shots: [[WS + 'crown-clinic--top.webp', 'The new Crown Clinic homepage', WS + 'crown-clinic--full.webp'], [C + 'crown-bounce-conversion.webp', 'Organic bounce rate down 87.94%, conversion rate up 285.09%', '', 'fit'], [C + 'crown-enquiries.webp', '467.54% increase in the number of enquiries', '', 'fit']],
       portrait: C + 'james-nadin.webp',
       quote: 'Enquiries have gone crazy, the number of enquiries has increased by three folds ever since they started. They are very thorough and results driven with their work.',
       who: 'James Nadin', role: 'CEO, ICCM and The Crown Clinic',
@@ -86,9 +86,9 @@
       place: 'Brisbane, Australia', specialty: 'Rheumatology',
       title: 'Organic conversion rate up from 1.94% to 4.91%, and first on Google Maps for "arthritis doctor Brisbane".',
       hero: { n: '259.95%', t: 'more website users, year on year' },
-      stats: [['1.94% to 4.91%', 'organic conversion rate, year on year'], ['192.25%', 'more organic users in six months'], ['#1', 'on Google Maps for arthritis doctor Brisbane']],
-      evidence: ['Website users up 259.95% year on year, from 7,568 to 27,241', 'Organic search users up 281.39%, with the organic conversion rate up from 1.94% to 4.91%', 'Organic users up a further 192.25% across six months of 2021', 'First on Google Maps for "arthritis doctor Brisbane", and at the top of Google for "rheumatologist Brisbane"'],
-      shots: [[C + 'arthritiscare-12-months.webp', 'Year on year: users up 259.95%, organic conversion rate 1.94% to 4.91%', '', 'fit'], [C + 'arthritiscare-organic-6-months.webp', 'Organic users up 192.25% in six months', '', 'fit'], [C + 'arthritiscare-maps-arthritis-doctor-brisbane.webp', 'First on Google Maps for arthritis doctor Brisbane', '', 'fit']],
+      stats: [['1.94% to 4.91%', 'organic conversion rate, year on year'], ['281.39%', 'more organic search users, year on year'], ['#1', 'on Google Maps for arthritis doctor Brisbane']],
+      evidence: ['Website users up 259.95% year on year, from 7,568 to 27,241', 'Organic search users up 281.39%, with the organic conversion rate up from 1.94% to 4.91%', 'First on Google Maps for "arthritis doctor Brisbane", and at the top of Google for "rheumatologist Brisbane"'],
+      shots: [[WS + 'arthritiscare--top.webp', 'The new ArthritisCARE homepage', WS + 'arthritiscare--full.webp'], [C + 'arthritiscare-12-months.webp', 'Year on year: users up 259.95%, organic conversion rate 1.94% to 4.91%', '', 'fit'], [C + 'arthritiscare-maps-arthritis-doctor-brisbane.webp', 'First on Google Maps for arthritis doctor Brisbane', '', 'fit']],
       portrait: ''
     }
   ];
@@ -113,11 +113,13 @@
     ],
     'Hair Transplant Clinics': [
       W('az-hair-restoration', 'AZ Hair Restoration', 'Doctor-led hair transplants, North Carolina'),
+      W('crown-clinic', 'The Crown Clinic', 'FUE hair transplants, Sydney'),
       W('atlantis', 'Atlantis Hair Transplant', 'Single-patient hair transplant days, Melbourne')
     ],
     'Surgeons & Specialists': [
       W('head2neck', 'Head2Neck', 'Head, neck and maxillofacial surgery, Hertfordshire and Luton'),
-      W('vasectomy-clinic-brisbane', 'Vasectomy Clinic Brisbane', 'No-scalpel vasectomy, Brisbane')
+      W('vasectomy-clinic-brisbane', 'Vasectomy Clinic Brisbane', 'No-scalpel vasectomy, Brisbane'),
+      W('arthritiscare', 'ArthritisCARE', 'Rheumatology, Brisbane')
     ],
     'GP & Medical Organisations': [
       W('new-albion-medical-centre', 'New Albion Medical Centre', 'GP practice, New South Wales'),
@@ -428,7 +430,7 @@
             <h4>What the analytics show</h4>
             <ul>${c.evidence.map(d => `<li>${esc(d)}</li>`).join('')}</ul>
           </div>
-          <p class="cs-note">Every figure above is read straight from the clinic's analytics and search screenshots, which you can open full size.</p>
+          <p class="cs-note">Every figure above is read straight from the clinic's analytics and search screenshots, which you can open full size, next to the website we built.</p>
           ` : `
           <div class="cs-body">
             <h4>The situation</h4><p>${c.situation}</p>
