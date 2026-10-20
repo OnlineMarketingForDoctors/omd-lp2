@@ -153,7 +153,6 @@
     'Aesthetic Clinics': [
       LP('aesthetic-lane-lip-filler', 'Aesthetic Lane', 'Lip filler'),
       LP('antiwrinkle-injections', 'My Cosmetic Clinic', 'Anti-wrinkle injections'),
-      LP('observatory-tower-sofwave', 'Observatory Tower Medical Centre', 'Sofwave skin tightening'),
       LP('ultherapy', 'Merz Aesthetics', 'Ultherapy skin lifting'),
       LP('eighteen-skin-hifu', 'Eighteen Skin', 'HIFU skin tightening'),
       LP('dermal-skin-laundry-emsculpt', 'Dermal Skin Laundry', 'Emsculpt body contouring'),
@@ -170,14 +169,19 @@
       LP('smile-specialists-suite-periodontics', 'Smile Specialists Suite', 'Periodontics, Sydney'),
       LP('the-dentists-general', 'The Dentist at 70 Pitt Street', 'General dentistry, Sydney')
     ],
+    'GP & Medical Centres': [
+      LP('mansmatters-peyronies', 'MansMatters', "Peyronie's disease, London"),
+      LP('oj-clinics-skin-cancer', 'OJ Clinics', 'Skin cancer checks, Toowoomba'),
+      LP('observatory-tower-sofwave', 'Observatory Tower Medical Centre', 'Sofwave skin tightening'),
+      LP('amputee-clinic-prosthetics', 'Amputee Clinic', 'Prosthetics')
+    ],
     'Mental Health Clinics': [
       LP('saveminds-depression', 'Save Minds', 'Depression treatment, London'),
       LP('mindful-space-adhd', 'Mindful Space Ireland', 'ADHD assessments, Ireland'),
       LP('cura-medical-specialists-migraine', 'Cura Medical Specialists', 'Headaches and migraine')
     ],
     'Other specialties': [
-      LP('lotus-medics-fertility', 'Lotus Medics', 'Fertility treatment'),
-      LP('amputee-clinic-prosthetics', 'Amputee Clinic', 'Prosthetics')
+      LP('lotus-medics-fertility', 'Lotus Medics', 'Fertility treatment')
     ]
   };
 
@@ -321,7 +325,7 @@
   }
 
   /* ---------------- results sliders ---------------- */
-  const ORDER = ['Plastic Surgeons', 'Ophthalmologists', 'Hair Transplant Clinics', 'Aesthetic Clinics', 'Neurology', 'Vein Clinics', 'Vasectomy Clinics', 'Medical eCommerce', 'Dental Clinics', 'Mental Health Clinics', 'Other specialties'];
+  const ORDER = ['Plastic Surgeons', 'Ophthalmologists', 'Hair Transplant Clinics', 'Aesthetic Clinics', 'Neurology', 'Vein Clinics', 'Vasectomy Clinics', 'Medical eCommerce', 'Dental Clinics', 'GP & Medical Centres', 'Mental Health Clinics', 'Other specialties'];
   // captions are written by hand in assets/results/index.json, so they are used as they are
   const prettyCaption = (c) => c;
   const buildSlider = (kind, data, tabsEl, slidesEl, posEl) => {
@@ -329,7 +333,7 @@
       const ia = ORDER.indexOf(a), ib = ORDER.indexOf(b);
       return (ia < 0 ? 99 : ia) - (ib < 0 ? 99 : ib);
     });
-    tabsEl.innerHTML = groups.map((g) => `<button class="tab" type="button" data-group="${g}"><span class="tab-name">${g}</span><span class="count">${data[g].length}</span><svg class="tab-chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></button>`).join('');
+    tabsEl.innerHTML = groups.map((g) => `<button class="tab" type="button" data-group="${esc(g)}"><span class="tab-name">${esc(g)}</span><span class="count">${data[g].length}</span><svg class="tab-chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></button>`).join('');
     const layout = tabsEl.parentElement, slider = slidesEl.closest('.slider');
     let current = groups[0];
     // below 860px the rail becomes an accordion: the slider is moved in under the
