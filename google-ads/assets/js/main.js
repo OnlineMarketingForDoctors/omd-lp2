@@ -157,7 +157,7 @@
       LP('dermal-skin-laundry-emsculpt', 'Dermal Skin Laundry', 'Emsculpt body contouring'),
       LP('dermacosmetika-skin-tightening', 'Dermacosmetika', 'Skin tightening and cellulite'),
       LP('iccm-plasma-pen', 'ICCM', 'Plasmage plasma pen'),
-      LP('endopersonalcare-lpg-endermologie', 'Endo Personal Care', 'LPG endermologie')
+      LP('endopersonalcare-lpg-endermologie', 'Endotherapeutics', 'LPG endermologie')
     ],
     'Vein Clinics': [
       LP('vein-doctors-sydney-varicose-veins', 'Vein Doctors Sydney', 'Varicose veins, Sydney'),
@@ -188,6 +188,7 @@
     'Medical Devices': [
       LP('endopersonalcare-emy', 'Endo Personal Care', 'Emy Kegel trainer for pelvic floor exercises'),
       LP('endopersonalcare-rystora', 'Endo Personal Care', 'Rystora silicone scar treatments'),
+      LP('endotherapeutics', 'Endotherapeutics', 'LPG endermologie for clinics'),
       LP('ultherapy', 'Merz Aesthetics', 'Ultherapy skin lifting')
     ],
     'Other specialties': [
