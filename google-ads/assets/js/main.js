@@ -174,6 +174,10 @@
       LP('observatory-tower-sofwave', 'Observatory Tower Medical Centre', 'Sofwave skin tightening'),
       LP('amputee-clinic-prosthetics', 'Amputee Clinic', 'Prosthetics')
     ],
+    'Physiotherapy': [
+      LP('infinity-allied-healthcare-shoulder', 'Infinity Allied Healthcare', 'Physiotherapy for shoulder pain, Sydney'),
+      LP('dr-dhwani-mehta', 'Dr Dhwani Mehta', 'Stroke and Parkinson\'s rehabilitation, India')
+    ],
     'Mental Health Clinics': [
       LP('saveminds-depression', 'Save Minds', 'Depression treatment, London'),
       LP('mindful-space-adhd', 'Mindful Space Ireland', 'ADHD assessments, Ireland'),
@@ -329,7 +333,7 @@
   }
 
   /* ---------------- results sliders ---------------- */
-  const ORDER = ['Plastic Surgeons', 'Ophthalmologists', 'Hair Transplant Clinics', 'Aesthetic Clinics', 'Neurology', 'Vein Clinics', 'Vasectomy Clinics', 'Medical eCommerce', 'Dental Clinics', 'GP & Medical Centres', 'Mental Health Clinics', 'Medical Devices', 'Other specialties'];
+  const ORDER = ['Plastic Surgeons', 'Ophthalmologists', 'Hair Transplant Clinics', 'Aesthetic Clinics', 'Neurology', 'Vein Clinics', 'Vasectomy Clinics', 'Medical eCommerce', 'Dental Clinics', 'GP & Medical Centres', 'Physiotherapy', 'Mental Health Clinics', 'Medical Devices', 'Other specialties'];
   // captions are written by hand in assets/results/index.json, so they are used as they are
   const prettyCaption = (c) => c;
   const buildSlider = (kind, data, tabsEl, slidesEl, posEl) => {
