@@ -178,10 +178,12 @@
       LP('infinity-allied-healthcare-shoulder', 'Infinity Allied Healthcare', 'Physiotherapy for shoulder pain, Sydney'),
       LP('dr-dhwani-mehta', 'Dr Dhwani Mehta', 'Stroke and Parkinson\'s rehabilitation, India')
     ],
+    'Neurology': [
+      LP('cura-medical-specialists-migraine', 'Cura Medical Specialists', 'Headaches and migraine, Sydney')
+    ],
     'Mental Health Clinics': [
       LP('saveminds-depression', 'Save Minds', 'Depression treatment, London'),
-      LP('mindful-space-adhd', 'Mindful Space Ireland', 'ADHD assessments, Ireland'),
-      LP('cura-medical-specialists-migraine', 'Cura Medical Specialists', 'Headaches and migraine')
+      LP('mindful-space-adhd', 'Mindful Space Ireland', 'ADHD assessments, Ireland')
     ],
     'Medical Devices': [
       LP('endopersonalcare-emy', 'Endo Personal Care', 'Emy Kegel trainer for pelvic floor exercises'),
