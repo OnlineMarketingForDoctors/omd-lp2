@@ -161,6 +161,11 @@
       LP('iccm-plasma-pen', 'ICCM', 'Plasmage plasma pen'),
       LP('endopersonalcare-lpg-endermologie', 'Endopersonalcare', 'LPG endermologie')
     ],
+    'Vein Clinics': [
+      LP('vein-doctors-sydney-varicose-veins', 'Vein Doctors Sydney', 'Varicose veins, Sydney'),
+      LP('shire-aesthetics-veins', 'Shire Aesthetics & Vein Clinic', 'Varicose veins, Sydney'),
+      LP('vascular-health-center-excel-v', 'Vascular Health Centers', 'Excel V laser for spider veins and rosacea, Florida')
+    ],
     'Mental Health Clinics': [
       LP('saveminds-depression', 'Save Minds', 'Depression treatment, London'),
       LP('mindful-space-adhd', 'Mindful Space Ireland', 'ADHD assessments, Ireland'),
