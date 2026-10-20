@@ -166,6 +166,10 @@
       LP('shire-aesthetics-veins', 'Shire Aesthetics & Vein Clinic', 'Varicose veins, Sydney'),
       LP('vascular-health-center-excel-v', 'Vascular Health Centers', 'Excel V laser for spider veins and rosacea, Florida')
     ],
+    'Dental Clinics': [
+      LP('smile-specialists-suite-periodontics', 'Smile Specialists Suite', 'Periodontics, Sydney'),
+      LP('the-dentists-general', 'The Dentist at 70 Pitt Street', 'General dentistry, Sydney')
+    ],
     'Mental Health Clinics': [
       LP('saveminds-depression', 'Save Minds', 'Depression treatment, London'),
       LP('mindful-space-adhd', 'Mindful Space Ireland', 'ADHD assessments, Ireland'),
@@ -317,7 +321,7 @@
   }
 
   /* ---------------- results sliders ---------------- */
-  const ORDER = ['Plastic Surgeons', 'Ophthalmologists', 'Hair Transplant Clinics', 'Aesthetic Clinics', 'Neurology', 'Vein Clinics', 'Vasectomy Clinics', 'Medical eCommerce', 'Mental Health Clinics', 'Other specialties'];
+  const ORDER = ['Plastic Surgeons', 'Ophthalmologists', 'Hair Transplant Clinics', 'Aesthetic Clinics', 'Neurology', 'Vein Clinics', 'Vasectomy Clinics', 'Medical eCommerce', 'Dental Clinics', 'Mental Health Clinics', 'Other specialties'];
   // captions are written by hand in assets/results/index.json, so they are used as they are
   const prettyCaption = (c) => c;
   const buildSlider = (kind, data, tabsEl, slidesEl, posEl) => {
