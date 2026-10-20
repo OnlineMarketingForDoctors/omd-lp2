@@ -191,7 +191,7 @@
       LP('endotherapeutics', 'Endotherapeutics', 'LPG endermologie for clinics'),
       LP('ultherapy', 'Merz Aesthetics', 'Ultherapy skin lifting')
     ],
-    'Other specialties': [
+    'Gynaecology': [
       LP('lotus-medics-fertility', 'Lotus Medics', 'Fertility treatment')
     ]
   };
@@ -336,7 +336,7 @@
   }
 
   /* ---------------- results sliders ---------------- */
-  const ORDER = ['Plastic Surgeons', 'Ophthalmologists', 'Hair Transplant Clinics', 'Aesthetic Clinics', 'Neurology', 'Vein Clinics', 'Vasectomy Clinics', 'Medical eCommerce', 'Dental Clinics', 'GP & Medical Centres', 'Physiotherapy', 'Mental Health Clinics', 'Medical Devices', 'Other specialties'];
+  const ORDER = ['Plastic Surgeons', 'Ophthalmologists', 'Hair Transplant Clinics', 'Aesthetic Clinics', 'Neurology', 'Vein Clinics', 'Vasectomy Clinics', 'Medical eCommerce', 'Dental Clinics', 'GP & Medical Centres', 'Physiotherapy', 'Gynaecology', 'Mental Health Clinics', 'Medical Devices'];
   // captions are written by hand in assets/results/index.json, so they are used as they are
   const prettyCaption = (c) => c;
   const buildSlider = (kind, data, tabsEl, slidesEl, posEl) => {
