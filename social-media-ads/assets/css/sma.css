@@ -248,6 +248,12 @@
 .shot-card.cs-reel .play svg{width:22px;height:22px}
 .shot-card.cs-reel figcaption{pointer-events:none}
 .cs-media .portrait{flex:0 0 auto;width:min(30%,150px);margin:0 0 -18px -44px;align-self:flex-end}
+/* without a portrait the videos share the width of the screenshots above,
+   so the row's right edge lines up with theirs */
+@media (min-width:921px){
+  .cs-media.is-fill{grid-column:1/6}
+  .cs-media.is-fill .shot-card.cs-reel{flex:1 1 0;width:auto}
+}
 @media (max-width:920px){
   /* the row's cards join the swipe row, at the screenshot cards' height */
   .cs-media{display:contents}
