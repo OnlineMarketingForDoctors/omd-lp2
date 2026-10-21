@@ -23,3 +23,11 @@ remove or weaken any of the above as a side effect of unrelated work.
 Removing no-index is a deliberate, standalone change: drop the `X-Robots-Tag`
 block from `vercel.json`, remove the robots meta tags, and add a sitemap.
 Only do this when explicitly asked to launch.
+
+## Publishing: push to main
+
+The owner has asked for every change to go straight to `main` (standing
+instruction, October 2026). After committing on a working branch, merge it
+into `main` (fast-forward when possible) and push `main`, without opening a
+pull request or asking first. Keep the working branch in step with `main`.
+This does not change the no-index rules above: they still apply to every push.
