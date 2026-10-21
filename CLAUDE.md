@@ -31,3 +31,8 @@ instruction, October 2026). After committing on a working branch, merge it
 into `main` (fast-forward when possible) and push `main`, without opening a
 pull request or asking first. Keep the working branch in step with `main`.
 This does not change the no-index rules above: they still apply to every push.
+
+Vercel does not always build a push to `main` (in October 2026 two pushes
+produced no deployment at all). After pushing, check that a production
+deployment exists for the new `main` commit, and if there is none, create one
+for that commit (Vercel project `omd-lp2`) so the change actually goes live.
