@@ -86,6 +86,7 @@
       situation: '',
       did: ['A breast augmentation lead campaign, then an expanded version with wider audiences and a larger budget once it had proved itself', 'Both run side by side for a month, so the expansion was judged against the original', 'Video ads for breast augmentation and for the clinic itself'],
       shots: [[R + 'plastic-surgeons/white-hill-clinic-breast-augmentation-may-2025.webp', 'May 2025: 175 leads', '', 'fit'], [R + 'plastic-surgeons/white-hill-clinic-breast-augmentation-june-2025.webp', 'June 2025: 139 leads at $11.76', '', 'fit']],
+      reels: [['EEb5xjdOkyY', 'Breast augmentation video ad'], ['C0j0xe8ZlSQ', 'Breast augmentation clinic video ad']],
       portrait: '', quote: '', link: ''
     },
     {
@@ -97,6 +98,7 @@
       situation: '',
       did: ['One campaign per treatment and per city: anti-wrinkle, laser and skin tightening, in Brisbane and on the Gold Coast', 'Instant forms, so patients can ask for a price without leaving Instagram', 'Video ads for HIFU, Pico laser, laser tattoo removal and anti-wrinkle treatment', 'Daily budgets from $20 to $68 per campaign'],
       shots: [[R + 'aesthetic-clinics/prophile-clinics-anti-wrinkle-january-2026.webp', 'Seven campaigns, January 2026: 581 leads', '', 'fit']],
+      reels: [['GiO7IIFncYc', 'Anti-wrinkle treatment video ad'], ['uCa8ZTtudvk', 'HIFU treatment video ad']],
       portrait: '', quote: '', link: ''
     },
     {
@@ -108,6 +110,7 @@
       situation: '',
       did: ['A hair transplant lead campaign running alongside a low-cost traffic campaign that feeds remarketing', 'Video ads for every stage: hair loss, the baldness calculator, the surgery and the client journey', 'A separate campaign for gynaecomastia', 'The same structure kept running and refreshed into 2025'],
       shots: [[R + 'hair-transplant-clinics/the-crown-clinic-hair-transplant-september-october-2024.webp', 'September to October 2024: 149 leads at $11.42', '', 'fit'], [R + 'hair-transplant-clinics/the-crown-clinic-hair-transplant-june-2025.webp', 'June 2025: 106 leads at $12.83', '', 'fit']],
+      reels: [['GQbEYqtv8PQ', 'Baldness calculator video ad'], ['_PnTuQFmS_c', 'Hair transplant video ad']],
       portrait: '',
       quote: 'Enquiries have gone crazy and the number of enquiries has increased three-fold ever since they started 6 months ago.',
       who: 'James Nadin', role: 'CEO, ICCM and The Crown Clinic',
@@ -122,6 +125,7 @@
       situation: '',
       did: ['One hair transplant lead campaign, optimised for submitted enquiries', 'Client testimonial and procedure videos made for the feed', 'Kept running and refreshed rather than restarted, so Meta keeps what it has learned'],
       shots: [[R + 'hair-transplant-clinics/malay-mehta-hair-transplant-november-december-2024.webp', 'November to December 2024: 165 enquiries', '', 'fit'], [R + 'hair-transplant-clinics/malay-mehta-hair-transplant-may-2025.webp', 'May 2025: 92 enquiries', '', 'fit']],
+      reels: [['NOlKPL3JxRI', 'Hair transplant video ad'], ['xN9mKsKvcMg', 'Client testimonial video ad']],
       portrait: '', quote: '',
       link: 'https://onlinemarketingfordoctors.com/casestudy/dr-malay-mehta/'
     },
@@ -381,12 +385,13 @@
     return out;
   };
   const WORK_PAGE = 12;
+  const reelThumb = (id) => `<img src="https://i.ytimg.com/vi/${esc(id)}/oar2.jpg?sqp=-oaymwEkCJUDENAFSFqQAgHyq4qpAxMIARUAAAAAJQAAyEI9AICiQ3gB" onerror="this.onerror=null;this.src='https://i.ytimg.com/vi/${esc(id)}/hqdefault.jpg'" alt="" loading="lazy" width="405" height="720">`;
   const workGrid = $('#workGrid'), workFilter = $('#workFilter'), workMore = $('#workMore'),
         workMoreBtn = $('#workMoreBtn'), workCount = $('#workCount');
   const reelCard = (it) => `
     <figure class="reel">
       <button class="reel-play" type="button" data-reel="${esc(it.id)}" data-client="${esc(it.client)}" data-title="${esc(it.title)}" aria-label="Play ad: ${esc(it.client)}, ${esc(it.title)}">
-        <img src="https://i.ytimg.com/vi/${esc(it.id)}/hqdefault.jpg" alt="" loading="lazy" width="480" height="360">
+        ${reelThumb(it.id)}
         <span class="fmt">Video ad</span>
         <span class="play" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></span>
       </button>
@@ -469,8 +474,8 @@
         </div>
         <div class="cs-shots">
           ${c.shots.map((s, k) => `<figure class="shot-card s${k + 1}${s[3] === 'fit' ? ' is-fit' : ''}"><button class="shot-zoom" type="button" data-zoom="${esc(s[0])}" data-client="${esc(c.name)}" data-cap="${esc(s[1])}" aria-label="Enlarge screenshot: ${esc(c.name)}, ${esc(s[1])}"><img src="${esc(s[0])}" alt="${esc(s[1])}" loading="lazy"></button><figcaption>${esc(s[1])}</figcaption></figure>`).join('')}
-          ${(c.reels || []).map((v, k) => `<figure class="shot-card cs-reel r${k + 1}" style="grid-row:${c.shots.length + 1}"><button class="reel-play" type="button" data-reel="${esc(v[0])}" data-client="${esc(c.name)}" data-title="${esc(v[1])}" aria-label="Play ad: ${esc(c.name)}, ${esc(v[1])}"><img src="https://i.ytimg.com/vi/${esc(v[0])}/hqdefault.jpg" alt="" loading="lazy" width="480" height="360"><span class="fmt">Video ad</span><span class="play" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></span></button><figcaption>${esc(v[1])}</figcaption></figure>`).join('')}
-          ${c.portrait ? `<div class="portrait"${c.reels ? ` style="grid-row:${c.shots.length + 1}"` : ''}><img src="${c.portrait}" alt="${c.who}" loading="lazy"></div>` : ''}
+          ${c.reels ? `<div class="cs-media" style="grid-row:${c.shots.length + 1}">${c.reels.map(v => `<figure class="shot-card cs-reel"><button class="reel-play" type="button" data-reel="${esc(v[0])}" data-client="${esc(c.name)}" data-title="${esc(v[1])}" aria-label="Play ad: ${esc(c.name)}, ${esc(v[1])}">${reelThumb(v[0])}<span class="fmt">Video ad</span><span class="play" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></span></button><figcaption>${esc(v[1])}</figcaption></figure>`).join('')}${c.portrait ? `<div class="portrait"><img src="${c.portrait}" alt="${c.who}" loading="lazy"></div>` : ''}</div>`
+            : c.portrait ? `<div class="portrait"><img src="${c.portrait}" alt="${c.who}" loading="lazy"></div>` : ''}
         </div>
       </div>
     </div>`).join('');

@@ -238,17 +238,18 @@
 @media (max-width:860px){#results .slide{flex-basis:min(86vw,520px)}}
 
 /* ---------------- case studies: the clinic's own video ads ----------------
-   upright cards in the row under the screenshots, the first beside the
-   portrait, a second beside the first. The row is set inline, after however
-   many screenshots the clinic has */
-.shot-card.cs-reel{grid-column:1/4;justify-self:start;width:min(100%,250px);aspect-ratio:9/16;background:#111}
-.shot-card.cs-reel.r2{grid-column:4/7}
+   one row under the screenshots, set inline after however many there are:
+   the videos side by side, and the surgeon's portrait tucked over the
+   corner of the last one rather than floating in the far corner */
+.cs-media{grid-column:1/7;display:flex;align-items:flex-end;gap:16px;margin-top:6px}
+.shot-card.cs-reel{flex:0 0 auto;width:min(46%,236px);aspect-ratio:9/16;background:#111}
 .shot-card.cs-reel .reel-play{height:100%;aspect-ratio:auto;border-radius:0;box-shadow:none}
-.shot-card.cs-reel .play{width:58px;height:58px}
-.shot-card.cs-reel .play svg{width:24px;height:24px}
+.shot-card.cs-reel .play{width:56px;height:56px}
+.shot-card.cs-reel .play svg{width:22px;height:22px}
 .shot-card.cs-reel figcaption{pointer-events:none}
-.cs-reel ~ .portrait{align-self:end}
+.cs-media .portrait{flex:0 0 auto;width:min(30%,150px);margin:0 0 -18px -44px;align-self:flex-end}
 @media (max-width:920px){
-  /* same height as the screenshot cards in the swipe row */
-  .shot-card.cs-reel{flex:0 0 auto;width:calc(min(78vw,440px) * 11 / 16 * 9 / 16);scroll-snap-align:start}
+  /* the row's cards join the swipe row, at the screenshot cards' height */
+  .cs-media{display:contents}
+  .shot-card.cs-reel{width:calc(min(78vw,440px) * 11 / 16 * 9 / 16);scroll-snap-align:start}
 }
