@@ -476,9 +476,13 @@
     };
     const updatePos = () => {
       const items = $$('.slide', slidesEl); if (!items.length) { posEl.textContent = ''; return; }
-      const w = items[0].getBoundingClientRect().width + 18;
-      const idx = Math.min(items.length, Math.round(slidesEl.scrollLeft / w) + 1);
-      posEl.textContent = `${idx} / ${items.length}`;
+      // a slider can run in more than one row (the portfolio runs in two), so
+      // count by column and show the range of cards on screen
+      const w = items[0].getBoundingClientRect().width + 18, n = items.length;
+      const rows = getComputedStyle(slidesEl).display === 'grid' ? getComputedStyle(slidesEl).gridTemplateRows.split(' ').length : 1;
+      const col = Math.round(slidesEl.scrollLeft / w), cols = Math.max(1, Math.round((slidesEl.clientWidth + 18) / w));
+      const first = Math.min(n, col * rows + 1), last = Math.min(n, (col + cols) * rows);
+      posEl.textContent = last > first ? `${first}\u2013${last} / ${n}` : `${first} / ${n}`;
     };
     slidesEl.addEventListener('scroll', updatePos, { passive: true });
     tabsEl.addEventListener('click', (e) => {
@@ -505,7 +509,8 @@
     btn.addEventListener('click', () => {
       const el = $('#' + (btn.dataset.prev || btn.dataset.next));
       const first = $('.slide', el); if (!first) return;
-      const w = first.getBoundingClientRect().width + 18;
+      // the two-row portfolio pages by a whole screen of four; single rows move one card
+      const w = getComputedStyle(el).display === 'grid' ? el.clientWidth + 18 : first.getBoundingClientRect().width + 18;
       el.scrollBy({ left: btn.dataset.prev ? -w : w, behavior: reduced ? 'auto' : 'smooth' });
     });
   });

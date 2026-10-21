@@ -175,3 +175,10 @@ a.b-card:hover{transform:translateY(-3px);box-shadow:var(--shadow-md);border-col
 .paper .qs{display:grid;margin:0 0 var(--rule);padding:0;list-style:none}
 .paper .qs li{display:grid;grid-template-columns:22px 1fr;gap:10px;line-height:var(--rule)}
 .paper .qs li::before{content:"?";width:22px;height:22px;border-radius:50%;background:var(--black);color:var(--green);display:grid;place-items:center;font-family:var(--action);font-size:.8rem;margin-top:4px}
+
+/* the portfolio shows four websites at a time on desktop: two rows that scroll
+   sideways together, so each arrow press moves on by a column of two */
+@media (min-width:861px){
+  #webSlides{display:grid;grid-auto-flow:column;grid-template-rows:repeat(2,auto);grid-auto-columns:calc((100% - 18px) / 2)}
+  #webSlides .slide{flex:none;min-width:0}
+}
