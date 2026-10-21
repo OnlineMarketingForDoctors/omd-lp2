@@ -530,57 +530,45 @@
     openLightbox(ytFrame(b.dataset.video, 'Client video testimonial'), false, 'Client video testimonial');
   }));
   /* the arrows step through whichever set the viewer opened from: the screenshots
-     of the visible slider group, the cards of one case study, or the video ads
-     currently on screen */
-  let lbMode = '', zoomSet = [], zoomIdx = 0, reelSet = [], reelIdx = 0;
-  const showZoom = (i) => {
-    if (!zoomSet.length) return;
-    const n = zoomSet.length;
-    zoomIdx = (i + n) % n;
-    const btn = zoomSet[zoomIdx], d = btn.dataset;
-    openLightbox(
-      `<div class="zoomwrap"><img src="${esc(d.zoom)}" alt="${esc(d.client)}: ${esc(d.cap)}"><span class="zoom-hint">Tap to zoom</span></div>` +
-      `<figcaption class="cap"><span class="cap-t"><b>${esc(d.client)}</b><span>${esc(d.cap)}</span></span>` +
-      `${n > 1 ? `<span class="cap-n">${zoomIdx + 1} / ${n}</span>` : ''}</figcaption>`,
-      true, `${d.client}: ${d.cap}`);
-    lb.classList.remove('is-zoomed', 'is-tall');
+     of the visible slider group, everything in one case study (screenshots and
+     video ads together), or the video ads currently on screen */
+  let lbMode = '', lbSet = [], lbIdx = 0;
+  const showAt = (i) => {
+    if (!lbSet.length) return;
+    const n = lbSet.length;
+    lbIdx = (i + n) % n;
+    const btn = lbSet[lbIdx], d = btn.dataset;
+    if (d.reel) {
+      openLightbox(ytFrame(d.reel, `${d.client}: ${d.title}`), false, `Video ad: ${d.client}, ${d.title}`);
+      lb.classList.remove('is-zoomed', 'is-tall');
+      lb.classList.add('is-vertical');
+    } else {
+      openLightbox(
+        `<div class="zoomwrap"><img src="${esc(d.zoom)}" alt="${esc(d.client)}: ${esc(d.cap)}"><span class="zoom-hint">Tap to zoom</span></div>` +
+        `<figcaption class="cap"><span class="cap-t"><b>${esc(d.client)}</b><span>${esc(d.cap)}</span></span>` +
+        `${n > 1 ? `<span class="cap-n">${lbIdx + 1} / ${n}</span>` : ''}</figcaption>`,
+        true, `${d.client}: ${d.cap}`);
+      lb.classList.remove('is-zoomed', 'is-tall');
+      // anything much taller than it is wide opens already zoomed
+      const im = lbFrame.querySelector('img');
+      const autoZoom = () => { if (im.naturalHeight > im.naturalWidth * 1.6) lb.classList.add('is-zoomed', 'is-tall'); };
+      if (im.complete && im.naturalWidth) autoZoom(); else im.addEventListener('load', autoZoom, { once: true });
+    }
     lb.classList.toggle('has-set', n > 1);
-    // anything much taller than it is wide opens already zoomed
-    const im = lbFrame.querySelector('img');
-    const autoZoom = () => { if (im.naturalHeight > im.naturalWidth * 1.6) lb.classList.add('is-zoomed', 'is-tall'); };
-    if (im.complete && im.naturalWidth) autoZoom(); else im.addEventListener('load', autoZoom, { once: true });
-    lastFocused = btn;  // close returns the viewer to the screenshot they ended on
-    // keep the slider or panel behind the lightbox on the screenshot being viewed
+    lastFocused = btn;  // close returns the viewer to the card they ended on
+    // keep the slider behind the lightbox on the screenshot being viewed
     if (btn.closest('.slides')) btn.closest('.slide').scrollIntoView({ block: 'nearest', inline: 'center', behavior: 'auto' });
   };
-  const showReel = (i) => {
-    if (!reelSet.length) return;
-    const n = reelSet.length;
-    reelIdx = (i + n) % n;
-    const btn = reelSet[reelIdx], d = btn.dataset;
-    openLightbox(ytFrame(d.reel, `${d.client}: ${d.title}`), false, `Video ad: ${d.client}, ${d.title}`);
-    lb.classList.add('is-vertical');
-    lb.classList.toggle('has-set', n > 1);
-    lastFocused = btn;
-  };
+  const openSet = (set, btn) => { lbMode = 'set'; lbSet = set; showAt(set.indexOf(btn)); };
   // slides are rebuilt on every tab change, so delegate rather than bind per card
   $$('#adsSlides, #csPanels').forEach(container => container.addEventListener('click', (e) => {
-    // a case study's videos step through each other, nothing else
-    const reel = e.target.closest('[data-reel]');
-    if (reel) { lbMode = 'reel'; reelSet = $$('[data-reel]', reel.closest('.cs-panel')); showReel(reelSet.indexOf(reel)); return; }
-    const btn = e.target.closest('[data-zoom]'); if (!btn) return;
-    const scope = btn.closest('.cs-panel') || container;
-    lbMode = 'zoom';
-    zoomSet = $$('[data-zoom]', scope);
-    showZoom(zoomSet.indexOf(btn));
+    const btn = e.target.closest('[data-zoom],[data-reel]'); if (!btn) return;
+    openSet($$('[data-zoom],[data-reel]', btn.closest('.cs-panel') || container), btn);
   }));
   workGrid.addEventListener('click', (e) => {
-    const btn = e.target.closest('[data-reel]'); if (!btn) return;
-    lbMode = 'reel';
-    reelSet = $$('[data-reel]', workGrid);
-    showReel(reelSet.indexOf(btn));
+    const btn = e.target.closest('[data-reel]'); if (btn) openSet($$('[data-reel]', workGrid), btn);
   });
-  const step = (dir) => { if (lbMode === 'reel') showReel(reelIdx + dir); else showZoom(zoomIdx + dir); };
+  const step = (dir) => { if (lbMode === 'set') showAt(lbIdx + dir); };
   // on a phone the screenshot is fitted, so tapping it switches to native size and pans
   lbFrame.addEventListener('click', (e) => {
     if (!lb.classList.contains('is-image') || !e.target.closest('.zoomwrap')) return;
