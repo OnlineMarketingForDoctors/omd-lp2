@@ -75,7 +75,7 @@
       stats: [['-87.94%', 'organic bounce rate'], ['5.16% to 19.89%', 'organic conversion rate'], ['906.99%', 'more goal completions, March to August 2020']],
       situation: 'A well-regarded Sydney hair transplant clinic being outranked and outsold by newer competitors who marketed harder. The old website had a high bounce rate, and most of the visitors it did get left without enquiring.',
       did: ['A new website built for conversion, with the consultation as the one obvious next step on every page', 'On-site SEO best practice across every page: unique titles, headings, descriptions and faster load times', 'Conversion fixes that cut the organic bounce rate by 88% and nearly quadrupled the organic conversion rate', 'A local reviews programme on the Google Business Profile, and top rankings for hair transplant Sydney'],
-      shots: [[WS + 'crown-clinic--top.webp', 'The new Crown Clinic homepage', WS + 'crown-clinic--full.webp'], [C + 'crown-bounce-conversion.webp', 'Organic bounce rate down 87.94%, conversion rate up 285.09%', '', 'fit'], [C + 'crown-enquiries.webp', '467.54% increase in the number of enquiries', '', 'fit']],
+      shots: [[WS + 'crown-clinic--top.webp', 'The FUE hair transplant page, Sydney', WS + 'crown-clinic--full.webp'], [C + 'crown-bounce-conversion.webp', 'Organic bounce rate down 87.94%, conversion rate up 285.09%', '', 'fit'], [C + 'crown-enquiries.webp', '467.54% increase in the number of enquiries', '', 'fit']],
       portrait: C + 'james-nadin.webp',
       quote: 'Enquiries have gone crazy, the number of enquiries has increased by three folds ever since they started. They are very thorough and results driven with their work.',
       who: 'James Nadin', role: 'CEO, ICCM and The Crown Clinic',
