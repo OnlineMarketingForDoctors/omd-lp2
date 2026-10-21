@@ -255,14 +255,8 @@
 }
 
 /* ---------------- case studies: stacked Ads Manager screenshots ----------------
-   the shared layout staggers the second and third cards into a collage,
-   which suits photos; wide table screenshots read better lined up under
-   the first, at its width */
+   for these three the second screenshot lines up under the first, at its
+   width, rather than the shared base's staggered collage */
 @media (min-width:921px){
-  .shot-card.s2.is-fit,.shot-card.s3.is-fit{grid-column:1/6}
-  /* the other cards are 4:5 feed ads: shown whole, not overlapping the
-     card above, and two of them side by side */
-  .cs-shots .shot-card:not(.is-fit){aspect-ratio:4/5;margin-top:0}
-  .shot-card.s2:not(.is-fit),.shot-card.s3:not(.is-fit){grid-column:1/4}
-  .shot-card.s2:not(.is-fit) + .shot-card.s3{grid-column:4/7;grid-row:2}
+  #cs-crown .shot-card.s2,#cs-whitehill .shot-card.s2,#cs-mehta .shot-card.s2{grid-column:1/6}
 }
