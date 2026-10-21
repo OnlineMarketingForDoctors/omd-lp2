@@ -9,8 +9,8 @@
 
   /* ---------------- data: case studies (the Facebook and Instagram side of each account) ----------------
      every figure is read off the Ads Manager screenshot shown with it. 'fit'
-     marks a short, wide screenshot that should keep its own shape; reel is
-     an optional [YouTube id, caption] for one of the clinic's video ads */
+     marks a short, wide screenshot that should keep its own shape; reels is
+     an optional list of [YouTube id, caption] for the clinic's own video ads */
   const R = 'assets/results/meta/';
   const CASES = [
     {
@@ -36,7 +36,7 @@
       situation: 'Mr Mrinal Supriya is known in the profession for deep plane facelift and rhinoplasty. Facial surgery patients research for months and want to see and hear the surgeon before they ask for a consultation, so the ads lead with him.',
       did: ['Separate lead campaigns for mini facelift, deep plane facelift, rhinoplasty and male rhinoplasty', 'Instant forms run alongside the deep plane facelift campaign, to see which brought cheaper leads', 'Video ads built around the surgeon: procedure FAQs, patient testimonials and results', 'Every lead tracked through the CRM to a booked consultation'],
       shots: [[R + 'plastic-surgeons/british-face-clinic-mini-facelift-july-2025.webp', 'Five lead campaigns, July 2025: mini facelift at £3.79', '', 'fit']],
-      reel: ['8g-nRQfQ674', 'Mini facelift video ad'],
+      reels: [['8g-nRQfQ674', 'Mini facelift video ad']],
       portrait: 'assets/cases/bfc-supriya.webp',
       quote: '', who: 'Mr Mrinal Supriya', role: 'Facial Cosmetic Surgeon, British Face Clinic',
       link: 'https://onlinemarketingfordoctors.com/case-study/british-face-clinic/'
@@ -63,6 +63,7 @@
       situation: "Men's health is one of the hardest categories on Meta: an ad may not name the reader's condition or suggest it knows about it. The clinic needed discreet ads that still made men want to ask a question.",
       did: ['Six static ads tested at once in one lead campaign', "Copy written to Meta's personal attributes policy: it talks about the treatment, never about the reader", 'Budget left on the winning ad, which produced 52 of the 56 leads', "Video ads for erectile dysfunction and Peyronie's disease treatment"],
       shots: [[R + "mens-health-clinics/mansmatters-erectile-dysfunction-february-2025.webp", 'Six ads, February 2025: 56 leads at £1.23', '', 'fit']],
+      reels: [['SZweYcc-PHc', 'Erectile dysfunction treatment video ad'], ['mOyQSTwV21w', 'ED solutions video ad']],
       portrait: '', quote: '', link: ''
     },
     {
@@ -468,8 +469,8 @@
         </div>
         <div class="cs-shots">
           ${c.shots.map((s, k) => `<figure class="shot-card s${k + 1}${s[3] === 'fit' ? ' is-fit' : ''}"><button class="shot-zoom" type="button" data-zoom="${esc(s[0])}" data-client="${esc(c.name)}" data-cap="${esc(s[1])}" aria-label="Enlarge screenshot: ${esc(c.name)}, ${esc(s[1])}"><img src="${esc(s[0])}" alt="${esc(s[1])}" loading="lazy"></button><figcaption>${esc(s[1])}</figcaption></figure>`).join('')}
-          ${c.reel ? `<figure class="shot-card cs-reel" style="grid-row:${c.shots.length + 1}"><button class="reel-play" type="button" data-reel="${esc(c.reel[0])}" data-client="${esc(c.name)}" data-title="${esc(c.reel[1])}" aria-label="Play ad: ${esc(c.name)}, ${esc(c.reel[1])}"><img src="https://i.ytimg.com/vi/${esc(c.reel[0])}/hqdefault.jpg" alt="" loading="lazy" width="480" height="360"><span class="fmt">Video ad</span><span class="play" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></span></button><figcaption>${esc(c.reel[1])}</figcaption></figure>` : ''}
-          ${c.portrait ? `<div class="portrait"${c.reel ? ` style="grid-row:${c.shots.length + 1}"` : ''}><img src="${c.portrait}" alt="${c.who}" loading="lazy"></div>` : ''}
+          ${(c.reels || []).map((v, k) => `<figure class="shot-card cs-reel r${k + 1}" style="grid-row:${c.shots.length + 1}"><button class="reel-play" type="button" data-reel="${esc(v[0])}" data-client="${esc(c.name)}" data-title="${esc(v[1])}" aria-label="Play ad: ${esc(c.name)}, ${esc(v[1])}"><img src="https://i.ytimg.com/vi/${esc(v[0])}/hqdefault.jpg" alt="" loading="lazy" width="480" height="360"><span class="fmt">Video ad</span><span class="play" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></span></button><figcaption>${esc(v[1])}</figcaption></figure>`).join('')}
+          ${c.portrait ? `<div class="portrait"${c.reels ? ` style="grid-row:${c.shots.length + 1}"` : ''}><img src="${c.portrait}" alt="${c.who}" loading="lazy"></div>` : ''}
         </div>
       </div>
     </div>`).join('');
@@ -573,8 +574,9 @@
   };
   // slides are rebuilt on every tab change, so delegate rather than bind per card
   $$('#adsSlides, #csPanels').forEach(container => container.addEventListener('click', (e) => {
+    // a case study's videos step through each other, nothing else
     const reel = e.target.closest('[data-reel]');
-    if (reel) { lbMode = 'reel'; reelSet = [reel]; showReel(0); return; }
+    if (reel) { lbMode = 'reel'; reelSet = $$('[data-reel]', reel.closest('.cs-panel')); showReel(reelSet.indexOf(reel)); return; }
     const btn = e.target.closest('[data-zoom]'); if (!btn) return;
     const scope = btn.closest('.cs-panel') || container;
     lbMode = 'zoom';
