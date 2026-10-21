@@ -230,8 +230,8 @@
   /* the browser in the hero scrolls through these, top to bottom */
   const HERO_SITES = [
     { f: 'breast-and-body-clinic-uk', name: 'Breast and Body Clinic UK', place: 'Manchester', url: 'breastandbody.co.uk' },
-    { f: 'british-face-clinic', name: 'British Face Clinic', place: 'Harley Street', url: 'britishfaceclinic.com' },
     { f: 'delta-clinics', name: 'Delta Clinics', place: 'Harley Street', url: 'deltaclinics.co.uk' },
+    { f: 'british-face-clinic', name: 'British Face Clinic', place: 'Harley Street', url: 'britishfaceclinic.com' },
     { f: 'the-harley-street-eye-centre', name: 'The Harley Street Eye Centre', place: 'Harley Street', url: 'theharleystreeteyecentre.com' }
   ];
 
