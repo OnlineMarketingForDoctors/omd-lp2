@@ -61,7 +61,7 @@
       stats: [['2,098%', 'increase in organic traffic'], ['107%', 'higher conversion rate on the new procedure pages'], ['16,000', 'monthly website visitors']],
       situation: 'Mr Hyder Ridha had barely marketed the practice while competing London clinics had been investing for a decade. The website had duplicated content, no local presence for its Hertfordshire clinics, and minimal traffic.',
       did: ['Overhauled the entire website, repositioning the practice as the go-to mummy makeover expert', 'Rewrote every thin or duplicated page, and added dedicated pages for each priority procedure', 'Local pages and Google Business Profiles for Harpenden, Hitchin and Hatfield', 'Ebook lead magnets with email follow-up for visitors who are not ready to book yet'],
-      shots: [[C + 'hr-landing-page.webp', 'Breast augmentation page'], [C + 'hr-plastic-surgery-traffic-over-16000-visitors.webp', 'Over 16,000 website visitors a month', '', 'fit']],
+      shots: [[WS + 'hr-plastic-surgery--top.webp', 'The new HR Plastic Surgery homepage', WS + 'hr-plastic-surgery--full.webp'], [C + 'hr-plastic-surgery-traffic-over-16000-visitors.webp', 'Over 16,000 website visitors a month', '', 'fit'], [C + 'hr-landing-page.webp', 'The breast augmentation page']],
       portrait: C + 'hr-ridha.webp',
       quote: 'OMD devised a comprehensive plan to overhaul my entire website, repositioning it as the go-to Mummy Makeover expert. In comparison to the initial state of my website, OMD not only met but exceeded my expectations.',
       who: 'Mr Hyder Ridha', role: 'Plastic Surgeon, HR Plastic Surgery',
@@ -231,6 +231,7 @@
   const HERO_SITES = [
     { f: 'breast-and-body-clinic-uk', name: 'Breast and Body Clinic UK', place: 'Manchester', url: 'breastandbody.co.uk' },
     { f: 'delta-clinics', name: 'Delta Clinics', place: 'Harley Street', url: 'deltaclinics.co.uk' },
+    { f: 'hr-plastic-surgery', name: 'HR Plastic Surgery', place: 'London and Hertfordshire', url: 'hrplasticsurgery.com' },
     { f: 'british-face-clinic', name: 'British Face Clinic', place: 'Harley Street', url: 'britishfaceclinic.com' },
     { f: 'the-harley-street-eye-centre', name: 'The Harley Street Eye Centre', place: 'Harley Street', url: 'theharleystreeteyecentre.com' }
   ];
