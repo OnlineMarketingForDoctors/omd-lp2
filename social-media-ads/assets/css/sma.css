@@ -217,6 +217,9 @@
 
 /* a Short plays upright, so its lightbox frame does too */
 .lightbox.is-vertical .frame{width:auto;height:min(86vh,820px);max-width:100%;aspect-ratio:9/16}
+/* the shared base only shows the arrows for screenshots; the video ads step
+   through the ads on screen the same way */
+.lightbox.is-vertical.has-set .lb-nav{display:flex}
 
 /* the lightbox opens a full page zoomed: it fills the frame width and
    scrolls straight down, the way the page itself does */
