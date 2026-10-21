@@ -236,3 +236,17 @@
 #results .slide .shot{aspect-ratio:2.6/1}
 #results .slide .shot img{object-position:center}
 @media (max-width:860px){#results .slide{flex-basis:min(86vw,520px)}}
+
+/* ---------------- case studies: one of the clinic's video ads ----------------
+   an upright card in the row under the screenshots, beside the portrait.
+   The row is set inline, after however many screenshots the clinic has */
+.shot-card.cs-reel{grid-column:1/5;justify-self:start;width:min(100%,250px);aspect-ratio:9/16;background:#111}
+.shot-card.cs-reel .reel-play{height:100%;aspect-ratio:auto;border-radius:0;box-shadow:none}
+.shot-card.cs-reel .play{width:58px;height:58px}
+.shot-card.cs-reel .play svg{width:24px;height:24px}
+.shot-card.cs-reel figcaption{pointer-events:none}
+.cs-reel ~ .portrait{align-self:end}
+@media (max-width:920px){
+  /* same height as the screenshot cards in the swipe row */
+  .shot-card.cs-reel{flex:0 0 auto;width:calc(min(78vw,440px) * 11 / 16 * 9 / 16);scroll-snap-align:start}
+}

@@ -9,7 +9,8 @@
 
   /* ---------------- data: case studies (the Facebook and Instagram side of each account) ----------------
      every figure is read off the Ads Manager screenshot shown with it. 'fit'
-     marks a short, wide screenshot that should keep its own shape */
+     marks a short, wide screenshot that should keep its own shape; reel is
+     an optional [YouTube id, caption] for one of the clinic's video ads */
   const R = 'assets/results/meta/';
   const CASES = [
     {
@@ -35,6 +36,7 @@
       situation: 'Mr Mrinal Supriya is known in the profession for deep plane facelift and rhinoplasty. Facial surgery patients research for months and want to see and hear the surgeon before they ask for a consultation, so the ads lead with him.',
       did: ['Separate lead campaigns for mini facelift, deep plane facelift, rhinoplasty and male rhinoplasty', 'Instant forms run alongside the deep plane facelift campaign, to see which brought cheaper leads', 'Video ads built around the surgeon: procedure FAQs, patient testimonials and results', 'Every lead tracked through the CRM to a booked consultation'],
       shots: [[R + 'plastic-surgeons/british-face-clinic-mini-facelift-july-2025.webp', 'Five lead campaigns, July 2025: mini facelift at £3.79', '', 'fit']],
+      reel: ['8g-nRQfQ674', 'Mini facelift video ad'],
       portrait: 'assets/cases/bfc-supriya.webp',
       quote: '', who: 'Mr Mrinal Supriya', role: 'Facial Cosmetic Surgeon, British Face Clinic',
       link: 'https://onlinemarketingfordoctors.com/case-study/british-face-clinic/'
@@ -466,7 +468,8 @@
         </div>
         <div class="cs-shots">
           ${c.shots.map((s, k) => `<figure class="shot-card s${k + 1}${s[3] === 'fit' ? ' is-fit' : ''}"><button class="shot-zoom" type="button" data-zoom="${esc(s[0])}" data-client="${esc(c.name)}" data-cap="${esc(s[1])}" aria-label="Enlarge screenshot: ${esc(c.name)}, ${esc(s[1])}"><img src="${esc(s[0])}" alt="${esc(s[1])}" loading="lazy"></button><figcaption>${esc(s[1])}</figcaption></figure>`).join('')}
-          ${c.portrait ? `<div class="portrait"><img src="${c.portrait}" alt="${c.who}" loading="lazy"></div>` : ''}
+          ${c.reel ? `<figure class="shot-card cs-reel" style="grid-row:${c.shots.length + 1}"><button class="reel-play" type="button" data-reel="${esc(c.reel[0])}" data-client="${esc(c.name)}" data-title="${esc(c.reel[1])}" aria-label="Play ad: ${esc(c.name)}, ${esc(c.reel[1])}"><img src="https://i.ytimg.com/vi/${esc(c.reel[0])}/hqdefault.jpg" alt="" loading="lazy" width="480" height="360"><span class="fmt">Video ad</span><span class="play" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></span></button><figcaption>${esc(c.reel[1])}</figcaption></figure>` : ''}
+          ${c.portrait ? `<div class="portrait"${c.reel ? ` style="grid-row:${c.shots.length + 1}"` : ''}><img src="${c.portrait}" alt="${c.who}" loading="lazy"></div>` : ''}
         </div>
       </div>
     </div>`).join('');
@@ -570,6 +573,8 @@
   };
   // slides are rebuilt on every tab change, so delegate rather than bind per card
   $$('#adsSlides, #csPanels').forEach(container => container.addEventListener('click', (e) => {
+    const reel = e.target.closest('[data-reel]');
+    if (reel) { lbMode = 'reel'; reelSet = [reel]; showReel(0); return; }
     const btn = e.target.closest('[data-zoom]'); if (!btn) return;
     const scope = btn.closest('.cs-panel') || container;
     lbMode = 'zoom';
