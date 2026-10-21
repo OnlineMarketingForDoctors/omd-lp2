@@ -82,7 +82,7 @@
       link: 'https://onlinemarketingfordoctors.com/case-study-crown-clinic/'
     },
     {
-      id: 'arthritiscare', name: 'ArthritisCARE', logo: '', uk: false, kind: 'evidence', meta: '12 months',
+      id: 'arthritiscare', name: 'arthritisCARE', logo: 'assets/client-logos/arthritiscare-logo.png', uk: false, kind: 'evidence', meta: '12 months',
       place: 'Brisbane, Australia', specialty: 'Rheumatology',
       title: 'Website conversion rate up from 1.94% to 4.97%, and eight times the goal completions.',
       hero: { n: '259.95%', t: 'more website users, year on year' },
