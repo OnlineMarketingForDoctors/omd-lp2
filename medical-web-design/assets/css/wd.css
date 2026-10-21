@@ -174,7 +174,8 @@ a.b-card:hover{transform:translateY(-3px);box-shadow:var(--shadow-md);border-col
 /* the questions in the letter, as a short checklist */
 .paper .qs{display:grid;margin:0 0 var(--rule);padding:0;list-style:none}
 .paper .qs li{display:grid;grid-template-columns:22px 1fr;gap:10px;line-height:var(--rule)}
-.paper .qs li::before{content:"?";width:22px;height:22px;border-radius:50%;background:var(--black);color:var(--green);display:grid;place-items:center;font-family:var(--action);font-size:.8rem;margin-top:4px}
+/* line-height:1, or the glyph takes the paper's 30px rule and drops below centre */
+.paper .qs li::before{content:"?";width:22px;height:22px;border-radius:50%;background:var(--black);color:var(--green);display:flex;align-items:center;justify-content:center;font-family:var(--sans);font-weight:700;font-size:.78rem;line-height:1;margin-top:4px}
 
 /* the portfolio shows four websites at a time on desktop: two rows that scroll
    sideways together, so each arrow press moves on by a column of two */
