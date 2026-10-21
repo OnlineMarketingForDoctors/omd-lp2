@@ -128,20 +128,6 @@
       reels: [['NOlKPL3JxRI', 'Hair transplant video ad'], ['xN9mKsKvcMg', 'Client testimonial video ad']],
       portrait: '', quote: '',
       link: 'https://onlinemarketingfordoctors.com/casestudy/dr-malay-mehta/'
-    },
-    {
-      id: 'attalla', name: 'Chelsea Cosmetics', logo: 'assets/client-logos/dr-mark-attalla-logo.webp',
-      place: 'Melbourne, Australia', specialty: 'Cosmetic surgery', months: 'Treatment launch',
-      title: '16 leads in a day on a $30 budget, for a treatment the clinic had just launched.',
-      hero: { n: '$1.80', t: 'per lead for a newly launched cellulite treatment' },
-      stats: [['16', 'leads in one day'], ['$30', 'daily budget'], ['2', 'audiences: people near the clinic, and past visitors']],
-      situation: 'Chelsea Cosmetics had just launched a new cellulite treatment and needed a fast, reliable way to find the people interested in it.',
-      did: ['Several ad copies and creatives tested against each other from the first day', 'Targeting people who live close to the clinic', 'Retargeting past website visitors', 'A follow-up process, so every lead was contacted quickly'],
-      shots: [],
-      portrait: 'assets/cases/attalla-portrait.webp',
-      quote: 'We found that we are spending almost one-fourth of our previous budget and getting double the conversion, which is a great deal to achieve in a short period of time.',
-      who: 'Dr Mark Attalla', role: 'Cosmetic Surgeon and Owner, Chelsea Cosmetics Melbourne',
-      link: 'https://onlinemarketingfordoctors.com/case-study-dr-attalla/'
     }
   ];
 
