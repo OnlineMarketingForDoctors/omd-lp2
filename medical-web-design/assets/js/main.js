@@ -224,10 +224,6 @@
       W('observatory-tower-medical-centre', 'Observatory Tower Medical Centre', 'GP and executive health clinic, Sydney CBD'),
       W('southern-allergy', 'Southern Allergy', 'Allergy care for children and adults, Melbourne'),
       W('st-leonards-medical-clinic', 'St Leonards Medical Clinic', 'General practice, St Leonards, Sydney')
-    ],
-    "Medical Skincare Stores": [
-      W('lumiere-skin-online', 'Lumi\u00e8re Skin', 'Online cosmeceutical skincare store, Sydney'),
-      W('pure-synergie', 'Pure Synergie Skin Store', 'Cosmeceutical skincare store, Edge Hill, Cairns')
     ]
   };
 
