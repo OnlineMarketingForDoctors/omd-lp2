@@ -47,7 +47,7 @@
       stats: [['300 to 4,270', 'search impressions a day'], ['1,068%', 'increase in total website traffic'], ['800%', 'more enquiries from organic search']],
       situation: 'Mr Aftab Siddiqui was competing in Manchester against clinics with years of history online. The website had thin, copied content, 300 impressions a day, and no first-page rankings for the procedures the practice is built on.',
       did: ['Redesigned the website and rewrote the procedure pages for tummy tuck, breast augmentation, breast reduction and mummy makeover', 'Built in lead magnets, patient testimonials and a regular blog', 'A CRM so every website enquiry is tracked and followed up', 'Keyword research across every important Manchester suburb, mapped page by page'],
-      shots: [[C + 'bbc-landing-page.webp', 'Mummy makeover page'], [C + 'breast-and-body-uk-traffic-over-6000.webp', 'Website traffic growth', '', 'fit'], [C + 'bbc-breast-augmentation-page--top.webp', 'The breast augmentation page', C + 'bbc-breast-augmentation-page--full.webp']],
+      shots: [[WS + 'breast-and-body-clinic-uk--top.webp', 'The new Breast and Body Clinic homepage', WS + 'breast-and-body-clinic-uk--full.webp'], [C + 'breast-and-body-uk-traffic-over-6000.webp', 'Website traffic growth', '', 'fit'], [C + 'bbc-breast-augmentation-page--top.webp', 'The breast augmentation page', C + 'bbc-breast-augmentation-page--full.webp']],
       portrait: C + 'bbc-siddiqui.webp',
       quote: 'My website has been redesigned, I have lead magnets such as interesting eBooks, client testimonials, fantastic blogs, detailed new content and they set up a CRM which enables me to track and monitor how my website performs.',
       who: 'Mr Aftab Siddiqui', role: 'Plastic Surgeon, Breast and Body Clinic UK',
@@ -229,6 +229,7 @@
 
   /* the browser in the hero scrolls through these, top to bottom */
   const HERO_SITES = [
+    { f: 'breast-and-body-clinic-uk', name: 'Breast and Body Clinic UK', place: 'Manchester', url: 'breastandbody.co.uk' },
     { f: 'british-face-clinic', name: 'British Face Clinic', place: 'Harley Street', url: 'britishfaceclinic.com' },
     { f: 'delta-clinics', name: 'Delta Clinics', place: 'Harley Street', url: 'deltaclinics.co.uk' },
     { f: 'the-harley-street-eye-centre', name: 'The Harley Street Eye Centre', place: 'Harley Street', url: 'theharleystreeteyecentre.com' }
