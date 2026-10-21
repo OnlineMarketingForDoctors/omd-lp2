@@ -96,34 +96,139 @@
   /* ---------------- data: the website portfolio ----------------
      each card shows the first screen; tapping opens the whole page.
      UK websites lead each group, then everywhere else */
-  const W = (f, client, caption) => ({ thumb: `${WS}${f}--top.webp`, file: `${WS}${f}--full.webp`, client, caption });
+  // thumb is the first screen at 960px wide; thumbSm is the same at 640px for phones
+  const W = (f, client, caption) => ({ thumb: `${WS}${f}--top.webp`, thumbSm: `${WS}${f}--top-640.webp`, file: `${WS}${f}--full.webp`, client, caption });
   const WEBSITES = {
-    'Plastic Surgeons': [
-      W('british-face-clinic', 'British Face Clinic', 'Facial cosmetic surgery, Harley Street, Milton Keynes and Northampton'),
-      W('delta-clinics', 'Delta Clinics', 'Cosmetic and plastic surgery, Harley Street'),
-      W('manaf-khatib', 'Mr Manaf Khatib', 'Plastic surgery, London'),
-      W('cambridge-clear-beauty', 'Cambridge Clear Beauty', 'Facial plastic surgery and aesthetics, Cambridge'),
-      W('beyond-aesthetics', 'Beyond Aesthetics', 'Dr Apresh Singla, plastic surgery, Sydney'),
-      W('doctor-jay', 'Doctor Jay Plastic Surgery', 'Facial plastic surgery, Bangkok')
+    "Plastic Surgeons": [
+      W('breast-and-body-clinic-uk', 'Breast and Body Clinic UK', 'Mummy makeover and cosmetic surgery, Manchester, Chester and Preston'),
+      W('british-face-clinic', 'British Face Clinic', 'Facial cosmetic surgery, London, Milton Keynes and Northampton'),
+      W('cambridge-clear-beauty', 'Cambridge Clear Beauty', 'Cosmetic surgery and aesthetic treatments, Cambridge'),
+      W('capsco', 'CAPSCO', 'Consortium of aesthetic plastic surgery clinic owners, UK'),
+      W('delta-clinics', 'Delta Clinics', 'Cosmetic and plastic surgery, London'),
+      W('hr-plastic-surgery', 'HR Plastic Surgery', 'Breast, body and face plastic surgery, Hertfordshire'),
+      W('mr-manaf-khatib-plastic-surgery', 'Mr Manaf Khatib', 'Aesthetic and reconstructive plastic surgery, London and Hertfordshire'),
+      W('mr-roshan-vijayan', 'Mr Roshan Vijayan', 'Aesthetic and body contouring surgery, Hertfordshire'),
+      W('ullas-plastic-surgery', 'Ullas Facial Plastic Surgery', 'Facial plastic and reconstructive surgery, Manchester'),
+      W('the-hanson-clinic', 'The Hanson Clinic', 'Plastic and aesthetic surgery with Mr Richard Hanson, Dublin'),
+      W('beyond-aesthetics', 'Beyond Aesthetics', 'Plastic and cosmetic surgery, Sydney'),
+      W('clinica-pogany', 'Centrul Medical Pogany', 'Aesthetic and post-bariatric plastic surgery, Romania'),
+      W('dr-jay-plastic-surgery', 'Doctor Jay Plastic Surgery', 'Facial plastic surgery, Bangkok'),
+      W('pcls-coffs-harbour', 'Dr Chandran Arianayagam', 'Plastic, cosmetic and laser surgery, Coffs Harbour'),
+      W('dr-joseph-luo', 'Dr Joseph Luo', 'Plastic, reconstructive and aesthetic surgery, Perth'),
+      W('dr-queenie-chan', 'Dr Queenie Chan', 'Plastic and reconstructive surgery, Albury'),
+      W('the-bougainvillea-clinique', 'The Bougainvillea Clinique', 'Plastic surgery and medical day spa, Winter Park, Florida'),
+      W('west-coast-plastic-surgery', 'West Coast Plastic Surgery', 'Plastic surgery with Dr Qadir Khan, West Perth'),
+      W('white-hill-clinic', 'White Hill Clinic', 'Cosmetic surgery, hair and skin, Double Bay, Sydney')
     ],
-    'Ophthalmologists': [
-      W('harley-street-eye-centre', 'The Harley Street Eye Centre', 'Surgeon-led eye care, Harley Street'),
-      W('the-vision-surgeon', 'The Vision Surgeon', 'Laser eye and lens surgery, Colchester and Essex'),
-      W('aaec', 'Ashford Advanced Eye Care', 'Laser vision correction and cataract surgery, Adelaide')
+    "Cosmetic Clinics": [
+      W('aesthetic-lane', 'Aesthetic Lane', 'Cosmetic aesthetics clinic, Black Rock, Melbourne'),
+      W('better-look', 'Better Look', 'Doctor-led cosmetic injectables and skin treatments, Deepdene, Melbourne'),
+      W('dermal-skin-laundry', 'Dermal Skin Laundry', 'Skin needling and non-surgical skin treatments, Epping, Melbourne'),
+      W("dr-reddy-sankeerth", "Dr Sankeerth Reddy", "Aesthetic medicine and men's health, Singapore"),
+      W('ellysium-aesthetics', 'Ellysium Aesthetics', 'Non-surgical aesthetics and hair restoration, Iluka, Perth'),
+      W('fancy-lash', 'Fancy Lash', 'Eyelash extensions, Potts Point and Chatswood, Sydney'),
+      W('gardenia-skin-co', 'Gardenia Skin Co', 'Cosmetic skin and anti-ageing treatments, Sydney'),
+      W('jade-cosmetic-clinic', 'Jade Cosmetic Clinic', 'Cosmetic injectables and skin rejuvenation, Cairns and Brisbane'),
+      W('my-cosmetic-clinic', 'My Cosmetic Clinic', 'Cosmetic injectables and surgery, Sydney and NSW'),
+      W('prophile-clinics', 'Prophile Clinics', 'Non-surgical aesthetic treatments, Gold Coast and Brisbane'),
+      W('queensland-skin-and-laser', 'Queensland Skin & Laser', 'Cosmetic skin and laser clinic, Brisbane'),
+      W('shire-aesthetics', 'Shire Cosmetic Medicine', 'Non-surgical cosmetic and vein clinic, Miranda, Sydney')
     ],
-    'Hair Transplant Clinics': [
-      W('az-hair-restoration', 'AZ Hair Restoration', 'Doctor-led hair transplants, North Carolina'),
-      W('crown-clinic', 'The Crown Clinic', 'FUE hair transplants, Sydney'),
-      W('atlantis', 'Atlantis Hair Transplant', 'Single-patient hair transplant days, Melbourne')
+    Ophthalmologists: [
+      W('the-harley-street-eye-centre', 'The Harley Street Eye Centre', 'Laser, lens and corneal eye surgery, Harley Street'),
+      W('the-vision-surgeon-uk', 'The Vision Surgeon', 'Laser eye, lens and cataract surgery, Colchester'),
+      W('ashford-advanced-eye-care', 'Ashford Advanced Eye Care', 'Laser vision correction and cataract surgery, Adelaide'),
+      W('canterbury-eye-specialists', 'Canterbury Eye Specialists', 'Ophthalmologists and cataract surgery, Canterbury, Melbourne'),
+      W('heidelberg-eye-clinic', 'Heidelberg Eye Clinic', 'Cataract, glaucoma and retinal eye care, Heidelberg, Melbourne'),
+      W('vision-clinic-sydney', 'Vision Clinic Sydney', 'Laser vision correction and cataract surgery, Sydney')
     ],
-    'Surgeons & Specialists': [
-      W('head2neck', 'Head2Neck', 'Head, neck and maxillofacial surgery, Hertfordshire and Luton'),
-      W('vasectomy-clinic-brisbane', 'Vasectomy Clinic Brisbane', 'No-scalpel vasectomy, Brisbane'),
-      W('arthritiscare', 'ArthritisCARE', 'Rheumatology, Brisbane')
+    "Hair Transplant Clinics": [
+      W('fortes-clinic', 'Fortes Clinic', 'FUE hair transplant clinic, Little Venice, London'),
+      W('tajmeel-clinic', 'Tajmeel Clinic', 'Hair transplants and hair loss treatment, Bournemouth'),
+      W('atlantis-medical', 'Atlantis Medical', 'Hair transplant surgery, Malvern, Melbourne'),
+      W('az-hair-restoration', 'AZ Hair Restoration', 'Doctor-led hair transplant clinic, Raleigh, North Carolina'),
+      W('hair-transplant-medical-centre', 'Hair Transplant Medical Centre', 'Hair transplant surgery, Toronto, Mississauga and Oakville'),
+      W('imami-hair-restoration', 'Imami Hair Restoration', 'Hair transplant surgery with Dr Imami, Melbourne, Florida'),
+      W('dr-malay-mehta', 'Malay Mehta Aesthetic Clinic', 'Hair transplant surgery with Dr Malay Mehta, Mumbai'),
+      W('new-hair-clinic', 'New Hair Clinic', 'Hair transplant and hair loss treatment, Perth'),
+      W('scalp-transformation', 'Scalp Transformation', 'Scalp micropigmentation, Sydney CBD'),
+      W('crown-clinic', 'The Crown Clinic', 'Hair transplants, Sydney, Campbelltown and Melbourne')
     ],
-    'GP & Medical Organisations': [
-      W('new-albion-medical-centre', 'New Albion Medical Centre', 'GP practice, New South Wales'),
-      W('nsw-hand-surgery', 'NSW Hand Surgery Association', 'Annual conference and members\' website')
+    Dermatologists: [
+      W('derma-cosmetika', 'Derma Cosmetika', 'Skin, face and body treatments, Camberwell, Melbourne'),
+      W('hk-cosmetics', 'HK Cosmetics', 'Doctor-led cosmetic injectables and skin, Sans Souci, Sydney'),
+      W('inside-out-dermatology', 'Inside Out Dermatology', 'Specialist dermatology for the whole family, Preston, Melbourne'),
+      W('my-cosmetic-skincare', 'My Cosmetic Skincare', 'Online medical-grade skincare store'),
+      W('sinclair-dermatology', 'Sinclair Dermatology', 'Medical dermatology and clinical trials, East Melbourne')
+    ],
+    "Orthopaedic Surgeons": [
+      W('dr-adrian-low', 'Dr Adrian Low', 'Shoulder, knee and trauma orthopaedic surgery, Sydney'),
+      W('dr-robert-sew-hoy', 'Dr Robert Sew Hoy', 'Hip and knee surgery, North Sydney and Frenchs Forest'),
+      W('moati-melbourne-othorpaethedic-trauma-institute', 'Melbourne Orthopaedic & Trauma Institute', 'Hip and knee surgery, Malvern and Werribee, Melbourne'),
+      W('mid-north-coast-hip-knee-clinic', 'Mid North Coast Hip & Knee Clinic', 'Hip and knee surgery, Coffs Harbour and Sydney'),
+      W('andrew-gong', 'Mr Andrew Gong', 'Orthopaedic surgery, Melbourne')
+    ],
+    "Hand Surgeons": [
+      W('hand-wrist-surgery-uk', 'UK Hand & Wrist Surgery', 'Specialist hand and wrist surgery, Hatfield, Hertfordshire'),
+      W('nsw-hand-surgery-association', 'NSW Hand Surgery Association', 'Professional association for hand surgeons, New South Wales')
+    ],
+    "Head & Neck Surgeons": [
+      W('head2neck', 'Head2Neck', 'Head, neck and maxillofacial surgery, London and Hertfordshire')
+    ],
+    "General Surgeons": [
+      W('dr-brad-bidwell-general-surgery', 'Dr Brad Bidwell', 'General, breast and colorectal surgery, Wangaratta')
+    ],
+    "Vasectomy Clinics": [
+      W('dr-geoff-cashion', 'Dr Geoff Cashion', 'Vasectomy and patient referrals, Australia'),
+      W('gentle-procedures', 'Gentle Procedures Clinic', 'No-scalpel vasectomy, Sydney, Penrith and Narellan'),
+      W('msi-vasectomy', 'MSI Australia', 'No-scalpel vasectomy clinics across Australia'),
+      W('sydney-vasectomy-centre', 'Sydney Vasectomy Centre', 'No-scalpel vasectomy, Sydney'),
+      W('the-cooper-clinic', 'The Cooper Clinic', 'Non-scalpel vasectomy, Auckland and North Island'),
+      W('vasectomy-clinic-brisbane', 'Vasectomy Clinic Brisbane', 'No-scalpel vasectomy, The Gap, Brisbane')
+    ],
+    "Vein Clinics": [
+      W('medi-vein', 'Medi Vein Centre', 'Varicose vein treatment, Sydney CBD and Balmain'),
+      W('spier-veins', 'Spider Veins Australia', 'Spider vein treatment, Sydney CBD and Parramatta'),
+      W('vein-health-clinics', 'Vein Health Clinics', 'Varicose vein treatment, Central Florida'),
+      W('vein-hydration', 'Vein Hydration', 'IV hydration and vitamin drips, Central Florida')
+    ],
+    Rheumatologists: [
+      W('arthritiscare', 'arthritisCARE', 'Rheumatology for arthritis and joint pain, Brisbane'),
+      W('fnq-rheumatology', 'FNQ Rheumatology', 'Rheumatology and joint pain care, Cairns'),
+      W("rheumatology-com-au", "Rheumatology.com.au", "arthritisCARE's rheumatology website, Dutton Park, Brisbane")
+    ],
+    "Dental & Periodontal Clinics": [
+      W('kiama-dental-specialists', 'Kiama Dental Specialists', 'Professor-led periodontal care, Kiama'),
+      W('smile-specialists-suite', 'Smile Specialists Suite', 'Specialist periodontics and dental implants, Neutral Bay, Newcastle and Kiama'),
+      W('the-dentist', 'The Dentist at 70 Pitt Street', 'General and cosmetic dentistry, Sydney CBD')
+    ],
+    "Chiropractic & Physiotherapy": [
+      W('adjusted', 'Adjusted Chiropractic Studios', 'Chiropractic care, Sydney CBD'),
+      W('infinity-allied-care', 'Infinity Allied Healthcare', 'Physiotherapy and allied health, Sydney'),
+      W('platinum-chiropractic-erina', 'Platinum Chiropractic Erina', 'Chiropractic care, Erina, Central Coast NSW')
+    ],
+    "Mental Health Clinics": [
+      W("save-minds", "Save Minds", "Consultant-led ketamine therapy, St John's Wood, London"),
+      W('mindful-space', 'Mindful Space', 'Online ADHD and autism assessments, Ireland')
+    ],
+    "GP & Medical Centres": [
+      W("mansmatters", "MansMatters", "Non-invasive men's health clinic, Knightsbridge and Richmond"),
+      W('balmoral-medical-practice', 'Balmoral Medical Practice', 'General practice for families, Mosman, Sydney'),
+      W('connectgene', 'ConnectGene', 'Personalised cancer care and genomic testing, Hong Kong'),
+      W('cg-genomics-oncology', 'ConnectGene Genomics Oncology', 'Genomic testing for cancer, Hong Kong'),
+      W('cura-specialists', 'CURA Medical Specialists', 'Neurology specialists, Drummoyne, Sydney'),
+      W('dr-tony-kodsi', 'Dr Tony Kodsi', 'Pain medicine specialist, Macquarie Park, Sydney'),
+      W('hearty-center', 'Hearty Center', 'Cancer wellness retreat, Katoomba, Blue Mountains'),
+      W('lotus-medics', 'Lotus Medics', 'Gynaecology and obstetrics, Orange, Bathurst and Parkes'),
+      W('new-albion-medical-centre', 'New Albion Medical Centre', 'Family GP practice, Albion Park NSW'),
+      W('night-lite-pediatrics', 'Night Lite Pediatrics', 'Paediatric urgent care, Florida'),
+      W('observatory-tower-medical-centre', 'Observatory Tower Medical Centre', 'GP and executive health clinic, Sydney CBD'),
+      W('southern-allergy', 'Southern Allergy', 'Allergy care for children and adults'),
+      W('st-leonards-medical-clinic', 'St Leonards Medical Clinic', 'General practice, St Leonards, Sydney')
+    ],
+    "Medical Skincare Stores": [
+      W('lumiere-skin-online', 'Lumi\u00e8re Skin', 'Online cosmeceutical skincare store, Sydney'),
+      W('pure-synergie', 'Pure Synergie Skin Store', 'Cosmeceutical skincare store, Edge Hill, Cairns')
     ]
   };
 
@@ -131,7 +236,7 @@
   const HERO_SITES = [
     { f: 'british-face-clinic', name: 'British Face Clinic', place: 'Harley Street', url: 'britishfaceclinic.com' },
     { f: 'delta-clinics', name: 'Delta Clinics', place: 'Harley Street', url: 'deltaclinics.co.uk' },
-    { f: 'harley-street-eye-centre', name: 'The Harley Street Eye Centre', place: 'Harley Street', url: 'theharleystreeteyecentre.com' }
+    { f: 'the-harley-street-eye-centre', name: 'The Harley Street Eye Centre', place: 'Harley Street', url: 'theharleystreeteyecentre.com' }
   ];
 
   const FEATURED = ['forbes-logo-2.webp', 'daily-mail-uk-logo.png', 'business-insider-logo-2.webp', 'entrepreneur-logo.png', 'Yahoo_Finance_logo.webp', 'mashable-logo.webp', 'usa-today-logo.webp', 'msn-logo-1.webp', 'london-insider-logo.webp', 'marketing-mag-logo.webp', 'thrive-global-logo.png', 'smart-company-logo-1.png', 'herald-sun.png', 'new-york-weekly.webp', 'sem_logo.webp'];
@@ -362,7 +467,7 @@
       slidesEl.innerHTML = items.map((it) => `
         <figure class="slide">
           <button class="shot" type="button" data-zoom="${esc(it.file)}" data-client="${esc(it.client)}" data-cap="${esc(prettyCaption(it.caption, it.client))}" aria-label="Enlarge screenshot: ${esc(it.client)}, ${esc(prettyCaption(it.caption, it.client))}">
-            <img src="${esc(it.thumb || it.file)}" alt="${esc(it.client)}: ${esc(prettyCaption(it.caption, it.client))}" loading="lazy">
+            <img src="${esc(it.thumb || it.file)}"${it.thumbSm ? ` srcset="${esc(it.thumbSm)} 640w, ${esc(it.thumb)} 960w" sizes="(max-width: 860px) 78vw, 520px" width="960" height="600"` : ''} decoding="async" alt="${esc(it.client)}: ${esc(prettyCaption(it.caption, it.client))}" loading="lazy">
             <span class="zoom" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><circle cx="11" cy="11" r="6.5"/><path d="m20 20-4.2-4.2M11 8.6v4.8M8.6 11h4.8"/></svg></span>
           </button>
           <figcaption class="meta"><b>${esc(it.client)}</b><span>${esc(prettyCaption(it.caption, it.client))}</span></figcaption>

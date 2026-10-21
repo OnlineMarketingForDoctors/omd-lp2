@@ -1,0 +1,23 @@
+# Raw uploads live in the repo as source material only. The pages use the
+# compressed copies inside each page's own assets/ folder, so none of this
+# needs to be deployed, and leaving it out keeps the originals off public URLs.
+/website screenshots
+/Landing Pages Portfolio
+/google ads results
+/social ads
+/videos
+/team photos
+/photography portfolio
+/client-photos
+/client-logos
+/case logos
+/doctor headshots
+/testimonial headshots
+/brand
+/*.zip
+/*.png
+/*.jpg
+/*.jpeg
+/*.webp
+/*.pdf
+/CLAUDE.md
