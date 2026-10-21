@@ -33,7 +33,7 @@
       stats: [['1,500%', 'increase in website traffic'], ['540%', 'increase in keyword rankings'], ['2', 'clinic locations, each with its own Google profile']],
       situation: 'Mr Hazem Alfie brought twenty years as a consultant plastic surgeon to a newly opened clinic with no proper website, procedure pages too thin to rank, and two Google listings competing with each other.',
       did: ['Designed and wrote a totally new website for the clinic', 'Long-form pages for tummy tuck, breast enlargement and labiaplasty, with diagrams and video', 'Rebuilt the Harley Street and Finchley Google Business Profiles so they stopped competing', 'Website, SEO and social media now run by one designated OMD team'],
-      shots: [[WS + 'delta-clinics--top.webp', 'The new Delta Clinics homepage', WS + 'delta-clinics--full.webp'], [C + 'delta-breast-enlargement-page--top.webp', 'The breast enlargement page', C + 'delta-breast-enlargement-page--full.webp']],
+      shots: [[WS + 'delta-clinics--top.webp', 'The new Delta Clinics homepage', WS + 'delta-clinics--full.webp'], [C + 'delta-contact-page--top.webp', 'The contact page', C + 'delta-contact-page--full.webp']],
       portrait: C + 'delta-alfie.webp',
       quote: 'Currently they are managing our website, they have designed a totally new website, they have also been doing our SEO and I\'ve seen great results with the SEO. I have seen an increase of almost 730% in the total number of leads or inquiries that come to the clinic.',
       who: 'Mr Hazem Alfie', role: 'Consultant Plastic Surgeon, Delta Clinics',
