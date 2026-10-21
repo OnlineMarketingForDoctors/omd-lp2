@@ -126,7 +126,6 @@
       W('dermal-skin-laundry', 'Dermal Skin Laundry', 'Skin needling and non-surgical skin treatments, Epping, Melbourne'),
       W("dr-reddy-sankeerth", "Dr Sankeerth Reddy", "Aesthetic medicine and men's health, Singapore"),
       W('ellysium-aesthetics', 'Ellysium Aesthetics', 'Non-surgical aesthetics and hair restoration, Iluka, Perth'),
-      W('fancy-lash', 'Fancy Lash', 'Eyelash extensions, Potts Point and Chatswood, Sydney'),
       W('gardenia-skin-co', 'Gardenia Skin Co', 'Cosmetic skin and anti-ageing treatments, Sydney'),
       W('jade-cosmetic-clinic', 'Jade Cosmetic Clinic', 'Cosmetic injectables and skin rejuvenation, Cairns and Brisbane'),
       W('my-cosmetic-clinic', 'My Cosmetic Clinic', 'Cosmetic injectables and surgery, Sydney and NSW'),
@@ -158,7 +157,7 @@
       W('derma-cosmetika', 'Derma Cosmetika', 'Skin, face and body treatments, Camberwell, Melbourne'),
       W('hk-cosmetics', 'HK Cosmetics', 'Doctor-led cosmetic injectables and skin, Sans Souci, Sydney'),
       W('inside-out-dermatology', 'Inside Out Dermatology', 'Specialist dermatology for the whole family, Preston, Melbourne'),
-      W('my-cosmetic-skincare', 'My Cosmetic Skincare', 'Online medical-grade skincare store'),
+      W('my-cosmetic-skincare', 'My Cosmetic Skincare', 'Online medical-grade skincare store, Sydney'),
       W('sinclair-dermatology', 'Sinclair Dermatology', 'Medical dermatology and clinical trials, East Melbourne')
     ],
     "Orthopaedic Surgeons": [
@@ -179,7 +178,7 @@
       W('dr-brad-bidwell-general-surgery', 'Dr Brad Bidwell', 'General, breast and colorectal surgery, Wangaratta')
     ],
     "Vasectomy Clinics": [
-      W('dr-geoff-cashion', 'Dr Geoff Cashion', 'Vasectomy and patient referrals, Australia'),
+      W('dr-geoff-cashion', 'Dr Geoff Cashion', 'Vasectomy and patient referrals, Sydney'),
       W('gentle-procedures', 'Gentle Procedures Clinic', 'No-scalpel vasectomy, Sydney, Penrith and Narellan'),
       W('msi-vasectomy', 'MSI Australia', 'No-scalpel vasectomy clinics across Australia'),
       W('sydney-vasectomy-centre', 'Sydney Vasectomy Centre', 'No-scalpel vasectomy, Sydney'),
@@ -223,7 +222,7 @@
       W('new-albion-medical-centre', 'New Albion Medical Centre', 'Family GP practice, Albion Park NSW'),
       W('night-lite-pediatrics', 'Night Lite Pediatrics', 'Paediatric urgent care, Florida'),
       W('observatory-tower-medical-centre', 'Observatory Tower Medical Centre', 'GP and executive health clinic, Sydney CBD'),
-      W('southern-allergy', 'Southern Allergy', 'Allergy care for children and adults'),
+      W('southern-allergy', 'Southern Allergy', 'Allergy care for children and adults, Melbourne'),
       W('st-leonards-medical-clinic', 'St Leonards Medical Clinic', 'General practice, St Leonards, Sydney')
     ],
     "Medical Skincare Stores": [
