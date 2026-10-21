@@ -64,7 +64,7 @@
       portrait: '', quote: '', link: ''
     },
     {
-      id: 'hanson', name: 'The Hanson Clinic', logo: '',
+      id: 'hanson', name: 'The Hanson Clinic', logo: 'assets/client-logos/the-hanson-clinic-logo.svg',
       place: 'Dublin, Ireland', specialty: 'Facial plastic surgery', months: 'January to May 2025',
       title: 'From 48 facelift leads in January to 149 surgical leads in May, at €3.30 each.',
       hero: { n: '€3.30', t: 'per deep plane facelift lead, May 2025' },
@@ -75,7 +75,7 @@
       portrait: '', quote: '', link: ''
     },
     {
-      id: 'whitehill', name: 'White Hill Clinic', logo: '',
+      id: 'whitehill', name: 'White Hill Clinic', logo: 'assets/client-logos/white-hill-clinic-logo.webp',
       place: '', specialty: 'Breast surgery', months: 'May and June 2025',
       title: '175 breast augmentation leads in a month, by expanding what already worked.',
       hero: { n: '175', t: 'breast augmentation leads, May 2025' },
@@ -86,7 +86,7 @@
       portrait: '', quote: '', link: ''
     },
     {
-      id: 'prophile', name: 'Prophile Clinics', logo: '',
+      id: 'prophile', name: 'Prophile Clinics', logo: 'assets/client-logos/prophile-clinics-logo.webp',
       place: 'Brisbane and Gold Coast, Australia', specialty: 'Aesthetic medicine', months: 'January 2026',
       title: '581 form leads in one month across seven treatment campaigns.',
       hero: { n: '581', t: 'form leads, January 2026' },
@@ -197,6 +197,9 @@
     ['british_face_clinic_logo.webp', 'British Face Clinic'],
     ['Harley-Street-Eye-Centre-logo.webp', 'The Harley Street Eye Centre'],
     ['mans-matters-logo.webp', 'MansMatters'],
+    ['the-hanson-clinic-logo.svg', 'The Hanson Clinic'],
+    ['white-hill-clinic-logo.webp', 'White Hill Clinic'],
+    ['prophile-clinics-logo.webp', 'Prophile Clinics'],
     ['the-crown-clinic-logo.webp', 'The Crown Clinic'],
     ['malay-mehta-logo.webp', 'Malay Mehta Aesthetic Clinic'],
     ['vein-doctors-sydney-logo.webp', 'Vein Doctors Sydney'],
