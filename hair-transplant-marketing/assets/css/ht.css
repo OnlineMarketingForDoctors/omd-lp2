@@ -135,3 +135,23 @@
 @media (max-width:560px){
   .pain-copy .btn,.funnel-cta .btn{white-space:normal;width:100%;justify-content:center;text-align:center}
 }
+
+/* ---------- hero ring: the five cards orbit a smaller map ---------- */
+@media (min-width:921px){
+  .viz-world .world{left:15%;right:15%}
+  .viz-world .viz-map{opacity:1}
+  /* five cards round one map: a size down from the three-card heroes */
+  .viz-world .fc .fc-quote{max-width:168px}
+  .viz-world .fc-avatar{width:60px;height:60px}
+  .viz-world::before{
+    content:"";position:absolute;left:50%;top:50%;width:84%;aspect-ratio:1;transform:translate(-50%,-50%);
+    border-radius:50%;border:1px dashed rgba(0,219,152,.28);
+    background:radial-gradient(circle,rgba(0,219,152,.07),transparent 62%);pointer-events:none
+  }
+}
+@media (min-width:921px) and (max-width:1180px){
+  .viz-world .fc .fc-quote{max-width:128px}
+  .viz-world .fc-avatar{width:48px;height:48px}
+  .viz-world .fc-stat{font-size:.56rem}
+  .viz-world .fc-stat b{font-size:1.08rem}
+}
