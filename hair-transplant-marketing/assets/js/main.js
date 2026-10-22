@@ -51,7 +51,6 @@
     ['websites/fortes-clinic', 'Fortes Clinic', 'Homepage, FUE hair transplant clinic, London'],
     ['websites/crown-clinic', 'The Crown Clinic', 'Homepage, hair transplants, Sydney and Melbourne'],
     ['websites/tajmeel-clinic', 'Tajmeel Clinic', 'Homepage, hair transplants and hair loss, Bournemouth'],
-    ['landing-pages/fortes-clinic-fue', 'Fortes Clinic', 'FUE hair transplant landing page, London'],
     ['websites/dr-malay-mehta', 'Malay Mehta Aesthetic Clinic', 'Homepage, hair transplant surgery, Mumbai'],
     ['landing-pages/crown-clinic-hair-transplant', 'The Crown Clinic', 'FUE hair transplant landing page'],
     ['websites/atlantis-medical', 'Atlantis Medical', 'Homepage, hair transplant surgery, Melbourne'],
@@ -535,13 +534,28 @@
     if (lastFocused && lastFocused.isConnected) lastFocused.focus();
     lastFocused = null;
   };
+  // the lightbox arrows step through whichever set was opened: the videos in
+  // one slider, or the screenshots in one slider or case study
+  let step = null;
   // video buttons are both static and generated, so delegate on the document
-  document.addEventListener('click', (e) => {
-    const b = e.target.closest('[data-video]'); if (!b) return;
-    lastFocused = b;
+  let videoSet = [], videoIdx = 0;
+  const showVideo = (i) => {
+    const n = videoSet.length;
+    videoIdx = (i + n) % n;
+    const b = videoSet[videoIdx];
     openLightbox(
       `<iframe src="https://www.youtube-nocookie.com/embed/${b.dataset.video}?autoplay=1&rel=0" title="Video" allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen></iframe>`,
       false, 'Video');
+    lb.classList.toggle('has-set', n > 1);
+    step = showVideo;
+    lastFocused = b;
+    if (b.closest('.slides')) b.closest('.slide').scrollIntoView({ block: 'nearest', inline: 'center', behavior: 'auto' });
+  };
+  document.addEventListener('click', (e) => {
+    const b = e.target.closest('[data-video]'); if (!b) return;
+    const scope = b.closest('.slides, .wall');
+    videoSet = scope ? $$('[data-video]', scope) : [b];
+    showVideo(videoSet.indexOf(b));
   });
   let zoomSet = [], zoomIdx = 0;
   const showZoom = (i) => {
@@ -556,6 +570,7 @@
       true, `${d.client}: ${d.cap}`);
     lb.classList.remove('is-zoomed', 'is-tall');
     lb.classList.toggle('has-set', n > 1);
+    step = showZoom;
     // a full-page website screenshot fitted to the viewport is an unreadable
     // strip, so anything much taller than it is wide opens already zoomed
     const im = lbFrame.querySelector('img');
@@ -576,15 +591,16 @@
     lb.classList.toggle('is-zoomed');
     if (lb.classList.contains('is-zoomed')) wrap.scrollLeft = (wrap.scrollWidth - wrap.clientWidth) / 2;
   });
-  lbPrev.addEventListener('click', () => showZoom(zoomIdx - 1));
-  lbNext.addEventListener('click', () => showZoom(zoomIdx + 1));
+  const go = (d) => { if (step === showVideo) showVideo(videoIdx + d); else showZoom(zoomIdx + d); };
+  lbPrev.addEventListener('click', () => go(-1));
+  lbNext.addEventListener('click', () => go(1));
   lbClose.addEventListener('click', closeLightbox);
   lb.addEventListener('click', (e) => { if (e.target === lb || e.target === lbFrame) closeLightbox(); });
   document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape') { closeLightbox(); if (typeof closeBook === 'function') closeBook(); setDrawer(false); return; }
     if (!lb.classList.contains('has-set')) return;
-    if (e.key === 'ArrowLeft') { e.preventDefault(); showZoom(zoomIdx - 1); }
-    else if (e.key === 'ArrowRight') { e.preventDefault(); showZoom(zoomIdx + 1); }
+    if (e.key === 'ArrowLeft') { e.preventDefault(); go(-1); }
+    else if (e.key === 'ArrowRight') { e.preventDefault(); go(1); }
   });
 
   /* ---------------- booking dialog ----------------

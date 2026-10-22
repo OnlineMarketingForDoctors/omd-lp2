@@ -109,3 +109,23 @@
 
 /* ---------- review wall: .text-q's own span would otherwise beat .v3 ---------- */
 .wall .text-q.v3{grid-column:span 5}
+
+/* ---------- hero: the world map in place of the UK one ---------- */
+/* the map is landscape, so the stage is squarer than the UK's portrait one
+   and the map sits across its middle, with the cards above and below */
+.hero-viz.viz-world{aspect-ratio:1/1}
+.viz-world .world{position:absolute;left:0;right:0;top:50%;transform:translateY(-50%);aspect-ratio:1000/413}
+.viz-world .viz-map{opacity:.95}
+.viz-world .viz-city{gap:0}
+.viz-world .viz-city i{width:7px;height:7px}
+.viz-world .viz-city:nth-child(3n) i{animation-delay:-.9s}
+.viz-world .viz-city:nth-child(3n+1) i{animation-delay:-1.7s}
+/* result cards with no photo: the clinics we have no headshot for */
+.fc-mini .fc-quote{max-width:178px}
+@media (max-width:920px){
+  .hero-viz.viz-quotes.viz-world{aspect-ratio:1/1.12}
+  .viz-world .fc-mini{display:none}
+}
+
+/* ---------- lightbox: arrows for a slider of videos too, not only screenshots ---------- */
+.lightbox.has-set .lb-nav{display:flex}
