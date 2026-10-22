@@ -24,7 +24,7 @@
 .pain-list svg{flex:none;width:20px;height:20px;color:#e0484f;margin-top:1px}
 .pain-copy .pain-turn{font-weight:700;font-size:1.08rem;margin-bottom:20px}
 @media (max-width:920px){
-  .pain-grid{grid-template-columns:1fr}
+  .pain-grid{grid-template-columns:minmax(0,1fr)}
   .pain-img{max-width:520px}
   .pain-img img{aspect-ratio:4/3;object-position:46% 40%}
 }
@@ -114,7 +114,7 @@
 /* the map is landscape, so the stage is squarer than the UK's portrait one
    and the map sits across its middle, with the cards above and below */
 .hero-viz.viz-world{aspect-ratio:1/1}
-.viz-world .world{position:absolute;left:0;right:0;top:50%;transform:translateY(-50%);aspect-ratio:1000/413}
+.viz-world .world{position:absolute;left:0;right:0;top:50%;transform:translateY(-50%);aspect-ratio:1000/389}
 .viz-world .viz-map{opacity:.95}
 .viz-world .viz-city{gap:0}
 .viz-world .viz-city i{width:7px;height:7px}
@@ -129,3 +129,8 @@
 
 /* ---------- lightbox: arrows for a slider of videos too, not only screenshots ---------- */
 .lightbox.has-set .lb-nav{display:flex}
+
+/* ---------- long call-to-action labels wrap on phones instead of widening the column ---------- */
+@media (max-width:560px){
+  .pain-copy .btn,.funnel-cta .btn{white-space:normal;width:100%;justify-content:center;text-align:center}
+}
