@@ -7,7 +7,8 @@
 .pain{background:var(--white)}
 .pain-grid{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:clamp(28px,5vw,80px);align-items:center}
 .pain-img{position:relative}
-.pain-img img{border-radius:14px;box-shadow:var(--shadow-lg);aspect-ratio:4/5;object-fit:cover;width:100%}
+/* landscape photo in a portrait frame: keep the surgeon and the patient's head in view */
+.pain-img img{border-radius:14px;box-shadow:var(--shadow-lg);aspect-ratio:4/5;object-fit:cover;object-position:46% 50%;width:100%}
 .pain-img .pain-tag{
   position:absolute;left:18px;bottom:18px;right:18px;background:rgba(0,0,0,.78);color:var(--white);
   border-radius:10px;padding:14px 16px;font-weight:600;font-size:.92rem;line-height:1.4;backdrop-filter:blur(6px)
@@ -25,7 +26,7 @@
 @media (max-width:920px){
   .pain-grid{grid-template-columns:1fr}
   .pain-img{max-width:520px}
-  .pain-img img{aspect-ratio:4/3;object-position:50% 30%}
+  .pain-img img{aspect-ratio:4/3;object-position:46% 40%}
 }
 @media (max-width:560px){.pain-list{grid-template-columns:1fr}}
 
