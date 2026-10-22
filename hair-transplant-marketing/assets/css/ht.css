@@ -120,8 +120,9 @@
 .viz-world .viz-city i{width:7px;height:7px}
 .viz-world .viz-city:nth-child(3n) i{animation-delay:-.9s}
 .viz-world .viz-city:nth-child(3n+1) i{animation-delay:-1.7s}
-/* result cards with no photo: the clinics we have no headshot for */
+/* the two extra result cards: narrower, and dropped on phones */
 .fc-mini .fc-quote{max-width:178px}
+@media (max-width:1180px){.fc-mini .fc-quote{max-width:148px}}
 @media (max-width:920px){
   .hero-viz.viz-quotes.viz-world{aspect-ratio:1/1.12}
   .viz-world .fc-mini{display:none}
