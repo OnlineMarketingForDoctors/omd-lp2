@@ -120,12 +120,12 @@
 .viz-world .viz-city i{width:7px;height:7px}
 .viz-world .viz-city:nth-child(3n) i{animation-delay:-.9s}
 .viz-world .viz-city:nth-child(3n+1) i{animation-delay:-1.7s}
-/* the two extra result cards: narrower, and dropped on phones */
+/* the two cards with a shorter stat line: a little narrower */
 .fc-mini .fc-quote{max-width:178px}
 @media (max-width:1180px){.fc-mini .fc-quote{max-width:148px}}
 @media (max-width:920px){
   .hero-viz.viz-quotes.viz-world{aspect-ratio:1/1.12}
-  .viz-world .fc-mini{display:none}
+  .viz-world .m-hide{display:none}
 }
 
 /* ---------- lightbox: arrows for a slider of videos too, not only screenshots ---------- */
@@ -156,7 +156,7 @@
   .viz-world .fc-stat b{font-size:1.08rem}
 }
 
-/* phones: the three cards zig-zag left, right, left down the map */
+/* phones: Fortes, Atlantis and AZ Hair zig-zag left, right, left down the map */
 @media (max-width:920px){
-  .viz-world .fc.m-left{left:0;right:auto;flex-direction:row}
+  .viz-world .fc.m-right{left:auto;right:0;flex-direction:row-reverse}
 }
