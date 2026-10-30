@@ -1,0 +1,171 @@
+/* ==========================================================================
+   Hair transplant page: the sections the plastic surgery page does not have
+   (pain points, the three things, the sales funnel). Same tokens as style.css.
+   ========================================================================== */
+
+/* ---------- pain points ---------- */
+.pain{background:var(--white)}
+.pain-grid{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:clamp(28px,5vw,80px);align-items:center}
+.pain-img{position:relative}
+/* landscape photo in a portrait frame: keep the surgeon and the patient's head in view */
+.pain-img img{border-radius:14px;box-shadow:var(--shadow-lg);aspect-ratio:4/5;object-fit:cover;object-position:46% 50%;width:100%}
+.pain-img .pain-tag{
+  position:absolute;left:18px;bottom:18px;right:18px;background:rgba(0,0,0,.78);color:var(--white);
+  border-radius:10px;padding:14px 16px;font-weight:600;font-size:.92rem;line-height:1.4;backdrop-filter:blur(6px)
+}
+.pain-img .pain-tag b{color:var(--green)}
+.pain-copy h2{margin-bottom:16px}
+.pain-copy .t-lead{color:var(--ink-2);margin-bottom:26px}
+.pain-list{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:28px}
+.pain-list li{
+  display:flex;gap:12px;align-items:flex-start;padding:16px 16px 16px 14px;border-radius:10px;
+  background:var(--off);border:1px solid var(--line);font-weight:600;font-size:.97rem;line-height:1.35
+}
+.pain-list svg{flex:none;width:20px;height:20px;color:#e0484f;margin-top:1px}
+.pain-copy .pain-turn{font-weight:700;font-size:1.08rem;margin-bottom:20px}
+@media (max-width:920px){
+  .pain-grid{grid-template-columns:minmax(0,1fr)}
+  .pain-img{max-width:520px}
+  .pain-img img{aspect-ratio:4/3;object-position:46% 40%}
+}
+@media (max-width:560px){.pain-list{grid-template-columns:1fr}}
+
+/* ---------- the three things ---------- */
+.three-head{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:32px;align-items:end;margin-bottom:44px}
+.three-head .side{color:var(--on-dark-2);max-width:46ch}
+.three-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;counter-reset:three}
+.three-card{
+  position:relative;padding:30px 26px 28px;border-radius:14px;background:rgba(255,255,255,.05);
+  border:1px solid var(--paper-line);display:flex;flex-direction:column;gap:12px
+}
+.three-card .n{
+  font-family:var(--action);font-weight:600;font-size:1.05rem;width:42px;height:42px;border-radius:9px;
+  background:var(--green);color:var(--black);display:flex;align-items:center;justify-content:center
+}
+.three-card h3{font-size:clamp(1.25rem,1.9vw,1.55rem);line-height:1.15}
+.three-card p{color:var(--on-dark-2);margin:0;font-size:.98rem}
+.three-card .chan{display:flex;flex-wrap:wrap;gap:6px;margin-top:auto;padding-top:8px}
+.three-card .chan li{
+  font-family:var(--action);font-size:.7rem;letter-spacing:.08em;text-transform:uppercase;padding:4px 9px;
+  border-radius:999px;background:rgba(0,219,152,.14);color:var(--green)
+}
+.three-foot{margin-top:34px;display:flex;flex-wrap:wrap;gap:16px 24px;align-items:center}
+.three-foot p{margin:0;color:var(--on-dark-2);max-width:60ch}
+@media (max-width:920px){
+  .three-head{grid-template-columns:1fr;align-items:start;margin-bottom:30px}
+  .three-grid{grid-template-columns:1fr}
+}
+
+/* ---------- sales funnel and email follow-up ---------- */
+.funnel{background:var(--off)}
+.funnel-head{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);gap:clamp(28px,5vw,72px);align-items:start;margin-bottom:clamp(36px,5vw,56px)}
+.funnel-head h2{margin-bottom:18px}
+.funnel-head .t-lead{color:var(--ink-2)}
+.funnel-head .story p{color:var(--ink-2)}
+.funnel-head .story p strong{color:var(--ink)}
+.funnel-wins{display:grid;gap:9px;margin-top:6px}
+.funnel-wins li{display:flex;gap:12px;align-items:flex-start;font-weight:600;line-height:1.4}
+.funnel-wins svg{flex:none;width:20px;height:20px;color:var(--green-deep);margin-top:2px}
+
+.stages{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:0;margin-bottom:clamp(36px,5vw,56px);border-radius:14px;overflow:hidden;box-shadow:var(--shadow-md)}
+.stage{padding:26px 24px;background:var(--white);position:relative}
+.stage+.stage{border-left:1px solid var(--line)}
+.stage .lbl{font-family:var(--action);font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:var(--green-deep);display:block;margin-bottom:6px}
+.stage h3{font-size:1.2rem;margin-bottom:10px;line-height:1.2}
+.stage p{font-size:.93rem;color:var(--ink-2);margin:0}
+.stage:nth-child(2){background:#f9fbfb}
+.stage:nth-child(3){background:var(--black);color:var(--white)}
+.stage:nth-child(3) p{color:var(--on-dark-2)}
+.stage:nth-child(3) .lbl{color:var(--green)}
+
+.funnel-body{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(24px,4vw,56px);align-items:start}
+.funnel-box{background:var(--white);border:1px solid var(--line);border-radius:14px;padding:clamp(22px,3vw,34px);box-shadow:var(--shadow-md)}
+.funnel-box h3{font-size:1.3rem;margin-bottom:6px;line-height:1.2}
+.funnel-box .sub{color:var(--ink-2);font-size:.95rem;margin-bottom:18px}
+.funnel-box ul{display:grid;gap:11px}
+.funnel-box li{display:grid;grid-template-columns:22px 1fr;gap:10px;font-size:.96rem;line-height:1.45}
+.funnel-box li svg{width:20px;height:20px;color:var(--green-deep);margin-top:2px}
+.funnel-box li b{font-weight:700}
+.funnel-shots{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:20px}
+.funnel-shots .shot-zoom{display:block;border-radius:10px;overflow:hidden;border:1px solid var(--line);background:var(--off);width:100%}
+.funnel-shots img{width:100%;aspect-ratio:1/1;object-fit:cover;object-position:50% 0}
+.funnel-shots figcaption{font-size:.8rem;color:var(--ink-2);margin-top:6px;line-height:1.35}
+.funnel-cta{margin-top:clamp(30px,4vw,44px);display:flex;flex-wrap:wrap;gap:14px 22px;align-items:center}
+.funnel-cta .note{color:var(--ink-2);font-size:.92rem}
+.funnel-fit{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:clamp(30px,4vw,44px)}
+.funnel-fit > div{border-radius:12px;padding:22px 24px;background:var(--white);border:1px solid var(--line)}
+.funnel-fit h4{font-size:1rem;margin-bottom:12px;font-family:var(--action);font-weight:600;letter-spacing:.06em;text-transform:uppercase}
+.funnel-fit ul{display:grid;gap:8px}
+.funnel-fit li{padding-left:22px;position:relative;font-size:.95rem;line-height:1.45}
+.funnel-fit li::before{content:"";position:absolute;left:0;top:.6em;width:12px;height:3px;background:var(--green)}
+.funnel-fit .no li::before{background:#e0484f}
+@media (max-width:920px){
+  .funnel-head,.funnel-body{grid-template-columns:1fr}
+  .stages{grid-template-columns:1fr}
+  .stage+.stage{border-left:0;border-top:1px solid var(--line)}
+  .funnel-fit{grid-template-columns:1fr}
+}
+.funnel-shots .contain img{object-fit:contain;background:var(--white)}
+
+/* ---------- review wall: .text-q's own span would otherwise beat .v3 ---------- */
+.wall .text-q.v3{grid-column:span 5}
+
+/* ---------- hero: the world map in place of the UK one ---------- */
+/* the map is landscape, so the stage is squarer than the UK's portrait one
+   and the map sits across its middle, with the cards above and below */
+.hero-viz.viz-world{aspect-ratio:1/1}
+.viz-world .world{position:absolute;left:0;right:0;top:50%;transform:translateY(-50%);aspect-ratio:1000/389}
+.viz-world .viz-map{opacity:.95}
+.viz-world .viz-city{gap:0}
+.viz-world .viz-city i{width:7px;height:7px}
+.viz-world .viz-city:nth-child(3n) i{animation-delay:-.9s}
+.viz-world .viz-city:nth-child(3n+1) i{animation-delay:-1.7s}
+/* the two cards with a shorter stat line: a little narrower */
+.fc-mini .fc-quote{max-width:178px}
+@media (max-width:1180px){.fc-mini .fc-quote{max-width:148px}}
+@media (max-width:920px){
+  .hero-viz.viz-quotes.viz-world{aspect-ratio:1/1.12}
+  .viz-world .m-hide{display:none}
+}
+
+/* ---------- lightbox: arrows for a slider of videos too, not only screenshots ---------- */
+.lightbox.has-set .lb-nav{display:flex}
+
+/* ---------- long call-to-action labels wrap on phones instead of widening the column ---------- */
+@media (max-width:560px){
+  .pain-copy .btn,.funnel-cta .btn{white-space:normal;width:100%;justify-content:center;text-align:center}
+}
+
+/* ---------- hero ring: the five cards orbit a smaller map ---------- */
+@media (min-width:921px){
+  .viz-world .world{left:15%;right:15%}
+  .viz-world .viz-map{opacity:1}
+  /* five cards round one map: a size down from the three-card heroes */
+  .viz-world .fc .fc-quote{max-width:168px}
+  .viz-world .fc-avatar{width:60px;height:60px}
+  .viz-world::before{
+    content:"";position:absolute;left:50%;top:50%;width:84%;aspect-ratio:1;transform:translate(-50%,-50%);
+    border-radius:50%;border:1px dashed rgba(0,219,152,.28);
+    background:radial-gradient(circle,rgba(0,219,152,.07),transparent 62%);pointer-events:none
+  }
+}
+@media (min-width:921px) and (max-width:1180px){
+  .viz-world .fc .fc-quote{max-width:128px}
+  .viz-world .fc-avatar{width:48px;height:48px}
+  .viz-world .fc-stat{font-size:.56rem}
+  .viz-world .fc-stat b{font-size:1.08rem}
+}
+
+/* phones: Fortes, Atlantis and AZ Hair zig-zag left, right, left down the map */
+@media (max-width:920px){
+  .viz-world .fc.m-right{left:auto;right:0;flex-direction:row-reverse}
+}
+
+/* ---------- Australian offices: Sydney headquarters, then four smaller cards ---------- */
+.loc-minis{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:clamp(14px,2vw,22px);margin-top:clamp(16px,2vw,22px)}
+.loc-mini{border:1px solid var(--paper-line);border-radius:14px;background:rgba(255,255,255,.03);padding:clamp(18px,2vw,24px);display:flex;flex-direction:column}
+.loc-mini h3{margin-bottom:8px}
+.loc-mini .loc-map{margin-top:auto;padding-top:0}
+.loc-mini .loc-link{margin-bottom:16px}
+@media (max-width:1100px){.loc-minis{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:600px){.loc-minis{grid-template-columns:minmax(0,1fr)}}
