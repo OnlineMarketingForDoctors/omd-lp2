@@ -1,0 +1,284 @@
+/* ==========================================================================
+   /social-media-ads-australia/ additions on top of the shared base (style.css, as on
+   /medical-seo/ and /google-ads/). Only what this page adds: the hero video
+   with Meta ad cards, the seal, the lead funnel, ad types, the feed ad
+   mock-up and the grid of video ad creatives.
+   ========================================================================== */
+
+/* ---------------- hero: video in place of the UK map ---------------- */
+.hero-viz.viz-video{aspect-ratio:auto;height:auto;min-height:0;width:100%;padding:56px 0 64px}
+.hv-frame{
+  position:relative;border-radius:16px;overflow:hidden;aspect-ratio:16/10;background:#0b0d0e;
+  box-shadow:0 0 0 1px rgba(255,255,255,.12),0 0 0 7px rgba(0,219,152,.14),0 40px 80px -30px rgba(0,0,0,.9);
+}
+.hv-frame video,.hv-frame img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.hv-frame::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,0) 55%,rgba(0,0,0,.55));pointer-events:none}
+/* the ad card: the same white pill as the SEO search chip, with Meta's
+   "Sponsored" marker above the ad format and procedure */
+.fc-ad{
+  display:grid;gap:3px;background:var(--white);color:var(--ink);border-radius:12px;padding:9px 12px 10px;
+  box-shadow:0 18px 34px -14px rgba(0,0,0,.8);min-width:0;max-width:230px;
+}
+.fc-ad .spon{display:flex;align-items:center;gap:6px;font-size:.6rem;font-weight:700;color:var(--ink)}
+.fc-ad .spon svg{width:14px;height:14px}
+.fc-ad .kw{font-size:.68rem;color:var(--ink-2);display:flex;align-items:center;gap:5px}
+.fc-ad .kw svg{width:11px;height:11px;flex:none;color:var(--ink-3)}
+.fc-ad .hl{font-size:.78rem;font-weight:700;color:var(--ink);line-height:1.25}
+.fc-stat{
+  display:grid;gap:2px;background:var(--black);color:var(--white);border:1px solid rgba(0,219,152,.45);
+  border-radius:12px;padding:10px 14px;box-shadow:0 18px 34px -14px rgba(0,0,0,.85);
+}
+.fc-stat b{font-family:var(--action);font-weight:600;font-size:1.7rem;line-height:1;color:var(--green)}
+.fc-stat span{font-size:.68rem;font-weight:600;line-height:1.3;max-width:20ch}
+.fc-stat small{font-size:.6rem;color:var(--on-dark-3);font-weight:600}
+
+/* ---------------- partner seal ---------------- */
+.seal{display:block;width:100%;height:auto}
+.seal text{font-family:var(--action)}
+.badge-seal{padding-left:10px}
+.badge-seal .seal{width:46px;height:46px;flex:none}
+
+/* ---------------- funnel: leads, cost per lead, remarketing ---------------- */
+.funnel{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin-top:26px}
+.funnel div{position:relative;border:1px solid var(--paper-line);border-radius:10px;padding:14px 14px 12px;background:rgba(255,255,255,.04)}
+.funnel div+div::before{
+  content:"";position:absolute;left:-10px;top:50%;width:10px;height:2px;background:var(--green);
+}
+.funnel .num{display:block;font-size:clamp(1.5rem,2.6vw,2.2rem);color:var(--green);line-height:1}
+.funnel small{display:block;margin-top:6px;font-size:.78rem;color:var(--on-dark-2);line-height:1.35}
+.funnel-note{margin-top:12px;font-size:.82rem;color:var(--on-dark-3)}
+@media (max-width:520px){.funnel{grid-template-columns:1fr}.funnel div+div::before{left:20px;top:-10px;width:2px;height:10px}}
+
+/* ---------------- Meta campaign types ---------------- */
+.types{background:var(--off)}
+.types-head{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:32px;align-items:end;margin-bottom:40px}
+.types-head h2{margin-bottom:12px}
+.types-head .seal-lg{width:150px;height:150px;flex:none;filter:drop-shadow(0 18px 30px rgba(0,0,0,.25))}
+.types-layout{display:grid;grid-template-columns:minmax(0,1.6fr) minmax(0,1fr);gap:clamp(20px,3vw,40px);align-items:start}
+.type-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+.type{
+  background:var(--white);border:1px solid var(--line);border-radius:12px;padding:22px 22px 20px;
+  transition:transform .25s var(--ease),box-shadow .25s var(--ease),border-color .25s var(--ease);
+}
+.type:hover{transform:translateY(-3px);box-shadow:var(--shadow-md);border-color:rgba(0,219,152,.5)}
+.type .ic{width:44px;height:44px;border-radius:10px;background:var(--black);color:var(--green);display:grid;place-items:center;margin-bottom:14px}
+.type .ic svg{width:22px;height:22px}
+.type h3{font-size:1.12rem;letter-spacing:-.01em;margin-bottom:6px}
+.type p{margin:0;font-size:.92rem;color:var(--ink-2);line-height:1.5}
+.type .for{display:block;margin-top:10px;font-family:var(--action);letter-spacing:.08em;text-transform:uppercase;font-size:.68rem;color:var(--green-deep)}
+.deliver{background:var(--black);color:var(--white);border-radius:14px;padding:26px 26px 24px;position:sticky;top:calc(var(--header-h) + 20px)}
+.deliver h3{font-size:1.25rem;margin-bottom:6px}
+.deliver > p{color:var(--on-dark-2);font-size:.92rem}
+.deliver ul{display:grid;gap:9px;margin:16px 0 22px}
+.deliver li{display:grid;grid-template-columns:20px 1fr;gap:10px;font-size:.92rem;line-height:1.4}
+.deliver li svg{width:18px;height:18px;color:var(--green);margin-top:1px}
+.deliver .btn{width:100%;justify-content:center}
+@media (max-width:1000px){.types-layout{grid-template-columns:1fr}.deliver{position:static}}
+@media (max-width:640px){
+  .type-grid{grid-template-columns:1fr}
+  .types-head{grid-template-columns:1fr}
+  .types-head .seal-lg{width:110px;height:110px;order:-1}
+}
+
+/* ---------------- feed ad mock-up in the "why social" band ----------------
+   a generic clinic, not a client: the real ads are in the results above */
+.feed{background:var(--white);color:var(--ink);border-radius:14px;margin:26px 0;box-shadow:var(--shadow-lg);max-width:400px;overflow:hidden}
+.feed-top{display:flex;align-items:center;gap:10px;padding:12px 14px;font-size:.8rem;line-height:1.25}
+.feed-top i{width:34px;height:34px;border-radius:50%;background:var(--black);display:grid;place-items:center;flex:none}
+.feed-top i::before{content:"";width:11px;height:11px;border-radius:50%;background:var(--green)}
+.feed-top b{display:block;font-size:.88rem}
+.feed-top small{color:var(--ink-3)}
+.feed-top .dots{margin-left:auto;color:var(--ink-3);font-weight:800;letter-spacing:.1em}
+/* .feed p beats the band's own .ai-copy p, which is white on dark */
+.feed p.feed-copy{padding:0 14px 12px;font-size:.86rem;line-height:1.45;color:var(--ink-2);margin:0}
+.feed-img{
+  position:relative;aspect-ratio:4/3;display:flex;flex-direction:column;justify-content:flex-end;gap:6px;padding:18px;color:var(--white);
+  background:radial-gradient(120% 90% at 85% 15%,rgba(0,219,152,.55),rgba(0,219,152,0) 55%),linear-gradient(160deg,#1d2326,#050607);
+}
+.feed-img .tag{align-self:flex-start;font-family:var(--action);letter-spacing:.1em;text-transform:uppercase;font-size:.66rem;background:var(--green);color:var(--black);padding:3px 8px;border-radius:4px}
+.feed-img b{font-size:1.45rem;line-height:1.1;letter-spacing:-.01em;max-width:14ch}
+.feed-img small{font-size:.78rem;color:var(--on-dark-2)}
+.feed-cta{display:flex;align-items:center;gap:12px;padding:11px 14px;background:#f0f2f5;font-size:.78rem;line-height:1.3}
+.feed-cta span{flex:1;min-width:0}
+.feed-cta small{display:block;color:var(--ink-3);text-transform:uppercase;font-size:.66rem;letter-spacing:.04em}
+.feed-cta em{font-style:normal;font-weight:700;background:#e4e6eb;border-radius:6px;padding:7px 12px;white-space:nowrap}
+.feed-react{display:flex;justify-content:space-around;padding:9px 14px;font-size:.78rem;font-weight:600;color:var(--ink-3);border-top:1px solid var(--line)}
+
+/* the strategy session label is longer than the shared buttons were drawn
+   for, so on a phone it may wrap rather than push the page sideways */
+@media (max-width:560px){
+  .btn{white-space:normal;text-align:center;line-height:1.2}
+  .hero-actions .btn{width:100%}
+}
+
+/* ---------------- responsive: the hero video ---------------- */
+@media (max-width:920px){
+  .hero-viz.viz-video{order:-1;aspect-ratio:auto;padding:30px 0 42px;margin-bottom:6px}
+  .hero-viz.viz-video::after{display:none}
+  .fc-ad{max-width:180px;padding:7px 10px 8px}
+  .fc-ad .hl{font-size:.68rem}
+  .fc-stat{padding:8px 11px}
+  .fc-stat b{font-size:1.3rem}
+  .fc-stat span{font-size:.6rem}
+}
+@media (max-width:520px){
+  .fc-ad .hl{display:none}
+  .fc-stat small{display:none}
+}
+
+/* ---------------- case study cards that show the whole image ----------------
+   short, wide ad screenshots lose their edges in the shared cropped cards,
+   so these take the image's own shape and carry the caption underneath */
+.shot-card.is-fit{aspect-ratio:auto;align-self:start}
+.shot-card.is-fit .shot-zoom{height:auto;padding:12px 12px 0;background:var(--white)}
+.shot-card.is-fit img{height:auto;object-fit:contain}
+.shot-card.is-fit figcaption,
+.shot-card.s1.is-fit figcaption{position:static;background:var(--white);color:var(--ink-2);padding:10px 12px 12px}
+.shot-card.s2.is-fit,.shot-card.s3.is-fit,.shot-card.s1.is-fit + .shot-card{margin-top:0}
+
+/* ---------------- "why social" band: keep her clear of the copy ----------------
+   at full width the photo can only crop top and bottom, which leaves her
+   under the text column. On desktop it is drawn 29% wider and slid left by
+   24% of that, so she sits in the left third with her phone clear of the
+   copy; the sliver it leaves on the right sits under the black gradient.
+   It hangs from the top, so a tall band crops her feet, not her head;
+   45% is her line in the photo if the band outgrows it */
+@media (min-width:921px){
+  #why{background:var(--black)}
+  #why .ai-bg{overflow:hidden}
+  #why .ai-bg img{
+    position:absolute;left:0;top:0;width:129%;height:auto;min-height:106%;max-width:none;
+    object-fit:cover;object-position:45% 10%;transform:translate(-24%,-6%);
+  }
+}
+
+/* on a phone the copy would cover her whatever the crop, so the photo
+   becomes a picture of its own above the copy, fading into the black */
+@media (max-width:920px){
+  #why{display:block;min-height:0;padding-top:0;background:var(--black)}
+  #why .ai-bg{position:relative;inset:auto;z-index:0;aspect-ratio:4/3;max-height:70vh;overflow:hidden}
+  #why .ai-bg img{object-position:42% 30%}
+  #why .ai-bg::after{background:linear-gradient(180deg,rgba(0,0,0,0) 55%,rgba(0,0,0,.65) 82%,var(--black) 100%)}
+  #why .ai-grid{margin-top:-48px;position:relative}
+}
+@media (max-width:600px){
+  #why .ai-bg{aspect-ratio:4/5}
+  #why .ai-bg img{object-position:40% 20%}
+}
+
+
+/* ---------------- our work: video ad creatives ----------------
+   9:16 cards, filtered by specialty, a dozen at a time. The thumbnail is
+   YouTube's 4:3 frame of the Short, cropped to the vertical picture in its
+   middle, and the video itself only loads when somebody taps play */
+.work{background:var(--white)}
+.chips-filter{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 26px}
+.chip{
+  font-family:var(--action);font-weight:500;letter-spacing:.05em;text-transform:uppercase;font-size:.76rem;
+  display:inline-flex;align-items:center;gap:8px;padding:.62em 1.05em;border-radius:999px;border:1px solid var(--line);
+  background:var(--off);color:var(--ink);transition:background .2s var(--ease),border-color .2s var(--ease),color .2s var(--ease);
+}
+.chip .count{font-size:.66rem;opacity:.6;font-variant-numeric:tabular-nums}
+.chip:hover{border-color:var(--green)}
+.chip[aria-pressed="true"]{background:var(--black);color:var(--white);border-color:var(--black)}
+.chip[aria-pressed="true"] .count{color:var(--green);opacity:1}
+.reels{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:18px}
+.reel{display:flex;flex-direction:column;gap:10px;margin:0}
+.reel-play{
+  position:relative;display:block;width:100%;aspect-ratio:9/16;border-radius:12px;overflow:hidden;background:#111;
+  box-shadow:var(--shadow-md);cursor:pointer;
+}
+.reel-play img{width:100%;height:100%;object-fit:cover;transition:transform .6s var(--ease)}
+.reel-play:hover img{transform:scale(1.04)}
+.reel-play::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,0) 60%,rgba(0,0,0,.55));pointer-events:none}
+.reel-play .play{width:58px;height:58px}
+.reel-play .play svg{width:24px;height:24px}
+.reel-play:hover .play{transform:translate(-50%,-50%) scale(1.08)}
+.reel-play .fmt{
+  position:absolute;left:10px;top:10px;z-index:1;display:inline-flex;align-items:center;gap:5px;
+  font-family:var(--action);letter-spacing:.08em;text-transform:uppercase;font-size:.62rem;
+  background:rgba(0,0,0,.66);color:var(--white);padding:4px 8px;border-radius:999px;
+}
+.reel-play .fmt svg{width:11px;height:11px}
+.reel figcaption{display:flex;flex-direction:column;gap:2px;line-height:1.3}
+.reel figcaption b{font-size:.9rem}
+.reel figcaption span{font-size:.8rem;color:var(--ink-2)}
+.reels-more{display:flex;flex-direction:column;align-items:center;gap:10px;margin-top:34px}
+.reels-more small{font-size:.82rem;color:var(--ink-3)}
+.reels-more[hidden]{display:none}
+@media (max-width:1000px){.reels{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media (max-width:640px){
+  .reels{grid-template-columns:repeat(2,minmax(0,1fr));gap:14px 12px}
+  .reel-play .play{width:48px;height:48px}
+  .chips-filter{flex-wrap:nowrap;overflow-x:auto;margin:0 calc(var(--gutter) * -1) 22px;padding:0 var(--gutter) 4px;scrollbar-width:none}
+  .chips-filter::-webkit-scrollbar{display:none}
+  .chip{flex:none}
+}
+
+/* a Short plays upright, so its lightbox frame does too */
+.lightbox.is-vertical .frame{width:auto;height:min(86vh,820px);max-width:100%;aspect-ratio:9/16}
+/* the shared base only shows the arrows for screenshots; the video ads step
+   through the ads on screen the same way */
+.lightbox.is-vertical.has-set .lb-nav{display:flex}
+
+/* the lightbox opens a full page zoomed: it fills the frame width and
+   scrolls straight down, the way the page itself does */
+.lightbox.is-image .zoom-hint{display:block}
+.lightbox.is-zoomed .zoom-hint{display:none}
+.lightbox.is-image.is-zoomed.is-tall .frame{width:min(1200px,100%)}
+.lightbox.is-image.is-zoomed.is-tall .zoomwrap{place-items:start center}
+
+/* ---------------- Meta results: wide Ads Manager strips ----------------
+   most of these screenshots are a table about four times wider than tall,
+   so the cards are wider and shorter than the shared 3:2. The few upright
+   feed ads sit centred in the same box */
+#results .slide{flex-basis:min(100%,680px)}
+#results .slide .shot{aspect-ratio:2.6/1}
+#results .slide .shot img{object-position:center}
+@media (max-width:860px){#results .slide{flex-basis:min(86vw,520px)}}
+
+/* ---------------- case studies: the clinic's own video ads ----------------
+   one row under the screenshots, set inline after however many there are:
+   the videos side by side, and the surgeon's portrait tucked over the
+   corner of the last one rather than floating in the far corner */
+.cs-media{grid-column:1/7;display:flex;align-items:flex-end;gap:16px;margin-top:6px}
+.shot-card.cs-reel{flex:0 0 auto;width:min(46%,236px);aspect-ratio:9/16;background:#111}
+.shot-card.cs-reel .reel-play{height:100%;aspect-ratio:auto;border-radius:0;box-shadow:none}
+.shot-card.cs-reel .play{width:56px;height:56px}
+.shot-card.cs-reel .play svg{width:22px;height:22px}
+.shot-card.cs-reel figcaption{pointer-events:none}
+.cs-media .portrait{flex:0 0 auto;width:min(30%,150px);margin:0 0 -18px -44px;align-self:flex-end}
+/* without a portrait the videos share the width of the screenshots above,
+   so the row's right edge lines up with theirs */
+@media (min-width:921px){
+  .cs-media.is-fill{grid-column:1/6}
+  .cs-media.is-fill .shot-card.cs-reel{flex:1 1 0;width:auto}
+}
+@media (max-width:920px){
+  /* the row's cards join the swipe row, at the screenshot cards' height */
+  .cs-media{display:contents}
+  .shot-card.cs-reel{width:calc(min(78vw,440px) * 11 / 16 * 9 / 16);scroll-snap-align:start}
+}
+
+/* ---------------- case studies: stacked Ads Manager screenshots ----------------
+   for these three the second screenshot lines up under the first, at its
+   width, rather than the shared base's staggered collage */
+@media (min-width:921px){
+  #cs-crown .shot-card.s2,#cs-whitehill .shot-card.s2,#cs-mehta .shot-card.s2{grid-column:1/6}
+}
+
+/* ---------------- Australian offices: Sydney headquarters, then four smaller cards ---------------- */
+.loc-minis{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:clamp(14px,2vw,22px);margin-top:clamp(16px,2vw,22px)}
+.loc-mini{border:1px solid var(--paper-line);border-radius:14px;background:rgba(255,255,255,.03);padding:clamp(18px,2vw,24px);display:flex;flex-direction:column}
+.loc-mini h3{margin-bottom:8px}
+.loc-mini .loc-map{margin-top:auto;padding-top:0}
+.loc-mini .loc-link{margin-bottom:16px}
+@media (max-width:1100px){.loc-minis{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:600px){.loc-minis{grid-template-columns:minmax(0,1fr)}}
+
+/* ---------------- quote band: one of The Crown Clinic's video ads ----------------
+   an upright card where the UK page has a 16:9 testimonial video */
+.qb-reel{margin:0;justify-self:center;width:min(100%,300px);display:flex;flex-direction:column;gap:12px}
+.qb-reel figcaption{font-size:.86rem;color:var(--on-dark-2);line-height:1.4}
+.qb-reel figcaption b{display:block;color:var(--white);font-size:.95rem}
+@media (max-width:920px){.qb-reel{width:min(100%,260px)}}
