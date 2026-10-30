@@ -169,3 +169,8 @@
 .loc-mini .loc-link{margin-bottom:16px}
 @media (max-width:1100px){.loc-minis{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media (max-width:600px){.loc-minis{grid-template-columns:minmax(0,1fr)}}
+
+/* phones (Australia): Crown, Atlantis, then Hair Transplants Melbourne back on the left */
+@media (max-width:920px){
+  .viz-world .fc.m-left{left:0;right:auto;flex-direction:row}
+}
