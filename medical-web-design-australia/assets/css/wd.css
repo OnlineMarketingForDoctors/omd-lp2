@@ -1,0 +1,198 @@
+/* ==========================================================================
+   /medical-web-design/ additions on top of the shared base (style.css, as on
+   /medical-seo/ and /google-ads/). Only what this page adds: the browser in
+   the hero, the funnel, the website formula grid, the portfolio, the
+   guarantee band, hosting and the service bundle.
+   ========================================================================== */
+
+/* ---------------- hero: a browser scrolling our own work, in place of the UK map ---------------- */
+.hero-viz.viz-video{aspect-ratio:auto;height:auto;min-height:0;width:100%;padding:56px 0 64px}
+.hv-frame{
+  position:relative;border-radius:14px;overflow:hidden;background:#0b0d0e;
+  box-shadow:0 0 0 1px rgba(255,255,255,.12),0 0 0 7px rgba(0,219,152,.14),0 40px 80px -30px rgba(0,0,0,.9);
+}
+/* browser chrome: three dots and an address bar carrying the clinic's domain */
+.hv-bar{display:flex;align-items:center;gap:7px;height:34px;padding:0 12px;background:#16191a;border-bottom:1px solid rgba(255,255,255,.08)}
+.hv-bar i{width:9px;height:9px;border-radius:50%;background:rgba(255,255,255,.22)}
+.hv-bar i:first-child{background:#ff5f57}.hv-bar i:nth-child(2){background:#febc2e}.hv-bar i:nth-child(3){background:#28c840}
+.hv-url{flex:1;min-width:0;margin-left:10px;height:22px;border-radius:999px;background:rgba(255,255,255,.08);color:var(--on-dark-2);
+  font-size:.68rem;display:flex;align-items:center;gap:6px;padding:0 10px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.hv-url svg{width:10px;height:10px;flex:none;color:var(--green)}
+.hv-screen{position:relative;aspect-ratio:16/10;overflow:hidden;background:var(--white)}
+/* the page scrolls from header to footer; --shift is the page height less
+   the screen, measured by main.js once the image has loaded */
+.hv-screen img{position:absolute;left:0;top:0;width:100%;height:auto;transition:opacity .6s var(--ease)}
+.hv-screen img.is-scrolling{animation:sitescroll var(--dur,18s) cubic-bezier(.45,0,.55,1) forwards;animation-play-state:var(--play,running)}
+.hv-screen img.is-out{opacity:0}
+@keyframes sitescroll{0%,10%{transform:translateY(0)}90%,100%{transform:translateY(calc(var(--shift,0px) * -1))}}
+@media (prefers-reduced-motion:reduce){.hv-screen img.is-scrolling{animation:none}}
+.hv-caption{display:flex;justify-content:space-between;gap:12px;margin-top:14px;font-size:.78rem;color:var(--on-dark-3)}
+.hv-caption b{color:var(--white);font-weight:600}
+.hv-dots{display:flex;gap:6px;align-items:center}
+.hv-dots button{width:8px;height:8px;border-radius:50%;border:0;padding:0;background:rgba(255,255,255,.25);cursor:pointer}
+.hv-dots button[aria-current="true"]{background:var(--green);width:20px;border-radius:4px}
+.fc-stat{
+  display:grid;gap:2px;background:var(--black);color:var(--white);border:1px solid rgba(0,219,152,.45);
+  border-radius:12px;padding:10px 14px;box-shadow:0 18px 34px -14px rgba(0,0,0,.85);
+}
+.fc-stat b{font-family:var(--action);font-weight:600;font-size:1.7rem;line-height:1;color:var(--green)}
+.fc-stat span{font-size:.68rem;font-weight:600;line-height:1.3;max-width:20ch}
+.fc-stat small{font-size:.6rem;color:var(--on-dark-3);font-weight:600}
+
+/* ---------------- funnel: the numbers under a testimonial ---------------- */
+.funnel{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin-top:26px}
+.funnel div{position:relative;border:1px solid var(--paper-line);border-radius:10px;padding:14px 14px 12px;background:rgba(255,255,255,.04)}
+.funnel div+div::before{
+  content:"";position:absolute;left:-10px;top:50%;width:10px;height:2px;background:var(--green);
+}
+.funnel .num{display:block;font-size:clamp(1.5rem,2.6vw,2.2rem);color:var(--green);line-height:1}
+.funnel small{display:block;margin-top:6px;font-size:.78rem;color:var(--on-dark-2);line-height:1.35}
+.funnel-note{margin-top:12px;font-size:.82rem;color:var(--on-dark-3)}
+@media (max-width:520px){.funnel{grid-template-columns:1fr}.funnel div+div::before{left:20px;top:-10px;width:2px;height:10px}}
+
+/* ---------------- what is in every website ---------------- */
+.types{background:var(--off)}
+.types-head{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:32px;align-items:end;margin-bottom:40px}
+.types-head h2{margin-bottom:12px}
+.types-layout{display:grid;grid-template-columns:minmax(0,1.6fr) minmax(0,1fr);gap:clamp(20px,3vw,40px);align-items:start}
+.type-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+.type{
+  background:var(--white);border:1px solid var(--line);border-radius:12px;padding:22px 22px 20px;
+  transition:transform .25s var(--ease),box-shadow .25s var(--ease),border-color .25s var(--ease);
+}
+.type:hover{transform:translateY(-3px);box-shadow:var(--shadow-md);border-color:rgba(0,219,152,.5)}
+.type .ic{width:44px;height:44px;border-radius:10px;background:var(--black);color:var(--green);display:grid;place-items:center;margin-bottom:14px}
+.type .ic svg{width:22px;height:22px}
+.type h3{font-size:1.12rem;letter-spacing:-.01em;margin-bottom:6px}
+.type p{margin:0;font-size:.92rem;color:var(--ink-2);line-height:1.5}
+.type .for{display:block;margin-top:10px;font-family:var(--action);letter-spacing:.08em;text-transform:uppercase;font-size:.68rem;color:var(--green-deep)}
+.deliver{background:var(--black);color:var(--white);border-radius:14px;padding:26px 26px 24px;position:sticky;top:calc(var(--header-h) + 20px)}
+.deliver h3{font-size:1.25rem;margin-bottom:6px}
+.deliver > p{color:var(--on-dark-2);font-size:.92rem}
+.deliver ul{display:grid;gap:9px;margin:16px 0 22px}
+.deliver li{display:grid;grid-template-columns:20px 1fr;gap:10px;font-size:.92rem;line-height:1.4}
+.deliver li svg{width:18px;height:18px;color:var(--green);margin-top:1px}
+.deliver .btn{width:100%;justify-content:center}
+@media (max-width:1000px){.types-layout{grid-template-columns:1fr}.deliver{position:static}}
+@media (max-width:640px){
+  .type-grid{grid-template-columns:1fr}
+  .types-head{grid-template-columns:1fr}
+}
+
+/* the strategy session label is longer than the shared buttons were drawn
+   for, so on a phone it may wrap rather than push the page sideways */
+@media (max-width:560px){
+  .btn{white-space:normal;text-align:center;line-height:1.2}
+  .hero-actions .btn{width:100%}
+}
+
+/* ---------------- responsive: the hero browser ---------------- */
+@media (max-width:920px){
+  .hero-viz.viz-video{order:-1;aspect-ratio:auto;padding:30px 0 42px;margin-bottom:6px}
+  .hero-viz.viz-video::after{display:none}
+  .fc-stat{padding:8px 11px}
+  .fc-stat b{font-size:1.3rem}
+  .fc-stat span{font-size:.6rem}
+}
+@media (max-width:520px){
+  .fc-stat small{display:none}
+}
+
+/* ---------------- case study cards that show the whole image ----------------
+   wide analytics screenshots lose their edges in the shared cropped cards,
+   so these take the image's own shape and carry the caption underneath */
+.shot-card.is-fit{aspect-ratio:auto;align-self:start}
+.shot-card.is-fit .shot-zoom{height:auto;padding:12px 12px 0;background:var(--white)}
+.shot-card.is-fit img{height:auto;object-fit:contain}
+.shot-card.is-fit figcaption,
+.shot-card.s1.is-fit figcaption{position:static;background:var(--white);color:var(--ink-2);padding:10px 12px 12px}
+.shot-card.s2.is-fit,.shot-card.s3.is-fit,.shot-card.s1.is-fit + .shot-card{margin-top:0}
+
+/* ---------------- website portfolio ----------------
+   white, so it reads apart from the dark sections either side.
+   Each card is the first screen of a tall page */
+.lps{background:var(--white)}
+.lps .slide{border:1px solid var(--line);box-shadow:none}
+.lps .slide .shot{aspect-ratio:16/10;padding:0}
+.lps .slide .shot img{object-fit:cover;object-position:top}
+.lps .slide .meta{border-top:1px solid var(--line)}
+
+/* the lightbox opens a full page zoomed: it fills the frame width and
+   scrolls straight down, the way the page itself does */
+.lightbox.is-image .zoom-hint{display:block}
+.lightbox.is-zoomed .zoom-hint{display:none}
+.lightbox.is-image.is-zoomed.is-tall .frame{width:min(1200px,100%)}
+.lightbox.is-image.is-zoomed.is-tall .zoomwrap{place-items:start center}
+.lightbox.is-image.is-zoomed.is-tall img{width:100%;max-width:100%;height:auto;max-height:none}
+
+/* ---------------- guarantee band ----------------
+   the shared photo band, with the two promises as cards in place of copy */
+.guarantee .ai-bg img{object-position:30% 30%}
+.g-cards{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;margin:26px 0}
+.g-card{border:1px solid rgba(0,219,152,.45);background:rgba(0,0,0,.55);backdrop-filter:blur(6px);border-radius:14px;padding:20px 20px 18px}
+.g-card .num{display:block;font-size:clamp(2.2rem,4vw,3.2rem);line-height:1;color:var(--green)}
+.g-card b{display:block;margin-top:8px;font-size:1rem;line-height:1.3}
+.g-card small{display:block;margin-top:6px;font-size:.82rem;color:var(--on-dark-2);line-height:1.45}
+.g-fine{font-size:.82rem;color:var(--on-dark-3)}
+@media (max-width:520px){.g-cards{grid-template-columns:1fr}}
+@media (max-width:920px){
+  .guarantee{display:block;min-height:0;padding-top:0;background:var(--black)}
+  .guarantee .ai-bg{position:relative;inset:auto;z-index:0;aspect-ratio:4/3;max-height:60vh;overflow:hidden}
+  .guarantee .ai-bg::after{background:linear-gradient(180deg,rgba(0,0,0,0) 55%,rgba(0,0,0,.65) 82%,var(--black) 100%)}
+  .guarantee .ai-grid{margin-top:-48px;position:relative;grid-template-columns:1fr}
+  .guarantee .ai-copy{grid-column:1}
+}
+
+/* ---------------- hosting and maintenance ---------------- */
+.hosting{background:var(--white)}
+.host-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.3fr);gap:clamp(24px,4vw,56px);align-items:start}
+.host-grid h2{margin-bottom:14px}
+.host-list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.host-list li{display:grid;grid-template-columns:36px 1fr;gap:12px;align-items:start;border:1px solid var(--line);border-radius:12px;padding:14px 16px;background:var(--off)}
+.host-list .ic{width:36px;height:36px;border-radius:9px;background:var(--black);color:var(--green);display:grid;place-items:center}
+.host-list .ic svg{width:18px;height:18px}
+.host-list b{display:block;font-size:.95rem;margin-bottom:2px}
+.host-list span{font-size:.85rem;color:var(--ink-2);line-height:1.45}
+.host-note{margin-top:18px;border-left:3px solid var(--green);padding:4px 0 4px 14px;color:var(--ink-2)}
+@media (max-width:920px){.host-grid{grid-template-columns:1fr}}
+@media (max-width:560px){.host-list{grid-template-columns:1fr}}
+
+/* ---------------- the rest of the service, one card each ---------------- */
+.bundle{background:var(--off)}
+.bundle-head{max-width:760px;margin-bottom:34px}
+.bundle-head h2{margin-bottom:12px}
+.bundle-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+.b-card{display:flex;flex-direction:column;background:var(--white);border:1px solid var(--line);border-radius:12px;padding:22px;color:inherit;text-decoration:none;
+  transition:transform .25s var(--ease),box-shadow .25s var(--ease),border-color .25s var(--ease)}
+a.b-card:hover{transform:translateY(-3px);box-shadow:var(--shadow-md);border-color:rgba(0,219,152,.5)}
+.b-card h3{font-size:1.08rem;margin-bottom:6px}
+.b-card p{margin:0;font-size:.9rem;color:var(--ink-2);line-height:1.5}
+.b-card .more{margin-top:auto;padding-top:14px;font-family:var(--action);letter-spacing:.08em;text-transform:uppercase;font-size:.7rem;color:var(--green-deep)}
+@media (max-width:920px){.bundle-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:560px){.bundle-grid{grid-template-columns:1fr}}
+
+/* the questions in the letter, as a short checklist */
+.paper .qs{display:grid;margin:0 0 var(--rule);padding:0;list-style:none}
+.paper .qs li{display:grid;grid-template-columns:22px 1fr;gap:10px;line-height:var(--rule)}
+/* line-height:1, or the glyph takes the paper's 30px rule and drops below centre */
+.paper .qs li::before{content:"?";width:22px;height:22px;border-radius:50%;background:var(--black);color:var(--green);display:flex;align-items:center;justify-content:center;font-family:var(--sans);font-weight:700;font-size:.78rem;line-height:1;margin-top:4px}
+
+/* the portfolio shows four websites at a time on desktop: two rows that scroll
+   sideways together, so each arrow press moves on by a column of two */
+@media (min-width:861px){
+  #webSlides{display:grid;grid-auto-flow:column;grid-template-rows:repeat(2,auto);grid-auto-columns:calc((100% - 18px) / 2)}
+  #webSlides .slide{flex:none;min-width:0}
+}
+
+/* ---------------- Australian offices: Sydney headquarters, then four smaller cards ---------------- */
+.loc-minis{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:clamp(14px,2vw,22px);margin-top:clamp(16px,2vw,22px)}
+.loc-mini{border:1px solid var(--paper-line);border-radius:14px;background:rgba(255,255,255,.03);padding:clamp(18px,2vw,24px);display:flex;flex-direction:column}
+.loc-mini h3{margin-bottom:8px}
+.loc-mini .loc-map{margin-top:auto;padding-top:0}
+.loc-mini .loc-link{margin-bottom:16px}
+@media (max-width:1100px){.loc-minis{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:600px){.loc-minis{grid-template-columns:minmax(0,1fr)}}
+
+/* the quote band leads with The Crown Clinic's page, a link to its case study rather than a video */
+.video-card.qb-site{display:block;text-decoration:none}
+.video-card.qb-site img{object-fit:cover;object-position:top}
