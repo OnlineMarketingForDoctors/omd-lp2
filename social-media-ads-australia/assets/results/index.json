@@ -1,0 +1,139 @@
+{
+ "ads": {
+  "Plastic Surgeons": [
+   {
+    "file": "assets/results/meta/plastic-surgeons/white-hill-clinic-breast-augmentation-may-2025.webp",
+    "client": "White Hill Clinic",
+    "caption": "Breast augmentation, May 2025: 175 leads from $12.38 each"
+   },
+   {
+    "file": "assets/results/meta/plastic-surgeons/white-hill-clinic-breast-augmentation-june-2025.webp",
+    "client": "White Hill Clinic",
+    "caption": "Breast augmentation, June 2025: 139 leads at $11.76 each"
+   },
+   {
+    "file": "assets/results/meta/plastic-surgeons/delta-clinics-tummy-tuck-june-2025.webp",
+    "client": "Delta Clinics",
+    "caption": "Tummy tuck lead campaign, June 2025: 130 leads at £4.64 each"
+   },
+   {
+    "file": "assets/results/meta/plastic-surgeons/delta-clinics-tummy-tuck-remarketing-august-2025.webp",
+    "client": "Delta Clinics",
+    "caption": "Tummy tuck remarketing, August 2025: 35 leads at £6.96 each"
+   },
+   {
+    "file": "assets/results/meta/plastic-surgeons/delta-clinics-dynamic-ads-september-2026.webp",
+    "client": "Delta Clinics",
+    "caption": "Breast augmentation and tummy tuck dynamic ads, September 2026: 63 form leads"
+   },
+   {
+    "file": "assets/results/meta/plastic-surgeons/delta-clinics-breast-augmentation-feed-ad.webp",
+    "client": "Delta Clinics",
+    "caption": "The breast augmentation feed ad behind those leads"
+   },
+   {
+    "file": "assets/results/meta/plastic-surgeons/british-face-clinic-mini-facelift-july-2025.webp",
+    "client": "British Face Clinic",
+    "caption": "Mini facelift lead campaign, July 2025: 36 leads at £3.79 each"
+   },
+   {
+    "file": "assets/results/meta/plastic-surgeons/the-hanson-clinic-deep-plane-facelift-january-2025.webp",
+    "client": "The Hanson Clinic",
+    "caption": "Deep plane facelift lead campaign, January 2025: 48 leads"
+   },
+   {
+    "file": "assets/results/meta/plastic-surgeons/the-hanson-clinic-deep-plane-facelift-march-2025.webp",
+    "client": "The Hanson Clinic",
+    "caption": "Deep plane facelift, March 2025: 57 leads at €5.47 each"
+   },
+   {
+    "file": "assets/results/meta/plastic-surgeons/the-hanson-clinic-facelift-blepharoplasty-may-2025.webp",
+    "client": "The Hanson Clinic",
+    "caption": "Deep plane facelift and blepharoplasty, May 2025: 149 leads from €3.30 each"
+   }
+  ],
+  "Hair Transplant Clinics": [
+   {
+    "file": "assets/results/meta/hair-transplant-clinics/the-crown-clinic-hair-transplant-september-october-2024.webp",
+    "client": "The Crown Clinic",
+    "caption": "Hair transplant leads, September to October 2024: 149 leads at $11.42 each"
+   },
+   {
+    "file": "assets/results/meta/hair-transplant-clinics/the-crown-clinic-hair-transplant-june-2025.webp",
+    "client": "The Crown Clinic",
+    "caption": "Hair transplant leads, June 2025: 106 leads at $12.83 each"
+   },
+   {
+    "file": "assets/results/meta/hair-transplant-clinics/darling-downs-hair-beard-transplant-2025.webp",
+    "client": "Darling Downs Hair Transplant Clinic",
+    "caption": "Hair and beard transplant, 1 February to 18 March 2025: 30 leads"
+   },
+   {
+    "file": "assets/results/meta/hair-transplant-clinics/hair-transplant-clinic-april.webp",
+    "client": "Hair transplant clinic",
+    "caption": "Merged hair transplant lead campaign: 144 leads at $6.64 each"
+   },
+   {
+    "file": "assets/results/meta/hair-transplant-clinics/hair-transplant-clinic-january-2025.webp",
+    "client": "Hair transplant clinic",
+    "caption": "Instant form lead campaign, January 2025: 96 leads at $16.11 each"
+   },
+   {
+    "file": "assets/results/meta/hair-transplant-clinics/malay-mehta-hair-transplant-november-december-2024.webp",
+    "client": "Malay Mehta Aesthetic Clinic",
+    "caption": "Hair transplant, November to December 2024: 165 enquiries"
+   },
+   {
+    "file": "assets/results/meta/hair-transplant-clinics/malay-mehta-hair-transplant-may-2025.webp",
+    "client": "Malay Mehta Aesthetic Clinic",
+    "caption": "Hair transplant leads, May 2025: 92 enquiries"
+   }
+  ],
+  "Aesthetic Clinics": [
+   {
+    "file": "assets/results/meta/aesthetic-clinics/prophile-clinics-anti-wrinkle-january-2026.webp",
+    "client": "Prophile Clinics",
+    "caption": "Anti-wrinkle treatment Brisbane, January 2026: 150 leads at $8.23 each"
+   },
+   {
+    "file": "assets/results/meta/aesthetic-clinics/dr-queenie-chan-morpheus8-may-2025.webp",
+    "client": "Dr Queenie Chan",
+    "caption": "Morpheus8 instant forms, May 2025: 56 leads at $6.08 each"
+   },
+   {
+    "file": "assets/results/meta/aesthetic-clinics/dr-queenie-chan-morpheus8-june-2025.webp",
+    "client": "Dr Queenie Chan",
+    "caption": "Morpheus8 instant forms, June 2025: 41 leads at $7.40 each"
+   },
+   {
+    "file": "assets/results/meta/aesthetic-clinics/dr-queenie-chan-feed-ads-september-2026.webp",
+    "client": "Dr Queenie Chan",
+    "caption": "Feed ads by creative, September 2026: Alma laser, Morpheus8 and PRP hair"
+   }
+  ],
+  "Ophthalmologists": [
+   {
+    "file": "assets/results/meta/ophthalmologists/the-harley-street-eye-centre-leads-september-2026.webp",
+    "client": "The Harley Street Eye Centre",
+    "caption": "Laser eye surgery lead ads, September 2026: 55 leads from £11.00 each"
+   },
+   {
+    "file": "assets/results/meta/ophthalmologists/the-harley-street-eye-centre-feed-ad-1.webp",
+    "client": "The Harley Street Eye Centre",
+    "caption": "Feed ad: considering laser eye surgery?"
+   },
+   {
+    "file": "assets/results/meta/ophthalmologists/the-harley-street-eye-centre-feed-ad-2.webp",
+    "client": "The Harley Street Eye Centre",
+    "caption": "Feed ad: tired of glasses and contacts?"
+   }
+  ],
+  "Men's Health Clinics": [
+   {
+    "file": "assets/results/meta/mens-health-clinics/mansmatters-erectile-dysfunction-february-2025.webp",
+    "client": "MansMatters",
+    "caption": "Erectile dysfunction lead ads, February 2025: 56 leads at £1.23 each"
+   }
+  ]
+ }
+}
