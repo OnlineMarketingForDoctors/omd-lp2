@@ -51,7 +51,7 @@
       portrait: ''
     },
     {
-      id: 'visionsyd', name: 'Vision Clinic Sydney', logo: '', uk: false,
+      id: 'visionsyd', name: 'Vision Clinic Sydney', logo: 'assets/client-logos/vision-clinic-sydney-logo.webp', uk: false,
       kind: 'rankings', meta: 'Ad placements',
       place: 'Sydney', specialty: 'Ophthalmology',
       title: 'In front of Sydney patients pricing up laser eye surgery, at the moment they compare clinics.',
@@ -62,7 +62,7 @@
       portrait: ''
     },
     {
-      id: 'cura', name: 'Cura Medical Specialists', logo: '', uk: false,
+      id: 'cura', name: 'Cura Medical Specialists', logo: 'assets/client-logos/cura-medical-specialists-logo.webp', uk: false,
       kind: 'rankings', meta: 'Ad placements',
       place: 'Sydney', specialty: 'Neurology',
       title: 'The sponsored neurologist above the map when Sydney patients search for one.',
@@ -276,6 +276,8 @@
   const CLIENTS = [
     ['the-crown-clinic-logo.webp', 'The Crown Clinic'],
     ['vein-doctors-sydney-logo.webp', 'Vein Doctors Sydney'],
+    ['vision-clinic-sydney-logo.webp', 'Vision Clinic Sydney'],
+    ['cura-medical-specialists-logo.webp', 'Cura Medical Specialists'],
     ['dr-mark-attalla-logo.webp', 'Chelsea Cosmetics'],
     ['dr-hodgkinson-logo.webp', 'Dr Darryl Hodgkinson'],
     ['naveen-somia-logo.webp', 'Dr Naveen Somia'],
