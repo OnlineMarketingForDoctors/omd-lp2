@@ -10,7 +10,6 @@
   /* ---------------- data: case studies (SEO and AI search only)
      Australian clinics first, then the UK, then the rest of the world ---------------- */
   const CASES = [
-    ,
     {
       id: 'crown', name: 'The Crown Clinic', logo: 'assets/client-logos/the-crown-clinic-logo.webp', uk: false,
       place: 'Sydney, Australia', specialty: 'Hair transplant', months: '6 months',
@@ -25,7 +24,6 @@
       who: 'James Nadin', role: 'CEO, ICCM and The Crown Clinic',
       link: 'https://onlinemarketingfordoctors.com/case-study-crown-clinic/'
     },
-    ,
     {
       id: 'vein', name: 'Vein Doctors Sydney', logo: 'assets/client-logos/vein-doctors-sydney-logo.webp', uk: false,
       place: 'Sydney, Australia', specialty: 'Vein clinic', months: '12 months',
@@ -54,7 +52,6 @@
       who: 'Mr Hazem Alfie', role: 'Consultant Plastic Surgeon, Delta Clinics',
       link: 'https://onlinemarketingfordoctors.com/casestudy/delta-clinics/'
     },
-    ,
     {
       id: 'bfc', name: 'British Face Clinic', logo: 'assets/client-logos/british_face_clinic_logo.webp', uk: true,
       place: 'Harley Street, Milton Keynes and Northampton', specialty: 'Facial cosmetic surgery', months: '12 months',
@@ -69,7 +66,6 @@
       who: 'Mr Mrinal Supriya', role: 'Facial Cosmetic Surgeon, British Face Clinic',
       link: 'https://onlinemarketingfordoctors.com/casestudy/british-face-clinic/'
     },
-    ,
     {
       id: 'hr', name: 'HR Plastic Surgery', logo: 'assets/client-logos/hr-plastic-surgery-logo.webp', uk: true,
       place: 'London and Hertfordshire', specialty: 'Plastic surgery', months: '18 months',
@@ -84,7 +80,6 @@
       who: 'Mr Hyder Ridha', role: 'Plastic Surgeon, HR Plastic Surgery',
       link: 'https://onlinemarketingfordoctors.com/case-study/hr-plastic-surgery/'
     },
-    ,
     {
       id: 'bbc', name: 'Breast and Body Clinic UK', logo: 'assets/client-logos/bb-clinic-uk-logo.webp', uk: true,
       place: 'Manchester', specialty: 'Plastic surgery', months: '18 months',
@@ -99,7 +94,6 @@
       who: 'Mr Aftab Siddiqui', role: 'Plastic Surgeon, Breast and Body Clinic UK',
       link: 'https://onlinemarketingfordoctors.com/case-study/breast-and-body-clinic-uk/'
     },
-    ,
     {
       id: 'symmetry', name: 'Symmetry Clinic', logo: 'assets/client-logos/symmetry-clinic-logo.png', uk: true,
       kind: 'rankings', meta: 'Ranking file',
@@ -111,7 +105,6 @@
       shots: [['assets/results/ai/plastic-surgery/symmetry-clinic--symmetry-clinic-ranks-on-chatgpt-for-top-5-plastic-surgery-clinics-in-london-specialising-in-rh.webp', "ChatGPT's top five London rhinoplasty clinics"], ['assets/results/ai/plastic-surgery/symmetry-clinic--symmetry-clinic-ranking-on-google-ai-overview-for-top-10-facial-cosmetic-surgeons-in-london.webp', 'Google AI Overview, top facial cosmetic surgeons in London'], ['assets/results/seo/plastic-surgery/symmetry-clinic--symmetry-clinic-ranking-in-google-search-for-the-keyword-revision-rhinoplasty-london.webp', 'Google Search, revision rhinoplasty London']],
       portrait: ''
     },
-    ,
     {
       id: 'vision', name: 'The Vision Surgeon', logo: 'assets/client-logos/the-vision-surgeon-logo.webp', uk: true,
       kind: 'rankings', meta: 'Ranking file',
@@ -123,7 +116,6 @@
       shots: [['assets/results/ai/eye-care-clinics/the-vision-surgeon--the-vision-surgeon-ranks-on-chatgpt-results-for-best-laser-surgeon-in-colchester-keyword.webp', "ChatGPT, best laser surgeon in Colchester"], ['assets/results/ai/eye-care-clinics/the-vision-surgeon--the-vision-surgeon-ranks-on-ai-search-results-for-laser-eye-surgery-colchester-keyword.webp', 'Google AI search, laser eye surgery Colchester'], ['assets/results/seo/eye-care-clinics/the-vision-surgeon--the-vision-surgeon-ranks-on-google-maps-for-eye-doctor-colchester-keyword.webp', 'Google Maps, eye doctor Colchester']],
       portrait: ''
     },
-    ,
     {
       id: 'mansmatters', name: 'MansMatters', logo: 'assets/client-logos/mans-matters-logo.webp', uk: true,
       kind: 'rankings', meta: 'Ranking file',
@@ -135,7 +127,6 @@
       shots: [['assets/results/seo/men-and-women-health-clinics/mansmatters--mansmatters-ranks-1st-on-google-search-results-for-the-e-shot-treatment-london-keyword.webp', 'First on Google Search, e-shot treatment London'], ['assets/results/ai/men-and-women-health-clinics/mansmatters--mans-matters-ranks-on-chatgpt-for-men-health-clinics-in-london.webp', "ChatGPT, men's health clinics in London"], ['assets/results/ai/men-and-women-health-clinics/mansmatters--mansmatters-ranks-on-top-ai-google-search-results-for-the-keyword-peyronies-disease-treatment-n.webp', "Google AI search, Peyronie's disease treatment near London"]],
       portrait: ''
     },
-    ,
     {
       id: 'fortes', name: 'Fortes Clinic', logo: 'assets/client-logos/fortes-clinic.webp', uk: true,
       kind: 'rankings', meta: 'AI search file',
@@ -148,7 +139,6 @@
       shots: [['assets/results/ai/hair-transplant-clinics/fortes-clinic--fortes-clinic-ranking-on-chatgpt-for-industry-shortlist-for-top-3-hair-transplant-clinics.webp', "ChatGPT, industry shortlist of the top three clinics"], ['assets/results/ai/hair-transplant-clinics/fortes-clinic--fortes-clinic-ranking-on-chatgpt-for-top-hair-transplant-clinics-in-london.webp', 'ChatGPT, top hair transplant clinics in London'], ['assets/results/ai/hair-transplant-clinics/fortes-clinic--fortes-clinic-ranking-on-chatgpt-for-best-doctor-led-hair-transplant-clinic-london.webp', 'ChatGPT, best doctor-led hair transplant clinic in London']],
       portrait: ''
     },
-    ,
     {
       id: 'mehta', name: 'Dr Malay Mehta', logo: 'assets/client-logos/malay-mehta-logo.webp', uk: false,
       place: 'Mumbai, India', specialty: 'Hair transplant', months: '12 months',
