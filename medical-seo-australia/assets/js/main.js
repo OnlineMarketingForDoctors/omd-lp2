@@ -211,7 +211,6 @@
   const CLIENTS = [
     ['the-crown-clinic-logo.webp', 'The Crown Clinic'],
     ['vein-doctors-sydney-logo.webp', 'Vein Doctors Sydney'],
-    ['dr-hodgkinson-logo.webp', 'Dr Darryl Hodgkinson'],
     ['prophile-clinics-logo.webp', 'Prophile Clinics'],
     ['arthritiscare-logo.png', 'arthritisCARE'],
     ['white-hill-clinic-logo.webp', 'White Hill Clinic'],
