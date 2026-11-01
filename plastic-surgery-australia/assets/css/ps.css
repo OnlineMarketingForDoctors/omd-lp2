@@ -257,6 +257,8 @@
 .reviews-light{background:var(--off);color:var(--ink)}
 .reviews-light .results-head .t-lead{color:var(--ink-2)}
 .reviews-light .wall .text-q{box-shadow:var(--shadow-md);border:1px solid var(--line)}
+/* last row: one quote beside the closing video card */
+.wall .text-q.v3{grid-column:span 5}
 
 /* ==========================================================================
    Case studies: local screenshots + a note when the figures are older
