@@ -1,0 +1,180 @@
+/* ==========================================================================
+   /google-ads/ additions on top of the shared base (style.css, as on
+   /medical-seo/). Only what this page adds: the hero video with ad cards,
+   the partner seal, the Google Ads funnel, ad types and the search mock-up.
+   ========================================================================== */
+
+/* ---------------- hero: video in place of the UK map ---------------- */
+.hero-viz.viz-video{aspect-ratio:auto;height:auto;min-height:0;width:100%;padding:56px 0 64px}
+.hv-frame{
+  position:relative;border-radius:16px;overflow:hidden;aspect-ratio:16/10;background:#0b0d0e;
+  box-shadow:0 0 0 1px rgba(255,255,255,.12),0 0 0 7px rgba(0,219,152,.14),0 40px 80px -30px rgba(0,0,0,.9);
+}
+.hv-frame video,.hv-frame img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.hv-frame::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,0) 55%,rgba(0,0,0,.55));pointer-events:none}
+/* the ad card: the same white pill as the SEO search chip, with Google's
+   "Sponsored" marker in front of the keyword */
+.fc-ad{
+  display:grid;gap:3px;background:var(--white);color:var(--ink);border-radius:12px;padding:9px 12px 10px;
+  box-shadow:0 18px 34px -14px rgba(0,0,0,.8);min-width:0;max-width:230px;
+}
+.fc-ad .spon{display:flex;align-items:center;gap:6px;font-size:.6rem;font-weight:700;color:var(--ink)}
+.fc-ad .spon svg{width:14px;height:14px}
+.fc-ad .kw{font-size:.68rem;color:var(--ink-2);display:flex;align-items:center;gap:5px}
+.fc-ad .kw svg{width:11px;height:11px;flex:none;color:var(--ink-3)}
+.fc-ad .hl{font-size:.78rem;font-weight:600;color:#1a0dab;line-height:1.25}
+.fc-stat{
+  display:grid;gap:2px;background:var(--black);color:var(--white);border:1px solid rgba(0,219,152,.45);
+  border-radius:12px;padding:10px 14px;box-shadow:0 18px 34px -14px rgba(0,0,0,.85);
+}
+.fc-stat b{font-family:var(--action);font-weight:600;font-size:1.7rem;line-height:1;color:var(--green)}
+.fc-stat span{font-size:.68rem;font-weight:600;line-height:1.3;max-width:20ch}
+.fc-stat small{font-size:.6rem;color:var(--on-dark-3);font-weight:600}
+
+/* ---------------- partner seal ---------------- */
+.seal{display:block;width:100%;height:auto}
+.seal text{font-family:var(--action)}
+.badge-seal{padding-left:10px}
+.badge-seal .seal{width:46px;height:46px;flex:none}
+
+/* ---------------- funnel: leads to procedures to revenue ---------------- */
+.funnel{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin-top:26px}
+.funnel div{position:relative;border:1px solid var(--paper-line);border-radius:10px;padding:14px 14px 12px;background:rgba(255,255,255,.04)}
+.funnel div+div::before{
+  content:"";position:absolute;left:-10px;top:50%;width:10px;height:2px;background:var(--green);
+}
+.funnel .num{display:block;font-size:clamp(1.5rem,2.6vw,2.2rem);color:var(--green);line-height:1}
+.funnel small{display:block;margin-top:6px;font-size:.78rem;color:var(--on-dark-2);line-height:1.35}
+.funnel-note{margin-top:12px;font-size:.82rem;color:var(--on-dark-3)}
+@media (max-width:520px){.funnel{grid-template-columns:1fr}.funnel div+div::before{left:20px;top:-10px;width:2px;height:10px}}
+
+/* ---------------- Google Ads campaign types ---------------- */
+.types{background:var(--off)}
+.types-head{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:32px;align-items:end;margin-bottom:40px}
+.types-head h2{margin-bottom:12px}
+.types-head .seal-lg{width:150px;height:150px;flex:none;filter:drop-shadow(0 18px 30px rgba(0,0,0,.25))}
+.types-layout{display:grid;grid-template-columns:minmax(0,1.6fr) minmax(0,1fr);gap:clamp(20px,3vw,40px);align-items:start}
+.type-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+.type{
+  background:var(--white);border:1px solid var(--line);border-radius:12px;padding:22px 22px 20px;
+  transition:transform .25s var(--ease),box-shadow .25s var(--ease),border-color .25s var(--ease);
+}
+.type:hover{transform:translateY(-3px);box-shadow:var(--shadow-md);border-color:rgba(0,219,152,.5)}
+.type .ic{width:44px;height:44px;border-radius:10px;background:var(--black);color:var(--green);display:grid;place-items:center;margin-bottom:14px}
+.type .ic svg{width:22px;height:22px}
+.type h3{font-size:1.12rem;letter-spacing:-.01em;margin-bottom:6px}
+.type p{margin:0;font-size:.92rem;color:var(--ink-2);line-height:1.5}
+.type .for{display:block;margin-top:10px;font-family:var(--action);letter-spacing:.08em;text-transform:uppercase;font-size:.68rem;color:var(--green-deep)}
+.deliver{background:var(--black);color:var(--white);border-radius:14px;padding:26px 26px 24px;position:sticky;top:calc(var(--header-h) + 20px)}
+.deliver h3{font-size:1.25rem;margin-bottom:6px}
+.deliver > p{color:var(--on-dark-2);font-size:.92rem}
+.deliver ul{display:grid;gap:9px;margin:16px 0 22px}
+.deliver li{display:grid;grid-template-columns:20px 1fr;gap:10px;font-size:.92rem;line-height:1.4}
+.deliver li svg{width:18px;height:18px;color:var(--green);margin-top:1px}
+.deliver .btn{width:100%;justify-content:center}
+@media (max-width:1000px){.types-layout{grid-template-columns:1fr}.deliver{position:static}}
+@media (max-width:640px){
+  .type-grid{grid-template-columns:1fr}
+  .types-head{grid-template-columns:1fr}
+  .types-head .seal-lg{width:110px;height:110px;order:-1}
+}
+
+/* ---------------- search mock-up in the "why Google Ads" band ---------------- */
+.serp{background:var(--white);color:var(--ink);border-radius:14px;padding:16px 18px 18px;margin:26px 0;box-shadow:var(--shadow-lg);max-width:520px}
+.serp-bar{display:flex;align-items:center;gap:10px;border:1px solid var(--line);border-radius:999px;padding:9px 14px;font-size:.92rem;margin-bottom:14px}
+.serp-bar svg{width:16px;height:16px;flex:none}
+.serp-bar .q{flex:1;min-width:0}
+.serp-bar .caret{display:inline-block;width:1px;height:1em;background:var(--ink);vertical-align:-2px;margin-left:1px;animation:caret 1s steps(1) infinite}
+@keyframes caret{50%{opacity:0}}
+@media (prefers-reduced-motion:reduce){.serp-bar .caret{animation:none}}
+.serp .spon{font-size:.78rem;font-weight:700;margin-bottom:8px}
+.serp .site{display:flex;align-items:center;gap:10px;font-size:.8rem;line-height:1.25}
+.serp .site i{width:26px;height:26px;border-radius:50%;background:var(--black);display:grid;place-items:center;flex:none}
+.serp .site i::before{content:"";width:9px;height:9px;border-radius:50%;background:var(--green)}
+.serp .site small{display:block;color:var(--ink-3)}
+.serp .hl{display:block;margin:8px 0 4px;color:#1a0dab;font-size:1.12rem;line-height:1.3}
+.serp .desc{font-size:.85rem;color:var(--ink-2);margin:0;line-height:1.5}
+.serp .ext{display:flex;flex-wrap:wrap;gap:6px 14px;margin-top:8px;font-size:.82rem;color:#1a0dab}
+
+/* the strategy session label is longer than the shared buttons were drawn
+   for, so on a phone it may wrap rather than push the page sideways */
+@media (max-width:560px){
+  .btn{white-space:normal;text-align:center;line-height:1.2}
+  .hero-actions .btn{width:100%}
+}
+
+/* ---------------- responsive: the hero video ---------------- */
+@media (max-width:920px){
+  .hero-viz.viz-video{order:-1;aspect-ratio:auto;padding:30px 0 42px;margin-bottom:6px}
+  .hero-viz.viz-video::after{display:none}
+  .fc-ad{max-width:180px;padding:7px 10px 8px}
+  .fc-ad .hl{font-size:.68rem}
+  .fc-stat{padding:8px 11px}
+  .fc-stat b{font-size:1.3rem}
+  .fc-stat span{font-size:.6rem}
+}
+@media (max-width:520px){
+  .fc-ad .hl{display:none}
+  .fc-stat small{display:none}
+}
+
+/* ---------------- case study cards that show the whole image ----------------
+   short, wide ad screenshots lose their edges in the shared cropped cards,
+   so these take the image's own shape and carry the caption underneath */
+.shot-card.is-fit{aspect-ratio:auto;align-self:start}
+.shot-card.is-fit .shot-zoom{height:auto;padding:12px 12px 0;background:var(--white)}
+.shot-card.is-fit img{height:auto;object-fit:contain}
+.shot-card.is-fit figcaption,
+.shot-card.s1.is-fit figcaption{position:static;background:var(--white);color:var(--ink-2);padding:10px 12px 12px}
+.shot-card.s2.is-fit,.shot-card.s3.is-fit,.shot-card.s1.is-fit + .shot-card{margin-top:0}
+
+/* ---------------- "why Google Ads" band ----------------
+   the Australian photo already has her at the left edge of the frame, by
+   the bus window, so a plain cover crop anchored left keeps her clear of
+   the copy column without the wider-and-slid trick the London photo needs */
+@media (min-width:921px){
+  #why{background:var(--black)}
+  #why .ai-bg img{object-position:15% 50%}
+}
+
+/* on a phone the copy would cover her whatever the crop, so the photo
+   becomes a picture of its own above the copy, fading into the black */
+@media (max-width:920px){
+  #why{display:block;min-height:0;padding-top:0;background:var(--black)}
+  #why .ai-bg{position:relative;inset:auto;z-index:0;aspect-ratio:4/3;max-height:70vh;overflow:hidden}
+  #why .ai-bg img{object-position:12% 40%}
+  #why .ai-bg::after{background:linear-gradient(180deg,rgba(0,0,0,0) 55%,rgba(0,0,0,.65) 82%,var(--black) 100%)}
+  #why .ai-grid{margin-top:-48px;position:relative}
+}
+@media (max-width:600px){
+  #why .ai-bg{aspect-ratio:4/5}
+  #why .ai-bg img{object-position:8% 40%}
+}
+
+/* ---------------- landing pages built for Google Ads ----------------
+   white rather than off-white, so it reads apart from the services above.
+   Each card is the first screen of a tall page */
+.lps{background:var(--white)}
+.lps .slide{border:1px solid var(--line);box-shadow:none}
+.lps .slide .shot{aspect-ratio:16/10;padding:0}
+.lps .slide .shot img{object-fit:cover;object-position:top}
+.lps .slide .meta{border-top:1px solid var(--line)}
+
+/* the lightbox opens a full page zoomed: it fills the frame width and
+   scrolls straight down, the way the page itself does */
+.lightbox.is-image .zoom-hint{display:block}
+.lightbox.is-zoomed .zoom-hint{display:none}
+.lightbox.is-image.is-zoomed.is-tall .frame{width:min(1200px,100%)}
+.lightbox.is-image.is-zoomed.is-tall .zoomwrap{place-items:start center}
+.lightbox.is-image.is-zoomed.is-tall img{width:100%;max-width:100%;height:auto;max-height:none}
+
+/* ---------------- Australian offices ----------------
+   Sydney headquarters as the large card, the other four as a row of minis
+   (as on /social-media-ads-australia/) */
+.loc-minis{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:clamp(14px,2vw,22px);margin-top:clamp(16px,2vw,22px)}
+.loc-mini{border:1px solid var(--paper-line);border-radius:14px;background:rgba(255,255,255,.03);padding:clamp(18px,2vw,24px);display:flex;flex-direction:column}
+.loc-mini h3{margin-bottom:8px}
+.loc-mini .loc-map{margin-top:auto;padding-top:0}
+.loc-mini .loc-link{margin-bottom:16px}
+@media (max-width:1100px){.loc-minis{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:600px){.loc-minis{grid-template-columns:minmax(0,1fr)}}
