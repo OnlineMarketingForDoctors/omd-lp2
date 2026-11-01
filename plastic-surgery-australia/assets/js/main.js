@@ -27,6 +27,21 @@
       link: 'https://onlinemarketingfordoctors.com/case-study-naveen-somia/'
     },
     {
+      id: 'attalla', name: 'Dr Mark Attalla', logo: 'assets/client-logos/dr-mark-attalla-logo.webp', region: 'Australia',
+      place: 'Melbourne', specialty: 'Cosmetic surgery', months: '8 months',
+      channels: ['Website revamp', 'SEO', 'Google Ads', 'Content'],
+      title: 'A penalised domain, a fresh start, and double the conversions on a quarter of the ad budget.',
+      hero: { n: '146%', t: 'increase in leads in 8 months' },
+      stats: [['76%', 'increase in monthly web traffic'], ['¼', 'of the previous Google Ads budget, for twice the conversions'], ['5.53% to 7.85%', 'organic conversion rate after the website revamp']],
+      situation: 'Years of digital marketing spend, a domain penalised by a Google update, and a new site that still was not ranking for the liposuction keywords the practice depended on, with an expensive Google Ads account to match.',
+      did: ['Website revamp for user experience and conversion before any more traffic was bought', 'Single keyword ad groups and bid negotiation in Google Ads: a quarter of the budget, double the conversions', 'Comprehensive keyword research across Melbourne suburbs and every liposuction variant', 'New niche procedure pages: stomach, thigh, arm, double chin, cost, fat transfer', 'On-site SEO best practice, proper indexation and faster load times'],
+      shots: [['assets/cases/attalla-website.webp', 'The website before and after the revamp'], ['assets/cases/attalla-fig2.webp', 'Top ranking for liposuction Melbourne on Maps and organic search'], ['assets/cases/attalla-fig1.webp', 'Traffic and goal completions over 8 months, paid and organic'], ['assets/cases/attalla-fig6.webp', 'Google reviews, Chelsea Cosmetics Melbourne']],
+      portrait: 'assets/cases/attalla-portrait.webp',
+      quote: 'They organised the website in a way that is easier for the clients to go through. We found that we are spending almost one-fourth of our previous budget and getting double the conversion.',
+      who: 'Dr Mark Attalla', role: 'Cosmetic Surgeon and Owner, Chelsea Cosmetics Melbourne',
+      link: 'https://onlinemarketingfordoctors.com/case-study-dr-attalla/'
+    },
+    {
       id: 'hodgkinson', name: 'Dr Darryl Hodgkinson', logo: 'assets/client-logos/dr-hodgkinson-logo.webp', region: 'Australia',
       place: 'Double Bay, Sydney', specialty: 'Plastic surgery', months: '4 months',
       channels: ['Positioning', 'SEO', 'Google Ads', 'Content', 'Lead magnet funnel'],
@@ -41,21 +56,6 @@
       quote: 'The number of requests for consultations is at least doubled from the last 5 months, which is a very good sign.',
       who: 'Dr Darryl Hodgkinson', role: 'Plastic Surgeon, Double Bay Day Surgery',
       link: 'https://onlinemarketingfordoctors.com/case-study-dr-hodgkinson/'
-    },
-    {
-      id: 'attalla', name: 'Dr Mark Attalla', logo: 'assets/client-logos/dr-mark-attalla-logo.webp', region: 'Australia',
-      place: 'Melbourne', specialty: 'Cosmetic surgery', months: '8 months',
-      channels: ['Website revamp', 'SEO', 'Google Ads', 'Content'],
-      title: 'A penalised domain, a fresh start, and double the conversions on a quarter of the ad budget.',
-      hero: { n: '146%', t: 'increase in leads in 8 months' },
-      stats: [['76%', 'increase in monthly web traffic'], ['¼', 'of the previous Google Ads budget, for twice the conversions'], ['5.53% to 7.85%', 'organic conversion rate after the website revamp']],
-      situation: 'Years of digital marketing spend, a domain penalised by a Google update, and a new site that still was not ranking for the liposuction keywords the practice depended on, with an expensive Google Ads account to match.',
-      did: ['Website revamp for user experience and conversion before any more traffic was bought', 'Single keyword ad groups and bid negotiation in Google Ads: a quarter of the budget, double the conversions', 'Comprehensive keyword research across Melbourne suburbs and every liposuction variant', 'New niche procedure pages: stomach, thigh, arm, double chin, cost, fat transfer', 'On-site SEO best practice, proper indexation and faster load times'],
-      shots: [['assets/cases/attalla-website.webp', 'The website before and after the revamp'], ['assets/cases/attalla-fig2.webp', 'Top ranking for liposuction Melbourne on Maps and organic search'], ['assets/cases/attalla-fig1.webp', 'Traffic and goal completions over 8 months, paid and organic'], ['assets/cases/attalla-fig6.webp', 'Google reviews, Chelsea Cosmetics Melbourne']],
-      portrait: 'assets/cases/attalla-portrait.webp',
-      quote: 'They organised the website in a way that is easier for the clients to go through. We found that we are spending almost one-fourth of our previous budget and getting double the conversion.',
-      who: 'Dr Mark Attalla', role: 'Cosmetic Surgeon and Owner, Chelsea Cosmetics Melbourne',
-      link: 'https://onlinemarketingfordoctors.com/case-study-dr-attalla/'
     },
     {
       id: 'delta', name: 'Delta Clinics', logo: 'assets/client-logos/delta-clinics-logo.webp', region: 'UK',
