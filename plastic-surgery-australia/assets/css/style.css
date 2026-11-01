@@ -211,11 +211,13 @@ figure{margin:0}
 .hero-note{font-size:.85rem;color:var(--on-dark-3)}
 
 /* floating client animation */
-.hero-viz{position:relative;aspect-ratio:600/720;height:min(640px,calc(100svh - var(--header-h) - 216px));min-height:480px;max-width:100%;margin-inline:auto}
+.hero-viz{position:relative;aspect-ratio:900/980;height:min(640px,calc(100svh - var(--header-h) - 216px));min-height:480px;max-width:100%;margin-inline:auto}
 .viz-map{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;opacity:.9;filter:drop-shadow(0 0 40px rgba(0,219,152,.12))}
-.viz-city{position:absolute;transform:translate(-50%,-50%);display:flex;align-items:center;gap:6px;font-family:var(--action);font-size:.66rem;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.55);white-space:nowrap}
+.viz-city{position:absolute;transform:translateY(-50%);display:flex;align-items:center;gap:6px;font-family:var(--action);font-size:.66rem;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.55);white-space:nowrap}
 .viz-city i{width:8px;height:8px;border-radius:50%;background:var(--green);box-shadow:0 0 0 0 rgba(0,219,152,.6);animation:ping 2.6s infinite}
-.viz-city:nth-child(3) i{animation-delay:-.9s}.viz-city:nth-child(4) i{animation-delay:-1.7s}
+.viz-city:nth-child(3) i{animation-delay:-.9s}.viz-city:nth-child(4) i{animation-delay:-1.7s}.viz-city:nth-child(5) i{animation-delay:-2.3s}
+/* east-coast pins carry their label on the left, so it stays inside the map */
+.viz-city.lt{flex-direction:row-reverse;transform:translate(-100%,-50%)}
 @keyframes ping{70%{box-shadow:0 0 0 12px rgba(0,219,152,0)}100%{box-shadow:0 0 0 0 rgba(0,219,152,0)}}
 .fc{
   margin:var(--py,0px) 0 0 var(--px,0px);transition:margin .6s var(--ease);
