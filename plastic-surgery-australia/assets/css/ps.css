@@ -181,6 +181,10 @@
 .svc-gallery .slide.photo{flex-basis:min(100%,380px)}
 .svc-gallery .slide.photo .shot{aspect-ratio:4/3;padding:0}
 .svc-gallery .slide.photo .shot img{object-fit:cover}
+/* vertical story creatives keep their 9:16 shape */
+.svc-gallery .slide.story{flex-basis:min(100%,260px)}
+.svc-gallery .slide.story .shot{aspect-ratio:9/16;background:#0b0b0b;padding:0}
+.svc-gallery .slide.story .shot img{object-fit:contain}
 .svc-gallery .vslide{flex-basis:min(100%,420px)}
 /* channel chips for the AI service */
 .chips-ai{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}

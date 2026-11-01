@@ -139,14 +139,24 @@
     ['british-face-clinic-rhinoplasty-lp', 'British Face Clinic', 'Rhinoplasty landing page']
   ].map(([f, c, t]) => ({ thumb: `assets/work/websites/${f}--top.webp`, full: `assets/work/websites/${f}--full.webp`, client: c, cap: t }));
 
+  // Australian search ads first, then the UK facial clinic account
   const GADS = [
-    ['results-ppc-performance-google-search-ads-ranking-result-deep-plane-facelift-near-london-for-british-face-clinic-by-omd-30032026.webp', 'Google Search ad, top position for deep plane facelift near London'],
-    ['results-ppc-performance-google-maps-ads-ranking-result-rhinoplasty-london-for-british-face-clinic-by-omd-27012026.webp', 'Google Maps ad, rhinoplasty London'],
-    ['results-ppc-performance-google-maps-ads-ranking-result-facial-surgeon-uk-for-british-face-clinic-by-omd-27012026.webp', 'Google Maps ad, facial surgeon UK'],
-    ['results-ppc-performance-google-search-ads-ranking-result-deep-plane-facelift-near-london-for-british-face-clinic-by-omd-24022026.webp', 'Google Search ad, deep plane facelift near London']
-  ].map(([f, t]) => ({ file: `assets/work/google-ads/${f}`, client: 'British Face Clinic', cap: t }));
+    ['results-google-search-ad-gynaecomastia-sydney-for-iccm-by-omd.webp', 'ICCM', 'Google Search ad, gynaecomastia Sydney'],
+    ['results-google-search-ad-face-lift-surgery-for-iccm-by-omd.webp', 'ICCM', 'Google Search ad, face lift surgery'],
+    ['results-google-search-ad-liposuction-sydney-for-lumiere-by-omd.webp', 'Lumiere', 'Google Search ad, liposuction Sydney'],
+    ['results-google-search-ad-non-surgical-thread-lift-for-shire-aesthetics-by-omd.webp', 'Shire Aesthetics and Vein Clinic', 'Google Search ad, non-surgical thread lift'],
+    ['results-ppc-performance-google-search-ads-ranking-result-deep-plane-facelift-near-london-for-british-face-clinic-by-omd-30032026.webp', 'British Face Clinic', 'Google Search ad, top position for deep plane facelift near London'],
+    ['results-ppc-performance-google-maps-ads-ranking-result-rhinoplasty-london-for-british-face-clinic-by-omd-27012026.webp', 'British Face Clinic', 'Google Maps ad, rhinoplasty London'],
+    ['results-ppc-performance-google-maps-ads-ranking-result-facial-surgeon-uk-for-british-face-clinic-by-omd-27012026.webp', 'British Face Clinic', 'Google Maps ad, facial surgeon UK'],
+    ['results-ppc-performance-google-search-ads-ranking-result-deep-plane-facelift-near-london-for-british-face-clinic-by-omd-24022026.webp', 'British Face Clinic', 'Google Search ad, deep plane facelift near London']
+  ].map(([f, c, t]) => ({ file: `assets/work/google-ads/${f}`, client: c, cap: t }));
 
+  // Australian campaign results first, then the UK and Irish clinics
   const SADS = [
+    ['results-social-media-advertising-plastic-surgery-clinic-account-september-2026-for-dr-queenie-chan-by-omd.webp', 'Dr Queenie Chan', 'Plastic surgery clinic account, September 2026'],
+    ['results-social-media-advertising-anti-wrinkle-brisbane-january-2026-for-prophile-clinics-by-omd.webp', 'Prophile Clinics', 'Anti-wrinkle campaign, Brisbane and the Gold Coast, January 2026'],
+    ['results-social-media-advertising-morpheus8-june-2025-for-dr-queenie-chan-by-omd.webp', 'Dr Queenie Chan', 'Morpheus8 campaign, June 2025'],
+    ['results-social-media-advertising-morpheus8-may-2025-for-dr-queenie-chan-by-omd.webp', 'Dr Queenie Chan', 'Morpheus8 campaign, May 2025'],
     ['results-social-media-advertising-tummy-tuck-campaign-august-2025-for-delta-clinics-by-omd-29092025.webp', 'Delta Clinics', 'Tummy tuck campaign, August 2025'],
     ['results-social-media-advertising-mini-facelift-july-2025-for-british-face-clinic-by-omd-30072025.webp', 'British Face Clinic', 'Mini facelift campaign, July 2025'],
     ['results-social-media-advertising-deep-plane-facelift-blepharoplasty-may-2025-for-the-hanson-clinic-by-omd-26062025.webp', 'The Hanson Clinic', 'Deep plane facelift and blepharoplasty, May 2025'],
@@ -155,6 +165,26 @@
     ['results-social-media-advertising-deep-plane-facelift-march-1-31-2025-for-the-hanson-clinic-by-omd-30042025.webp', 'The Hanson Clinic', 'Deep plane facelift, March 2025'],
     ['results-social-media-advertising-breast-augmentation-may-2025-for-white-hill-clinic-by-omd-26062025.webp', 'White Hill Clinic', 'Breast augmentation, May 2025']
   ].map(([f, c, t]) => ({ file: `assets/work/social-ads/${f}`, client: c, cap: t }));
+
+  // static story creatives we ran on Meta for Australian clinics
+  const AD_CREATIVES = [
+    ['creative-thread-lift-facebook-story-for-ashbrooke-cosmetic-surgery-by-omd.webp', 'Ashbrooke Cosmetic Surgery', 'Thread lift, Facebook story'],
+    ['creative-pdo-thread-lift-instagram-story-for-shiraz-cosmetic-by-omd.webp', 'Shiraz Cosmetic', 'PDO thread lift, Instagram story']
+  ].map(([f, c, t]) => ({ file: `assets/work/social-creatives/${f}`, client: c, cap: t }));
+
+  // video ad creatives we produced and ran on Meta, surgical work first
+  const AD_VIDEOS = [
+    ['-GWgFdVq3w4', 'The Crown Clinic', 'Gynaecomastia'],
+    ['o_eXtwxHYLE', 'Ashbrooke Cosmetic Surgery', 'Vaser liposuction'],
+    ['t89SMLLO_eM', 'Ashbrooke Cosmetic Surgery', 'Vaser liposuction'],
+    ['HNe-3V8ryyM', 'Ashbrooke Cosmetic Surgery', 'Thread lift'],
+    ['5XA3tCZnCCA', 'Dr Queenie Chan', 'Morpheus8'],
+    ['NF7Er2xm_wU', 'Dr Queenie Chan', 'Microneedling'],
+    ['uCa8ZTtudvk', 'Prophile Clinics', 'HIFU'],
+    ['GiO7IIFncYc', 'Prophile Clinics', 'Anti-wrinkle treatment'],
+    ['Hzf-tcWCtzQ', 'Jade Cosmetic Clinic', 'Secret RF skin needling'],
+    ['RAL57frVtsY', 'Shire Cosmetic and Vein Clinic', 'Anti-wrinkle treatment']
+  ];
 
   const SOCIAL_VIDEOS = ['1Yz3dmQhNy8', 'EEb5xjdOkyY', 'J4JO0OGQwfs', 'Q5k_kK4KRuw', 'fDvDVZYmfII'];
 
@@ -341,6 +371,20 @@
   fillSlider('gadsSlides', 'gadsPos', GADS, 'ad');
   fillSlider('sadsSlides', 'sadsPos', SADS, 'wide');
   fillSlider('photoSlides', 'photoPos', PHOTOS, 'photo');
+  fillSlider('adCreativeSlides', 'adCreativePos', AD_CREATIVES, 'story');
+  // video ad creatives, in the same card as the social media videos
+  const av = $('#adVideoSlides');
+  if (av) {
+    av.innerHTML = AD_VIDEOS.map(([id, client, cap], i) => `
+      <figure class="slide vslide">
+        <button class="vshot" type="button" data-video="${esc(id)}" aria-label="Play advert creative: ${esc(client)}, ${esc(cap)}">
+          <img src="https://i.ytimg.com/vi/${esc(id)}/hqdefault.jpg" alt="" loading="lazy">
+          <span class="play" aria-hidden="true">${PLAY_SVG}</span>
+        </button>
+        <figcaption class="meta"><b>${esc(client)}</b><span>${esc(cap)}</span></figcaption>
+      </figure>`).join('');
+    trackPos(av, $('#adVideoPos'));
+  }
   const sm = $('#smSlides');
   if (sm) {
     sm.innerHTML = SOCIAL_VIDEOS.map((id, i) => `
