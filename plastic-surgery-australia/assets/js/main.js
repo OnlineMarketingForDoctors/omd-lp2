@@ -122,8 +122,11 @@
   const FEATURED = ['forbes-logo-2.webp', 'daily-mail-uk-logo.png', 'business-insider-logo-2.webp', 'entrepreneur-logo.png', 'Yahoo_Finance_logo.webp', 'mashable-logo.webp', 'usa-today-logo.webp', 'msn-logo-1.webp', 'london-insider-logo.webp', 'marketing-mag-logo.webp', 'thrive-global-logo.png', 'smart-company-logo-1.png', 'herald-sun.png', 'new-york-weekly.webp', 'sem_logo.webp'];
 
   /* ---------------- data: service galleries ---------------- */
-  // newest work first
+  // Australian sites first, then the rest, newest work first
   const WEBSITES = [
+    ['west-coast-plastic-surgery', 'West Coast Plastic Surgery', 'Homepage, plastic surgery with Dr Qadir Khan, West Perth'],
+    ['dr-joseph-luo', 'Dr Joseph Luo', 'Homepage, plastic, reconstructive and aesthetic surgery, Perth'],
+    ['beyond-aesthetics', 'Beyond Aesthetics', 'Homepage, plastic and cosmetic surgery, Sydney'],
     ['vijayan-home', 'Mr Roshan Vijayan', 'Homepage, consultant plastic surgeon, Hertfordshire'],
     ['ullas-facial-plastic-surgery-home', 'Ullas Facial Plastic Surgery', 'Homepage, facial plastic surgery, Manchester'],
     ['adore-life-facelift-lp', 'Mr Hagen Schumacher', 'Facelift landing page, Adore Life, London and Cambridge'],
