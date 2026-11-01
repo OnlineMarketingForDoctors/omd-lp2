@@ -52,6 +52,14 @@ ul{list-style:none;margin:0;padding:0;display:grid;gap:14px}
   font-family:var(--action);font-weight:500;letter-spacing:.08em;text-transform:uppercase;font-size:clamp(1.05rem,1.6vw,1.25rem);
 }
 .group-h span{font-size:.72rem;letter-spacing:.1em;color:var(--on-dark-3)}
+/* each country is a <details>: the heading toggles it, the chevron shows which way */
+.group > summary{list-style:none;cursor:pointer}
+.group > summary::-webkit-details-marker{display:none}
+.group > summary:focus-visible{outline:2px solid var(--green);outline-offset:4px;border-radius:4px}
+.group-h .chev{width:22px;height:22px;margin-left:auto;align-self:center;color:var(--green);transition:transform .25s var(--ease)}
+.group:not([open]) .chev{transform:rotate(-90deg)}
+.group:not([open]) .group-h{margin-bottom:0}
+.group > summary:hover .group-h{border-bottom-color:rgba(0,219,152,.5)}
 .card{
   position:relative;display:grid;grid-template-columns:auto minmax(0,1fr) auto;align-items:center;
   gap:clamp(14px,2.4vw,26px);padding:clamp(18px,2.6vw,28px);
@@ -107,8 +115,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <h1>Online Marketing For Doctors.</h1>
     <p class="lead">Every landing page we are building, in one place. More are on the way.</p>
 
-    <section class="group" aria-labelledby="g-uk">
-      <h2 class="group-h" id="g-uk">United Kingdom<span>6 pages</span></h2>
+    <details class="group" open>
+      <summary><h2 class="group-h" id="g-uk">United Kingdom<span>6 pages</span><svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></h2></summary>
       <ul>
         <li>
           <a class="card" href="/medical-seo/">
@@ -177,9 +185,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           </a>
         </li>
       </ul>
-    </section>
-    <section class="group" aria-labelledby="g-au">
-      <h2 class="group-h" id="g-au">Australia<span>3 pages</span></h2>
+    </details>
+    <details class="group" open>
+      <summary><h2 class="group-h" id="g-au">Australia<span>3 pages</span><svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></h2></summary>
       <ul>
         <li>
           <a class="card" href="/hair-transplant-marketing-australia/">
@@ -215,7 +223,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           </a>
         </li>
       </ul>
-    </section>
+    </details>
   </div>
 </main>
 
