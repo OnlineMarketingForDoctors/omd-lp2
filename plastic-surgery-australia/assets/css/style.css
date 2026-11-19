@@ -463,7 +463,9 @@ img.fc-engine{object-fit:contain}
 .vshot .play svg{width:24px;height:24px;margin-left:2px}
 .vshot:hover .play{transform:translate(-50%,-50%) scale(1.08)}
 .vslide .meta{background:var(--black);color:var(--white)}
-.vslide .meta span{color:var(--on-dark-2)}
+/* .slide.vslide, not .vslide: the general ".slide .meta span" rule further
+   down has the same weight and won, leaving the caption dark grey on black */
+.slide.vslide .meta span{color:var(--on-dark-2)}
 .vanity-img .slider-nav .pos{font-size:.76rem;letter-spacing:.1em;text-transform:uppercase}
 .vanity-copy h2{margin-bottom:22px}
 .vanity-copy .t-lead{margin-bottom:10px}
