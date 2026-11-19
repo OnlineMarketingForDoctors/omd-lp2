@@ -20,7 +20,7 @@
       did: ['Search campaigns split by procedure: deep plane facelift, rhinoplasty and blepharoplasty', 'A dedicated landing page for each procedure, so the advert and the page say the same thing', 'Search and Maps ads targeted around each of the three clinics', 'Every lead tracked to a booked procedure and its value, so the return is measured in pounds, not clicks', 'An AI SMS assistant in the CRM that answers every ad enquiry within minutes and books the phone consultation'],
       shots: [['assets/cases/bfc-ads-snapshot.webp', 'Google Ads: 2,889 leads, 44 procedures, £230,875 revenue'], [R + 'plastic-surgeons/british-face-clinic--british-face-clinic-ranking-on-both-google-ads-for-the-keyword-facelift-near-me.webp', 'Google Search ad, facelift near me'], [R + 'plastic-surgeons/british-face-clinic--british-face-clinic-ranks-on-google-search-ads-for-deep-plane-facelift-near-london-keyword.webp', 'Google Search ad, deep plane facelift near London']],
       portrait: 'assets/cases/bfc-supriya.webp',
-      quote: 'OMD completely renovated our website and gave it a much fresher look. They have also helped us with our SEO and with our paid Google campaign. We have seen an increase in our practice with a ROI of around 5.08.',
+      quote: 'OMD completely renovated our website and gave it a much fresher look. They have also helped us with our SEO and with our paid Google campaign. We have seen an increase in our practice with a ROI of around 5.8.',
       who: 'Mr Mrinal Supriya', role: 'Facial Cosmetic Surgeon, British Face Clinic',
       link: 'https://onlinemarketingfordoctors.com/casestudy/british-face-clinic/'
     },

@@ -593,6 +593,7 @@ img.fc-engine{object-fit:contain}
 blockquote{margin:0}
 .q-big{font-size:clamp(1.3rem,2.1vw,1.85rem);font-weight:600;line-height:1.35;letter-spacing:-.01em}
 .q-big::before{content:"\201C";font-family:Georgia,serif;font-size:3.4em;line-height:0;vertical-align:-.45em;margin-right:.08em;color:var(--green)}
+.q-big::after{content:"\201D";font-family:Georgia,serif;font-size:3.4em;line-height:0;vertical-align:-.45em;margin-left:.04em;color:var(--green)}
 .q-who{margin-top:20px;display:flex;gap:14px;align-items:center}
 .q-who img{flex:none;width:56px;height:56px;border-radius:50%;object-fit:cover}
 .q-who b{display:block}
