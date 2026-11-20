@@ -79,7 +79,7 @@
     ['the-crown-clinic-hair-transplant-june-2025.webp', 'The Crown Clinic', 'Hair transplant leads, June 2025: 106 at $12.83 each'],
     ['darling-downs-hair-beard-transplant-2025.webp', 'Darling Downs Hair Transplant Clinic', 'Hair and beard transplant, February to March 2025: 30 leads'],
     ['the-crown-clinic-hair-transplant-september-october-2024.webp', 'The Crown Clinic', 'Hair transplant leads, September to October 2024: 149 at $11.42 each'],
-    ['hair-transplant-clinic-april.webp', 'Hair transplant clinic', 'Merged hair transplant lead campaign: 144 leads at $6.64 each'],
+    ['hair-transplant-clinic-april.webp', 'AZ Hair Restoration', 'Merged hair transplant lead campaign: 144 leads at $6.64 each'],
     ['hair-transplant-clinic-january-2025.webp', 'Hair transplant clinic', 'Instant form leads, January 2025: 96 at $16.11 each'],
     ['malay-mehta-hair-transplant-may-2025.webp', 'Malay Mehta Aesthetic Clinic', 'Hair transplant leads, May 2025: 92 enquiries'],
     ['malay-mehta-hair-transplant-november-december-2024.webp', 'Malay Mehta Aesthetic Clinic', 'Hair transplant, November to December 2024: 165 enquiries']
