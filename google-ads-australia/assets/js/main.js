@@ -196,6 +196,7 @@
       LP('the-dentists-general', 'The Dentist at 70 Pitt Street', 'General dentistry, Sydney')
     ],
     'GP & Medical Centres': [
+      LP('sunstate-family-practice', 'Sunstate Family Practice', 'AI skin mapping and skin cancer checks, Victoria Point, Queensland'),
       LP('oj-clinics-skin-cancer', 'OJ Clinics', 'Skin cancer checks, Toowoomba'),
       LP('observatory-tower-sofwave', 'Observatory Tower Medical Centre', 'Sofwave skin tightening'),
       LP('niva-medical-clinic', 'Niva Medical Clinic', 'Private GP, Stanmore, London'),

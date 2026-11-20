@@ -175,6 +175,7 @@
     'GP & Medical Centres': [
       LP('niva-medical-clinic', 'Niva Medical Clinic', 'Private GP, Stanmore, London'),
       LP('mansmatters-peyronies', 'MansMatters', "Peyronie's disease, London"),
+      LP('sunstate-family-practice', 'Sunstate Family Practice', 'AI skin mapping and skin cancer checks, Victoria Point, Queensland'),
       LP('oj-clinics-skin-cancer', 'OJ Clinics', 'Skin cancer checks, Toowoomba'),
       LP('observatory-tower-sofwave', 'Observatory Tower Medical Centre', 'Sofwave skin tightening'),
       LP('amputee-clinic-prosthetics', 'Amputee Clinic', 'Prosthetics')
