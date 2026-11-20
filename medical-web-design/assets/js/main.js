@@ -121,6 +121,7 @@
       W('white-hill-clinic', 'White Hill Clinic', 'Cosmetic surgery, hair and skin, Double Bay, Sydney')
     ],
     "Cosmetic Clinics": [
+      W('london-real-skin', 'London Real Skin', 'Dermatology-led skin clinic, Holborn, London'),
       W('aesthetic-lane', 'Aesthetic Lane', 'Cosmetic aesthetics clinic, Black Rock, Melbourne'),
       W('better-look', 'Better Look', 'Doctor-led cosmetic injectables and skin treatments, Deepdene, Melbourne'),
       W('dermal-skin-laundry', 'Dermal Skin Laundry', 'Skin needling and non-surgical skin treatments, Epping, Melbourne'),
@@ -145,13 +146,15 @@
       W('fortes-clinic', 'Fortes Clinic', 'FUE hair transplant clinic, Little Venice, London'),
       W('tajmeel-clinic', 'Tajmeel Clinic', 'Hair transplants and hair loss treatment, Bournemouth'),
       W('atlantis-medical', 'Atlantis Medical', 'Hair transplant surgery, Malvern, Melbourne'),
-      W('az-hair-restoration', 'AZ Hair Restoration', 'Doctor-led hair transplant clinic, Raleigh, North Carolina'),
+      W('az-hair-restoration', 'AZ Hair Restoration', 'Doctor-led hair transplants, Raleigh, North Carolina'),
       W('hair-transplant-medical-centre', 'Hair Transplant Medical Centre', 'Hair transplant surgery, Toronto, Mississauga and Oakville'),
       W('imami-hair-restoration', 'Imami Hair Restoration', 'Hair transplant surgery with Dr Imami, Melbourne, Florida'),
       W('dr-malay-mehta', 'Malay Mehta Aesthetic Clinic', 'Hair transplant surgery with Dr Malay Mehta, Mumbai'),
       W('new-hair-clinic', 'New Hair Clinic', 'Hair transplant and hair loss treatment, Perth'),
       W('scalp-transformation', 'Scalp Transformation', 'Scalp micropigmentation, Sydney CBD'),
-      W('crown-clinic', 'The Crown Clinic', 'Hair transplants, Sydney, Campbelltown and Melbourne')
+      W('crown-clinic', 'The Crown Clinic', 'Hair transplants, Sydney, Campbelltown and Melbourne'),
+      W('advanced-hair-clinics', 'Advanced Hair Clinics', 'Hair transplants led by Dr Anastasios Vekris, Athens'),
+      W('nuttorn-hair-centre', 'Nuttorn Hair Centre', 'Long hair transplants without shaving, Bangkok')
     ],
     Dermatologists: [
       W('derma-cosmetika', 'Derma Cosmetika', 'Skin, face and body treatments, Camberwell, Melbourne'),
@@ -211,6 +214,7 @@
       W('mindful-space', 'Mindful Space', 'Online ADHD and autism assessments, Ireland')
     ],
     "GP & Medical Centres": [
+      W('niva-medical-clinic', 'Niva Medical Clinic', 'Private GP clinic, Stanmore, London'),
       W("mansmatters", "MansMatters", "Non-invasive men's health clinic, Knightsbridge and Richmond"),
       W('balmoral-medical-practice', 'Balmoral Medical Practice', 'General practice for families, Mosman, Sydney'),
       W('connectgene', 'ConnectGene', 'Personalised cancer care and genomic testing, Hong Kong'),
@@ -223,7 +227,13 @@
       W('night-lite-pediatrics', 'Night Lite Pediatrics', 'Paediatric urgent care, Florida'),
       W('observatory-tower-medical-centre', 'Observatory Tower Medical Centre', 'GP and executive health clinic, Sydney CBD'),
       W('southern-allergy', 'Southern Allergy', 'Allergy care for children and adults, Melbourne'),
-      W('st-leonards-medical-clinic', 'St Leonards Medical Clinic', 'General practice, St Leonards, Sydney')
+      W('st-leonards-medical-clinic', 'St Leonards Medical Clinic', 'General practice, St Leonards, Sydney'),
+      W('sunstate-family-practice', 'Sunstate Family Practice', 'Family practice and skin cancer clinic, Victoria Point, Brisbane')
+    ],
+    "Medical eCommerce": [
+      W('allmedic', 'Allmedic', 'Medical-grade skincare store, Gold Coast'),
+      W('lumiere-web-store', 'Lumi\u00e8re', 'Skincare web store for Lumi\u00e8re Cosmetic Clinic, Sydney'),
+      W('pure-synergie', 'Pure Synergie Skin Store', 'Skincare store for Jade Cosmetic Clinic, Edge Hill, Cairns')
     ]
   };
 
