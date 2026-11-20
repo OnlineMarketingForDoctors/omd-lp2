@@ -143,6 +143,8 @@
       W('vision-clinic-sydney', 'Vision Clinic Sydney', 'Laser vision correction and cataract surgery, Sydney')
     ],
     "Hair Transplant Clinics": [
+      W('advanced-hair-clinics', 'Advanced Hair Clinics', 'Hair transplants led by Dr Anastasios Vekris, Athens'),
+      W('nuttorn-hair-centre', 'Nuttorn Hair Centre', 'Long hair transplants without shaving, Bangkok'),
       W('fortes-clinic', 'Fortes Clinic', 'FUE hair transplant clinic, Little Venice, London'),
       W('tajmeel-clinic', 'Tajmeel Clinic', 'Hair transplants and hair loss treatment, Bournemouth'),
       W('atlantis-medical', 'Atlantis Medical', 'Hair transplant surgery, Malvern, Melbourne'),
@@ -152,9 +154,7 @@
       W('dr-malay-mehta', 'Malay Mehta Aesthetic Clinic', 'Hair transplant surgery with Dr Malay Mehta, Mumbai'),
       W('new-hair-clinic', 'New Hair Clinic', 'Hair transplant and hair loss treatment, Perth'),
       W('scalp-transformation', 'Scalp Transformation', 'Scalp micropigmentation, Sydney CBD'),
-      W('crown-clinic', 'The Crown Clinic', 'Hair transplants, Sydney, Campbelltown and Melbourne'),
-      W('advanced-hair-clinics', 'Advanced Hair Clinics', 'Hair transplants led by Dr Anastasios Vekris, Athens'),
-      W('nuttorn-hair-centre', 'Nuttorn Hair Centre', 'Long hair transplants without shaving, Bangkok')
+      W('crown-clinic', 'The Crown Clinic', 'Hair transplants, Sydney, Campbelltown and Melbourne')
     ],
     Dermatologists: [
       W('derma-cosmetika', 'Derma Cosmetika', 'Skin, face and body treatments, Camberwell, Melbourne'),
@@ -215,6 +215,7 @@
     ],
     "GP & Medical Centres": [
       W('niva-medical-clinic', 'Niva Medical Clinic', 'Private GP clinic, Stanmore, London'),
+      W('sunstate-family-practice', 'Sunstate Family Practice', 'Family practice and skin cancer clinic, Victoria Point, Brisbane'),
       W("mansmatters", "MansMatters", "Non-invasive men's health clinic, Knightsbridge and Richmond"),
       W('balmoral-medical-practice', 'Balmoral Medical Practice', 'General practice for families, Mosman, Sydney'),
       W('connectgene', 'ConnectGene', 'Personalised cancer care and genomic testing, Hong Kong'),
@@ -227,8 +228,7 @@
       W('night-lite-pediatrics', 'Night Lite Pediatrics', 'Paediatric urgent care, Florida'),
       W('observatory-tower-medical-centre', 'Observatory Tower Medical Centre', 'GP and executive health clinic, Sydney CBD'),
       W('southern-allergy', 'Southern Allergy', 'Allergy care for children and adults, Melbourne'),
-      W('st-leonards-medical-clinic', 'St Leonards Medical Clinic', 'General practice, St Leonards, Sydney'),
-      W('sunstate-family-practice', 'Sunstate Family Practice', 'Family practice and skin cancer clinic, Victoria Point, Brisbane')
+      W('st-leonards-medical-clinic', 'St Leonards Medical Clinic', 'General practice, St Leonards, Sydney')
     ],
     "Medical eCommerce": [
       W('allmedic', 'Allmedic', 'Medical-grade skincare store, Gold Coast'),

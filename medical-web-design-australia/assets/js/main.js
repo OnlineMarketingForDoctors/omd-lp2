@@ -143,6 +143,8 @@
       W('the-vision-surgeon-uk', 'The Vision Surgeon', 'Laser eye, lens and cataract surgery, Colchester')
     ],
     "Hair Transplant Clinics": [
+      W('advanced-hair-clinics', 'Advanced Hair Clinics', 'Hair transplants led by Dr Anastasios Vekris, Athens'),
+      W('nuttorn-hair-centre', 'Nuttorn Hair Centre', 'Long hair transplants without shaving, Bangkok'),
       W('atlantis-medical', 'Atlantis Medical', 'Hair transplant surgery, Malvern, Melbourne'),
       W('new-hair-clinic', 'New Hair Clinic', 'Hair transplant and hair loss treatment, Perth'),
       W('scalp-transformation', 'Scalp Transformation', 'Scalp micropigmentation, Sydney CBD'),
@@ -152,9 +154,7 @@
       W('az-hair-restoration', 'AZ Hair Restoration', 'Doctor-led hair transplants, Raleigh, North Carolina'),
       W('hair-transplant-medical-centre', 'Hair Transplant Medical Centre', 'Hair transplant surgery, Toronto, Mississauga and Oakville'),
       W('imami-hair-restoration', 'Imami Hair Restoration', 'Hair transplant surgery with Dr Imami, Melbourne, Florida'),
-      W('dr-malay-mehta', 'Malay Mehta Aesthetic Clinic', 'Hair transplant surgery with Dr Malay Mehta, Mumbai'),
-      W('advanced-hair-clinics', 'Advanced Hair Clinics', 'Hair transplants led by Dr Anastasios Vekris, Athens'),
-      W('nuttorn-hair-centre', 'Nuttorn Hair Centre', 'Long hair transplants without shaving, Bangkok')
+      W('dr-malay-mehta', 'Malay Mehta Aesthetic Clinic', 'Hair transplant surgery with Dr Malay Mehta, Mumbai')
     ],
     Dermatologists: [
       W('derma-cosmetika', 'Derma Cosmetika', 'Skin, face and body treatments, Camberwell, Melbourne'),
