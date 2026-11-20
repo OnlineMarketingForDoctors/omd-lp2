@@ -19,8 +19,8 @@
       stats: [['¼', 'of the previous Google Ads budget'], ['331%', 'more conversions from paid search'], ['101%', 'more visits from paid search']],
       situation: 'Dr Mark Attalla had years of digital marketing spend behind him, an expensive Google Ads account, and a domain penalised by a Google update. The goal was more leads, better leads, and a lower cost per lead.',
       did: ['Single keyword ad groups, so the advert copy matches the search almost word for word and click-through rate climbs', 'Bidding strategy, and negotiation with Google, so the clinic stopped paying for clicks that never converted', 'A website revamp for conversion before any more traffic was bought', 'New landing pages for every liposuction variant patients search: stomach, thigh, arm, double chin, cost'],
-      shots: [['assets/cases/attalla-fig1.webp', 'Paid search conversions up 331%, from 206 to 887', '', 'fit'], ['assets/cases/attalla-website.webp', 'The website before and after the revamp'], ['assets/cases/attalla-fig2.webp', 'Top for liposuction Melbourne on Maps and search']],
-      portrait: 'assets/headshots/mark-attalla.webp',
+      shots: [['assets/cases/attalla-fig1.webp', 'Paid search conversions up 331%, from 206 to 887', '', 'fit'], ['assets/cases/attalla-website.webp', 'The website before and after the revamp'], ['assets/cases/omd-with-dr-attalla.webp', 'The OMD team with Dr Attalla at Chelsea Cosmetics']],
+      portrait: '', avatar: 'assets/headshots/mark-attalla.webp',
       quote: 'They organised the website in a way that is easier for the clients to go through. We found that we are spending almost one-fourth of our previous budget and getting double the conversion.',
       who: 'Dr Mark Attalla', role: 'Cosmetic Surgeon and Owner, Chelsea Cosmetics Melbourne',
       link: 'https://onlinemarketingfordoctors.com/case-study-dr-attalla/'
@@ -489,7 +489,7 @@
           </div>
           <blockquote class="cs-quote">
             <p>"${c.quote}"</p>
-            <div class="q-who">${c.portrait ? `<img src="${c.portrait}" alt="" loading="lazy">` : ''}<div><b>${c.who}</b><small>${c.role}</small></div></div>
+            <div class="q-who">${(c.avatar || c.portrait) ? `<img src="${c.avatar || c.portrait}" alt="" loading="lazy">` : ''}<div><b>${c.who}</b><small>${c.role}</small></div></div>
           </blockquote>
           ${c.link ? `<a class="cs-link" href="${c.link}" target="_blank" rel="noopener">Read the full case study <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M8 7h9v9"/></svg></a>` : ''}
           `}

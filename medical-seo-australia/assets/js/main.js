@@ -114,7 +114,7 @@
       stats: [['5', 'Google Search and Maps placements across Colchester and Essex'], ['6', 'AI answers captured'], ['2', 'ChatGPT shortlists for laser refractive surgery']],
       queries: ['best laser surgeon in colchester', 'best laser refractive surgery clinic in colchester', 'laser eye surgery colchester', 'hyperopia treatment colchester', 'eye doctor colchester', 'ophthalmologist colchester', 'eye care specialist essex'],
       shots: [['assets/results/ai/eye-care-clinics/the-vision-surgeon--the-vision-surgeon-ranks-on-chatgpt-results-for-best-laser-surgeon-in-colchester-keyword.webp', "ChatGPT, best laser surgeon in Colchester"], ['assets/results/ai/eye-care-clinics/the-vision-surgeon--the-vision-surgeon-ranks-on-ai-search-results-for-laser-eye-surgery-colchester-keyword.webp', 'Google AI search, laser eye surgery Colchester'], ['assets/results/seo/eye-care-clinics/the-vision-surgeon--the-vision-surgeon-ranks-on-google-maps-for-eye-doctor-colchester-keyword.webp', 'Google Maps, eye doctor Colchester']],
-      portrait: ''
+      portrait: 'assets/cases/the-vision-surgeon-portrait.webp', who: 'Mr Hatch Mukherjee, The Vision Surgeon'
     },
     {
       id: 'mansmatters', name: 'MansMatters', logo: 'assets/client-logos/mans-matters-logo.webp', uk: true,
