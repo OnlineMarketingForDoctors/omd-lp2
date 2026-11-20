@@ -111,8 +111,8 @@
       stats: [['76%', 'increase in monthly web traffic'], ['¼', 'of the previous Google Ads budget, for twice the conversions'], ['5.53% to 7.85%', 'organic conversion rate after the website revamp']],
       situation: 'Years of digital marketing spend, a domain penalised by a Google update, and a new site that still was not ranking for the liposuction keywords the practice depended on, with an expensive Google Ads account to match.',
       did: ['Website revamp for user experience and conversion before any more traffic was bought', 'Single keyword ad groups and bid negotiation in Google Ads: a quarter of the budget, double the conversions', 'Comprehensive keyword research across Melbourne suburbs and every liposuction variant', 'New niche procedure pages: stomach, thigh, arm, double chin, cost, fat transfer', 'On-site SEO best practice, proper indexation and faster load times'],
-      shots: [['assets/cases/attalla-website.webp', 'The website before and after the revamp'], ['assets/cases/attalla-fig2.webp', 'Top ranking for liposuction Melbourne on Maps and organic search'], ['assets/cases/attalla-fig1.webp', 'Traffic and goal completions over 8 months, paid and organic'], ['assets/cases/attalla-fig6.webp', 'Google reviews, Chelsea Cosmetics Melbourne']],
-      portrait: 'assets/cases/attalla-portrait.webp',
+      shots: [['assets/cases/attalla-website.webp', 'The website before and after the revamp'], ['assets/cases/attalla-fig2.webp', 'Top ranking for liposuction Melbourne on Maps and organic search'], ['assets/cases/attalla-fig1.webp', 'Traffic and goal completions over 8 months, paid and organic'], ['assets/cases/attalla-fig6.webp', 'Google reviews, Chelsea Cosmetics Melbourne'], ['assets/cases/omd-with-dr-attalla.webp', 'The OMD team with Dr Attalla at Chelsea Cosmetics']],
+      portrait: '', avatar: 'assets/cases/attalla-portrait.webp',
       quote: 'They organised the website in a way that is easier for the clients to go through. We found that we are spending almost one-fourth of our previous budget and getting double the conversion.',
       who: 'Dr Mark Attalla', role: 'Cosmetic Surgeon and Owner, Chelsea Cosmetics Melbourne',
       link: 'https://onlinemarketingfordoctors.com/case-study-dr-attalla/'
@@ -540,7 +540,7 @@
           </div>
           <blockquote class="cs-quote">
             <p>"${esc(c.quote)}"</p>
-            <div class="q-who">${c.portrait ? `<img src="${esc(c.portrait)}" alt="" loading="lazy">` : ''}<div><b>${esc(c.who)}</b><small>${esc(c.role)}</small></div></div>
+            <div class="q-who">${(c.avatar || c.portrait) ? `<img src="${esc(c.avatar || c.portrait)}" alt="" loading="lazy">` : ''}<div><b>${esc(c.who)}</b><small>${esc(c.role)}</small></div></div>
           </blockquote>
           <a class="cs-link" href="${esc(c.link)}" target="_blank" rel="noopener">Read the full case study <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
         </div>
