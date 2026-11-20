@@ -169,7 +169,10 @@
     ],
     'Hair Transplant Clinics': [
       LP('crown-clinic-hair-transplant', 'The Crown Clinic', 'FUE hair transplant, Australia'),
+      LP('atlantis-medical-hair-transplant', 'Atlantis Medical', 'Hair transplant, Melbourne'),
       LP('fortes-clinic-fue', 'Fortes Clinic', 'FUE hair transplant, central London'),
+      LP('advanced-hair-clinics', 'Advanced Hair Clinics', 'Hair transplant in Athens, for UK patients'),
+      LP('az-hair-restoration', 'AZ Hair Restoration', 'FUE hair transplant, Raleigh, North Carolina'),
       LP('imami-hair-fue', 'Imami Hair', 'FUE hair transplant'),
       LP('hair-transplant-medical-centre', 'Hair Transplant Medical Centre', 'Hair transplant, Canada')
     ],
@@ -180,7 +183,8 @@
       LP('dermal-skin-laundry-emsculpt', 'Dermal Skin Laundry', 'Emsculpt body contouring'),
       LP('dermacosmetika-skin-tightening', 'Dermacosmetika', 'Skin tightening and cellulite'),
       LP('iccm-plasma-pen', 'ICCM', 'Plasmage plasma pen'),
-      LP('endopersonalcare-lpg-endermologie', 'Endotherapeutics', 'LPG endermologie')
+      LP('endopersonalcare-lpg-endermologie', 'Endotherapeutics', 'LPG endermologie'),
+      LP('london-real-skin', 'London Real Skin', 'EMSCULPT NEO body sculpting, Holborn, London')
     ],
     'Vein Clinics': [
       LP('vein-doctors-sydney-varicose-veins', 'Vein Doctors Sydney', 'Varicose veins, Sydney'),
@@ -194,6 +198,7 @@
     'GP & Medical Centres': [
       LP('oj-clinics-skin-cancer', 'OJ Clinics', 'Skin cancer checks, Toowoomba'),
       LP('observatory-tower-sofwave', 'Observatory Tower Medical Centre', 'Sofwave skin tightening'),
+      LP('niva-medical-clinic', 'Niva Medical Clinic', 'Private GP, Stanmore, London'),
       LP('mansmatters-peyronies', 'MansMatters', "Peyronie's disease, London"),
       LP('amputee-clinic-prosthetics', 'Amputee Clinic', 'Prosthetics')
     ],

@@ -146,11 +146,15 @@
     ],
     'Hair Transplant Clinics': [
       LP('fortes-clinic-fue', 'Fortes Clinic', 'FUE hair transplant, central London'),
+      LP('advanced-hair-clinics', 'Advanced Hair Clinics', 'Hair transplant in Athens, for UK patients'),
+      LP('atlantis-medical-hair-transplant', 'Atlantis Medical', 'Hair transplant, Melbourne'),
+      LP('az-hair-restoration', 'AZ Hair Restoration', 'FUE hair transplant, Raleigh, North Carolina'),
       LP('imami-hair-fue', 'Imami Hair', 'FUE hair transplant'),
       LP('crown-clinic-hair-transplant', 'The Crown Clinic', 'FUE hair transplant, Australia'),
       LP('hair-transplant-medical-centre', 'Hair Transplant Medical Centre', 'Hair transplant, Canada')
     ],
     'Aesthetic Clinics': [
+      LP('london-real-skin', 'London Real Skin', 'EMSCULPT NEO body sculpting, Holborn, London'),
       LP('aesthetic-lane-lip-filler', 'Aesthetic Lane', 'Lip filler'),
       LP('antiwrinkle-injections', 'My Cosmetic Clinic', 'Anti-wrinkle injections'),
       LP('eighteen-skin-hifu', 'Eighteen Skin', 'HIFU skin tightening'),
@@ -169,6 +173,7 @@
       LP('the-dentists-general', 'The Dentist at 70 Pitt Street', 'General dentistry, Sydney')
     ],
     'GP & Medical Centres': [
+      LP('niva-medical-clinic', 'Niva Medical Clinic', 'Private GP, Stanmore, London'),
       LP('mansmatters-peyronies', 'MansMatters', "Peyronie's disease, London"),
       LP('oj-clinics-skin-cancer', 'OJ Clinics', 'Skin cancer checks, Toowoomba'),
       LP('observatory-tower-sofwave', 'Observatory Tower Medical Centre', 'Sofwave skin tightening'),
