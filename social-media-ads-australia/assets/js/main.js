@@ -101,8 +101,8 @@
       hero: { n: '£1.23', t: 'average cost per lead, February 2025' },
       stats: [['56', 'leads from six static ads'], ['£1.12', 'per lead from the best ad'], ['3,706', 'men reached']],
       situation: "Men's health is one of the hardest categories on Meta: an ad may not name the reader's condition or suggest it knows about it. The clinic needed discreet ads that still made men want to ask a question.",
-      did: ['Six static ads tested at once in one lead campaign', "Copy written to Meta's personal attributes policy: it talks about the treatment, never about the reader", 'Budget left on the winning ad, which produced 52 of the 56 leads', "Video ads for erectile dysfunction and Peyronie's disease treatment"],
-      shots: [[R + "mens-health-clinics/mansmatters-erectile-dysfunction-february-2025.webp", 'Six ads, February 2025: 56 leads at £1.23', '', 'fit']],
+      did: ['Six static ads tested at once in one lead campaign', "Copy written to Meta's personal attributes policy: it talks about the treatment, never about the reader", 'Budget left on the winning ad, the carrot, which produced 52 of the 56 leads', "Video ads for erectile dysfunction and Peyronie's disease treatment"],
+      shots: [[R + "mens-health-clinics/mansmatters-erectile-dysfunction-february-2025.webp", 'Six ads, February 2025: 56 leads at £1.23', '', 'fit'], [R + "mens-health-clinics/mansmatters-erectile-dysfunction-carrot-ad.webp", 'The winning feed ad: 52 of the 56 leads, at £1.12 each']],
       reels: [['SZweYcc-PHc', 'Erectile dysfunction treatment video ad'], ['mOyQSTwV21w', 'ED solutions video ad']],
       portrait: '', quote: '', link: ''
     },

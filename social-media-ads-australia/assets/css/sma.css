@@ -282,3 +282,6 @@
 .qb-reel figcaption{font-size:.86rem;color:var(--on-dark-2);line-height:1.4}
 .qb-reel figcaption b{display:block;color:var(--white);font-size:.95rem}
 @media (max-width:920px){.qb-reel{width:min(100%,260px)}}
+
+/* ---------------- MansMatters: the winning feed ad is square ---------------- */
+#cs-mansmatters .shot-card.s2{aspect-ratio:1/1}
