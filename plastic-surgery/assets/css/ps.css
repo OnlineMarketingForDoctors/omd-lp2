@@ -142,7 +142,7 @@
 /* the service photograph with the intro card riding over its lower corner */
 .svc-hero{position:relative;margin-bottom:clamp(28px,3.5vw,44px)}
 .svc-hero .svc-img{border-radius:12px;overflow:hidden;box-shadow:var(--shadow-lg);aspect-ratio:16/9;background:#111}
-.svc-hero .svc-img img{width:100%;height:100%;object-fit:cover}
+.svc-hero .svc-img img,.svc-hero .svc-img video{width:100%;height:100%;object-fit:cover;display:block}
 /* the intro card spans the photograph with a small inset each side, headline
    on the left and the summary beside it */
 .svc-card{

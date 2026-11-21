@@ -498,6 +498,9 @@
     trackPos(ol, $('#' + ol.id + 'Pos'));
   });
 
+  // the service clip is ambient, so it holds on its poster for anyone who asks for less motion
+  if (reduced) $$('.svc-video').forEach(v => { v.autoplay = false; v.pause(); });
+
   /* ---------------- services rail ---------------- */
   const ICONS = {
     web: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="14" rx="2"/><path d="M3 9h18M8 21h8"/></svg>',
