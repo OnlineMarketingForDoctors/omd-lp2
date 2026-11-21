@@ -121,6 +121,8 @@ figure{margin:0}
 .header .btn{font-size:.86rem;padding:.95em 1.3em}
 .icon-btn{display:none;width:44px;height:44px;align-items:center;justify-content:center;border-radius:8px;color:var(--white)}
 .icon-btn svg{width:26px;height:26px}
+.wa-btn{color:#25D366}
+.wa-btn svg{width:24px;height:24px}
 /* the hamburger becomes a close button while the drawer is open */
 .menu-btn .ic-close{display:none}
 .menu-btn[aria-expanded="true"] .ic-menu{display:none}
@@ -142,6 +144,8 @@ figure{margin:0}
   .nav{display:none}
   .header-cta .phone,.header-cta .btn{display:none}
   .icon-btn{display:inline-flex}
+  /* call, WhatsApp and menu side by side next to the booking button */
+  .header-cta{gap:4px}
   .logo img{height:44px}
   .mobile-book{display:none}
   .header.is-stuck .logo{display:none}
@@ -459,7 +463,9 @@ img.fc-engine{object-fit:contain}
 .vshot .play svg{width:24px;height:24px;margin-left:2px}
 .vshot:hover .play{transform:translate(-50%,-50%) scale(1.08)}
 .vslide .meta{background:var(--black);color:var(--white)}
-.vslide .meta span{color:var(--on-dark-2)}
+/* .slide.vslide, not .vslide: the general ".slide .meta span" rule further
+   down has the same weight and won, leaving the caption dark grey on black */
+.slide.vslide .meta span{color:var(--on-dark-2)}
 .vanity-img .slider-nav .pos{font-size:.76rem;letter-spacing:.1em;text-transform:uppercase}
 .vanity-copy h2{margin-bottom:22px}
 .vanity-copy .t-lead{margin-bottom:10px}
@@ -589,6 +595,7 @@ img.fc-engine{object-fit:contain}
 blockquote{margin:0}
 .q-big{font-size:clamp(1.3rem,2.1vw,1.85rem);font-weight:600;line-height:1.35;letter-spacing:-.01em}
 .q-big::before{content:"\201C";font-family:Georgia,serif;font-size:3.4em;line-height:0;vertical-align:-.45em;margin-right:.08em;color:var(--green)}
+.q-big::after{content:"\201D";font-family:Georgia,serif;font-size:3.4em;line-height:0;vertical-align:-.45em;margin-left:.04em;color:var(--green)}
 .q-who{margin-top:20px;display:flex;gap:14px;align-items:center}
 .q-who img{flex:none;width:56px;height:56px;border-radius:50%;object-fit:cover}
 .q-who b{display:block}
@@ -1065,7 +1072,9 @@ blockquote{margin:0}
    Back to top
    ========================================================================== */
 .to-top{
-  position:fixed;right:var(--gutter);bottom:calc(var(--gutter) + env(safe-area-inset-bottom,0px));z-index:90;
+  /* sits directly above the HighLevel chat bubble (60px, 20px in from the
+     right and bottom edges), centred on it, so the two never overlap */
+  position:fixed;right:24px;bottom:calc(96px + env(safe-area-inset-bottom,0px));z-index:90;
   width:52px;height:52px;border-radius:50%;display:grid;place-items:center;
   background:var(--green);color:var(--black);box-shadow:var(--shadow-green);
   opacity:0;visibility:hidden;transform:translateY(14px);
@@ -1074,7 +1083,7 @@ blockquote{margin:0}
 .to-top.is-on{opacity:1;visibility:visible;transform:none}
 .to-top:hover{background:#19e6a6;transform:translateY(-2px)}
 .to-top svg{width:22px;height:22px}
-@media (max-width:920px){.to-top{width:46px;height:46px}.to-top svg{width:20px;height:20px}}
+@media (max-width:920px){.to-top{width:46px;height:46px;right:27px;bottom:calc(92px + env(safe-area-inset-bottom,0px))}.to-top svg{width:20px;height:20px}}
 @media (prefers-reduced-motion:reduce){.to-top{transition:none}}
 
 /* ==========================================================================

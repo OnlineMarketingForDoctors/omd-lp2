@@ -38,8 +38,8 @@
     {
       id: 'bfc', name: 'British Face Clinic', logo: 'assets/client-logos/british_face_clinic_logo.webp', uk: true,
       place: 'Harley Street, Milton Keynes and Northampton', specialty: 'Facial cosmetic surgery', months: '12 months',
-      title: 'A completely renovated website, and a 5.08x return on the practice\'s marketing.',
-      hero: { n: '5.08x', t: 'return on investment in 12 months' },
+      title: 'A completely renovated website, and a 5.8x return on the practice\'s marketing.',
+      hero: { n: '5.8x', t: 'return on investment in 12 months' },
       stats: [['300%', 'increase in conversions'], ['106%', 'increase in organic traffic'], ['1,012%', 'growth in keyword rankings']],
       situation: 'Mr Mrinal Supriya operates across London, Milton Keynes and Northampton. The clinic was known for deep plane facelift and rhinoplasty in the profession, but its website looked dated and was almost invisible for those procedures on Google.',
       did: ['Renovated the website from top to bottom, with a fresher, more premium look for a Harley Street facial surgeon', 'Long-form pages for deep plane facelift, rhinoplasty and blepharoplasty, written from real patient searches', 'Location content for London, Milton Keynes and Northampton, matched to three restructured Google Business Profiles', 'On-page rebuild: unique titles, headings and descriptions on every page'],
@@ -121,6 +121,7 @@
       W('the-bougainvillea-clinique', 'The Bougainvillea Clinique', 'Plastic surgery and medical day spa, Winter Park, Florida')
     ],
     "Cosmetic Clinics": [
+      W('london-real-skin', 'London Real Skin', 'Dermatology-led skin clinic, Holborn, London'),
       W('aesthetic-lane', 'Aesthetic Lane', 'Cosmetic aesthetics clinic, Black Rock, Melbourne'),
       W('better-look', 'Better Look', 'Doctor-led cosmetic injectables and skin treatments, Deepdene, Melbourne'),
       W('dermal-skin-laundry', 'Dermal Skin Laundry', 'Skin needling and non-surgical skin treatments, Epping, Melbourne'),
@@ -142,13 +143,15 @@
       W('the-vision-surgeon-uk', 'The Vision Surgeon', 'Laser eye, lens and cataract surgery, Colchester')
     ],
     "Hair Transplant Clinics": [
+      W('advanced-hair-clinics', 'Advanced Hair Clinics', 'Hair transplants led by Dr Anastasios Vekris, Athens'),
+      W('nuttorn-hair-centre', 'Nuttorn Hair Centre', 'Long hair transplants without shaving, Bangkok'),
       W('atlantis-medical', 'Atlantis Medical', 'Hair transplant surgery, Malvern, Melbourne'),
       W('new-hair-clinic', 'New Hair Clinic', 'Hair transplant and hair loss treatment, Perth'),
       W('scalp-transformation', 'Scalp Transformation', 'Scalp micropigmentation, Sydney CBD'),
       W('crown-clinic', 'The Crown Clinic', 'Hair transplants, Sydney, Campbelltown and Melbourne'),
       W('fortes-clinic', 'Fortes Clinic', 'FUE hair transplant clinic, Little Venice, London'),
       W('tajmeel-clinic', 'Tajmeel Clinic', 'Hair transplants and hair loss treatment, Bournemouth'),
-      W('az-hair-restoration', 'AZ Hair Restoration', 'Doctor-led hair transplant clinic, Raleigh, North Carolina'),
+      W('az-hair-restoration', 'AZ Hair Restoration', 'Doctor-led hair transplants, Raleigh, North Carolina'),
       W('hair-transplant-medical-centre', 'Hair Transplant Medical Centre', 'Hair transplant surgery, Toronto, Mississauga and Oakville'),
       W('imami-hair-restoration', 'Imami Hair Restoration', 'Hair transplant surgery with Dr Imami, Melbourne, Florida'),
       W('dr-malay-mehta', 'Malay Mehta Aesthetic Clinic', 'Hair transplant surgery with Dr Malay Mehta, Mumbai')
@@ -211,6 +214,8 @@
       W('mindful-space', 'Mindful Space', 'Online ADHD and autism assessments, Ireland')
     ],
     "GP & Medical Centres": [
+      W('sunstate-family-practice', 'Sunstate Family Practice', 'Family practice and skin cancer clinic, Victoria Point, Brisbane'),
+      W('niva-medical-clinic', 'Niva Medical Clinic', 'Private GP clinic, Stanmore, London'),
       W('balmoral-medical-practice', 'Balmoral Medical Practice', 'General practice for families, Mosman, Sydney'),
       W('cura-specialists', 'CURA Medical Specialists', 'Neurology specialists, Drummoyne, Sydney'),
       W('dr-tony-kodsi', 'Dr Tony Kodsi', 'Pain medicine specialist, Macquarie Park, Sydney'),
@@ -224,6 +229,11 @@
       W('connectgene', 'ConnectGene', 'Personalised cancer care and genomic testing, Hong Kong'),
       W('cg-genomics-oncology', 'ConnectGene Genomics Oncology', 'Genomic testing for cancer, Hong Kong'),
       W('night-lite-pediatrics', 'Night Lite Pediatrics', 'Paediatric urgent care, Florida')
+    ],
+    "Medical eCommerce": [
+      W('allmedic', 'Allmedic', 'Medical-grade skincare store, Gold Coast'),
+      W('lumiere-web-store', 'Lumi\u00e8re', 'Skincare web store for Lumi\u00e8re Cosmetic Clinic, Sydney'),
+      W('pure-synergie', 'Pure Synergie Skin Store', 'Skincare store for Jade Cosmetic Clinic, Edge Hill, Cairns')
     ]
   };
 

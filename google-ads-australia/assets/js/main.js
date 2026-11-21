@@ -19,8 +19,8 @@
       stats: [['¼', 'of the previous Google Ads budget'], ['331%', 'more conversions from paid search'], ['101%', 'more visits from paid search']],
       situation: 'Dr Mark Attalla had years of digital marketing spend behind him, an expensive Google Ads account, and a domain penalised by a Google update. The goal was more leads, better leads, and a lower cost per lead.',
       did: ['Single keyword ad groups, so the advert copy matches the search almost word for word and click-through rate climbs', 'Bidding strategy, and negotiation with Google, so the clinic stopped paying for clicks that never converted', 'A website revamp for conversion before any more traffic was bought', 'New landing pages for every liposuction variant patients search: stomach, thigh, arm, double chin, cost'],
-      shots: [['assets/cases/attalla-fig1.webp', 'Paid search conversions up 331%, from 206 to 887', '', 'fit'], ['assets/cases/attalla-website.webp', 'The website before and after the revamp'], ['assets/cases/attalla-fig2.webp', 'Top for liposuction Melbourne on Maps and search']],
-      portrait: 'assets/headshots/mark-attalla.webp',
+      shots: [['assets/cases/attalla-fig1.webp', 'Paid search conversions up 331%, from 206 to 887', '', 'fit'], ['assets/cases/attalla-website.webp', 'The website before and after the revamp'], ['assets/cases/omd-with-dr-attalla.webp', 'The OMD team with Dr Attalla at Chelsea Cosmetics']],
+      portrait: '', avatar: 'assets/headshots/mark-attalla.webp',
       quote: 'They organised the website in a way that is easier for the clients to go through. We found that we are spending almost one-fourth of our previous budget and getting double the conversion.',
       who: 'Dr Mark Attalla', role: 'Cosmetic Surgeon and Owner, Chelsea Cosmetics Melbourne',
       link: 'https://onlinemarketingfordoctors.com/case-study-dr-attalla/'
@@ -82,7 +82,7 @@
       did: ['Search campaigns split by procedure: deep plane facelift, rhinoplasty and blepharoplasty', 'A dedicated landing page for each procedure, so the advert and the page say the same thing', 'Search and Maps ads targeted around each of the three clinics', 'Every lead tracked to a booked procedure and its value, so the return is measured in pounds, not clicks', 'An AI SMS assistant in the CRM that answers every ad enquiry within minutes and books the phone consultation'],
       shots: [['assets/cases/bfc-ads-snapshot.webp', 'Google Ads: 2,889 leads, 44 procedures, £230,875 revenue'], [R + 'plastic-surgeons/british-face-clinic--british-face-clinic-ranking-on-both-google-ads-for-the-keyword-facelift-near-me.webp', 'Google Search ad, facelift near me'], [R + 'plastic-surgeons/british-face-clinic--british-face-clinic-ranks-on-google-search-ads-for-deep-plane-facelift-near-london-keyword.webp', 'Google Search ad, deep plane facelift near London']],
       portrait: 'assets/cases/bfc-supriya.webp',
-      quote: 'OMD completely renovated our website and gave it a much fresher look. They have also helped us with our SEO and with our paid Google campaign. We have seen an increase in our practice with a ROI of around 5.08.',
+      quote: 'OMD completely renovated our website and gave it a much fresher look. They have also helped us with our SEO and with our paid Google campaign. We have seen an increase in our practice with a ROI of around 5.8.',
       who: 'Mr Mrinal Supriya', role: 'Facial Cosmetic Surgeon, British Face Clinic',
       link: 'https://onlinemarketingfordoctors.com/casestudy/british-face-clinic/'
     },
@@ -169,7 +169,10 @@
     ],
     'Hair Transplant Clinics': [
       LP('crown-clinic-hair-transplant', 'The Crown Clinic', 'FUE hair transplant, Australia'),
+      LP('atlantis-medical-hair-transplant', 'Atlantis Medical', 'Hair transplant, Melbourne'),
       LP('fortes-clinic-fue', 'Fortes Clinic', 'FUE hair transplant, central London'),
+      LP('advanced-hair-clinics', 'Advanced Hair Clinics', 'Hair transplant in Athens, for UK patients'),
+      LP('az-hair-restoration', 'AZ Hair Restoration', 'FUE hair transplant, Raleigh, North Carolina'),
       LP('imami-hair-fue', 'Imami Hair', 'FUE hair transplant'),
       LP('hair-transplant-medical-centre', 'Hair Transplant Medical Centre', 'Hair transplant, Canada')
     ],
@@ -180,7 +183,8 @@
       LP('dermal-skin-laundry-emsculpt', 'Dermal Skin Laundry', 'Emsculpt body contouring'),
       LP('dermacosmetika-skin-tightening', 'Dermacosmetika', 'Skin tightening and cellulite'),
       LP('iccm-plasma-pen', 'ICCM', 'Plasmage plasma pen'),
-      LP('endopersonalcare-lpg-endermologie', 'Endotherapeutics', 'LPG endermologie')
+      LP('endopersonalcare-lpg-endermologie', 'Endotherapeutics', 'LPG endermologie'),
+      LP('london-real-skin', 'London Real Skin', 'EMSCULPT NEO body sculpting, Holborn, London')
     ],
     'Vein Clinics': [
       LP('vein-doctors-sydney-varicose-veins', 'Vein Doctors Sydney', 'Varicose veins, Sydney'),
@@ -192,8 +196,10 @@
       LP('the-dentists-general', 'The Dentist at 70 Pitt Street', 'General dentistry, Sydney')
     ],
     'GP & Medical Centres': [
+      LP('sunstate-family-practice', 'Sunstate Family Practice', 'AI skin mapping and skin cancer checks, Victoria Point, Queensland'),
       LP('oj-clinics-skin-cancer', 'OJ Clinics', 'Skin cancer checks, Toowoomba'),
       LP('observatory-tower-sofwave', 'Observatory Tower Medical Centre', 'Sofwave skin tightening'),
+      LP('niva-medical-clinic', 'Niva Medical Clinic', 'Private GP, Stanmore, London'),
       LP('mansmatters-peyronies', 'MansMatters', "Peyronie's disease, London"),
       LP('amputee-clinic-prosthetics', 'Amputee Clinic', 'Prosthetics')
     ],
@@ -484,7 +490,7 @@
           </div>
           <blockquote class="cs-quote">
             <p>"${c.quote}"</p>
-            <div class="q-who">${c.portrait ? `<img src="${c.portrait}" alt="" loading="lazy">` : ''}<div><b>${c.who}</b><small>${c.role}</small></div></div>
+            <div class="q-who">${(c.avatar || c.portrait) ? `<img src="${c.avatar || c.portrait}" alt="" loading="lazy">` : ''}<div><b>${c.who}</b><small>${c.role}</small></div></div>
           </blockquote>
           ${c.link ? `<a class="cs-link" href="${c.link}" target="_blank" rel="noopener">Read the full case study <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M8 7h9v9"/></svg></a>` : ''}
           `}

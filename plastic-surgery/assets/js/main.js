@@ -30,14 +30,14 @@
       id: 'bfc', name: 'British Face Clinic', logo: 'assets/client-logos/british_face_clinic_logo.webp', region: 'UK',
       place: 'Harley Street, Milton Keynes and Northampton', specialty: 'Facial cosmetic surgery', months: '12 months',
       channels: ['Website', 'Brand and funnel', 'Google Ads', 'Meta ads', 'SEO', 'Content', 'AI SMS assistant'],
-      title: 'Three clinics, one facial surgeon, and a 5.08x return in twelve months.',
-      hero: { n: '5.08x', t: 'return on investment in 12 months' },
+      title: 'Three clinics, one facial surgeon, and a 5.8x return in twelve months.',
+      hero: { n: '5.8x', t: 'return on investment in 12 months' },
       stats: [['1,012%', 'growth in keyword rankings'], ['£230,875', 'revenue from 44 procedures booked through Google Ads in a year'], ['£4', 'average cost per lead on Meta, from 3.2 million impressions']],
       situation: 'Mr Mrinal Supriya operates across London, Milton Keynes and Northampton. The clinic was known for deep plane facelift and rhinoplasty in the profession, invisible for those terms on Google, and had a website that did not convert and almost no paid presence.',
       did: ['Positioned the clinic around the deep plane facelift, then rebuilt the website to convert', 'Landing pages for deep plane facelift, rhinoplasty and blepharoplasty for Google Ads: 2,889 leads and 44 booked procedures in a year', 'Full-funnel Facebook and Instagram campaigns: 3.2 million impressions, 41,290 clicks, about £4 a lead', 'An AI SMS assistant in the CRM that answers every enquiry within minutes and books the phone consultation', 'Three Google Business Profiles restructured, plus long-form procedure pages and a monthly blog'],
       shots: [['assets/cases/bfc-ads-snapshot.webp', 'Google Ads: 2,889 leads, 44 procedures, £230,875 revenue'], ['assets/work/websites/british-face-clinic-home--top.webp', 'The new British Face Clinic website', 'assets/work/websites/british-face-clinic-home--full.webp'], ['assets/cases/bfc-ai-sms.webp', 'The AI SMS assistant booking phone consultations'], ['assets/cases/bfc-ga4.webp', 'Organic search up 106% year on year']],
       portrait: 'assets/cases/bfc-supriya.webp',
-      quote: 'OMD completely renovated our website and gave it a much fresher look. They have also helped us with our SEO and with our paid Google campaign. Our organic keywords have grown by 1,000%, and we have seen an increase in our practice with a ROI of around 5.08.',
+      quote: 'OMD completely renovated our website and gave it a much fresher look. They have also helped us with our SEO and with our paid Google campaign. Our organic keywords have grown by 1,000%, and we have seen an increase in our practice with a ROI of around 5.8.',
       who: 'Mr Mrinal Supriya', role: 'Facial Cosmetic Surgeon, British Face Clinic',
       link: 'https://onlinemarketingfordoctors.com/casestudy/british-face-clinic/'
     },
@@ -111,8 +111,8 @@
       stats: [['76%', 'increase in monthly web traffic'], ['¼', 'of the previous Google Ads budget, for twice the conversions'], ['5.53% to 7.85%', 'organic conversion rate after the website revamp']],
       situation: 'Years of digital marketing spend, a domain penalised by a Google update, and a new site that still was not ranking for the liposuction keywords the practice depended on, with an expensive Google Ads account to match.',
       did: ['Website revamp for user experience and conversion before any more traffic was bought', 'Single keyword ad groups and bid negotiation in Google Ads: a quarter of the budget, double the conversions', 'Comprehensive keyword research across Melbourne suburbs and every liposuction variant', 'New niche procedure pages: stomach, thigh, arm, double chin, cost, fat transfer', 'On-site SEO best practice, proper indexation and faster load times'],
-      shots: [['assets/cases/attalla-website.webp', 'The website before and after the revamp'], ['assets/cases/attalla-fig2.webp', 'Top ranking for liposuction Melbourne on Maps and organic search'], ['assets/cases/attalla-fig1.webp', 'Traffic and goal completions over 8 months, paid and organic'], ['assets/cases/attalla-fig6.webp', 'Google reviews, Chelsea Cosmetics Melbourne']],
-      portrait: 'assets/cases/attalla-portrait.webp',
+      shots: [['assets/cases/attalla-website.webp', 'The website before and after the revamp'], ['assets/cases/attalla-fig2.webp', 'Top ranking for liposuction Melbourne on Maps and organic search'], ['assets/cases/attalla-fig1.webp', 'Traffic and goal completions over 8 months, paid and organic'], ['assets/cases/attalla-fig6.webp', 'Google reviews, Chelsea Cosmetics Melbourne'], ['assets/cases/omd-with-dr-attalla.webp', 'The OMD team with Dr Attalla at Chelsea Cosmetics']],
+      portrait: '', avatar: 'assets/cases/attalla-portrait.webp',
       quote: 'They organised the website in a way that is easier for the clients to go through. We found that we are spending almost one-fourth of our previous budget and getting double the conversion.',
       who: 'Dr Mark Attalla', role: 'Cosmetic Surgeon and Owner, Chelsea Cosmetics Melbourne',
       link: 'https://onlinemarketingfordoctors.com/case-study-dr-attalla/'
@@ -543,7 +543,7 @@
           </div>
           <blockquote class="cs-quote">
             <p>"${esc(c.quote)}"</p>
-            <div class="q-who">${c.portrait ? `<img src="${esc(c.portrait)}" alt="" loading="lazy">` : ''}<div><b>${esc(c.who)}</b><small>${esc(c.role)}</small></div></div>
+            <div class="q-who">${(c.avatar || c.portrait) ? `<img src="${esc(c.avatar || c.portrait)}" alt="" loading="lazy">` : ''}<div><b>${esc(c.who)}</b><small>${esc(c.role)}</small></div></div>
           </blockquote>
           <a class="cs-link" href="${esc(c.link)}" target="_blank" rel="noopener">Read the full case study <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
         </div>

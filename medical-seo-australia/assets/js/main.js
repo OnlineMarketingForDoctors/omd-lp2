@@ -57,12 +57,12 @@
       place: 'Harley Street, Milton Keynes and Northampton', specialty: 'Facial cosmetic surgery', months: '12 months',
       title: 'Three clinics, one facial surgeon, and a 1,012% increase in ranking keywords.',
       hero: { n: '1,012%', t: 'growth in keyword rankings in 12 months' },
-      stats: [['5.08x', 'return on investment'], ['106%', 'increase in organic traffic'], ['300%', 'increase in conversions']],
+      stats: [['5.8x', 'return on investment'], ['106%', 'increase in organic traffic'], ['300%', 'increase in conversions']],
       situation: 'Mr Mrinal Supriya operates across London, Milton Keynes and Northampton. The clinic was known for deep plane facelift and rhinoplasty in the profession, and almost invisible for those terms on Google.',
       did: ['Restructured three Google Business Profiles so each location owned its own local searches', 'Long-form pages for deep plane facelift, rhinoplasty and blepharoplasty, built from real search intent', 'Keyword research around trending facelift techniques and recovery questions', 'On-page rebuild: unique titles, headings and descriptions on every page'],
       shots: [[U + '2025/08/keywords-results-BFC.jpg', 'Keyword ranking results, British Face Clinic'], [U + '2025/08/British-Face-Clinic-GA4-YOY-Results-by-OMD.jpg', 'Year-on-year results in Google Analytics'], [U + '2025/08/GMB-listing.jpg', 'Google Business Profile listing']],
       portrait: U + '2025/08/mr-mrinal-supriya.jpg',
-      quote: 'We have seen a significant increase in our organic traffic which has grown by around 150%. Similarly, we have seen a significant increase in our organic keywords, which has grown by 1,000%. We have seen an increase in our practice with a ROI of around 5.08.',
+      quote: 'We have seen a significant increase in our organic traffic which has grown by around 150%. Similarly, we have seen a significant increase in our organic keywords, which has grown by 1,000%. We have seen an increase in our practice with a ROI of around 5.8.',
       who: 'Mr Mrinal Supriya', role: 'Facial Cosmetic Surgeon, British Face Clinic',
       link: 'https://onlinemarketingfordoctors.com/casestudy/british-face-clinic/'
     },
@@ -114,7 +114,7 @@
       stats: [['5', 'Google Search and Maps placements across Colchester and Essex'], ['6', 'AI answers captured'], ['2', 'ChatGPT shortlists for laser refractive surgery']],
       queries: ['best laser surgeon in colchester', 'best laser refractive surgery clinic in colchester', 'laser eye surgery colchester', 'hyperopia treatment colchester', 'eye doctor colchester', 'ophthalmologist colchester', 'eye care specialist essex'],
       shots: [['assets/results/ai/eye-care-clinics/the-vision-surgeon--the-vision-surgeon-ranks-on-chatgpt-results-for-best-laser-surgeon-in-colchester-keyword.webp', "ChatGPT, best laser surgeon in Colchester"], ['assets/results/ai/eye-care-clinics/the-vision-surgeon--the-vision-surgeon-ranks-on-ai-search-results-for-laser-eye-surgery-colchester-keyword.webp', 'Google AI search, laser eye surgery Colchester'], ['assets/results/seo/eye-care-clinics/the-vision-surgeon--the-vision-surgeon-ranks-on-google-maps-for-eye-doctor-colchester-keyword.webp', 'Google Maps, eye doctor Colchester']],
-      portrait: ''
+      portrait: 'assets/cases/the-vision-surgeon-portrait.webp', who: 'Mr Hatch Mukherjee, The Vision Surgeon'
     },
     {
       id: 'mansmatters', name: 'MansMatters', logo: 'assets/client-logos/mans-matters-logo.webp', uk: true,
