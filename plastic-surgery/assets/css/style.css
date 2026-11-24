@@ -123,6 +123,17 @@ figure{margin:0}
 .icon-btn svg{width:26px;height:26px}
 .wa-btn{color:#25D366}
 .wa-btn svg{width:24px;height:24px}
+
+/* WhatsApp on desktop too: between the phone number and the booking
+   button, so the two ways to talk sit together */
+@media (min-width:921px){
+  .header-cta .wa-btn{display:inline-flex;order:2;width:40px;height:40px}
+  .header-cta{gap:14px}
+  .header-cta .phone span{white-space:nowrap}
+  .header-cta .wa-btn{margin-left:-6px}
+  .header-cta .phone{order:1}
+  .header-cta > .btn{order:3}
+}
 /* the hamburger becomes a close button while the drawer is open */
 .menu-btn .ic-close{display:none}
 .menu-btn[aria-expanded="true"] .ic-menu{display:none}
